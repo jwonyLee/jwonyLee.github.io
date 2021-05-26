@@ -1,0 +1,30 @@
+# Site settings
+title: 🌩 먹구름
+description: This is the Collider Jekyll Theme.
+baseurl: ""
+url: "https://jwonylee.github.io"
+
+# Author
+author:
+  name: 이지원
+  email: jiwon.swdev@gmail.com
+
+link:
+  github: jwonyLee
+  blog: https://jwonylee.tistory.com
+  facebook:
+  twitter:
+  linkedin:
+
+# Gems
+# plugins:
+
+# Markdown Processing
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Permalinks
+permalink: /:categories/:title

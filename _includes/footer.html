@@ -1,0 +1,30 @@
+<footer class="footer footer-transparent d-print-none">
+    <div class="container">
+        <div class="row text-center align-items-center flex-row-reverse">
+            <div class="col-lg-auto ms-lg-auto">
+                <ul class="list-inline list-inline-dots mb-0">
+                    {% if site.link.github %}
+                    <li class="list-inline-item">
+                        <a href="https://github.com/{{ site.link.github }}" class="link-secondary">Github</a>
+                    </li>
+                    {% endif %}
+                    {% if site.link.blog %}
+                    <li class="list-inline-item">
+                        <a href="{{ site.link.blog }}" class="link-secondary">Blog</a>
+                    </li>
+                    {% endif %}
+                    {% if site.link.facebook %}
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/profile.php?id={{ site.link.facebook }}" class="link-secondary">Facebook</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+                <ul class="list-inline list-inline-dots mb-0">
+                    <li class="list-inline-item">Copyright © 2021 jwonyLee. All rights reserved.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,29 @@
+---
+layout: page
+title: All Posts
+---
+
+<div class="page-body">
+    <div class="container-xl">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <ul class="list list-timeline">
+                            {% for post in site.posts %}
+                            <li>
+                                <div class="list-timeline-icon" style="background-color: #f0f2f6;">{{ post.emoji }}</div>
+                                <div class="list-timeline-content">
+                                    <div class="list-timeline-time">{{ post.date | date: "%Y-%m-%d" }}</div>
+                                    <p class="list-timeline-title"><a href="{{ post.url }}">{{ post.title }}</a></p>
+                                    <p class="text-muted">{{ post.subtitle }}</p>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+---
+layout: page
+title: Categories
+---
+
+<div class="page-body">
+    <div class="container-xl">
+        <div class="card">
+            <div class="card-body">
+                <div class="btn-list">
+                    {% for category in site.categories %}
+                        <a href="#{{ category[0] }}-ref" class="btn btn-white">
+                            {{ category[0] }} <span class="badge bg-blue-lt ms-2">{{ category[1].size }}</span>
+                        </a>
+                    {% endfor%}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-body">
+    <div class="container-xl">
+        <div class="row row-deck row-cards">
+            {% for category in site.categories %}
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title" id="{{ category[0] }}-ref">{{ category[0] }}</h3>
+                    </div>
+                    
+                    <div class="list-group list-group-flush list-group-hoverable">
+                        {% for post in category[1] %}
+                        <div class="list-group-item">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <span class="avatar avatar-rounded">{{ post.emoji }}</span>
+                                </div>
+                                <div class="col">
+                                    <div class="text-truncate"><a href="{{ post.url }}">{{ post.title }}</a></div>
+                                    <div class="text-muted">{{ post.subtitle }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
