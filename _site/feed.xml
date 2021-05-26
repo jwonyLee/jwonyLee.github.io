@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jwonylee.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jwonylee.github.io/" rel="alternate" type="text/html" /><updated>2021-05-26T22:46:38+09:00</updated><id>https://jwonylee.github.io/feed.xml</id><title type="html">🌩 먹구름</title><subtitle>This is the Collider Jekyll Theme.</subtitle><author><name>이지원</name><email>jiwon.swdev@gmail.com</email></author><entry><title type="html">Fast Enumeration 이란 무엇인지 설명하시오.</title><link href="https://jwonylee.github.io/swift/iosinterviewquestions/Fast-Enumeration" rel="alternate" type="text/html" title="Fast Enumeration 이란 무엇인지 설명하시오." /><published>2020-10-07T00:00:00+09:00</published><updated>2020-10-07T00:00:00+09:00</updated><id>https://jwonylee.github.io/swift/iosinterviewquestions/Fast-Enumeration</id><content type="html" xml:base="https://jwonylee.github.io/swift/iosinterviewquestions/Fast-Enumeration">&lt;p&gt;Fast Enumeration이라는 개념을 처음 봤다. 그래서 찾아보니 전혀 생소한 개념은 아니고 파이썬이나, 스위프트에서 배열이나 딕셔너리 같이 순회할 수 있는 컬렉션들을 순회할 때 사용하는 문법이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+	&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;값을 읽는 정도만 사용한다면 for-in 문이 좋다. (컬렉션의 요소를 수정할 수 없음)&lt;/p&gt;
+
+&lt;p&gt;index를 직접 다뤄야하거나, 컬렉션의 요소를 수정해야하는 작업에서는 부적절하다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Fast enumeration is a language feature that allows you to efficiently and safely enumerate over the contents of a collection using a concise syntax.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Fast enumeration은 간결한 구문을 사용하여 컬렉션의 내용을 효율적이고 안전하게 열거할 수 있는 언어 기능이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;참고-자료&quot;&gt;참고 자료&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjectiveC/Chapters/ocFastEnumeration.html&quot;&gt;Fast Enumeration&lt;/a&gt;&lt;/p&gt;</content><author><name>이지원</name><email>jiwon.swdev@gmail.com</email></author><category term="Swift" /><category term="iOSInterviewquestions" /><category term="Swift" /><summary type="html">Fast Enumeration이라는 개념을 처음 봤다. 그래서 찾아보니 전혀 생소한 개념은 아니고 파이썬이나, 스위프트에서 배열이나 딕셔너리 같이 순회할 수 있는 컬렉션들을 순회할 때 사용하는 문법이다.</summary></entry></feed>

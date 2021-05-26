@@ -17,7 +17,9 @@ link:
   linkedin:
 
 # Gems
-# plugins:
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
 
 # Markdown Processing
 markdown: kramdown
