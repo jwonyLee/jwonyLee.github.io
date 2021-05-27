@@ -1,0 +1,33 @@
+I"�	<h2 id="defer">defer</h2>
+
+<blockquote>
+  <p>연기하다, 뒤로 미루다</p>
+</blockquote>
+
+<p>코드가 블록을 어떤 식으로 빠져나가든 간에 꼭 실행해야 하는 마무리 작업을 할 수 있도록 도와줌</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">defer</code> 구문 내부에는 <code class="language-plaintext highlighter-rouge">break</code>, <code class="language-plaintext highlighter-rouge">return</code> 등과 같이 구문을 빠져나갈 수 있는 코드 또는 오류를 던지는 코드는 작성하면 안됨</li>
+  <li>여러 개의 <code class="language-plaintext highlighter-rouge">defer</code> 구문이 하나의 범위 내부에 속해 있다면 맨 마지막에 작성된 구문부터 역순으로 실행</li>
+  <li><code class="language-plaintext highlighter-rouge">try-catch-finally</code>와 비슷하지만, <code class="language-plaintext highlighter-rouge">defer</code>는 <code class="language-plaintext highlighter-rouge">do-catch</code>말고 다른 블록에서도 사용 가능</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="mi">3</span> <span class="p">{</span>
+    <span class="k">defer</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"end!"</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="nf">print</span><span class="p">(</span><span class="s">"i: </span><span class="se">\(</span><span class="n">i</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">i</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">end</span><span class="o">!</span>
+<span class="nv">i</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">end</span><span class="o">!</span>
+<span class="nv">i</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">end</span><span class="o">!</span>
+</code></pre></div></div>
+
+<p>반복문 블럭이 끝날 때마다 <code class="language-plaintext highlighter-rouge">defer</code> 구문 내부 블럭의 내용이 실행되는 걸 확인할 수 있다.</p>
+:ET

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="BHx56ioY5NM_mqKgwinDWGi4RQizKJy-sfs5OLeYPV0" />
+
+    <title>UIWindow 객체의 역할은 무엇인가?</title>
+    <meta name="description" content="  The backdrop for your app’s user interface and the object that dispatches events to your views.">
+
+    <!-- favicon -->
+    <link href="/assets/favicon.ico" rel="icon" type="image/ico" />
+
+    <!-- Tabler -->
+    <script src="https://unpkg.com/@tabler/core@1.0.0-beta3/dist/js/tabler.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@tabler/core@1.0.0-beta3/dist/css/tabler.min.css">
+
+    <!-- github style -->
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+
+    <!-- Twitter Cards -->
+	<meta name="twitter:title" content="UIWindow 객체의 역할은 무엇인가?">
+	<meta name="twitter:description" content="
+  The backdrop for your app’s user interface and the object that dispatches events to your views.
+
+">
+	
+	
+	
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:image" content="https://jwonylee.github.io/images/">
+	
+
+	<!-- Open Graph -->
+	<meta property="og:locale" content="">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="UIWindow 객체의 역할은 무엇인가?">
+	
+	<meta name="og:image" content="https://jwonylee.github.io/images/">
+	
+
+	<meta property="og:description" content="
+  The backdrop for your app’s user interface and the object that dispatches events to your views.
+
+">
+	<meta property="og:url" content="https://jwonylee.github.io/iosinterviewquestions/UIWindow">
+	<meta property="og:site_name" content="🌩 먹구름">
+</head>
+
+<body>
+
+    <header class="navbar navbar-expand-md navbar-light d-print-none">
+    <div class="container-xl">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
+            <a href="/" class="nav-link">
+                🌩 먹구름
+            </a>
+        </h1>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <div class="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user"
+                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                                </svg>
+                            </span>
+                            <span class="nav-link-title">About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/archive">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive"
+                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <rect x="3" y="4" width="18" height="4" rx="2"></rect>
+                                    <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10"></path>
+                                    <line x1="10" y1="12" x2="14" y2="12"></line>
+                                </svg>
+                            </span>
+                            <span class="nav-link-title">Archive</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/categories">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-folder" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2"></path>
+                                 </svg>
+                            </span>
+                            <span class="nav-link-title">Categories</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tags">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag"
+                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path
+                                        d="M11 3l9 9a1.5 1.5 0 0 1 0 2l-6 6a1.5 1.5 0 0 1 -2 0l-9 -9v-4a4 4 0 0 1 4 -4h4">
+                                    </path>
+                                    <circle cx="9" cy="9" r="2"></circle>
+                                </svg>
+                            </span>
+                            <span class="nav-link-title">Tags</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="my-2 my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-last">
+            <form action="" method="get">
+                <div class="input-icon">
+                    <span class="input-icon-addon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <circle cx="10" cy="10" r="7"></circle>
+                            <line x1="21" y1="21" x2="15" y2="15"></line>
+                        </svg>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Search" aria-label="Search in blog">
+                </div>
+            </form>
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="page-wrapper">
+    <div class="container-xl">
+        <div class="page-header d-print-none">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h2 class="page-title">UIWindow 객체의 역할은 무엇인가?</h2>
+                    <div class="text-muted mt-1">iOSInterviewquestions</div>
+                </div>
+                <div class="col-auto">
+                    2020-12-08
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-body">
+        <div class="container-xl">
+            <div class="card card-lg">
+                <div class="card-body markdown">
+                        <blockquote>
+  <p>The backdrop for your app’s user interface and the object that dispatches events to your views.</p>
+</blockquote>
+
+<p>사용자 인터페이스에 배경을 제공하고, 중요한 이벤트 처리 행동을 제공하는 객체</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">UIWindow</span><span class="p">:</span> <span class="kt">UIView</span>
+</code></pre></div></div>
+
+<ul>
+  <li>앱의 콘텐츠를 표시할 기본 윈도우 제공</li>
+  <li>추가 콘텐츠를 표시하려면 필요한 경우 추가 <code class="language-plaintext highlighter-rouge">window</code>를 만듦</li>
+</ul>
+
+<p>일반적으로 <code class="language-plaintext highlighter-rouge">Xcode</code>에서 <code class="language-plaintext highlighter-rouge">iOS</code> 프로젝트를 만들면 스토리 보드에서 자동으로 생성함 → 스토리보드를 사용하지 않는 경우 <code class="language-plaintext highlighter-rouge">window</code>를 직접 만들어야 함</p>
+
+<ul>
+  <li>z축 설정</li>
+  <li><code class="language-plaintext highlighter-rouge">window</code>를 표시하고 이를 키보드 이벤트의 대상으로 만듦</li>
+  <li><code class="language-plaintext highlighter-rouge">window</code>의 좌표계간에 좌표 값을 변환</li>
+  <li><code class="language-plaintext highlighter-rouge">window</code>의 루트 뷰 컨트롤러 변경</li>
+  <li><code class="language-plaintext highlighter-rouge">window</code>가 표시되는 화면 변경</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">window</code>에는 고유한 시각적 모양이 없음. 대신 <code class="language-plaintext highlighter-rouge">window</code>의 루트 뷰 컨트롤러에서 관리하는 하나 이상의 <code class="language-plaintext highlighter-rouge">view</code>를 호스팅함</p>
+
+<h2 id="키보드-상호-작용-이해">키보드 상호 작용 이해</h2>
+<p>터치 이벤트는 발생한 <code class="language-plaintext highlighter-rouge">window</code>로 전달되는 반면, 관련 좌표 값이 없는 이벤트는 <code class="language-plaintext highlighter-rouge">key window</code>로 전달됨. 한 번에 하나의 <code class="language-plaintext highlighter-rouge">window</code>만 <code class="language-plaintext highlighter-rouge">key window</code>가 될 수 있으며 <code class="language-plaintext highlighter-rouge">window</code>의 속성을 사용하여 상태를 확인할 수 있음. 대부분의 경우 앱의 기본 <code class="language-plaintext highlighter-rouge">window</code>는 <code class="language-plaintext highlighter-rouge">key window</code>이지만 <code class="language-plaintext highlighter-rouge">UIKit</code>은 필요에 따라 다른 <code class="language-plaintext highlighter-rouge">window</code>를 지정할 수 있음</p>
+
+<p>어떤 <code class="language-plaintext highlighter-rouge">window</code>가 핵심인지 알아야하는 경우 <code class="language-plaintext highlighter-rouge">didBecomeKeyNotification</code>과 <code class="language-plaintext highlighter-rouge">didResignKeyNotification</code>을 구독하면 된다. (Notification) 시스템은 앱의 <code class="language-plaintext highlighter-rouge">key window</code> 변경에 대한 응답으로 알림을 보냄.</p>
+
+                </div>
+
+                <div class="card-footer">
+                    <div class="col mb-3">
+                        
+                        <div class="btn-list">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-folder"
+                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path
+                                        d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2">
+                                    </path>
+                                </svg>
+                                Category
+                            </span>
+                            
+                            <a href="/categories#iOSInterviewquestions-ref"
+                                class="btn btn-pill btn-sm" role="button">iOSInterviewquestions</a>
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="col">
+                        
+                        <div class="btn-list">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag"
+                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path
+                                        d="M11 3l9 9a1.5 1.5 0 0 1 0 2l-6 6a1.5 1.5 0 0 1 -2 0l-9 -9v-4a4 4 0 0 1 4 -4h4">
+                                    </path>
+                                    <circle cx="9" cy="9" r="2"></circle>
+                                </svg>
+                                Tags
+                            </span>
+                            
+                            <a href="/tags#iOS" class="btn btn-pill btn-sm"
+                                role="button">iOS</a>
+                            
+                            <a href="/tags#iOSInterviewquestions" class="btn btn-pill btn-sm"
+                                role="button">iOSInterviewquestions</a>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </main>
+    <footer class="footer footer-transparent d-print-none">
+    <div class="container">
+        <div class="row text-center align-items-center flex-row-reverse">
+            <div class="col-lg-auto ms-lg-auto">
+                <ul class="list-inline list-inline-dots mb-0">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/jwonyLee" class="link-secondary">Github</a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://jwonylee.tistory.com" class="link-secondary">Blog</a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+                <ul class="list-inline list-inline-dots mb-0">
+                    <li class="list-inline-item">Copyright © 2021 jwonyLee. All rights reserved.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>

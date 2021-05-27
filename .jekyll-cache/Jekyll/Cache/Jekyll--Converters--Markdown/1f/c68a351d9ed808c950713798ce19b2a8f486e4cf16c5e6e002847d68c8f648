@@ -1,0 +1,39 @@
+I"�<ul>
+  <li>UI와 관련된 작업은 메인 스레드에서 구현</li>
+  <li>Mutable한 인스턴스는 스레드에 안전하지 않음(Thread-unsafe), 읽기 전용으로만 사용하다면 문제가 발생하지 않음</li>
+  <li>프로퍼티 원자성
+    <ul>
+      <li>어떤 프로퍼티를 두 개의 스레드가 참조하고 있는 상황에서 해당 프로퍼티 접근자 메서드가 atomic하지 않는다면 값에 대한 싱크가 맞지 않아 문제가 발생할 수 있음</li>
+      <li>Mutable한 인스턴스가 변경 중에 동시 접근할 경우가 없다면 nonatomic으로 사용해도 무방함</li>
+    </ul>
+  </li>
+  <li>스레드 관련 작업은 GCD를 통해 처리
+    <ul>
+      <li>GCD: Grand Central Dispatch</li>
+      <li>클로저 블록 안에 있는 특정 작업을 큐에 올리고, 해당 큐를 특정 스레드에 실행하는 방식</li>
+    </ul>
+  </li>
+  <li>구조체가 파라미터로 전달될 때 스레드에 안전(Thread-safe)</li>
+</ul>
+
+<hr />
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://gwangyonglee.tistory.com/47">[iOS] 멀티 스레드(Multi Thread) 구현 시 고려해야될 것들</a></li>
+</ul>
+
+<h2 id="스터디">스터디</h2>
+
+<ul>
+  <li>Dispatch Queue</li>
+  <li>Quality of Service(QoS)</li>
+  <li>asyncAfter</li>
+  <li>멀티 스레딩을 사용하는 이유</li>
+</ul>
+
+<p>Queue에서 Thread로 넘기는 구조</p>
+
+<p>직접적으로 스레드를 관리하지 않고 Queue를 활용해 작업을 분산 처리</p>
+:ET

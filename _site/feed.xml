@@ -1,23 +1,402 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jwonylee.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jwonylee.github.io/" rel="alternate" type="text/html" /><updated>2021-05-26T23:08:29+09:00</updated><id>https://jwonylee.github.io/feed.xml</id><title type="html">🌩 먹구름</title><subtitle>This is the Collider Jekyll Theme.</subtitle><author><name>이지원</name><email>jiwon.swdev@gmail.com</email></author><entry><title type="html">Fast Enumeration 이란 무엇인지 설명하시오.</title><link href="https://jwonylee.github.io/swift/iosinterviewquestions/Fast-Enumeration" rel="alternate" type="text/html" title="Fast Enumeration 이란 무엇인지 설명하시오." /><published>2020-10-07T00:00:00+09:00</published><updated>2020-10-07T00:00:00+09:00</updated><id>https://jwonylee.github.io/swift/iosinterviewquestions/Fast-Enumeration</id><content type="html" xml:base="https://jwonylee.github.io/swift/iosinterviewquestions/Fast-Enumeration">&lt;p&gt;Fast Enumeration이라는 개념을 처음 봤다. 그래서 찾아보니 전혀 생소한 개념은 아니고 파이썬이나, 스위프트에서 배열이나 딕셔너리 같이 순회할 수 있는 컬렉션들을 순회할 때 사용하는 문법이다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jwonylee.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jwonylee.github.io/" rel="alternate" type="text/html" /><updated>2021-05-27T15:50:56+09:00</updated><id>https://jwonylee.github.io/feed.xml</id><title type="html">🌩 먹구름</title><subtitle>This is the Collider Jekyll Theme.</subtitle><author><name>이지원</name><email>jiwon.swdev@gmail.com</email></author><entry><title type="html">UIKit 클래스들을 다룰 때 꼭 처리해야하는 애플리케이션 쓰레드 이름은 무엇인가?</title><link href="https://jwonylee.github.io/iosinterviewquestions/Application-thread" rel="alternate" type="text/html" title="UIKit 클래스들을 다룰 때 꼭 처리해야하는 애플리케이션 쓰레드 이름은 무엇인가?" /><published>2021-04-01T00:00:00+09:00</published><updated>2021-04-01T00:00:00+09:00</updated><id>https://jwonylee.github.io/iosinterviewquestions/Application-thread</id><content type="html" xml:base="https://jwonylee.github.io/iosinterviewquestions/Application-thread">&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Important&lt;/strong&gt;&lt;br /&gt;
+Use UIKit classes only from your app’s main thread or main dispatch queue, unless otherwise indicated. This restriction particularly applies to classes derived from UIResponder or that involve manipulating your app’s user interface in any way.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;p&gt;UIKit 클래스는 앱의 기본 스레드 혹은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DispatchQueue.main&lt;/code&gt;에서만 사용해야 한다. 이 제한은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UIResponder&lt;/code&gt;에서 파생되거나 앱의 사용자 인터페이스를 조작하는 것과 관련된 클래스에 적용된다.&lt;/p&gt;
 
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-	&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;참고-자료&quot;&gt;참고 자료&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/18467114/why-must-uikit-operations-be-performed-on-the-main-thread&quot;&gt;Why must UIKit operations be performed on the main thread? - Stack Overflow&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit&quot;&gt;UIKit - Apple Developer Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>이지원</name><email>jiwon.swdev@gmail.com</email></author><category term="iOSInterviewquestions" /><category term="iOS" /><category term="iOSInterviewquestions" /><summary type="html">Important Use UIKit classes only from your app’s main thread or main dispatch queue, unless otherwise indicated. This restriction particularly applies to classes derived from UIResponder or that involve manipulating your app’s user interface in any way.</summary></entry><entry><title type="html">Delegate란 무언인가 설명하고, retain 되는지 안되는지 그 이유를 함께 설명하시오.</title><link href="https://jwonylee.github.io/iosinterviewquestions/Delegate-retain" rel="alternate" type="text/html" title="Delegate란 무언인가 설명하고, retain 되는지 안되는지 그 이유를 함께 설명하시오." /><published>2021-03-30T00:00:00+09:00</published><updated>2021-03-30T00:00:00+09:00</updated><id>https://jwonylee.github.io/iosinterviewquestions/Delegate-retain</id><content type="html" xml:base="https://jwonylee.github.io/iosinterviewquestions/Delegate-retain">&lt;h2 id=&quot;delegate&quot;&gt;Delegate&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Delegation&lt;/em&gt; 은 클래스 또는 구조체가 책임의 일부를 다른 유형의 인스턴스에 넘겨주거나 &lt;em&gt;위임&lt;/em&gt; 할 수 있도록 하는 디자인 패턴이다. 이 디자인 패턴은 위임된 기능을 제공하기 위해 준수 형식(대리자라고 함)이 보장되도록 위임된 책임을 캡슐화하는 프로토콜을 정의하여 구현된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;retain&quot;&gt;retain&lt;/h2&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;protocol&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SomeDelegate&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;something&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;값을 읽는 정도만 사용한다면 for-in 문이 좋다. (컬렉션의 요소를 수정할 수 없음)&lt;/p&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SomeClass&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;delegate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SomeDelegate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;p&gt;index를 직접 다뤄야하거나, 컬렉션의 요소를 수정해야하는 작업에서는 부적절하다.&lt;/p&gt;
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;some1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SomeClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SomeClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;some2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SomeClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SomeClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;some1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;delegate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;some2&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;some2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;delegate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;some1&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;some1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;some2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위의 코드와 같은 경우에는 retain cycle이 발생한다. 왜냐하면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SomeClass&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;delegate&lt;/code&gt;가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;strong&lt;/code&gt;으로 선언되어 있는데, 이렇게 강한 참조를 하면 상위 객체의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nil&lt;/code&gt;을 할당해도 메모리에서 해제되지 않는다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SomeClass&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;weak&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;delegate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SomeDelegate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;some1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SomeClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SomeClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;some2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SomeClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SomeClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;some1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;delegate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;some2&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;some2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;delegate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;some1&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;some1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;some2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;두번째 코드처럼 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;delegate&lt;/code&gt;에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;weak&lt;/code&gt; 키워드를 포함하여 선언하면, 상위 객체에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nil&lt;/code&gt;을 할당할 때 메모리에서 같이 해제된다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;참고-자료&quot;&gt;참고 자료&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://baked-corn.tistory.com/30&quot;&gt;[Swift] Retain cycle, weak, unowned [번역]&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.swift.org/swift-book/LanguageGuide/Protocols.html&quot;&gt;Protocols - The Swift Programming Language&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>이지원</name><email>jiwon.swdev@gmail.com</email></author><category term="iOSInterviewquestions" /><category term="iOS" /><category term="iOSInterviewquestions" /><summary type="html">Delegate Delegation 은 클래스 또는 구조체가 책임의 일부를 다른 유형의 인스턴스에 넘겨주거나 위임 할 수 있도록 하는 디자인 패턴이다. 이 디자인 패턴은 위임된 기능을 제공하기 위해 준수 형식(대리자라고 함)이 보장되도록 위임된 책임을 캡슐화하는 프로토콜을 정의하여 구현된다.</summary></entry><entry><title type="html">scene delegate에 대해 설명하시오.</title><link href="https://jwonylee.github.io/iosinterviewquestions/Scene-Delegate" rel="alternate" type="text/html" title="scene delegate에 대해 설명하시오." /><published>2021-03-23T00:00:00+09:00</published><updated>2021-03-23T00:00:00+09:00</updated><id>https://jwonylee.github.io/iosinterviewquestions/Scene-Delegate</id><content type="html" xml:base="https://jwonylee.github.io/iosinterviewquestions/Scene-Delegate">&lt;h2 id=&quot;-ios-12&quot;&gt;~ iOS 12&lt;/h2&gt;
+
+&lt;p&gt;in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;App Delegate&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;App Life Cycle&lt;/li&gt;
+  &lt;li&gt;UI Life Cycle&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;ios-13-&quot;&gt;iOS 13 ~&lt;/h2&gt;
+
+&lt;p&gt;iOS 13부터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AppDelegate&lt;/code&gt;의 책임이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AppDelegate&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SceneDelegate&lt;/code&gt;로 분리되었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;App Delegate&lt;/code&gt; → 애플리케이션 생명주기 및 설정 담당&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;App Life Cycle&lt;/li&gt;
+  &lt;li&gt;Session Life Cycle&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Scene Delegate&lt;/code&gt; → 화면에 표시되는 내용(Windows 또는 Scenes)을 처리하고 앱이 표시되는 방식을 관리&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;UI Life Cycle&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;window&lt;/code&gt; → &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;scene&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;scene-delegate&quot;&gt;Scene Delegate&lt;/h2&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;optional&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+      &lt;span class=&quot;n&quot;&gt;willConnectTo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UISceneSession&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+            &lt;span class=&quot;n&quot;&gt;options&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;connectionOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIScene&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;ConnectionOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UISceneSession&lt;/code&gt; 라이프 사이클에서 호출되는 첫번째 메서드. 새 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UIWindow&lt;/code&gt;를 만들고 루트 뷰 컨트롤러를 설정하며 이 창을 표시 할 키 창으로 만든다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;optional&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sceneWillEnterForeground&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;앱이 처음 활성화 될 때 또는 background에서 foreground로 전환할 때처럼 scene이 시작되려고 할 때 호출된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;optional&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sceneDidBecomeActive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WillEnterForeground&lt;/code&gt; 메서드 바로 다음에 호출되며, 여기에서 scene이 설정, 표시되고 사용할 준비를 마친다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;optional&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sceneWillResignActive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;optional&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sceneDidEnterBackground&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;앱이 background로 스테이징될 때 호출된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;optional&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sceneDidDisconnect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;scene이 background로 갈 때마다 iOS는 리소스를 확보하기 위해 scene을 삭제하는 것을 결정할 수 있다. 이것은 앱이 종료되거나 실행되지 않음을 의미하지는 않지만 scene만 세션에서 연결 해제되고 활성화되지 않는다. iOS는 사용자가 특정 scene을 다시 foreground로 가져올 때 이 scene을 scene 세션에 다시 연결하도록 결정할 수 있다. 이 방법은 더 이상 사용되지 않는 리소스를 삭제하는 데 사용할 수 있다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;참고-자료&quot;&gt;참고 자료&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://velog.io/@dev-lena/iOS-AppDelegate와-SceneDelegate&quot;&gt;[iOS] AppDelegate와 SceneDelegate&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@kalyan.parise/understanding-scene-delegate-app-delegate-7503d48c5445&quot;&gt;Understanding Scene Delegate &amp;amp; App Delegate&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>이지원</name><email>jiwon.swdev@gmail.com</email></author><category term="iOSInterviewquestions" /><category term="iOS" /><category term="iOSInterviewquestions" /><summary type="html">~ iOS 12</summary></entry><entry><title type="html">앱이 In-Active 상태가 되는 시나리오를 설명하시오.</title><link href="https://jwonylee.github.io/iosinterviewquestions/In-Active" rel="alternate" type="text/html" title="앱이 In-Active 상태가 되는 시나리오를 설명하시오." /><published>2021-03-23T00:00:00+09:00</published><updated>2021-03-23T00:00:00+09:00</updated><id>https://jwonylee.github.io/iosinterviewquestions/In-Active</id><content type="html" xml:base="https://jwonylee.github.io/iosinterviewquestions/In-Active">&lt;h2 id=&quot;foreground&quot;&gt;Foreground&lt;/h2&gt;
+
+&lt;p&gt;In-Active와 Active를 합쳐서 Foreground 라고 함&lt;/p&gt;
+
+&lt;h2 id=&quot;in-active&quot;&gt;In-Active&lt;/h2&gt;
+
+&lt;p&gt;App이 실행 중이지만 이벤트를 받지 않는 상태&lt;/p&gt;
+
+&lt;p&gt;*보통 이 상태에 잠시 머물렀다가 다른 상태로 변경됨&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;시나리오 1. 사용자가 앱을 실행합니다.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Not Running&lt;/code&gt; → &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;In-Active&lt;/code&gt; → &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Active&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;시나리오 2. 앱 실행 도중 홈 버튼을 누릅니다.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Active&lt;/code&gt; → &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;In-Active&lt;/code&gt; → &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Background&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;시나리오 3. 앱을 다시 켭니다.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Background&lt;/code&gt; → &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Active&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;시나리오 4. 앱이 백그라운드에 있다가 Suspended 상태로 전이됩니다.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Active&lt;/code&gt; → &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;In-Active&lt;/code&gt; → &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Background&lt;/code&gt; → &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Suspended&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;참고-자료&quot;&gt;참고 자료&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://caution-dev.github.io/ios/2019/03/14/iOS-Application-state.html&quot;&gt;iOS Application state&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;생각해보기&quot;&gt;생각해보기&lt;/h2&gt;
+
+&lt;p&gt;iOS 14부터 일부 인터페이스가 컴팩트하게 변경되었다. 기존(iOS 14 이전)에는 전화가 오면 앱에 상태가 Active → In-Active → Background로 변경되었는데, 이렇게 UI가 변경된 상황(앱을 가리지 않음)에서는 앱이 In-Active를 진입할까?&lt;/p&gt;</content><author><name>이지원</name><email>jiwon.swdev@gmail.com</email></author><category term="iOSInterviewquestions" /><category term="iOS" /><category term="iOSInterviewquestions" /><summary type="html">Foreground</summary></entry><entry><title type="html">mutating 키워드에 대해 설명하시오.</title><link href="https://jwonylee.github.io/iosinterviewquestions/Mutating" rel="alternate" type="text/html" title="mutating 키워드에 대해 설명하시오." /><published>2021-03-04T00:00:00+09:00</published><updated>2021-03-04T00:00:00+09:00</updated><id>https://jwonylee.github.io/iosinterviewquestions/Mutating</id><content type="html" xml:base="https://jwonylee.github.io/iosinterviewquestions/Mutating">&lt;p&gt;구조체에서, 함수가 내부 변수의 값을 수정하려면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mutating&lt;/code&gt; 키워드를 붙여야 한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;mutating&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;modify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;값 타입(구조체와 열거형)의 인스턴스 메서드에서 자신 내부의 값을 변경하고자 할 때 사용하는 키워드&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Fast enumeration is a language feature that allows you to efficiently and safely enumerate over the contents of a collection using a concise syntax.&lt;/p&gt;
+  &lt;p&gt;Structures and enumerations are value types. By default, the properties of a value type cannot be modified from within its instance methods.&lt;/p&gt;
+
+  &lt;p&gt;However, if you need to modify the properties of your structure or enumeration within a particular method, you can opt in to mutating behavior for that method. The method can then mutate (that is, change) its properties from within the method, and any changes that it makes are written back to the original structure when the method ends.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;보통 값 타입의 프로퍼티는 인스턴스 메서드에서 수정할 수 없다.&lt;/p&gt;
+
+&lt;p&gt;그러나 구조체나 열거형의 인스턴스 메서드에서 프로퍼티를 수정하길 원한다면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mutating&lt;/code&gt;을 채택해서 할 수 있다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mutating&lt;/code&gt;을 채택하면 메서드 내에서 프로퍼티를 변경할 수 있으며 메서드가 종료되면 변경 내용이 원래 구조에 다시 기록된다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The method can also assign a completely new instance to its implicit self property, and this new instance will replace the existing one when the method ends.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Fast enumeration은 간결한 구문을 사용하여 컬렉션의 내용을 효율적이고 안전하게 열거할 수 있는 언어 기능이다.&lt;/p&gt;
+  &lt;p&gt;Assigning to self Within a Mutating Method&lt;/p&gt;
+
+  &lt;p&gt;Mutating methods can assign an entirely new instance to the implicit self property. The Point example shown above could have been written in the following way instead:&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&quot;참고-자료&quot;&gt;참고 자료&lt;/h3&gt;
+&lt;p&gt;Mutating 메서드는 암시적인 속성인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;self&lt;/code&gt;에 완전히 새로운 인스턴스를 할당할 수 있다.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjectiveC/Chapters/ocFastEnumeration.html&quot;&gt;Fast Enumeration&lt;/a&gt;&lt;/p&gt;</content><author><name>이지원</name><email>jiwon.swdev@gmail.com</email></author><category term="Swift" /><category term="iOSInterviewquestions" /><category term="Swift" /><summary type="html">Fast Enumeration이라는 개념을 처음 봤다. 그래서 찾아보니 전혀 생소한 개념은 아니고 파이썬이나, 스위프트에서 배열이나 딕셔너리 같이 순회할 수 있는 컬렉션들을 순회할 때 사용하는 문법이다.</summary></entry></feed>
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Point&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;mutating&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;moveBy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;deltaX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Double&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;deltaY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Double&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;deltaX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;deltaY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;참고-자료&quot;&gt;참고 자료&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.swift.org/swift-book/LanguageGuide/Methods.html&quot;&gt;Methods - The Swift Programming Language (Swift 5.3)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://xho95.github.io/swift/language/grammar/method/2020/05/03/Methods.html&quot;&gt;Swift 5.2: Methods (메소드)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;스터디&quot;&gt;스터디&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Swift는 값이 변경될 때만 실제 복사를 하는 COW(Copy on Write)방식을 채용하고 있는데, 구조체 프로퍼티는 값을 변경할 때 Swift가 직관적으로 알 수 있지만 구조체 메서드에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mutating&lt;/code&gt; 키워드없이 프로퍼티를 변경하게 되면 언제 실제로 복사를 해야하는 지 알 수 없다.&lt;/li&gt;
+  &lt;li&gt;Struct는 값 타입이라서 스택 메모리에 저장이 되고, 힙 내부에 존재하지 않기 때문에 구조체를 전달할 때 계속해서 복사됨&lt;/li&gt;
+  &lt;li&gt;변수에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mutating&lt;/code&gt;을 안 쓰는 이유는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let&lt;/code&gt; 키워드를 통해 이미 컴파일러가 알고 있기 때문에&lt;/li&gt;
+  &lt;li&gt;value type은 값이 immutable하기 때문에 변경이 된다면 사용해야 한다.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>이지원</name><email>jiwon.swdev@gmail.com</email></author><category term="iOSInterviewquestions" /><category term="Swift" /><category term="iOSInterviewquestions" /><summary type="html">구조체에서, 함수가 내부 변수의 값을 수정하려면 mutating 키워드를 붙여야 한다.</summary></entry><entry><title type="html">Autorelease Pool을 사용해야 하는 상황을 두 가지 이상 예로 들어 설명하시오.</title><link href="https://jwonylee.github.io/iosinterviewquestions/Autorelease-Pool" rel="alternate" type="text/html" title="Autorelease Pool을 사용해야 하는 상황을 두 가지 이상 예로 들어 설명하시오." /><published>2021-02-16T00:00:00+09:00</published><updated>2021-02-16T00:00:00+09:00</updated><id>https://jwonylee.github.io/iosinterviewquestions/Autorelease-Pool</id><content type="html" xml:base="https://jwonylee.github.io/iosinterviewquestions/Autorelease-Pool">&lt;ul&gt;
+  &lt;li&gt;command-line 도구와 같이 UI 프레임워크를 기반으로 하지 않는 프로그램을 작성하는 경우&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;많은 임시 객체를 생성하는 루프를 작성하는 경우
+루프 내에서 autorelease pool을 사용하여 다음 반복 전에 해당 객체를 삭제할 수 있다. 루프에서 autorelease pool 블록을 사용하면 애플리케이션의 최대 메모리 공간을 줄이는 데 도움이 된다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-objectivec highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;NSArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;urls&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;An&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;URLs&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSURL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     
+      &lt;span class=&quot;k&quot;&gt;@autoreleasepool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fileContents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stringWithContentsOfURL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;
+                                           &lt;span class=&quot;nl&quot;&gt;encoding:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSUTF8StringEncoding&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+          &lt;span class=&quot;cm&quot;&gt;/* 문자열을 처리하여, 더 많은 객체를 만들고 autorelease 한다. */&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;보조 스레드를 생성하는 경우
+스레드가 실행되자마자 고유한 autorelease pool을 만들어야 한다. 그렇지 않으면 응용 프로그램에서 객체가 누출된다.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>이지원</name><email>jiwon.swdev@gmail.com</email></author><category term="iOSInterviewquestions" /><category term="ARC" /><category term="iOSInterviewquestions" /><summary type="html">command-line 도구와 같이 UI 프레임워크를 기반으로 하지 않는 프로그램을 작성하는 경우 많은 임시 객체를 생성하는 루프를 작성하는 경우 루프 내에서 autorelease pool을 사용하여 다음 반복 전에 해당 객체를 삭제할 수 있다. 루프에서 autorelease pool 블록을 사용하면 애플리케이션의 최대 메모리 공간을 줄이는 데 도움이 된다.</summary></entry><entry><title type="html">특정 객체를 autorelease 하기 위해 필요한 사항과 과정을 설명하시오.</title><link href="https://jwonylee.github.io/iosinterviewquestions/autorelease" rel="alternate" type="text/html" title="특정 객체를 autorelease 하기 위해 필요한 사항과 과정을 설명하시오." /><published>2021-02-16T00:00:00+09:00</published><updated>2021-02-16T00:00:00+09:00</updated><id>https://jwonylee.github.io/iosinterviewquestions/autorelease</id><content type="html" xml:base="https://jwonylee.github.io/iosinterviewquestions/autorelease">&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Foundation&lt;/code&gt;에서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;autorelease pool&lt;/code&gt;이라는 기능을 사용하여 함수 내에서 생성한 객체들을 적절한 시점에 한 번에 해제할 수 있도록 해주는 방법을 제공한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;arc를-사용하는-경우&quot;&gt;ARC를 사용하는 경우&lt;/h2&gt;
+
+&lt;p&gt;autorelease pool을 직접 사용할 수 없고, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@autoreleasepool&lt;/code&gt; 블록을 사용한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-objectivec highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;NSAutoreleasePool&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pool&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSAutoreleasePool&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Codebenefitting from a local autorelease pool.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pool&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;release&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-objectivec highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@autoreleasepool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;// Code benefitting from a local autorelease pool.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@autoreleasepool&lt;/code&gt; 블록은 직접 인스턴스를 사용하는 것보다 더 효율적이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;arc를-사용하지-않는-경우&quot;&gt;ARC를 사용하지 않는 경우?&lt;/h2&gt;
+
+&lt;p&gt;객체의 참조 카운트를 감소시킬 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;release&lt;/code&gt; 대신 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;autorelease&lt;/code&gt;를 사용하면 된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-objectivec highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aPerson&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// [aPerson release]; delete now&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aPerson&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;autorelease&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// delete later&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;참고-자료&quot;&gt;참고 자료&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://nephilim.tistory.com/120&quot;&gt;Objective-C의 autorelease 이해하기(1)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/foundation/nsautoreleasepool&quot;&gt;NSAutoreleasePool - Apple Developer Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://soooprmx.com/archives/4174&quot;&gt;[Objective-C] Objective-C의 메모리 관리 방법 · Wireframe&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>이지원</name><email>jiwon.swdev@gmail.com</email></author><category term="iOSInterviewquestions" /><category term="ARC" /><category term="iOSInterviewquestions" /><summary type="html">Foundation에서는 autorelease pool이라는 기능을 사용하여 함수 내에서 생성한 객체들을 적절한 시점에 한 번에 해제할 수 있도록 해주는 방법을 제공한다.</summary></entry><entry><title type="html">강한 순환 참조 (Strong Reference Cycle) 는 어떤 경우에 발생하는지 설명하시오.</title><link href="https://jwonylee.github.io/iosinterviewquestions/Strong-Reference-Cycle" rel="alternate" type="text/html" title="강한 순환 참조 (Strong Reference Cycle) 는 어떤 경우에 발생하는지 설명하시오." /><published>2021-02-15T00:00:00+09:00</published><updated>2021-02-15T00:00:00+09:00</updated><id>https://jwonylee.github.io/iosinterviewquestions/Strong-Reference-Cycle</id><content type="html" xml:base="https://jwonylee.github.io/iosinterviewquestions/Strong-Reference-Cycle">&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;apartment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Apartment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;deinit&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; is being deinitialized&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Apartment&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;unit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;unit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unit&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;tenant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;deinit&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Apartment &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unit&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; is being deinitialized&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;john&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;unit4A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Apartment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;john&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;John Appleseed&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;unit4A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Apartment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;unit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;4A&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://docs.swift.org/swift-book/_images/referenceCycle01_2x.png&quot; alt=&quot;referenceCycle01&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;특정 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Person&lt;/code&gt; 인스턴스와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Apartment&lt;/code&gt; 인스턴스를 만들고 할당하면 위 그림과 같이 강력한 참조가 생성된다. 이렇게 만든 인스턴스를 연결하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Person&lt;/code&gt; 인스턴스가 아파트를 갖고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Apartment&lt;/code&gt; 인스턴스에 임차인이 있도록 한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;john&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apartment&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unit4A&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;unit4A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tenant&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;john&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://docs.swift.org/swift-book/_images/referenceCycle02_2x.png&quot; alt=&quot;referenceCycle02&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이렇게 두 인스턴스를 연결하면 두 인스턴스 간에 강한 순환 참조가 생성된다. 그래서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Person&lt;/code&gt; 인스턴스와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Apartment&lt;/code&gt; 인스턴스의 참조를 끊어도 참조 횟수가 0으로 떨어지지 않는다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;john&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;unit4A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://docs.swift.org/swift-book/_images/referenceCycle03_2x.png&quot; alt=&quot;referenceCycle03&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이러한 강한 순환 참조를 해결하려면 속성을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;weak&lt;/code&gt; 키워드를 이용해 약한 참조를 한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Apartment&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;unit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;unit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unit&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;weak&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;tenant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;deinit&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Apartment &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unit&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; is being deinitialized&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;참고-자료&quot;&gt;참고 자료&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.swift.org/swift-book/LanguageGuide/AutomaticReferenceCounting.html&quot;&gt;Automatic Reference Counting - The Swift Programming Language (Swift 5.3)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>이지원</name><email>jiwon.swdev@gmail.com</email></author><category term="iOSInterviewquestions" /><category term="ARC" /><category term="iOSInterviewquestions" /><summary type="html">```swift class Person { let name: String init(name: String) { self.name = name } var apartment: Apartment? deinit { print(“(name) is being deinitialized”) } }</summary></entry><entry><title type="html">retain 과 assign 의 차이점을 설명하시오.</title><link href="https://jwonylee.github.io/iosinterviewquestions/retain-assign" rel="alternate" type="text/html" title="retain 과 assign 의 차이점을 설명하시오." /><published>2021-02-08T00:00:00+09:00</published><updated>2021-02-08T00:00:00+09:00</updated><id>https://jwonylee.github.io/iosinterviewquestions/retain-assign</id><content type="html" xml:base="https://jwonylee.github.io/iosinterviewquestions/retain-assign">&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Assign&lt;/code&gt; 은 소스의 보유 수를 늘리지 않고 한 객체에서 다른 객체로의 참조를 만든다. 객체가 아닌 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;primitive type&lt;/code&gt;에 대해 적합하다.&lt;/p&gt;
+
+&lt;div class=&quot;language-objectivec highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj1&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;release&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;obj1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;obj1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Retain&lt;/code&gt; 은 한 객체에서 다른 객체로의 참조를 만들고 원본 객체의 유지 수를 늘린다.&lt;/p&gt;
+
+&lt;div class=&quot;language-objectivec highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj1&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;release&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;obj1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;obj1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj2&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;retain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;참고-자료&quot;&gt;참고 자료&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.mindstick.com/interview/12748/what-is-the-difference-between-retain-assign&quot;&gt;What is the difference between retain &amp;amp; assign?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jivepia.tistory.com/81&quot;&gt;[Obj-C] 접근자 @property, @synthesize, @dynamic / retain, copy, assign, atomic, nonatomic&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>이지원</name><email>jiwon.swdev@gmail.com</email></author><category term="iOSInterviewquestions" /><category term="ARC" /><category term="iOSInterviewquestions" /><summary type="html">Assign 은 소스의 보유 수를 늘리지 않고 한 객체에서 다른 객체로의 참조를 만든다. 객체가 아닌 primitive type에 대해 적합하다.</summary></entry><entry><title type="html">ARC 대신 Manual Reference Count 방식으로 구현할 때 꼭 사용해야 하는 메서드들을 쓰고 역할을 설명하시오.</title><link href="https://jwonylee.github.io/iosinterviewquestions/MRC-method" rel="alternate" type="text/html" title="ARC 대신 Manual Reference Count 방식으로 구현할 때 꼭 사용해야 하는 메서드들을 쓰고 역할을 설명하시오." /><published>2021-02-04T00:00:00+09:00</published><updated>2021-02-04T00:00:00+09:00</updated><id>https://jwonylee.github.io/iosinterviewquestions/MRC-method</id><content type="html" xml:base="https://jwonylee.github.io/iosinterviewquestions/MRC-method">&lt;h2 id=&quot;allocinit&quot;&gt;alloc/init&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;alloc&lt;/code&gt; → 수신 클래스의 새 인스턴스를 반환. 새 인스턴스의 isa 인스턴스 변수는 클래스를 설명하는 데이터 구조로 초기화됨. 다른 모든 인스턴스 변수의 메모리는 0으로 설정됨. 새 인스턴스는 기본 영역에서 할당됨. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;allocWithZone:&lt;/code&gt; 을 사용하여 특정 영역을 지정&lt;/p&gt;
+
+&lt;p&gt;초기화를 완료하려면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;init&lt;/code&gt; 메소드를 이용해야한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-objectivec highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;TheClass&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newObject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TheClass&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;init&lt;/code&gt; → 메모리가 할당된 직후에 새 객체(수신자)를 초기화하기 위해 서브 클래스에 의해 구현됨. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;init&lt;/code&gt; 은 일반적으로 동일한 코드 라인에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;alloc&lt;/code&gt; 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;allocWithZone:&lt;/code&gt; 과 같이 사용함&lt;/p&gt;
+
+&lt;h2 id=&quot;retain&quot;&gt;retain&lt;/h2&gt;
+
+&lt;p&gt;수신자의 참조 횟수를 증가시킴&lt;/p&gt;
+
+&lt;h2 id=&quot;release&quot;&gt;release&lt;/h2&gt;
+
+&lt;p&gt;수신자의 참조 횟수를 감소시킴&lt;/p&gt;
+
+&lt;h2 id=&quot;autorelease&quot;&gt;autorelease&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Decrements the receiver’s retain count at the end of the current autorelease pool block.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;현재 autorelease pool block의 끝에서 수신자의 참조 횟수를 감소시킴&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;참고-자료&quot;&gt;참고 자료&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/MemoryMgmt.html&quot;&gt;About Memory Management&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/objectivec/1418956-nsobject/1571946-retain&quot;&gt;retain - Apple Developer Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>이지원</name><email>jiwon.swdev@gmail.com</email></author><category term="iOSInterviewquestions" /><category term="ARC" /><category term="iOSInterviewquestions" /><summary type="html">alloc/init</summary></entry></feed>

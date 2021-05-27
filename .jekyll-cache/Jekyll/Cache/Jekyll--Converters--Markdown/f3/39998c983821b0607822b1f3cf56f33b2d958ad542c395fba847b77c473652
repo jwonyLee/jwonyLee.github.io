@@ -1,0 +1,77 @@
+I"<h1 id="swift의-클로저와-objective-c의-블록은-어떤-차이가-있는가">Swift의 클로저와 Objective-C의 블록은 어떤 차이가 있는가?</h1>
+
+<p>일반적인 클로저에 대한 내용은 <a href="./Escaping-Closure.md">탈출 클로저에 대하여 설명하시오.</a> 문서 참고</p>
+
+<h2 id="두-줄-요약">두 줄 요약</h2>
+
+<ol>
+  <li>Swift의 클로저는 값 타입(value type) 변수를 캡쳐할 때 명시적으로 캡쳐 리스트를 작성하지 않으면 reference capture가 일어난다.</li>
+  <li>Objective-C의 블럭은 값 타입(value type) 변수를 캡쳐할 때 기본적으로 value copy이며, reference copy로 변경하려면 캡쳐할 변수를 선언할 때 <code class="language-plaintext highlighter-rouge">__block</code> 키워드를 명시하면 된다.</li>
+</ol>
+
+<h2 id="capture">Capture</h2>
+
+<p>Swift의 클로저에서 변수를 캡쳐할 때는 명시적인 캡쳐 리스트를 작성하지 않으면 value type 변수 임에도 불구하고 reference capture가 일어난다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">integer</span> <span class="o">=</span> <span class="mi">42</span>
+
+<span class="k">let</span> <span class="nv">closure</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="nf">print</span><span class="p">(</span><span class="s">"Integer is: </span><span class="se">\(</span><span class="n">integer</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">integer</span> <span class="o">=</span> <span class="mi">84</span>
+<span class="nf">closure</span><span class="p">()</span>
+<span class="c1">// Prints "Integer is: 84"</span>
+</code></pre></div></div>
+
+<p>value copy를 하려면 capture list를 만들어서 변수를 명시해주면 된다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">integer</span> <span class="o">=</span> <span class="mi">42</span>
+
+<span class="k">let</span> <span class="nv">closure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">[</span><span class="n">integer</span><span class="p">]</span> <span class="k">in</span>
+	<span class="nf">print</span><span class="p">(</span><span class="s">"Integer is: </span><span class="se">\(</span><span class="n">integer</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">integer</span> <span class="o">=</span> <span class="mi">84</span>
+<span class="nf">closure</span><span class="p">()</span>
+<span class="c1">// Prints "Integer is: 42"</span>
+</code></pre></div></div>
+
+<p>Objective-C의 block은 기본 동작이 value copy이다.</p>
+
+<div class="language-objectivec highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">integer</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="o">=^</span><span class="p">{</span>
+	<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Integer is: %i"</span><span class="p">,</span> <span class="n">integer</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="n">integer</span> <span class="o">=</span> <span class="mi">84</span><span class="p">;</span>
+<span class="n">block</span><span class="p">();</span>
+<span class="c1">// Prints "Integer is: 42"</span>
+</code></pre></div></div>
+
+<p>이를 reference copy로 변경하려면 capture할 변수 선언시에 <code class="language-plaintext highlighter-rouge">__block</code> 키워드를 명시하면 된다.</p>
+
+<div class="language-objectivec highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">__block</span> <span class="kt">int</span> <span class="n">integer</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="o">=^</span><span class="p">{</span>
+	<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Integer is: %i"</span><span class="p">,</span> <span class="n">integer</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="n">integer</span> <span class="o">=</span> <span class="mi">84</span><span class="p">;</span>
+<span class="n">block</span><span class="p">();</span>
+<span class="c1">// Prints "Integer is: 84"</span>
+</code></pre></div></div>
+
+<h2 id="block">Block</h2>
+
+<p>일반적으로 객체는 힙(heap)에 할당되지만 블럭은 스택(stack)에 할당되는 객체다. 실행속도 최적화를 위해 기본적으로 스택에 할당 하게된다.</p>
+
+<hr />
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://www.letmecompile.com/swift-closure-vs-objective-c-block/">Swift Closure vs. Objective-C Block 차이점 비교 분석</a></li>
+</ul>
+:ET

@@ -1,0 +1,7 @@
+I"�<ol>
+  <li><code class="language-plaintext highlighter-rouge">viewDidLoad()</code> 에서 <code class="language-plaintext highlighter-rouge">UITableView.register()</code>를 사용해서 셀을 등록한다.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 💡 스토리보드에서 만든 경우에는 등록할 필요가 없음!
+</code></pre></div>    </div>
+  </li>
+</ol>
+:ET

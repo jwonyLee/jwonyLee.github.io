@@ -1,0 +1,42 @@
+I"n<h2 id="qos-quality-of-service">QoS (Quality-of-service)</h2>
+
+<p>Qos는 원래 네트워크에서 사용하는 용어로 서비스의 중요도에 따라 중요한 서비스에 더 많은 자원을 할당하는 것, 또는 이 중요도를 뜻하는 말</p>
+
+<p>적절하게 QoS를 지정하면 앱의 에너지 효율이 좋아짐</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">enum</span> <span class="kt">DispatchQoS</span><span class="o">.</span><span class="kt">QoSClass</span>
+</code></pre></div></div>
+
+<h3 id="userinteractive">userInteractive</h3>
+
+<p>메인 스레드에서 작업하거나 사용자 인터페이스를 새로 고치거나 애니메이션을 수행하는 등 사용자와 상호 작용하는 작업</p>
+
+<h3 id="initiated">Initiated</h3>
+
+<p>사용자가 시작한 작업으로 저장된 문서를 열거나 사용자가 사용자 인터페이스에서 무언가를 클릭 할 때 작업을 수행하는 등 즉각적인 결과가 필요할 때 사용</p>
+
+<h3 id="default">default</h3>
+
+<p>기본값</p>
+
+<h3 id="utility">utility</h3>
+
+<p>완료하는데 약간의 시간이 걸리고 데이터 다운로드 또는 가져오기와 같이 즉각적인 결과가 필요하지 않은 작업</p>
+
+<h3 id="background">background</h3>
+
+<p>인덱싱, 동기화 및 백업과 같이 백그라운드에서 작동하고 사용자에게 표시되지 않는 작업</p>
+
+<h3 id="unspecified">unspecified</h3>
+
+<hr />
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://jcsoohwancho.github.io/2019-10-09-DispatchQueue%EC%9D%98Qos/">DispatchQueue의 Qos</a></li>
+  <li><a href="https://developer.apple.com/library/archive/documentation/Performance/Conceptual/EnergyGuide-iOS/PrioritizeWorkWithQoS.html#//apple_ref/doc/uid/TP40015243-CH39-SW1">Prioritize Work with Quality of Service Classes</a></li>
+  <li><a href="https://zeddios.tistory.com/521">iOS ) Prioritize Work with Quality of Service Classes</a></li>
+  <li><a href="https://developer.apple.com/documentation/dispatch/dispatchqueue">DispatchQueue - Apple Developer Documentation</a></li>
+</ul>
+:ET

@@ -1,0 +1,51 @@
+I"u<h1 id="delegate란-무언인가-설명하고-retain-되는지-안되는지-그-이유를-함께-설명하시오">Delegate란 무언인가 설명하고, retain 되는지 안되는지 그 이유를 함께 설명하시오.</h1>
+
+<h2 id="delegate">Delegate</h2>
+<p><em>Delegation</em> 은 클래스 또는 구조체가 책임의 일부를 다른 유형의 인스턴스에 넘겨주거나 <em>위임</em> 할 수 있도록 하는 디자인 패턴이다. 이 디자인 패턴은 위임된 기능을 제공하기 위해 준수 형식(대리자라고 함)이 보장되도록 위임된 책임을 캡슐화하는 프로토콜을 정의하여 구현된다.</p>
+
+<h2 id="retain">retain</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">SomeDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">something</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">SomeClass</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt">SomeDelegate</span><span class="p">?</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">some1</span><span class="p">:</span> <span class="kt">SomeClass</span><span class="p">?</span> <span class="o">=</span> <span class="kt">SomeClass</span><span class="p">()</span>
+<span class="k">var</span> <span class="nv">some2</span><span class="p">:</span> <span class="kt">SomeClass</span><span class="p">?</span> <span class="o">=</span> <span class="kt">SomeClass</span><span class="p">()</span>
+
+<span class="n">some1</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">some2</span>
+<span class="n">some2</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">some1</span>
+
+<span class="n">some1</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="n">some2</span> <span class="o">=</span> <span class="kc">nil</span>
+</code></pre></div></div>
+
+<p>위의 코드와 같은 경우에는 retain cycle이 발생한다. 왜냐하면 <code class="language-plaintext highlighter-rouge">SomeClass</code>의 <code class="language-plaintext highlighter-rouge">delegate</code>가 <code class="language-plaintext highlighter-rouge">strong</code>으로 선언되어 있는데, 이렇게 강한 참조를 하면 상위 객체의 <code class="language-plaintext highlighter-rouge">nil</code>을 할당해도 메모리에서 해제되지 않는다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">SomeClass</span> <span class="p">{</span>
+    <span class="k">weak</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt">SomeDelegate</span><span class="p">?</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">some1</span><span class="p">:</span> <span class="kt">SomeClass</span><span class="p">?</span> <span class="o">=</span> <span class="kt">SomeClass</span><span class="p">()</span>
+<span class="k">var</span> <span class="nv">some2</span><span class="p">:</span> <span class="kt">SomeClass</span><span class="p">?</span> <span class="o">=</span> <span class="kt">SomeClass</span><span class="p">()</span>
+
+<span class="n">some1</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">some2</span>
+<span class="n">some2</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">some1</span>
+
+<span class="n">some1</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="n">some2</span> <span class="o">=</span> <span class="kc">nil</span>
+</code></pre></div></div>
+
+<p>두번째 코드처럼 <code class="language-plaintext highlighter-rouge">delegate</code>에 <code class="language-plaintext highlighter-rouge">weak</code> 키워드를 포함하여 선언하면, 상위 객체에 <code class="language-plaintext highlighter-rouge">nil</code>을 할당할 때 메모리에서 같이 해제된다.</p>
+
+<hr />
+
+<h2 id="참고-자료">참고 자료</h2>
+<ul>
+  <li><a href="https://baked-corn.tistory.com/30">[Swift] Retain cycle, weak, unowned [번역]</a></li>
+  <li><a href="https://docs.swift.org/swift-book/LanguageGuide/Protocols.html">Protocols - The Swift Programming Language</a></li>
+</ul>
+:ET

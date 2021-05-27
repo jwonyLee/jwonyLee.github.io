@@ -1,0 +1,32 @@
+I"H<h2 id="동작-방식">동작 방식</h2>
+
+<h3 id="구성-요소">구성 요소</h3>
+
+<ul>
+  <li>객체 A : listener</li>
+  <li>객체 B : sender</li>
+  <li>NotificationCenter</li>
+</ul>
+
+<ol>
+  <li>
+    <p>객체 A는 객체 B의 어떠한 행위를 관찰하기 위해 NotificationCenter에 옵저버를 등록한다.</p>
+
+    <p>옵저버에는 어떤 객체를 관찰할 것인지, 어떤 행위를 관찰할 것인지 등이 들어감</p>
+  </li>
+  <li>객체 A가 어떠한 행위를 한다.</li>
+  <li>객체 A는 알림을 생성하고 NotificationCenter에 post함</li>
+  <li>NotificationCenter는 객체 B에게 등록한 옵저버에 대한 알림이 발생했다고 알려줌</li>
+</ol>
+
+<h2 id="활용-방안">활용 방안</h2>
+
+<p>몇 번 사용해보기는 했는데, 아직 잘 모르겠다. 활용 방안도 찾아봤는데 검색 능력 부족으로 못 찾겠음</p>
+
+<hr />
+
+<h2 id="참고-자료">참고 자료</h2>
+<ul>
+  <li><a href="https://learnappmaking.com/notification-center-how-to-swift/">Using Notification Center In Swift (How To) - LearnAppMaking</a></li>
+</ul>
+:ET

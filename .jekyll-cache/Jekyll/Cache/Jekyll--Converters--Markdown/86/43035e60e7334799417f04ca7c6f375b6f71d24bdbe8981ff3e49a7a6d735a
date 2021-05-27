@@ -1,0 +1,66 @@
+I"!<h2 id="-ios-12">~ iOS 12</h2>
+
+<p>in <code class="language-plaintext highlighter-rouge">App Delegate</code></p>
+<ul>
+  <li>App Life Cycle</li>
+  <li>UI Life Cycle</li>
+</ul>
+
+<h2 id="ios-13-">iOS 13 ~</h2>
+
+<p>iOS 13부터 <code class="language-plaintext highlighter-rouge">AppDelegate</code>의 책임이 <code class="language-plaintext highlighter-rouge">AppDelegate</code>와 <code class="language-plaintext highlighter-rouge">SceneDelegate</code>로 분리되었다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">App Delegate</code> → 애플리케이션 생명주기 및 설정 담당</p>
+<ul>
+  <li>App Life Cycle</li>
+  <li>Session Life Cycle</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">Scene Delegate</code> → 화면에 표시되는 내용(Windows 또는 Scenes)을 처리하고 앱이 표시되는 방식을 관리</p>
+<ul>
+  <li>UI Life Cycle</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">window</code> → <code class="language-plaintext highlighter-rouge">scene</code></p>
+
+<h2 id="scene-delegate">Scene Delegate</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">scene</span><span class="p">(</span><span class="n">_</span> <span class="nv">scene</span><span class="p">:</span> <span class="kt">UIScene</span><span class="p">,</span> 
+      <span class="n">willConnectTo</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">UISceneSession</span><span class="p">,</span> 
+            <span class="n">options</span> <span class="nv">connectionOptions</span><span class="p">:</span> <span class="kt">UIScene</span><span class="o">.</span><span class="kt">ConnectionOptions</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">UISceneSession</code> 라이프 사이클에서 호출되는 첫번째 메서드. 새 <code class="language-plaintext highlighter-rouge">UIWindow</code>를 만들고 루트 뷰 컨트롤러를 설정하며 이 창을 표시 할 키 창으로 만든다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">sceneWillEnterForeground</span><span class="p">(</span><span class="n">_</span> <span class="nv">scene</span><span class="p">:</span> <span class="kt">UIScene</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>앱이 처음 활성화 될 때 또는 background에서 foreground로 전환할 때처럼 scene이 시작되려고 할 때 호출된다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">sceneDidBecomeActive</span><span class="p">(</span><span class="n">_</span> <span class="nv">scene</span><span class="p">:</span> <span class="kt">UIScene</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">WillEnterForeground</code> 메서드 바로 다음에 호출되며, 여기에서 scene이 설정, 표시되고 사용할 준비를 마친다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">sceneWillResignActive</span><span class="p">(</span><span class="n">_</span> <span class="nv">scene</span><span class="p">:</span> <span class="kt">UIScene</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">sceneDidEnterBackground</span><span class="p">(</span><span class="n">_</span> <span class="nv">scene</span><span class="p">:</span> <span class="kt">UIScene</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>앱이 background로 스테이징될 때 호출된다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">sceneDidDisconnect</span><span class="p">(</span><span class="n">_</span> <span class="nv">scene</span><span class="p">:</span> <span class="kt">UIScene</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>scene이 background로 갈 때마다 iOS는 리소스를 확보하기 위해 scene을 삭제하는 것을 결정할 수 있다. 이것은 앱이 종료되거나 실행되지 않음을 의미하지는 않지만 scene만 세션에서 연결 해제되고 활성화되지 않는다. iOS는 사용자가 특정 scene을 다시 foreground로 가져올 때 이 scene을 scene 세션에 다시 연결하도록 결정할 수 있다. 이 방법은 더 이상 사용되지 않는 리소스를 삭제하는 데 사용할 수 있다.</p>
+
+<hr />
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://velog.io/@dev-lena/iOS-AppDelegate와-SceneDelegate">[iOS] AppDelegate와 SceneDelegate</a></li>
+  <li><a href="https://medium.com/@kalyan.parise/understanding-scene-delegate-app-delegate-7503d48c5445">Understanding Scene Delegate &amp; App Delegate</a></li>
+</ul>
+:ET

@@ -1,0 +1,43 @@
+I"�<h1 id="view-객체에-대해-설명하시오">View 객체에 대해 설명하시오.</h1>
+
+<h2 id="view">View</h2>
+
+<p>사용자 인터페이스의 기본 구성 요소</p>
+
+<h2 id="uiview">UiView</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">UIView</span><span class="p">:</span> <span class="kt">UIResponder</span>
+</code></pre></div></div>
+
+<p>화면의 직사각형 영역에 대한 콘텐츠를 관리하는 객체. 모든 뷰에 공통적인 동작을 정의하며 <code class="language-plaintext highlighter-rouge">UIButton</code>, <code class="language-plaintext highlighter-rouge">UIImageView</code>, <code class="language-plaintext highlighter-rouge">UILabel</code> 과 같은 모든 뷰 클래스의 상위 클래스</p>
+
+<ul>
+  <li>사용자와 상호 작용
+    <ul>
+      <li>
+        <p>그리기 및 애니메이션<br />
+  <code class="language-plaintext highlighter-rouge">Core Graphics</code>, <code class="language-plaintext highlighter-rouge">UIViewAnimations</code>, <code class="language-plaintext highlighter-rouge">CoreAnimation</code></p>
+      </li>
+      <li>
+        <p>레이아웃 및 하위보기 관리<br />
+  오토레이아웃</p>
+      </li>
+      <li>
+        <p>이벤트 처리</p>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">UIResponder</code> → 터치 및 기타 유형의 이벤트 응답</li>
+          <li>제스처 인식</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="스레딩">스레딩</h3>
+
+<p>사용자 인터페이스에 대한 조작은 메인 스레드에서 해야 함. 메인 스레드가 필요하지 않을 수 있는 유일한 경우는 <strong>뷰 객체를 생성</strong>할 때 뿐이고, 그 외에 모든 조작은 메인 스레드에서 발생해야 함.</p>
+
+<h3 id="참고-자료">참고 자료</h3>
+
+<p><a href="https://developer.apple.com/documentation/uikit/uiview">UIView - Apple Developer Documentation</a></p>
+:ET

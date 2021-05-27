@@ -1,0 +1,56 @@
+I"<<p><img src="/assets/image/hugging-resistance.png" alt="hugging resistance" /></p>
+
+<h2 id="content-hugging">Content hugging</h2>
+
+<p>늘어나지 않으려고 하는 힘, 최대 크기에 제한을 두는 것. 뷰를 안쪽으로 당겨 콘텐츠 주변에 꼭 맞도록 한다. 
+→ 주어진 크기보다 작아질 수 있음</p>
+
+<h2 id="compression-resistance">Compression resistance</h2>
+
+<p>외부에서 압력을 줄 때 버티는 힘, 최소 크기에 제한을 두는 것. 콘텐츠를 자르지 않도록 뷰를 바깥쪽으로 밀어낸다.
+→ 주어진 크기보다 커질 수 있음</p>
+
+<p>Content hugging은 기본값이 250, Compression Resistance는 기본값이 750이다. 따라서 뷰를 줄이는 것보다 늘리는 게 더 쉽다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Place a label on a storyboard</th>
+      <th>Constraints</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="/assets/image/storyboard.png" alt="Place a label on a storyboard" /></td>
+      <td><img src="/assets/image/constraint.png" alt="Constraints" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/assets/image/error.png" alt="Error" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Right Label Content Hugging Priority = 750</th>
+      <th>Left Label Content Hugging Priority = 750</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="/assets/image/rightLabel.png" alt="Right Label Content Hugging Priority = 750" /></td>
+      <td><img src="/assets/image/leftLabel.png" alt="Left Label Content Hugging Priority = 750" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/AnatomyofaConstraint.html#//apple_ref/doc/uid/TP40010853-CH9-SW21">Anatomy of a Constraint</a></li>
+  <li><a href="https://ontheswift.tistory.com/21">Content hugging vs Compression resistance 차이점 알기!</a></li>
+  <li><a href="https://eunjin3786.tistory.com/43">[AutoLayout] Hugging priority와 Compression Resistance priority 비교</a></li>
+</ul>
+:ET

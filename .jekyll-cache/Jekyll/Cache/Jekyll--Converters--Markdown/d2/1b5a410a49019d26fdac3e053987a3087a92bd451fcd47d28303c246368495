@@ -1,0 +1,43 @@
+I"�<h1 id="앱이-in-active-상태가-되는-시나리오를-설명하시오">앱이 In-Active 상태가 되는 시나리오를 설명하시오.</h1>
+
+<h2 id="foreground">Foreground</h2>
+
+<p>In-Active와 Active를 합쳐서 Foreground 라고 함</p>
+
+<h2 id="in-active">In-Active</h2>
+
+<p>App이 실행 중이지만 이벤트를 받지 않는 상태</p>
+
+<p>*보통 이 상태에 잠시 머물렀다가 다른 상태로 변경됨</p>
+
+<ul>
+  <li>시나리오 1. 사용자가 앱을 실행합니다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Not Running</code> → <code class="language-plaintext highlighter-rouge">In-Active</code> → <code class="language-plaintext highlighter-rouge">Active</code></li>
+    </ul>
+  </li>
+  <li>시나리오 2. 앱 실행 도중 홈 버튼을 누릅니다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Active</code> → <code class="language-plaintext highlighter-rouge">In-Active</code> → <code class="language-plaintext highlighter-rouge">Background</code></li>
+    </ul>
+  </li>
+  <li>시나리오 3. 앱을 다시 켭니다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Background</code> → <code class="language-plaintext highlighter-rouge">Active</code></li>
+    </ul>
+  </li>
+  <li>시나리오 4. 앱이 백그라운드에 있다가 Suspended 상태로 전이됩니다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Active</code> → <code class="language-plaintext highlighter-rouge">In-Active</code> → <code class="language-plaintext highlighter-rouge">Background</code> → <code class="language-plaintext highlighter-rouge">Suspended</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="참고-자료">참고 자료</h3>
+
+<p><a href="https://caution-dev.github.io/ios/2019/03/14/iOS-Application-state.html">iOS Application state</a></p>
+
+<h3 id="생각해보기">생각해보기</h3>
+
+<p>iOS 14부터 일부 인터페이스가 컴팩트하게 변경되었다. 기존(iOS 14 이전)에는 전화가 오면 앱에 상태가 Active → In-Active → Background로 변경되었는데, 이렇게 UI가 변경된 상황(앱을 가리지 않음)에서는 앱이 In-Active를 진입할까?</p>
+:ET

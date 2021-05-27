@@ -1,0 +1,44 @@
+I"�<h1 id="모든-view-controller-객체의-상위-클래스는-무엇이고-그-역할은-무엇인가">모든 View Controller 객체의 상위 클래스는 무엇이고 그 역할은 무엇인가?</h1>
+
+<p>Container ViewController</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">UINavigationController</code></li>
+  <li><code class="language-plaintext highlighter-rouge">UITabBarController</code></li>
+  <li><code class="language-plaintext highlighter-rouge">UITableViewController</code></li>
+  <li><code class="language-plaintext highlighter-rouge">UIPageViewController</code></li>
+  <li><code class="language-plaintext highlighter-rouge">UISplitViewController</code></li>
+  <li><code class="language-plaintext highlighter-rouge">UIPopoverController</code></li>
+  <li>등등</li>
+</ul>
+
+<p>위와 같은 뷰 컨트롤러들은 <code class="language-plaintext highlighter-rouge">UIViewController</code>를 상속받는다.</p>
+
+<h2 id="uiviewcontroller">UIViewController</h2>
+
+<p>UIKit 앱의 뷰 계층 구조를 관리하는 객체</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">UIViewController</span><span class="p">:</span> <span class="kt">UIResponder</span>
+</code></pre></div></div>
+
+<p>뷰 컨트롤러의 주요 책임</p>
+
+<ul>
+  <li>기본 데이터의 변경에 대한 응답으로 뷰의 콘텐츠를 업데이트</li>
+  <li>뷰와 사용자 상호 작용에 응답</li>
+  <li>뷰 크기 조정 및 전체 인터페이스의 레이아웃 관리</li>
+  <li>앱에서 다른 뷰 컨트롤러를 포함한 다른 객체와 조정</li>
+</ul>
+
+<hr />
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://soooprmx.com/archives/4496">[iOS 앱 만들기 005] 뷰 컨트롤러의 종류 · Wireframe</a></li>
+</ul>
+
+<h3 id="스터디">스터디</h3>
+
+<p>UIResonder: 이벤트가 발생하면, UIKit은 이를 처리할 수 있도록 앱의 리스폰더 객체에 전달</p>
+:ET

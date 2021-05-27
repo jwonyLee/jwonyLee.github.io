@@ -1,0 +1,18 @@
+I"<h1 id="uikit-클래스들을-다룰-때-꼭-처리해야하는-애플리케이션-쓰레드-이름은-무엇인가">UIKit 클래스들을 다룰 때 꼭 처리해야하는 애플리케이션 쓰레드 이름은 무엇인가?</h1>
+
+<blockquote>
+  <p><strong>Important</strong><br />
+Use UIKit classes only from your app’s main thread or main dispatch queue, unless otherwise indicated. This restriction particularly applies to classes derived from UIResponder or that involve manipulating your app’s user interface in any way.</p>
+</blockquote>
+
+<p>UIKit 클래스는 앱의 기본 스레드 혹은 <code class="language-plaintext highlighter-rouge">DispatchQueue.main</code>에서만 사용해야 한다. 이 제한은 <code class="language-plaintext highlighter-rouge">UIResponder</code>에서 파생되거나 앱의 사용자 인터페이스를 조작하는 것과 관련된 클래스에 적용된다.</p>
+
+<hr />
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://stackoverflow.com/questions/18467114/why-must-uikit-operations-be-performed-on-the-main-thread">Why must UIKit operations be performed on the main thread? - Stack Overflow</a></li>
+  <li><a href="https://developer.apple.com/documentation/uikit">UIKit - Apple Developer Documentation</a></li>
+</ul>
+:ET

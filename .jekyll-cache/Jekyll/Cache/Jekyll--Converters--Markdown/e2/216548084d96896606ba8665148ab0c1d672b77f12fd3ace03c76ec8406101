@@ -1,0 +1,42 @@
+I"}<h2 id="userdefaults">UserDefaults</h2>
+
+<p>키-값 형태로 데이터를 저장하고, 사용할 수 있는 데이터 저장소</p>
+
+<p>사용자 기본 설정과 같은 단일 데이터 값에 적합함</p>
+
+<p><code class="language-plaintext highlighter-rouge">SomeObject</code>는 <code class="language-plaintext highlighter-rouge">Codable</code>을 채택하고 있음</p>
+
+<h3 id="저장">저장</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="k">let</span> <span class="nv">appDelegate</span> <span class="o">=</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">delegate</span> <span class="k">as?</span> <span class="kt">AppDelegate</span> <span class="p">{</span>
+	<span class="k">do</span> <span class="p">{</span>
+		<span class="k">try</span> <span class="kt">UserDefaults</span><span class="o">.</span><span class="n">standard</span><span class="o">.</span><span class="nf">setObject</span><span class="p">(</span><span class="n">appDelegate</span><span class="o">.</span><span class="n">someObject</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="s">"someObject"</span><span class="p">)</span>
+	<span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+		<span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="사용">사용</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">do</span> <span class="p">{</span>
+	<span class="k">let</span> <span class="nv">someObject</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">UserDefaults</span><span class="o">.</span><span class="n">standard</span><span class="o">.</span><span class="nf">getObject</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"someObject"</span><span class="p">,</span> <span class="nv">castTo</span><span class="p">:</span> <span class="kt">SomeObject</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+	<span class="k">if</span> <span class="k">let</span> <span class="nv">appDelegate</span> <span class="o">=</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">delegate</span> <span class="k">as?</span> <span class="kt">AppDelegate</span> <span class="p">{</span>
+		<span class="n">appDelegate</span><span class="o">.</span><span class="n">someObject</span> <span class="o">=</span> <span class="n">someObject</span>
+	<span class="p">}</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+	<span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://developer.apple.com/documentation/foundation/userdefaults">UserDefaults - Apple Developer Documentation</a></li>
+  <li><a href="https://zeddios.tistory.com/107">iOS ) 왕초보를 위한 User Defaults사용해보기(switch)</a></li>
+  <li><a href="https://developer.apple.com/documentation/bundleresources/information_property_list/data_and_storage">Data and Storage - Apple Developer Documentation</a></li>
+  <li><a href="https://stackoverflow.com/questions/36608645/call-function-when-if-value-in-nsuserdefaults-standarduserdefaults-changes">Call function when if value in NSUserDefaults.standardUserDefaults() changes</a></li>
+</ul>
+:ET
