@@ -1,2 +1,0 @@
-I"A<p><code class="language-plaintext highlighter-rouge">Foundation</code>에서는 <code class="language-plaintext highlighter-rouge">autorelease pool</code>이라는 기능을 사용하여 함수 내에서 생성한 객체들을 적절한 시점에 한 번에 해제할 수 있도록 해주는 방법을 제공한다.</p>
-:ET

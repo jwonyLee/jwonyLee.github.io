@@ -1,7 +1,0 @@
-I"�<ul>
-  <li>여러 객체에서 공용으로 객체를 사용하고 싶을 때 사용한다.</li>
-  <li>일반적으로는 <code class="language-plaintext highlighter-rouge">shared</code>라는 이름의 상수를 만든다.</li>
-  <li><code class="language-plaintext highlighter-rouge">static</code> 키워드를 붙인다.</li>
-  <li>이니셜라이저를 <code class="language-plaintext highlighter-rouge">private</code>으로 만들어서, 외부에서 생성을 못하게 해야 한다.</li>
-</ul>
-:ET

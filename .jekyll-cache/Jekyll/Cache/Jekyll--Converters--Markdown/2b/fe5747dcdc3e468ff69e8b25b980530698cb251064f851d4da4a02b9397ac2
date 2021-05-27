@@ -1,5 +1,0 @@
-I"=<blockquote>
-  <p><strong>Important</strong><br />
-Use UIKit classes only from your app’s main thread or main dispatch queue, unless otherwise indicated. This restriction particularly applies to classes derived from UIResponder or that involve manipulating your app’s user interface in any way.</p>
-</blockquote>
-:ET
