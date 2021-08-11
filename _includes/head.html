@@ -1,63 +1,28 @@
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="google-site-verification" content="BHx56ioY5NM_mqKgwinDWGi4RQizKJy-sfs5OLeYPV0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-	<meta name="description"
-		content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  {% seo %}
 
-	<!-- favicon -->
-	<link href="/assets/favicon.ico" rel="icon" type="image/ico" />
+  <!-- highlight -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/github.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 
-	<!-- Tabler -->
-	<script src="https://unpkg.com/@tabler/core@1.0.0-beta3/dist/js/tabler.min.js"></script>
-	<link rel="stylesheet" href="https://unpkg.com/@tabler/core@1.0.0-beta3/dist/css/tabler.min.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
 
-	<!-- github style -->
-	<link rel="stylesheet" href="/assets/css/syntax.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicon-32x32.png" | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/favicon-16x16.png" | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/apple-touch-icon.png" | relative_url }}">
 
-	<!-- Twitter Cards -->
-	<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-	{% if page.excerpt %}
-	<meta name="twitter:description" content="{{ page.excerpt | strip_html }}">{% endif %}
-	{% if site.owner.twitter %}
-	<meta name="twitter:site" content="@{{ site.owner.twitter }}">{% endif %}
-	{% if author.twitter %}
-	<meta name="twitter:creator" content="@{{ author.twitter }}">{% endif %}
-	{% if page.image.feature %}
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:image" content="{{ site.url }}/images/{{ page.image.feature }}">
-	{% else %}
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:image"
-		content="{% if page.image.thumb %}{{ site.url }}/images/{{ page.image.thumb }}{% else %}{{ site.url }}/images/{{ site.logo }}{% endif %}">
-	{% endif %}
+  <!-- RSS -->
+  {% feed_meta %}
 
-	<!-- Open Graph -->
-	<meta property="og:locale" content="{{ site.locale }}">
-	<meta property="og:type" content="article">
-	<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-	{% if page.image.feature %}
-	<meta name="og:image" content="{{ site.url }}/images/{{ page.image.feature }}">
-	{% else %}
-	<meta name="og:image"
-		content="{% if page.image.thumb %}{{ site.url }}/images/{{ page.image.thumb }}{% else %}{{ site.url }}/images/{{ site.logo }}{% endif %}">
-	{% endif %}
-
-	{% if page.excerpt %}
-	<meta property="og:description" content="{{ page.excerpt | strip_html }}">{% endif %}
-	<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}">
-	<meta property="og:site_name" content="{{ site.title }}">
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-T4JN0NNEQ6"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-
-		gtag('config', 'G-T4JN0NNEQ6');
-	</script>
+  <!-- Google Analytics-->
+  {% if site.google_analytics and jekyll.environment == 'production' %}
+  {% include analytics.html %}
+  {% endif %}
 </head>

@@ -1,32 +1,44 @@
 # Site settings
-title: 🌩 먹구름
-description: This is the Collider Jekyll Theme.
-baseurl: ""
-url: "https://jwonylee.github.io"
+title:          🌩 먹구름
+description:    "방구석 iOS 개발자"
+baseurl:        ""
+url:            "https://jwonylee.github.io"
+
+# Google Analytics
+google_analytics: UA—XXXXXXXX-X
 
 # Author
 author:
-  name: 이지원
-  email: jiwon.swdev@gmail.com
+  name:         리을
+  url:          https://jwonylee.github.io
+  email:        jiwon.swdev@gmail.com
 
-link:
-  github: jwonyLee
-  blog: https://jwonylee.tistory.com
-  facebook:
-  twitter:
-  linkedin:
+# Build settings
+markdown:       kramdown
+include:
+  - _pages
+
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        compressed
 
 # Gems
 plugins:
-  - jekyll-sitemap
   - jekyll-feed
-
-# Markdown Processing
-markdown: kramdown
-
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+  - jekyll-paginate
+  - jekyll-seo-tag
+  # - jemoji #Uncomment this to allow emoji in your post
 
 # Permalinks
-permalink: /:categories/:title
+permalink:      /:title
+paginate:       10
+
+# Excludes
+exclude: [ Gemfile, Gemfile.lock, tale.gemspec ]
+
+# Collections
+collections:
+  iOSInterviewquestions:
+    output: true
+    permalink: /:collection/:title

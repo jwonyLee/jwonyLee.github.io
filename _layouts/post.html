@@ -2,74 +2,34 @@
 layout: default
 ---
 
-<div class="page-wrapper">
-    <div class="container-xl">
-        <div class="page-header d-print-none">
-            <div class="row align-items-center">
-                <div class="col">
-                    <h2 class="page-title">{{ page.title }}</h2>
-                    <div class="text-muted mt-1">{{ page.subtitle }}</div>
-                </div>
-                <div class="col-auto">
-                    {{ page.date | date: "%Y-%m-%d" }}
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="post markdown-body">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <div class="post-info">
+    <p>
+    {% if page.subtitle %}
+      {{ page.subtitle }} · 
+    {% endif %}
+    {% if page.date %}
+    <time datetime="{{ page.date }}">{{ page.date | date: "%Y년 %m월 %d일" }}</time>
+    {% endif %}
+    </p>
+  </div>
 
-    <div class="page-body">
-        <div class="container-xl">
-            <div class="card card-lg">
-                <div class="card-body markdown">
-                        {{ content }}
-                </div>
+  {{ content }}
+</div>
 
-                <div class="card-footer">
-                    <div class="col mb-3">
-                        {% if page.categories %}
-                        <div class="btn-list">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-folder"
-                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <path
-                                        d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2">
-                                    </path>
-                                </svg>
-                                Category
-                            </span>
-                            {% for category in page.categories %}
-                            <a href="{{ '/categories' | prepend: site.baseurl }}#{{ category }}-ref"
-                                class="btn btn-pill btn-sm" role="button">{{ category }}</a>
-                            {% endfor %}
-                        </div>
-                        {% endif %}
-                    </div>
-                    <div class="col">
-                        {% if page.tags %}
-                        <div class="btn-list">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag"
-                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <path
-                                        d="M11 3l9 9a1.5 1.5 0 0 1 0 2l-6 6a1.5 1.5 0 0 1 -2 0l-9 -9v-4a4 4 0 0 1 4 -4h4">
-                                    </path>
-                                    <circle cx="9" cy="9" r="2"></circle>
-                                </svg>
-                                Tags
-                            </span>
-                            {% for tag in page.tags %}
-                            <a href="{{ '/tags' | prepend: site.baseurl }}#{{ tag }}" class="btn btn-pill btn-sm"
-                                role="button">{{ tag }}</a>
-                            {% endfor %}
-                        </div>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="tags-clouds">
+{% for tag in page.tags %}
+  <a href="{{ '/tags' | prepend: site.baseurl }}#{{ tag }}" role="button">{{ tag }}</a>
+  {% endfor %}
+{% include comments.html %}
+</div>
+
+<div class="pagination">
+  {% if page.next.url %}
+  <a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow">&#8592;</a>
+  {% endif %}
+  {% if page.previous.url %}
+  <a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
+  {% endif %}
 </div>
