@@ -14,7 +14,11 @@ author:
   email:        jiwon.swdev@gmail.com
 
 # Build settings
+highlighter: none
 markdown:       kramdown
+kramdown:
+  input: GFM
+
 include:
   - _pages
 
