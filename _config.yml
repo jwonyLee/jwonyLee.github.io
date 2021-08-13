@@ -5,8 +5,7 @@ baseurl:        ""
 url:            "https://jwonylee.github.io"
 
 # Google Analytics
-# google_analytics: UA—XXXXXXXX-X
-new_google_analytics: N44LCG7B9E
+google_analytics: UA—163321753-2
 
 # Author
 author:
