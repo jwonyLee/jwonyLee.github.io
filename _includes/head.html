@@ -25,4 +25,7 @@
   {% if site.google_analytics and jekyll.environment == 'production' %}
   {% include analytics.html %}
   {% endif %}
+
+  <meta itemprop="description" name="description" content="{% if page.subtitle %}{{ page.subtitle | truncate: 160 }}
+ {% else %}{{ site.description | truncate: 160  }}{% endif %}" />
 </head>
