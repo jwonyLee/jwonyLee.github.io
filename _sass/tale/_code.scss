@@ -4,7 +4,7 @@ code {
 }
 
 code {
-  background-color: $grey-3;
+  background-color: rgba(175,184,193,0.4) !important;
   border-radius: 3px;
   color: $code-color;
   font-size: 85%;
@@ -15,15 +15,11 @@ code {
 //   margin: 0 0 1rem;
 // }
 
-// pre code {
-//   background-color: transparent;
-//   color: inherit;
-//   font-size: 100%;
-//   padding: 0;
-// }
-
-.hljs {
-  background-color: $grey-4 !important;
+pre > code {
+  background-color: transparent !important;
+  color: inherit;
+  font-size: 100%;
+  padding: 0;
 }
 
 .highlight {

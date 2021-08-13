@@ -5,7 +5,8 @@ baseurl:        ""
 url:            "https://jwonylee.github.io"
 
 # Google Analytics
-google_analytics: UA—XXXXXXXX-X
+# google_analytics: UA—XXXXXXXX-X
+new_google_analytics: N44LCG7B9E
 
 # Author
 author:
@@ -14,10 +15,12 @@ author:
   email:        jiwon.swdev@gmail.com
 
 # Build settings
-highlighter: none
+highlighter: rouge
 markdown:       kramdown
 kramdown:
   input: GFM
+  syntax_highlighter_opts:
+    default_lang: swift
 
 include:
   - _pages
