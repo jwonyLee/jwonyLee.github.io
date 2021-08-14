@@ -18,6 +18,11 @@ layout: default
   {{ content }}
 </div>
 
+<div class="support-button">
+  <a href="https://www.buymeacoffee.com/jwonylee" title="Buy me a Book" class="buymea-button" target="_blank"><span>📚 Buy me a Book</span></a>
+</div>
+
+
 <div class="tags-clouds">
 {% for tag in page.tags %}
   <a href="{{ '/tags' | prepend: site.baseurl }}#{{ tag }}" role="button">{{ tag }}</a>
