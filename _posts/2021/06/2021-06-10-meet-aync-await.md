@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "[WWDC2021] Meet async/await in Swift"
+title: "[iOS] WWDC2021: Meet async/await in Swift"
 subtitle: 
 categories: Swift
-tags: [async, await, wwdc2021]
+tags: [async, await, WWDC2021, WWDC]
 ---
 
 관심 있는 세션을 하나씩 보고 있는데, 그중 첫 번째로 시청한 것이 "Meet async/await in Swift"다. 중반부까지의 내용을 정리했다. `completionHandler`를 사용했을 때와 `async/await`을 사용했을 때를 비교하는 내용인데 이것만 봐도 어느 정도 감이 잡힌다.
