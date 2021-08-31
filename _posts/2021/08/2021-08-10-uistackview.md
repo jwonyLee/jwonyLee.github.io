@@ -52,7 +52,7 @@ tags: [UIStackView]
 
 > 스택 뷰가 스택 뷰의 축을 따라 사용 가능한 공간을 채우도록 정렬된 뷰(arrangedSubviews)의 크기를 조정하는 레이아웃이다. 각 뷰의 CHCR에 따라 조정된다. Compression Resistance에 따라 뷰가 축소되고, Content Hugging에 따라 뷰가 늘어난다. 모호한 부분이 있으면 배열의 인덱스를 기반으로 조정한다.
 
-→ CHCR에 자세한 내용은 다음 포스팅에서...
+→ CHCR에 자세한 내용은 [[iOS] Anatomy of a Constraint](https://jwonylee.github.io/ios/Anatomy-of-a-Constraint#고유-콘텐츠-크기)를 참조
 
 각 뷰에 CHCR을 주지 않고, `distribution.fill`을 하게 되면 어떻게 될까?
 
