@@ -48,3 +48,6 @@ collections:
   iOSInterviewquestions:
     output: true
     permalink: /:collection/:title
+  log:
+    output: true
+    permalink: /:collection/:year-:month-:day/:title
