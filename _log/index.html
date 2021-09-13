@@ -3,11 +3,9 @@ layout: default
 title: Log
 permalink: /log/
 ---
-
 <div class="post">
     {% for post in site.log %}
     {% assign currentDate = post.date | date: "%Y" %}
-
     {% if post.title != page.title %}
     {% if currentDate != myDate %}
     {% unless forloop.first %}
