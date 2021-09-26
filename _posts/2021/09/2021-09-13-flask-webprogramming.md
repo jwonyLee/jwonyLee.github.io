@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 처음 배우는 플라스크 웹 프로그래밍
+title: "[Book] 처음 배우는 플라스크 웹 프로그래밍"
 subtitle:
 categories: Book
 tags: [Flask, Book, 책, 서평]
