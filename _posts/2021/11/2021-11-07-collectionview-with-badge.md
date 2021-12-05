@@ -7,6 +7,10 @@ tags: [iOS, UICollectionView, UICollectionViewCell, "Compositional Layout"]
 published: true
 ---
 
+```
+🎯 Compositional Layout을 이용해 컬렉션뷰에 뱃지 추가하기
+```
+
 구현하려는 모양은 다음과 같다.
 
 ![구현하려는 모양](/assets/image/collectionview-with-badge/1.png)
