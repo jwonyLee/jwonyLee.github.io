@@ -35,11 +35,8 @@
 <body>
 
     {% include navigation.html %}
-
-    <div id="table-of-contents" class="toc">
-        {% toc %}
-    </div>
-
+    {% include toc.html %}
+    
     <main class="post-article">
         {{ content }}
     </main>
