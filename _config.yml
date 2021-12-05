@@ -34,7 +34,6 @@ sass:
 plugins:
   - jekyll-paginate
   - jekyll-seo-tag
-  - jekyll-toc
   # - jemoji #Uncomment this to allow emoji in your post
 
 # Permalinks
@@ -52,11 +51,3 @@ collections:
   log:
     output: true
     permalink: /:collection/:year-:month-:day/:title
-
-## TOC
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      toc: true

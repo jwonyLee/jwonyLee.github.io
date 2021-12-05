@@ -76,3 +76,31 @@
     background-color: #212529;
   }
 }
+
+// TOC
+.toc {
+  position: fixed;
+  left: 10px;
+  top: 50%;
+  transform: translate(10px, -50%);
+  font-size: small;
+  width: 300px;
+  display: none;
+
+  @media screen and (min-width: 1400px) {
+    display: block;
+  }
+
+  a {
+    text-decoration: none;
+    display: block;
+    padding: .125rem 0;
+    color: #868e96;
+    transition: all 50ms ease-in-out;
+    word-wrap: break-word;
+  }
+
+  ul {
+    padding-left: 1rem;
+  }
+}
