@@ -4,7 +4,7 @@ title: Log
 permalink: /log/
 ---
 <div class="post">
-    {% for post in site.log %}
+    {% for post in site.log reversed %}
     {% assign currentDate = post.date | date: "%Y" %}
     {% if post.title != page.title %}
     {% if currentDate != myDate %}
