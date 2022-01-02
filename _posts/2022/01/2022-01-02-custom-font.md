@@ -116,7 +116,7 @@ protocol FontStyle {
 이제 아래의 코드처럼 폰트 이름을 관리할 수 있다.
 
 ```swift
-let pretendardBody: UIFont = UIFont(name: Pretendard.regular.name, size: 14)!
+let pretendardBody: UIFont = UIFont(name: Pretendard.style.regular.name, size: 14)!
 label.font = pretendardBody
 ```
 
@@ -155,8 +155,8 @@ protocol Fontable {
 
 ```swift
 struct Pretendard: Fontable {
-    static var body: UIFont { UIFont(name: Pretendard.regular.name, size: 14)! }
-    static var callout: UIFont { UIFont(name: Pretendard.regular.name, size: 16)! }
+    static var body: UIFont { UIFont(name: Pretendard.style.regular.name, size: 14)! }
+    static var callout: UIFont { UIFont(name: Pretendard.style.regular.name, size: 16)! }
     // ... 생략
 }
 ```
@@ -184,7 +184,17 @@ bodyLabel.font = Cafe24Ssurround.body
 - [접근성 지원 != 시각장애인 대응](https://www.sungdoo.dev/programming/accessibility-is-not-about-supporting-blind-people)
 - [iOS VoiecOver 무엇을 어떻게 할까? Intro - YouTube](https://www.youtube.com/watch?v=G46RS-fuT5A&list=PLtaz5vK7MbK3tvJ81_uRKIxFZ235QuJe9)
 
-커스텀 폰트에서도 Dynamic Type을 지원해보자.
+커스텀 폰트에서도 Dynamic Type을 지원해보자. 
+
+먼저 Dynamic Type을 지원할 뷰의 `adjustsFontForContentSizeCategory` 값을 `true`로 지정한다. 이 프로퍼티는 사용자가 설정한 시스템 글꼴 크기에 따라 뷰의 글꼴 크기를 반영할 것인지를 나타내는 값이다. 기본값은 `false`이다.
+
+```swift
+label.adjustsFontForContentSizeCategory = true
+```
+
+스토리보드에서는 Attribute Inspector에서 변경할 수 있다.
+
+![Attribute Inspector](/assets/image/custom-font/attribute-inspector.png)
 
 `Fontable` 프로토콜에 두 개의 메서드를 추가한다.
 
