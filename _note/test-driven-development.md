@@ -5,7 +5,8 @@ subtitle:
 notetype: feed
 tags: [TDD, 테스트-주도-개발]
 created: 2022-01-06 16:29:11+09:00
-updated: 2022-01-08 11:09:41+09:00
+updated: 2022-01-09 16:02:13+09:00
+published: true
 ---
 
 ## 기록

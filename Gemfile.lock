@@ -47,6 +47,9 @@ GEM
       jekyll (>= 3.8, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
+    jekyll-wikilinks (0.0.8)
+      jekyll (~> 4.2.0)
+      nokogiri (~> 1.12.3)
     kramdown (2.3.1)
       rexml
     kramdown-parser-gfm (1.1.0)
@@ -56,9 +59,12 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
+    nokogiri (1.12.5-x86_64-darwin)
+      racc (~> 1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.6)
+    racc (1.6.0)
     rake (12.3.3)
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
@@ -78,6 +84,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 2.0)
+  jekyll-wikilinks
   rake (~> 12.3.3)
   tale!
   webrick (~> 1.7)

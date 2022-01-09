@@ -34,6 +34,7 @@ sass:
 plugins:
   - jekyll-paginate
   - jekyll-seo-tag
+  - jekyll-wikilinks
   # - jemoji #Uncomment this to allow emoji in your post
 
 # Permalinks
@@ -54,3 +55,23 @@ collections:
   log:
     output: true
     permalink: /:collection/:year-:month-:day/:title
+
+# Jekyll wikilinks
+wikilinks:
+  attributes:
+    enabled: true
+  css:
+    exclude: []
+    name:
+      typed: 'typed'
+      wiki: 'wiki-link'
+      web: 'web-link'
+      invalid_wiki: 'invalid-wiki-link'
+      embed_container: 'embed-container'
+      embed_title: 'embed-title'
+      embed_content: 'embed-content'
+      embed_link: 'embed-wiki-link'
+      embed_image_container: 'embed-image-container'
+      embed_image: 'embed-image'
+  enabled: true
+  exclude: []
