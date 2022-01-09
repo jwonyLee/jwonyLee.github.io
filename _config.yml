@@ -17,10 +17,10 @@ author:
 # Build settings
 highlighter: rouge
 markdown:       kramdown
-# kramdown:
-#   input: GFM
-#   syntax_highlighter_opts:
-#     default_lang: swift
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    disable: true
 
 include:
   - _pages
@@ -45,6 +45,9 @@ exclude: [ Gemfile, Gemfile.lock, tale.gemspec ]
 
 # Collections
 collections:
+  note:
+    output: true
+    permalink: /:collection/:title
   iOSInterviewquestions:
     output: true
     permalink: /:collection/:title
