@@ -11,10 +11,13 @@ layout: default
   <div class="post-info">
     <p>
     {% if page.subtitle %}
-      {{ page.subtitle }} · 
+      {{ page.subtitle }} ·
     {% endif %}
-    {% if page.date %}
-    <time datetime="{{ page.date }}">{{ page.date | date: "%Y년 %m월 %d일" }}</time>
+    {% if page.created %}
+    created: <time datetime="{{ page.created }}">{{ page.created | date: "%Y년 %m월 %d일" }}</time>
+    {% endif %}
+    {% if page.updated %}
+    · updated: <time datetime="{{ page.updated }}">{{ page.updated | date: "%Y년 %m월 %d일" }}</time>
     {% endif %}
     </p>
   </div>
