@@ -3,9 +3,9 @@ layout: post
 title: 운영체제
 subtitle: 
 tags: []
-published: true
+published: false
 created: 2022-01-12 11:03:02+09:00
-updated: 2022-01-12 11:29:49+09:00
+updated: 2022-01-20 22:08:04+09:00
 ---
 
 [🏡 목차로 돌아가기](basic-knowledge)

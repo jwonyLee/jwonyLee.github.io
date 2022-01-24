@@ -3,9 +3,9 @@ layout: post
 title: 자료구조
 subtitle: 
 tags: []
-published: true
+published: false
 created: 2022-01-12 11:00:36+09:00
-updated: 2022-01-12 11:25:50+09:00
+updated: 2022-01-20 22:07:59+09:00
 ---
 
 [🏡 목차로 돌아가기](basic-knowledge)
