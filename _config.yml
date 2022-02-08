@@ -1,77 +1,94 @@
 # Site settings
-title:          🌩 먹구름
-description:    "방구석 iOS 개발자"
-baseurl:        ""
-url:            "https://jwonylee.github.io"
-locale: ko
+title: 🌩 먹구름 # site title
+description: >- # site description
+  우당탕탕 개발 기록
+lang: ko-KR # default lang
+timezone: Asia/Seoul # set your timezone
+image: assets/img/ogp.jpeg # This image used for Open Graph more info https://ogp.me/
+repo: https://github.com/jwonyLee/jwonyLee.github.io # site repo [optional]
+mode: light # default theme "dark" | "light"
 
-# Google Analytics
-google_analytics: UA—163321753-2
-
-# Author
+# Profile settings
 author:
-  name:         리을
-  url:          https://jwonylee.github.io
-  email:        jiwon.swdev@gmail.com
+  name: 리을 # author name
+  bio: >- # tell to the world
+    these days, interested in building my own writing system and learning English. Naturally, 1st is Programming. 
+    I am interested in productivity tools, architecture, design patterns, etc.
+  username: rieul # general username
+  github: jwonyLee # github username
+  twitter: _rieul_ # twitter username
+  facebook: facebook_username # facebook username
+  email: jiwon.swdev@gmail.com # email adress
+  avatar: /assets/img/profile.png # change with your own avatar
 
-# Build settings
-highlighter: rouge
-markdown:       kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter_opts:
-    disable: true
+# URL settings
+url: "https://jwonyLee.github.io" #
+baseurl:
+permalink: /:categories/:title
+google_analytics: UA—163321753-2 # leave it blank if not wish
+fb_appid:
 
-include:
-  - _pages
-
-# Assets
-sass:
-  sass_dir:     _sass
-  style:        compressed
-
-# Gems
-plugins:
-  - jekyll-paginate
-  - jekyll-seo-tag
-  - jekyll-wikilinks
-  # - jemoji #Uncomment this to allow emoji in your post
-
-# Permalinks
-permalink:      /:categories/:title
-paginate:       10
-
-# Excludes
-exclude: [ Gemfile, Gemfile.lock, tale.gemspec ]
-
-# Collections
+# Collection setting
 collections:
-  note:
+  posts:
     output: true
-    permalink: /:collection/:title
-  iOSInterviewquestions:
-    output: true
-    permalink: /:collection/:title
   log:
     output: true
     permalink: /:collection/:year-:month-:day/:title
 
-# Jekyll wikilinks
-wikilinks:
-  attributes:
-    enabled: true
-  css:
-    exclude: []
-    name:
-      typed: 'typed'
-      wiki: 'wiki-link'
-      web: 'web-link'
-      invalid_wiki: 'invalid-wiki-link'
-      embed_container: 'embed-container'
-      embed_title: 'embed-title'
-      embed_content: 'embed-content'
-      embed_link: 'embed-wiki-link'
-      embed_image_container: 'embed-image-container'
-      embed_image: 'embed-image'
-  enabled: true
-  exclude: []
+# Markdown settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: post
+      comments: true
+
+# Jekyll Compose default front matter
+jekyll_compose:
+  post_default_front_matter:
+    modified:
+    tags: []
+    description:
+  draft_default_front_matter:
+    modified:
+    tags: []
+    description:
+
+# Homepage limit posts
+number_of_posts: 5
+
+# Build settings
+# theme: klise
+sass:
+  style: compressed
+
+include:
+  - _redirects
+  - .htaccess
+
+exclude:
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - CHANGELOG.md
+  - README.md
+  - node_modules
+  - CODE_OF_CONDUCT.md
+  - CONTRIBUTING.md
+  - lighthouse.png
+  - klise-*.gem
+  - klise.gemspec
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-postfiles

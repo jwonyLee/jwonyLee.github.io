@@ -1,9 +1,8 @@
 ---
-layout: post
-title: "[iOS] 컬렉션뷰 최상단으로 이동하기"
-subtitle: Programmatically go to the top of the UICollectionView
-categories: iOS
+title: '[iOS] 컬렉션뷰 최상단으로 이동하기'
 tags: [iOS, Programmatically, UICollectionView]
+categories: iOS
+comments: true
 ---
 
 ```swift

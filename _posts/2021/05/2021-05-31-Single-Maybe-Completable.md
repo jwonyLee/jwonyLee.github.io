@@ -1,10 +1,8 @@
 ---
-layout: post
-title: "[RxSwift] Single, Maybe, Completable"
-subtitle: 
+title: '[RxSwift] Single, Maybe, Completable'
+tags: RxSwift
 categories: RxSwift
-tags: [RxSwift]
-emoji: 🍎
+comments: true
 ---
 
 ## Single

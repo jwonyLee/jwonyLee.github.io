@@ -1,9 +1,8 @@
 ---
-layout: post
-title: "[iOS] 오토 레이아웃 기반 뷰에 cornerRadius 적용하기"
-subtitle: 초기화할 때 frame.size.height는 왜 안 먹히는가
-categories: iOS
+title: '[iOS] 오토 레이아웃 기반 뷰에 cornerRadius 적용하기'
 tags: [iOS, AutoLayout]
+categories: iOS
+comments: true
 ---
 
 ```swift

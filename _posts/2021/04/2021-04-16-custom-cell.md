@@ -1,9 +1,8 @@
 ---
-layout: post
-title: "[iOS] 커스텀 셀 적용하기"
-subtitle: Use Custom Cell
+title: '[iOS] 커스텀 셀 적용하기'
+tags: [iOS, Programmatically, UICollectionView]
 categories: iOS
-tags: [iOS, Programmatically, UICollectionViewCell]
+comments: true
 ---
 
 ## 코드로 만든 경우

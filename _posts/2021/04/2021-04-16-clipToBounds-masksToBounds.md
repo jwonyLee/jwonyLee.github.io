@@ -1,9 +1,8 @@
 ---
-layout: post
-title: "[iOS] UIView.clipToBounds와 layer.masksToBounds"
-subtitle: clipToBounds와 masksToBounds의 차이점
+title: '[iOS] UIView.clipToBounds와 layer.masksToBounds'
+tags: iOS
 categories: iOS
-tags: [iOS]
+comments: true
 ---
 
 ## `UIView.clipToBounds`

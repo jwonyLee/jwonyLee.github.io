@@ -1,14 +1,13 @@
 ---
-layout: post
-title: "[iOS] UserDefaults, KeyChain, Core Data"
-subtitle: 
+title: '[iOS] UserDefaults, KeyChain, Core Data'
+tags: [iOS, UserDefaults, KeyChain, CoreData]
 categories: iOS
-tags: [UserDefaults, KeyChain, Core Data]
+comments: true
 ---
 
 ## UserDefaults
 
--   데이터를 저장할 때Info.plist와 유사한 구조로 저장한다.
+-   데이터를 저장할 때 Info.plist와 유사한 구조로 저장한다.
     -   UserDefaults.plist는 앱 폴더 내의 Library 폴더에 저장된다.
 -   저장할 수 있는 형식
     -   NSString

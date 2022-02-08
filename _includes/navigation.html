@@ -1,13 +1,16 @@
-<nav class="nav">
-  <div class="nav-container">
-    <a href="{{ site.baseurl }}/">
-      <h2 class="nav-title">{{ site.title }}</h2>
-    </a>
-    <ul>
-      <li><a href="{{ '/archive' | prepend: site.baseurl }}/">Archive</a></li>
-      <li><a href="{{ '/note' | prepend: site.baseurl }}/">Note</a></li>
-      <li><a href="{{ '/log' | prepend: site.baseurl }}/">Log</a></li>
-      <li><a href="https://jiwon.tech" target="_blank">About</a></li>
-    </ul>
-  </div>
+<nav class="post-nav">
+  {% if page.previous %}
+  <a
+    class="post-nav-item post-nav-prev"
+    href="{{ page.previous | relative_url }}"
+  >
+    <div class="nav-arrow">Previous</div>
+    <span class="post-title">{{ page.previous.title }}</span>
+  </a>
+  {% endif %} {% if page.next %}
+  <a class="post-nav-item post-nav-next" href="{{ page.next | relative_url }}">
+    <div class="nav-arrow">Next</div>
+    <span class="post-title">{{ page.next.title }}</span>
+  </a>
+  {% endif %}
 </nav>

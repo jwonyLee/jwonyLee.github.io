@@ -1,9 +1,8 @@
 ---
-layout: post
 title: "[iOS] layoutMarginsGuide, safeAreaLayoutGuide"
-subtitle:
-categories: iOS
 tags: [iOS, AutoLayout]
+categories: iOS
+comments: true
 ---
 
 | iPhone 8, safeAreaLayoutGuide | iPhone 8, layoutMarginsGuide | iPhone 11, safeAreaLayoutGuide | iPhone 11, layoutMarginsGuide |

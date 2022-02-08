@@ -1,9 +1,8 @@
 ---
-layout: post
-title: "[RxSwift] UITextField.text의 변경을 감지하지 못할 때"
-subtitle: 
-categories: RxSwift
+title: '[RxSwift] UITextField.text의 변경을 감지하지 못할 때'
 tags: [RxSwift, UITextField]
+categories: RxSwift
+comments: true
 ---
 
 현재 하고 있는 토이 프로젝트에서 사용자에게 이모지를 입력받는다. 일반적인 키보드로 입력받는 것이 아니라 [ISEmojiView](https://github.com/isaced/ISEmojiView) 라는 라이브러리를 사용했는데, 이 라이브러리는 `EmojiViewDelegate`를 구현해야 한다. 그중에서 핵심은 이 부분이다.
@@ -19,7 +18,7 @@ func emojiViewDidSelectEmoji(_ emoji: String, emojiView: EmojiView) {
 
 그래서 나는 단순하게, 직접 이벤트를 넘겨주는 방식으로 해결했다.
 
-```
+```swift
 // callback when tap a emoji on keyboard
 func emojiViewDidSelectEmoji(_ emoji: String, emojiView: EmojiView) {
     emojiField.text = emoji

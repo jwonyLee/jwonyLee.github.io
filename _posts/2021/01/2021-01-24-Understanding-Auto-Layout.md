@@ -1,10 +1,8 @@
 ---
-layout: post
-title: "[iOS] Understanding Auto Layout"
-subtitle:
+title: '[iOS] Understanding Auto Layout'
+tags: [iOS, AutoLayout]
 categories: iOS
-tags: [AutoLayout]
-published: true
+comments: true
 ---
 
 > 이 글은 [Auto Layout Guide: Understanding Auto Layout](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/index.html) 문서를 번역한 글입니다.  

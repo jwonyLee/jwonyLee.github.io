@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://jwonylee.github.io/sitemap.xml

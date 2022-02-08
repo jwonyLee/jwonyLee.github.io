@@ -1,9 +1,8 @@
 ---
-layout: post
-title: "[iOS] 뷰의 그림자 만들기"
-subtitle: Programmatically add a shadow to UIView
-categories: iOS
+title: '[iOS] 뷰의 그림자 만들기'
 tags: [iOS, Programmatically]
+categories: iOS
+comments: true
 ---
 
 ```swift

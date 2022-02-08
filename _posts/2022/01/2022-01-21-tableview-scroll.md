@@ -1,11 +1,8 @@
 ---
-layout: post
 title: "[iOS] 원하는 위치의 셀로 이동"
-subtitle: 
-category: iOS
+categories: iOS
 tags: [iOS, TableView, Life Cycle]
-created: 2022-01-21 10:19:52+09:00
-updated: 2022-01-24 15:59:43+09:00
+comments: true
 ---
 
 ## 상황

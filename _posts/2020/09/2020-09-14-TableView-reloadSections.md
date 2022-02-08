@@ -1,9 +1,8 @@
 ---
-layout: post
-title: "[iOS] TableView.reloadSections(_:with:)"
-subtitle: 
-categories: iOS
+title: '[iOS] TableView.reloadSections(_:with:)'
 tags: [iOS, UITableView]
+categories: iOS
+comments: true
 ---
 
 ```swift

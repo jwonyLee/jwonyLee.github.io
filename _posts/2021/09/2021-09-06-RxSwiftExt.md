@@ -1,10 +1,8 @@
 ---
-layout: post
-title: "[RxSwift] RxSwiftExt 일부 연산자 정리"
-subtitle:
-categories: RxSwift
+title: '[RxSwift] RxSwiftExt 일부 연산자 정리'
 tags: [RxSwift, RxSwiftExt]
-published: true
+categories: RxSwift
+comments: true
 ---
 
 `RxSwiftCommunity` 에서 하는 프로젝트

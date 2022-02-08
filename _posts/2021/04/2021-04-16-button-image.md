@@ -1,9 +1,8 @@
 ---
-layout: post
-title: "[iOS] 코드로 버튼에 이미지와 텍스트 넣기"
-subtitle: Programmatically add image and text to UIButton
-categories: iOS
+title: '[iOS] 코드로 버튼에 이미지와 텍스트 넣기'
 tags: [iOS, Programmatically]
+categories: iOS
+comments: true
 ---
 
 ```swift

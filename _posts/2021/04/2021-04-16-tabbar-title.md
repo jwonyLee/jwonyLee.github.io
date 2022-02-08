@@ -1,9 +1,8 @@
 ---
-layout: post
-title: "[iOS] 네비게이션 타이틀 변경"
-subtitle: Programmatically change navigation title
-categories: iOS
+title: '[iOS] 네비게이션 타이틀 변경'
 tags: [iOS, Programmatically, UINavigationController]
+categories: iOS
+comments: true
 ---
 
 ```swift

@@ -1,11 +1,8 @@
 ---
-layout: post
 title: "[Swift] 중첩 클로저의 캡처 리스트"
-subtitle: 
 tags: [Swift, Closure]
-published: true
-created: 2022-01-25 11:04:45+09:00
-updated: 2022-02-08 09:47:42+00:00
+categories: Swift
+comments: true
 ---
 
 프로젝트에서 아래의 코드를 작성했다.
@@ -59,5 +56,5 @@ DispatchQueue.main.async {
 
 ## 참고 자료
 
-- [The Nested Closure Trap. Revisiting [weak self] to avoid retain… | by Besher Al Maleh](https://medium.com/@almalehdev/the-nested-closure-trap-356a0145b6d)
-- [You don’t (always) need [weak self] | by Besher Al Maleh | Medium](https://medium.com/@almalehdev/you-dont-always-need-weak-self-a778bec505ef)
+- [The Nested Closure Trap. Revisiting [weak self] to avoid retain…](https://medium.com/@almalehdev/the-nested-closure-trap-356a0145b6d)
+- [You don’t (always) need [weak self]](https://medium.com/@almalehdev/you-dont-always-need-weak-self-a778bec505ef)
