@@ -92,3 +92,8 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-postfiles
+  - jekyll-last-modified-at
+
+# jekyll-last-modified-at Options
+last-modified-at:
+    date-format: '%y-%m-%d'

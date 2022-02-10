@@ -45,26 +45,22 @@ layout: compress
           </div>
           {% endif %}
           <h1 class="header-title" itemprop="headline">{{ page.title | escape }}</h1>          
+          {% if page.date %}
           <div class="post-meta">
-            {% if page.created %}
-            <time datetime="{{ page.created | date_to_xmlschema }}" itemprop="datePublished">
-              {{ page.created | date: "%Y-%m-%d %T" }}
-            </time>
-            {% elsif page.date %}
             <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
               {{ page.date | date: "%Y-%m-%d %T" }}
             </time>
-            {% endif %}
             <span itemprop="author" itemscope itemtype="https://schema.org/Person">
               <span itemprop="name">{{ site.author.name }}</span>
             </span>
-            <time hidden datetime="{{ page.updated | date_to_xmlschema }}" itemprop="dateModified">
-              {{ page.updated | date: "%Y-%m-%d %T" }}
+            <time hidden datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">
+              {{ page.last_modified_at | date: "%Y-%m-%d %T" }}
             </time>
             <span hidden itemprop="publisher" itemtype="Person">{{ site.author.name }}</span>
             <span hidden itemprop="image">{{ page.image }}</span>
             <span hidden itemprop="mainEntityOfPage">{{ page.excerpt }}</span>
           </div>
+          {% endif %}
         </header>
 
         <div class="page-content" itemprop="articleBody">
@@ -83,8 +79,8 @@ layout: compress
 
     </main>
 
-    {% if page.updated %}
-      <small class="post-updated-at">updated {{page.updated | date: "%Y-%m-%d %T"}}</small>
+    {% if page.last_modified_at %}
+      <small class="post-updated-at">updated {{ page.last_modified_at | date: "%Y-%m-%d %T" }}</small>
     {% endif %}
     {% if page.next or page.previous %}
       {% include navigation.html %}
