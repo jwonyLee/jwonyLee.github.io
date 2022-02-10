@@ -25,7 +25,7 @@ author:
 url: "https://jwonyLee.github.io" #
 baseurl:
 permalink: /:categories/:title
-google_analytics: UA—163321753-2 # leave it blank if not wish
+google_analytics: UA-163321753-2 # leave it blank if not wish
 fb_appid:
 
 # Collection setting
