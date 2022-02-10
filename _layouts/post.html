@@ -48,18 +48,18 @@ layout: compress
           <div class="post-meta">
             {% if page.created %}
             <time datetime="{{ page.created | date_to_xmlschema }}" itemprop="datePublished">
-              {{ page.created | date: "%Y년 %m월 %d일 %T" }}
+              {{ page.created | date: "%Y-%m-%d %T" }}
             </time>
             {% elsif page.date %}
             <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-              {{ page.date | date: "%Y년 %m월 %d일 %T" }}
+              {{ page.date | date: "%Y-%m-%d %T" }}
             </time>
             {% endif %}
             <span itemprop="author" itemscope itemtype="https://schema.org/Person">
               <span itemprop="name">{{ site.author.name }}</span>
             </span>
             <time hidden datetime="{{ page.updated | date_to_xmlschema }}" itemprop="dateModified">
-              {{ page.updated | date: "%Y년 %m월 %d일 %T" }}
+              {{ page.updated | date: "%Y-%m-%d %T" }}
             </time>
             <span hidden itemprop="publisher" itemtype="Person">{{ site.author.name }}</span>
             <span hidden itemprop="image">{{ page.image }}</span>
@@ -84,7 +84,7 @@ layout: compress
     </main>
 
     {% if page.updated %}
-      <small class="post-updated-at">updated {{page.updated | date: "%Y년 %m월 %d일 %T"}}</small>
+      <small class="post-updated-at">updated {{page.updated | date: "%Y-%m-%d %T"}}</small>
     {% endif %}
     {% if page.next or page.previous %}
       {% include navigation.html %}
