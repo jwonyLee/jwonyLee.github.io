@@ -13,7 +13,7 @@ $bold-weight: 700;
 // $black-weight: 900; // uncomment if necessary
 
 //Light Colors
-$text-base-color: #434648;
+$text-base-color: #24292f;
 $text-link-blue: #003fff;
 $text-link-blue-active: #0036c7;
 
@@ -24,13 +24,13 @@ $gray: #6b7886;
 $white: #fff;
 
 // Dark Colors
-$dark-text-base-color: #c7bebe;
-$dark-text-link-blue: #ff5277;
-$dark-text-link-blue-active: #ff2957;
+$dark-text-base-color: #c9d1d9;
+$dark-text-link-blue: #58a6ff;
+$dark-text-link-blue-active: #58a6ff;
 
-$dark-black: #131418;
+$dark-black: rgb(13, 17, 23);
 $dark-white: #eaeaea;
-$dark-light: #1b1d25;
+$dark-light: rgba(110,118,129,0.4);
 $dark-smoke: #4a4d56;
 $dark-gray: #767f87;
 
