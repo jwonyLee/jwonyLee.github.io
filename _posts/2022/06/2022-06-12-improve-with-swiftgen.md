@@ -76,7 +76,7 @@ Apple의 API 와 유사하게 구현되어 있다고 한다(?)
 
 PR 을 세개로 나눠서 올렸는데도 무수한 파일의 변경이 있었다. 
 
-![File Change 83](assets/img/improve-with-swiftgen/pr.png)
+![File Change 86](/assets/img/improve-with-swiftgen/pr.png)
 
 ㅇ<-<
 
