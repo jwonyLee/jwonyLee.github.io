@@ -29,7 +29,7 @@ lazy var markerImage = UIImage(named: "marker")!.imageWithImage(scaledToSize: ma
 
 ### SwiftGen
 
-[GitHub - SwiftGen/SwiftGen](https://github.com/SwiftGen/SwiftGen)
+[GitHub - SwiftGen/SwiftGen](https://github.com/SwiftGen/SwiftGen)  
 [SwiftGen](https://zeddios.tistory.com/1017?category=682196)
 
 - Assets 을 선택해서 build 할 수 있다.
@@ -47,7 +47,7 @@ outputs 으로 생긴 파일(들)을 프로젝트에 추가해야 한다.
 
 ### R.swift
 
-[GitHub - mac-cain13/R.swift](https://github.com/mac-cain13/R.swift)
+[GitHub - mac-cain13/R.swift](https://github.com/mac-cain13/R.swift)  
 [R.swift](https://zeddios.tistory.com/1016)
 
 - 모든 Assets 을 build 함 → 선택적 취사 불가
