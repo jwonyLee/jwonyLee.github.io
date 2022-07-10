@@ -10,7 +10,7 @@ published: true
 그간은 팀장님 혼자 만드느라 *컨벤션이 뭐죠? 규칙 따위 없다* 였다. 둘이서 일하게 된 순간부터 나는 이걸 뜯어고쳐야겠다는 생각이 들었다.
 혼자만의 규칙이라도 있었다면 모르겠는데 3년 전의 팀장님과 2년 전의 팀장님, 1년 전의 팀장님은 전부 다른 사람이 작성한 것처럼 일관성이 없었다. 그래서 SwiftLint 도입을 통해 강제성을 만들어서 가독성 좋은 코드를 만들기로 했다. 코드 컨벤션을 정하고, lint를 적용하는 건 코드에 맞춤법을 지키는 것과 같다고 생각한다.
 
-SwiftLint 규칙은 Raywenderlich 와 재르시님이 공개해둔 lint 파일을 기반으로 만들었다. Swiftlet 에서 잡아내지 못하는 규칙은 StyleShare 에서 공개해둔 Swift Style Guide를 참고해서 프로젝트 README 파일에 명시해놨다.
+SwiftLint 규칙은 Raywenderlich 와 재르시님이 공개해둔 lint 파일을 기반으로 만들었다. SwiftLint 에서 잡아내지 못하는 규칙은 StyleShare 에서 공개해둔 Swift Style Guide를 참고해서 프로젝트 README 파일에 명시해놨다.
 
 나는 원래 아래와 같은 스타일을 더 선호했다.
 
@@ -69,3 +69,10 @@ Warning 은 권고사항 정도라서 각자 작업하는 파일에 Warning 제�
 lint를 적용하고 나서 좋은 점은, 부수적인 부분에 신경을 뺏기지 않아도 된다는 것이다. 코드 컨벤션의 합의가 없다면 코드 리뷰가 전부 컨벤션에 관한 토론의 장이 될 수도 있다(고 생각한다). 매번 고쳐달라고 하기도 눈치보이고. 
 
 글로 쓰니까 짧고, 후루룩 뚝딱 끝난 것처럼 보이지만 스프린트 외에 진행되었고, 단순 반복 노동이긴 하지만 적은 작업은 아니어서 한 달 정도 소요됐다. 시기상으로 SwiftGen 도입보다 먼저였는데, 실제 출시 버전에 들어가는 건 더 나중이 되었다.
+
+## 참고 자료
+
+- [realm/SwiftLint: A tool to enforce Swift style and conventions.](https://github.com/realm/SwiftLint)
+- [raywenderlich/swift-style-guide: The official Swift style guide for raywenderlich.com.](https://github.com/raywenderlich/swift-style-guide)
+- [StyleShare/swift-style-guide: StyleShare에서 작성한 Swift 한국어 스타일 가이드](https://github.com/StyleShare/swift-style-guide)
+- [JeaSungLEE/DefaultOption](https://github.com/JeaSungLEE/DefaultOption)
