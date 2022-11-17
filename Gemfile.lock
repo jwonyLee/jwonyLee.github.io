@@ -71,6 +71,7 @@ GEM
     webrick (1.7.0)
 
 PLATFORMS
+  universal-darwin-21
   x86_64-darwin-20
 
 DEPENDENCIES
@@ -83,4 +84,4 @@ DEPENDENCIES
   webrick (~> 1.7)
 
 BUNDLED WITH
-   2.2.29
+   2.3.25
