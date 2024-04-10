@@ -1,7 +1,8 @@
 ---
 title: "[iOS] 오토레이아웃을 코드로 작성하는 방법은 무엇인가? (3가지)"
-permalink: "31b7b10d-02ae-8cf6-064d-5bfb2cc11000"
+permalink: 31b7b10d-02ae-8cf6-064d-5bfb2cc11000
 publish: true
+created: 2021-04-16
 ---
 
 # \[iOS] 오토레이아웃을 코드로 작성하는 방법은 무엇인가? (3가지)

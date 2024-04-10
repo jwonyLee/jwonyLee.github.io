@@ -1,7 +1,8 @@
 ---
 title: "[iOS] scene delegate에 대해 설명하시오."
-permalink: "1da5c7c4-77b5-078d-7d51-cb4af2a594be"
+permalink: 1da5c7c4-77b5-078d-7d51-cb4af2a594be
 publish: true
+created: 2021-03-23
 ---
 
 # \[iOS] scene delegate에 대해 설명하시오.

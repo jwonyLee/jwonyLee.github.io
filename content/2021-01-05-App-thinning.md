@@ -5,6 +5,7 @@ publish: true
 tags:
   - iOS
   - iOSInterviewquestions
+created: 2021-01-05
 ---
 
 # \[iOS] App thinning에 대해서 설명하시오.

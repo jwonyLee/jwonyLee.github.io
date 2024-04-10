@@ -2,6 +2,7 @@
 title: "[iOS] Left Constraint 와 Leading Constraint 의 차이점을 설명하시오."
 permalink: "1cf039e2-3425-0ddb-02e8-a054c8a9f7b9"
 publish: true
+created: 2021-01-25
 ---
 
 # \[iOS] Left Constraint 와 Leading Constraint 의 차이점을 설명하시오.

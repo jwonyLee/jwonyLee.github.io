@@ -2,6 +2,7 @@
 title: "[Objective-C] 특정 객체를 autorelease 하기 위해 필요한 사항과 과정을 설명하시오."
 permalink: "8c462797-aaee-445d-efdc-b532b964984f"
 publish: true
+created: 2021-02-16
 ---
 
 # \[Objective-C] 특정 객체를 autorelease 하기 위해 필요한 사항과 과정을 설명하시오.
