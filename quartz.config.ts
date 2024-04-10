@@ -12,9 +12,10 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: "plausible",
+      provider: "google",
+      tagId: "G-Z4HL86NN7E"
     },
-    locale: "en-US",
+    locale: "ko-KR",
     baseUrl: "rieul.tech",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
@@ -22,30 +23,30 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "-apple-system",
-        body: "-apple-system",
-        code: "ui-monospace",
+        header: "Noto Sans Korean",
+        body: "Noto Sans Korean",
+        code: "IBM Plex Mono",
       },
       colors: {
         lightMode: {
-          light: "#FFFCF0",
-          lightgray: "#e5e5e5",
-          gray: "#6F6E69",
-          darkgray: "#100F0F",
-          dark: "#100F0F",
-          secondary: "#4385BE",
-          tertiary: "#205EA6",
-          highlight: "rgba(143, 159, 169, 0.15)",
+          light: "#FFFCF0", // ✅ 페이지 배경
+          lightgray: "#F2F0E5", // 테두리
+          gray: "#6F6E69", // ✅ 그래프 링크, 두꺼운 테두리
+          darkgray: "#100F0F", // ✅ 본문 
+          dark: "#100F0F", // ✅ 헤더 텍스트 및 아이콘
+          secondary: "#4385BE", // ✅ 링크 색상, 현재 그래프 노드
+          tertiary: "#4385BE", // ✅ 호버 색상, 방문 그래프 노드
+          highlight: "#F2F0E5", // ✅ 내부 링크 배경, 강조 표시된 텍스트, 강조 표시된 코드 줄
         },
         darkMode: {
-          light: "#100F0F",
-          lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#4385BE",
+          light: "#100F0F", // ✅
+          lightgray: "#1C1B1A", // ✅ 
+          gray: "#878580", // ✅ 
+          darkgray: "#CECDC3",
+          dark: "#CECDC3",
+          secondary: "#205EA6",
           tertiary: "#205EA6",
-          highlight: "rgba(143, 159, 169, 0.15)",
+          highlight: "#1C1B1A", // ✅
         },
       },
     },
