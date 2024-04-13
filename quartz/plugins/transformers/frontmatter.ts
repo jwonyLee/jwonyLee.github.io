@@ -105,8 +105,6 @@ declare module "vfile" {
         lang: string
         enableToc: string
         cssclasses: string[]
-        // created?: Date
-        // modified?: Date
         dates: [string: Date]
       }>
   }

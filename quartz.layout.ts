@@ -24,7 +24,28 @@ export const defaultContentPageLayout: PageLayout = {
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
-    Component.DesktopOnly(Component.RecentNotes({ title: "Recent" })),
+    Component.DesktopOnly(Component.RecentNotes({ 
+      title: "Recent",
+      limit: 3,
+      sort: (lhs, rhs) => {
+        const getDateValue = (item) => {
+          // frontmatter의 modified를 우선적으로 사용
+          if (item.frontmatter?.dates.find(date => date["modified"])) {
+            return item.frontmatter?.dates.find(date => date["modified"])["modified"]
+          } else if (item.frontmatter?.dates.find(date => date["created"])) {
+            return item.frontmatter?.dates.find(date => date["created"])["created"]
+          } else if (item.dates.created) {
+            return item.dates.created
+          }
+          return new Date().getTime();
+        }
+
+        const lhsDate = getDateValue(lhs)
+        const rhsDate = getDateValue(rhs)
+
+        return rhsDate - lhsDate
+      },
+    })),
     Component.DesktopOnly(Component.Explorer()),
   ],
   right: [
