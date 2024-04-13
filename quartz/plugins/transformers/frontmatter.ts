@@ -71,6 +71,18 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options> | undefined> 
             const cssclasses = coerceToArray(coalesceAliases(data, ["cssclasses", "cssclass"]))
             if (cssclasses) data.cssclasses = cssclasses
 
+            data.dates = []
+
+            const createdDate = new Date(coalesceAliases(data, ["created"]))
+            if (!isNaN(createdDate.getTime())) { // modifiedDate가 유효한 날짜인 경우에만 체크
+              data.dates.push({"created": createdDate});
+            }
+
+            const modifiedDate = new Date(coalesceAliases(data, ["modified"]))
+            if (!isNaN(modifiedDate.getTime())) { // modifiedDate가 유효한 날짜인 경우에만 체크
+              data.dates.push({"modified": modifiedDate});
+            }
+
             // fill in frontmatter
             file.data.frontmatter = data as QuartzPluginData["frontmatter"]
           }
@@ -93,6 +105,9 @@ declare module "vfile" {
         lang: string
         enableToc: string
         cssclasses: string[]
+        // created?: Date
+        // modified?: Date
+        dates: [string: Date]
       }>
   }
 }

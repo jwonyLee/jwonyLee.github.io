@@ -19,6 +19,7 @@ const config: QuartzConfig = {
     baseUrl: "rieul.tech",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
+    dateTypesToDisplay: ["created", "modified"],
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,

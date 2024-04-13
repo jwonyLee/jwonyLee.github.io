@@ -30,9 +30,15 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
       const segments: (string | JSX.Element)[] = []
 
       if (fileData.dates) {
-        segments.push(formatDate(getDate(cfg, fileData)!, cfg.locale))
+        cfg?.dateTypesToDisplay?.forEach((dateType) => {
+          const dateInfo = fileData.frontmatter?.dates.find(date => date[dateType]);
+          // dateInfo가 존재하는지 먼저 확인
+          if (dateInfo && dateInfo[dateType]) {
+            segments.push(formatDate(dateInfo[dateType], cfg.locale));
+          }
+        });
       }
-
+    
       // Display reading time if enabled
       if (options.showReadingTime) {
         const { minutes, words: _words } = readingTime(text)
