@@ -1,12 +1,19 @@
 ---
 layout: wiki
-title: "[Swift] 접근 제어자의 종류엔 어떤게 있는지 설명하시오."
+title: 접근 제어자의 종류엔 어떤게 있는지 설명하시오.
+summary: 
 permalink: 4a1becfc-9139-fbe2-ee07-67ed68e3de10
-publish: true
-tags:
-  - Swift
-  - iOSInterviewquestions
+date: 2020-10-14
+updated: 2020-10-14
+tag: Swift Swift iOSInterviewquestions 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[Swift] 접근 제어자의 종류엔 어떤게 있는지 설명하시오.
 

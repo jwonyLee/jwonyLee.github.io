@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] Swift Package 만들기"
+title: Swift Package 만들기
+summary: 
 permalink: b6e7d281-7f11-d868-7945-9704afcaccaa
-publish: true
 date: 2022-05-29
+updated: 2022-05-29
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 ```markdown
 📌 기존 프로젝트에서 기능을 분리해서 Swift Package로 모듈화하기
@@ -173,4 +182,3 @@ targets: [
 
 ## 태그
 
-#Swift/Pakage #iOS/PackageManager/SPM 

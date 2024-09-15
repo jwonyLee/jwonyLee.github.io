@@ -1,17 +1,19 @@
 ---
 layout: wiki
+title: 
+summary: 
 permalink: 6818f72c-8679-19ea-5849-0fa044b8e138
 date: 2020-09-14
-topics:
-  - "[[Software Development]]"
-category: "[[iOS]]"
-tags:
-  - iOS/UIKit/UITableView
-  - iOSInterviewquestions
-  - Knowledge
-status: "[[Done]]"
-publish: true
+updated: 2020-09-14
+tag: iOS/UIKit/UITableView iOSInterviewquestions Knowledge 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] TableView.reloadSections(_:with:)
 

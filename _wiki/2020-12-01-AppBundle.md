@@ -1,9 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] App Bundle의 구조와 역할에 대해 설명하시오."
+title: App Bundle의 구조와 역할에 대해 설명하시오.
+summary: 
 permalink: 35d80db8-e942-f7d2-f087-31cd5bde82ba
-publish: true
+date: 2020-12-01
+updated: 2020-12-01
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] App Bundle의 구조와 역할에 대해 설명하시오.
 
@@ -54,4 +64,3 @@ iOS 애플리케이션은 국제화 되어야하며 지원하는 각 언어에 �
 
 ## 태그
 
-#iOS #iOSInterviewquestions

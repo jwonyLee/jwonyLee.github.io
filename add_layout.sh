@@ -16,9 +16,7 @@ convert_date_format() {
 # 태그 처리 함수
 process_tag() {
     local tag="$1"
-    # '_'를 '-'로 변경
     tag="${tag//_/-}"
-    # '/'는 그대로 유지
     echo "$tag"
 }
 
@@ -80,6 +78,7 @@ for file in *.md; do
             # 제목 처리
             IFS='|' read -r processed_title extracted_category <<< "$(process_title "$title")"
             # 수집된 정보를 새 형식으로 작성
+            echo "layout: wiki" >> "$temp_file"  # layout: wiki 추가
             echo "title: $processed_title" >> "$temp_file"
             echo "summary: $summary" >> "$temp_file"
             echo "permalink: $permalink" >> "$temp_file"
@@ -99,15 +98,15 @@ for file in *.md; do
             echo "* TOC" >> "$temp_file"
             echo "{:toc}" >> "$temp_file"
         elif $frontmatter_start && ! $frontmatter_end; then
-            if [[ $line =~ ^title:\ (.+)$ ]]; then
+            if [[ $line =~ ^title:\ *(.*) ]]; then
                 title="${BASH_REMATCH[1]}"
-            elif [[ $line =~ ^summary:\ (.+)$ ]]; then
+            elif [[ $line =~ ^summary:\ *(.*) ]]; then
                 summary="${BASH_REMATCH[1]}"
-            elif [[ $line =~ ^permalink:\ (.+)$ ]]; then
+            elif [[ $line =~ ^permalink:\ *(.*) ]]; then
                 permalink="${BASH_REMATCH[1]}"
-            elif [[ $line =~ ^date:\ (.+)$ ]]; then
+            elif [[ $line =~ ^date:\ *(.*) ]]; then
                 date="${BASH_REMATCH[1]}"
-            elif [[ $line =~ ^updated:\ (.+)$ ]]; then
+            elif [[ $line =~ ^updated:\ *(.*) ]]; then
                 updated="${BASH_REMATCH[1]}"
             elif [[ $line =~ ^tags:\ *$ ]] || [[ $line =~ ^tag:\ *$ ]]; then
                 :
@@ -115,16 +114,15 @@ for file in *.md; do
                 tag="${BASH_REMATCH[1]}"
                 processed_tag=$(process_tag "$tag")
                 tags+="$processed_tag "
-            elif [[ $line =~ ^public:\ (.+)$ ]]; then
+            elif [[ $line =~ ^public:\ *(.*) ]]; then
                 public="${BASH_REMATCH[1]}"
-            elif [[ $line =~ ^parent:\ (.+)$ ]]; then
+            elif [[ $line =~ ^parent:\ *(.*) ]]; then
                 parent="${BASH_REMATCH[1]}"
-            elif [[ $line =~ ^latex:\ (.+)$ ]]; then
+            elif [[ $line =~ ^latex:\ *(.*) ]]; then
                 latex="${BASH_REMATCH[1]}"
-            elif [[ $line =~ ^comment:\ (.+)$ ]]; then
+            elif [[ $line =~ ^comment:\ *(.*) ]]; then
                 comment="${BASH_REMATCH[1]}"
             fi
-            # 다른 프론트매터 필드는 무시됩니다.
         else
             echo "$line" >> "$temp_file"
         fi

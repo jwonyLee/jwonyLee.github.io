@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[Book] 적정 소프트웨어 아키텍처"
+title: 적정 소프트웨어 아키텍처
+summary: 
 permalink: 14542ed1-ffb9-c062-5b3a-828755257d2b
-publish: true
 date: 2022-12-01
+updated: 2022-12-01
+tag: Book 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 <p align="center">
 <img alt="적정 소프트웨어 아키텍처 표지" src="https://hanbit.co.kr/data/books/B6059097161_l.jpg"><br />
@@ -41,4 +50,3 @@ date: 2022-12-01
 
 ## 태그
 
-#서평

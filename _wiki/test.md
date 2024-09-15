@@ -11,5 +11,7 @@ public  : true
 parent  : [[how-to]]
 latex   : true
 ---
+
 * TOC
 {:toc}
+* TOC

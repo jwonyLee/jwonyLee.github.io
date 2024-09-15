@@ -1,12 +1,19 @@
 ---
 layout: wiki
 title: thread safety한 싱글톤
+summary: 
 permalink: dcded7c6-5ce0-ebca-6536-e7323d041de4
-publish: true
-tags:
-  - Swift/Design_Patterns
-updated: 2024-04-13T20:05:32+09:00
+date: 2024-04-13 20:05:32 +09:00
+updated: 2024-04-13 20:05:32 +09:00
+tag: Swift/Design-Patterns 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # thread safety한 싱글톤
 

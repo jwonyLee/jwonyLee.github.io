@@ -1,17 +1,19 @@
 ---
 layout: wiki
+title: 
+summary: 
 permalink: 7a278d9b-ab71-5000-e7a8-be05b116af61
 date: 2020-10-07
-topics:
-  - "[[Software Development]]"
-category: "[[Swift]]"
-tags:
-  - Swift/Design_Patterns
-  - iOSInterviewquestions
-  - Knowledge
-status: "[[Done]]"
-publish: true
+updated: 2020-10-07
+tag: Swift/Design-Patterns iOSInterviewquestions Knowledge 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[Swift] Singleton 패턴을 활용하는 경우를 예를 들어 설명하시오.
 

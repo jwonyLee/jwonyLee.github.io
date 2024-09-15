@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] Anatomy of a Constraint"
+title: Anatomy of a Constraint
+summary: 
 permalink: 91779299-b1d8-f752-efbb-bebf18b9b997
-publish: true
 date: 2021-02-01
+updated: 2021-02-01
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] Anatomy of a Constraint
 
@@ -215,4 +224,3 @@ View.width <= 0.0 * NotAnAttribute + IntrinsicWidth
 
 ## 태그
 
-#iOS/Autolayout

@@ -1,9 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] Bounds 와 Frame 의 차이점을 설명하시오."
+title: Bounds 와 Frame 의 차이점을 설명하시오.
+summary: 
 permalink: 221ef090-7f3a-cb99-5502-01ff6d90e6a6
-publish: true
+date: 2020-10-20
+updated: 2020-10-20
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] Bounds 와 Frame 의 차이점을 설명하시오.
 
@@ -32,4 +42,3 @@ SuperView의 좌표 시스템 안에서 View의 위치와 크기를 나타냄
 
 ## 태그
 
-#iOS #iOSInterviewquestions

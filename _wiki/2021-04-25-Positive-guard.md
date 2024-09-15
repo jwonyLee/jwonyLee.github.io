@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[Swift] 긍정적인 Guard 사용"
+title: 긍정적인 Guard 사용
+summary: 
 permalink: 21b56994-cc18-9f41-e982-cf9735b9d345
-publish: true
 date: 2021-04-25
+updated: 2021-04-25
+tag: Swift 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[Swift] 긍정적인 Guard 사용
 
@@ -54,4 +63,3 @@ guard pices.isNotEmpty else {
 
 ## 태그
 
-#Swift/Guard

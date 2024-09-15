@@ -1,9 +1,19 @@
 ---
 layout: wiki
-title: "[Swift] 탈출 클로저에 대하여 설명하시오."
+title: 탈출 클로저에 대하여 설명하시오.
+summary: 
 permalink: 110c7a71-3d8e-f97e-14d9-24d6c28778f1
-publish: true
+date: 2020-10-11
+updated: 2020-10-11
+tag: Swift 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[Swift] 탈출 클로저에 대하여 설명하시오.
 
@@ -88,4 +98,3 @@ Server.getPerson { (isSuccess, persons) in
 
 ## 태그
 
-#Swift #iOSInterviewquestions

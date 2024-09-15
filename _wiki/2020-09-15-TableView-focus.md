@@ -1,16 +1,19 @@
 ---
 layout: wiki
+title: 
+summary: 
 permalink: 9725d37e-e0e5-a1ed-f4fc-97a20479f6c8
 date: 2020-09-15
-topics:
-  - "[[Software Development]]"
-category: "[[iOS]]"
-tags:
-  - iOS/UIKit/UITableView
-  - Knowledge
-status: "[[Done]]"
-publish: true
+updated: 2020-09-15
+tag: iOS/UIKit/UITableView Knowledge 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] 테이블뷰 셀 터치 후, 다른 뷰로 이동한 뒤에 다시 돌아왔을 때 포커스 없애기
 
@@ -41,4 +44,3 @@ override func viewWillAppear(_ animated: Bool) {
 
 ## 참고 자료
 
-- [iOS: 테이블뷰 셀 터치 시 포커스 남기지 않기 (TableViewCell SelectionStyle)](https://ohgyun.com/641)

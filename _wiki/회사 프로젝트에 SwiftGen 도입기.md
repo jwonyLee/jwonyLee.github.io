@@ -1,15 +1,19 @@
 ---
 layout: wiki
+title: 
+summary: 
 permalink: 3acba79d-c253-a833-0fb8-9534af3cdffc
 date: 2022-06-12
-topics:
-  - "[[Software Development]]"
-category: "[[iOS]]"
-tags:
-  - iOS/SwiftGen
-status: "[[Done]]"
-publish: true
+updated: 2022-06-12
+tag: iOS/SwiftGen 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] 회사 프로젝트에 SwiftGen 도입기
 

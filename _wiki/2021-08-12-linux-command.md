@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[Book] 리눅스 입문자를 위한 명령어 사전"
+title: 리눅스 입문자를 위한 명령어 사전
+summary: 
 permalink: bc24663e-8037-285f-8159-94f8b91384e1
-publish: true
 date: 2021-08-20
+updated: 2021-08-20
+tag: Book 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[Book] 리눅스 입문자를 위한 명령어 사전
 
@@ -40,4 +49,3 @@ date: 2021-08-20
 
 ## 태그
 
-#서평 #Linux

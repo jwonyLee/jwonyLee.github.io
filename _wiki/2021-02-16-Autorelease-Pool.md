@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[Objective-C] Autorelease Pool을 사용해야 하는 상황을 두 가지 이상 예로 들어 설명하시오."
+title: Autorelease Pool을 사용해야 하는 상황을 두 가지 이상 예로 들어 설명하시오.
+summary: 
 permalink: f61fef68-7386-ba55-b341-d15ea08393d4
-publish: true
 date: 2021-02-16
+updated: 2021-02-16
+tag: Objective-C 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[Objective-C] Autorelease Pool을 사용해야 하는 상황을 두 가지 이상 예로 들어 설명하시오.
 
@@ -29,4 +38,3 @@ for (NSURL *url in urls) {
 
 ## 태그
 
-#Objective-C/ARC #iOSInterviewquestions

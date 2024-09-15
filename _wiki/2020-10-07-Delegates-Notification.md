@@ -1,18 +1,19 @@
 ---
 layout: wiki
+title: 
+summary: 
 permalink: 9ba05cc2-3d59-2b87-ea58-f3e733d6be01
 date: 2020-10-07
-topics:
-  - "[[Software Development]]"
-category: "[[iOS]]"
-tags:
-  - Swift/Design_Patterns
-  - iOS/NotificationCenter
-  - iOSInterviewquestions
-  - Knowledge
-status: "[[Done]]"
-publish: true
+updated: 2020-10-07
+tag: Swift/Design-Patterns iOS/NotificationCenter iOSInterviewquestions Knowledge 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[Swift] Delegates와 Notification 방식의 차이점에 대해 설명하시오.
 

@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] 커스텀 폰트 적용하기 with Dynamic Type"
+title: 커스텀 폰트 적용하기 with Dynamic Type
+summary: 
 permalink: 087cf713-71b1-fed1-92de-eb4eb894c0d4
-publish: true
 date: 2022-01-02
+updated: 2022-01-02
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 ```
 🎯 커스텀 폰트 적용하기 (with Dynamic Type)
@@ -258,4 +267,3 @@ struct Pretendard: Fontable {
 
 ## 태그
 
-#iOS/UIFont #접근성 #iOS/Dynamic_Type

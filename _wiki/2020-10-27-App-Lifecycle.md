@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] 상태 변화에 따라 다른 동작을 처리하기 위한 앱델리게이트 메서드들을 설명하시오."
+title: 상태 변화에 따라 다른 동작을 처리하기 위한 앱델리게이트 메서드들을 설명하시오.
+summary: 
 permalink: d30afc77-e653-1750-2441-cb8efaf43483
-publish: true
-updated: 2024-04-30T11:57:43+09:00
+date: 2020-10-27
+updated: 2024-04-30 11:57:43 +09:00
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] 상태 변화에 따라 다른 동작을 처리하기 위한 앱델리게이트 메서드들을 설명하시오.
 
@@ -59,4 +68,3 @@ func applicationWillTerminate(_ application: UIApplication)
 
 ## 태그
 
-#iOS #iOSInterviewquestions

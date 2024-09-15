@@ -1,12 +1,19 @@
 ---
 layout: wiki
-title: "[Book] 기업의 성공을 이끄는 Developer Relations"
+title: 기업의 성공을 이끄는 Developer Relations
+summary: 
 permalink: f61f3b71-2fcb-fb9c-5bf6-8695576b8ada
-publish: true
-tags:
-  - 서평
 date: 2022-06-26
+updated: 2022-06-26
+tag: Book 서평 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 <p align="center">
 <img alt="기업의 성공을 이끄는 Developer Relations 표지" src="https://www.hanbit.co.kr/data/books/B9102351881_l.jpg"><br />

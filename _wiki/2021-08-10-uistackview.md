@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] UIStackView"
+title: UIStackView
+summary: 
 permalink: 5b441ad2-f77c-e2c0-5787-e4ed4138ec3c
-publish: true
 date: 2021-08-10
+updated: 2021-08-10
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] UIStackView
 
@@ -164,4 +173,3 @@ First Baseline과 Last Baseline은 사진만 봐서는 Top, Bottom과 비슷해�
 
 ## 태그
 
-#iOS/UIStackView

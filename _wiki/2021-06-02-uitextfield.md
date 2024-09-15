@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[RxSwift] UITextField.text의 변경을 감지하지 못할 때"
+title: UITextField.text의 변경을 감지하지 못할 때
+summary: 
 permalink: 71f3e025-53b0-9a83-78df-fbf9c5bba6f6
-publish: true
 date: 2021-06-02
+updated: 2021-06-02
+tag: RxSwift 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[RxSwift] UITextField.text의 변경을 감지하지 못할 때
 
@@ -60,4 +69,3 @@ func emojiViewDidSelectEmoji(_ emoji: String, emojiView: EmojiView) {
 
 ## 태그
 
-#iOS/RxSwift #iOS/UITextField

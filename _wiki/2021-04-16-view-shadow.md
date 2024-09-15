@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] 뷰의 그림자 만들기"
+title: 뷰의 그림자 만들기
+summary: 
 permalink: 8f337062-db00-d89b-5151-0e2eec7ebf30
-publish: true
 date: 2021-04-16
+updated: 2021-04-16
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] 뷰의 그림자 만들기
 
@@ -40,4 +49,3 @@ button.layer.shouldRasterize = true
 
 ## 태그
 
-#iOS

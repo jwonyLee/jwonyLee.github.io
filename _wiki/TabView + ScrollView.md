@@ -1,14 +1,19 @@
 ---
 layout: wiki
+title: TabView + ScrollView
+summary: 
 permalink: a6f7c741-4d45-d56e-7c60-aea6037ccc1a
-status: "[[Done]]"
-tags:
-  - Knowledge
-  - iOS/SwiftUI
-  - 삽질
-publish: true
-updated: 2024-05-19T19:12:52+09:00
+date: 2024-05-19 19:12:52 +09:00
+updated: 2024-05-19 19:12:52 +09:00
+tag: Knowledge iOS/SwiftUI 삽질 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # TabView + ScrollView
 
@@ -70,4 +75,3 @@ TabView {
 
 - https://stackoverflow.com/questions/75256478/how-to-make-swiftui-tabbar-background-always-transparent
 - https://developer.apple.com/documentation/uikit/uinavigationbar/3198027-scrolledgeappearance
-- https://developer.apple.com/documentation/uikit/uinavigationbar/3198028-standardappearance

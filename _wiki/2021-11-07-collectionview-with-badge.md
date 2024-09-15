@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] 컬렉션뷰에 뱃지 추가하기"
+title: 컬렉션뷰에 뱃지 추가하기
+summary: 
 permalink: 354752f2-0c01-5d34-7214-bacd077e4153
-publish: true
 date: 2021-11-07
+updated: 2021-11-07
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] 컬렉션뷰에 뱃지 추가하기
 
@@ -155,4 +164,3 @@ func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElem
 
 ## 태그
 
-#iOS/UICollectionView #iOS/UICollectionView/Compositional_Layout

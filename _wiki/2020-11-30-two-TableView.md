@@ -1,9 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] 하나의 View Controller 코드에서 여러 TableView Controller 역할을 해야 할 경우 어떻게 구분해서 구현해야 하는지 설명하시오."
+title: 하나의 View Controller 코드에서 여러 TableView Controller 역할을 해야 할 경우 어떻게 구분해서 구현해야 하는지 설명하시오.
+summary: 
 permalink: ba700875-ce39-9567-5a76-b69390ff8828
-publish: true
+date: 2020-11-30
+updated: 2020-11-30
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] 하나의 View Controller 코드에서 여러 TableView Controller 역할을 해야 할 경우 어떻게 구분해서 구현해야 하는지 설명하시오.
 
@@ -72,4 +82,3 @@ func register(AnyClass?, forCellReusepermalink: String)
 
 ## 태그
 
-#iOS #iOSInterviewquestions

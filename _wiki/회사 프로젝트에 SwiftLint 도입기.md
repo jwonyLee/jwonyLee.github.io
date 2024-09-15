@@ -1,15 +1,19 @@
 ---
 layout: wiki
+title: 
+summary: 
 permalink: 98e2a8e5-c76c-0e4c-0d1c-d9c4ae71426c
 date: 2022-06-26
-topics:
-  - "[[Software Development]]"
-category: "[[iOS]]"
-tags:
-  - iOS/SwiftLint
-status: "[[Done]]"
-publish: true
+updated: 2022-06-26
+tag: iOS/SwiftLint 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] 회사 프로젝트에 SwiftLint 도입기
 
@@ -83,4 +87,3 @@ lint를 적용하고 나서 좋은 점은, 부수적인 부분에 신경을 뺏�
 - [realm/SwiftLint: A tool to enforce Swift style and conventions.](https://github.com/realm/SwiftLint)
 - [raywenderlich/swift-style-guide: The official Swift style guide for raywenderlich.com.](https://github.com/raywenderlich/swift-style-guide)
 - [StyleShare/swift-style-guide: StyleShare에서 작성한 Swift 한국어 스타일 가이드](https://github.com/StyleShare/swift-style-guide)
-- [JeaSungLEE/DefaultOption](https://github.com/JeaSungLEE/DefaultOption)

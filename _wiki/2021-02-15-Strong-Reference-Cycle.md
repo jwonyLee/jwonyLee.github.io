@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[Swift] 강한 순환 참조 (Strong Reference Cycle) 는 어떤 경우에 발생하는지 설명하시오."
+title: 강한 순환 참조 (Strong Reference Cycle) 는 어떤 경우에 발생하는지 설명하시오.
+summary: 
 permalink: 0e5f64f9-ad6d-a804-3131-2c3b871c78f1
-publish: true
 date: 2021-02-15
+updated: 2021-02-15
+tag: Swift 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[Swift] 강한 순환 참조 (Strong Reference Cycle) 는 어떤 경우에 발생하는지 설명하시오.
 
@@ -73,4 +82,3 @@ class Apartment {
 
 ## 태그
 
-#Swift/ARC #iOSInterviewquestions

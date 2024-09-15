@@ -1,9 +1,19 @@
 ---
 layout: wiki
-title: "[Swift] Extension에 대해 설명하시오."
+title: Extension에 대해 설명하시오.
+summary: 
 permalink: 1b55afe8-60cf-8c94-0be0-14f2859f9e38
-publish: true
+date: 2020-10-13
+updated: 2020-10-13
+tag: Swift 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[Swift] Extension에 대해 설명하시오.
 
@@ -42,4 +52,3 @@ extension ExtensionType {
 
 ## 태그
 
-#Swift #iOSInterviewquestions

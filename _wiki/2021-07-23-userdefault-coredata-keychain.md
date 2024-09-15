@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] UserDefaults, KeyChain, Core Data"
+title: UserDefaults, KeyChain, Core Data
+summary: 
 permalink: 3efa3d59-c701-1158-7923-59270f51357b
-publish: true
 date: 2021-07-23
+updated: 2021-07-23
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 ## UserDefaults
 
@@ -47,4 +56,3 @@ date: 2021-07-23
 
 ## 태그
 
-#iOS/UserDefaults #iOS/KeyChain #iOS/CoreData

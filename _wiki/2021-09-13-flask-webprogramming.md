@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[Book] 처음 배우는 플라스크 웹 프로그래밍"
+title: 처음 배우는 플라스크 웹 프로그래밍
+summary: 
 permalink: a2ed4fc7-e0f5-7e9d-802f-0ef7e6a021d5
-publish: true
 date: 2021-09-13
+updated: 2021-09-13
+tag: Book 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[Book] 처음 배우는 플라스크 웹 프로그래밍
 
@@ -49,4 +58,3 @@ date: 2021-09-13
 
 ## 태그
 
-#서평 #Flask

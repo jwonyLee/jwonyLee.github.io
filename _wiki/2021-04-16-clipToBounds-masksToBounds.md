@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] UIView.clipToBounds와 layer.masksToBounds"
+title: UIView.clipToBounds와 layer.masksToBounds
+summary: 
 permalink: 10a55411-2e65-1d24-1465-93b6a7ef8317
-publish: true
 date: 2021-04-16
+updated: 2021-04-16
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] UIView.clipToBounds와 layer.masksToBounds
 
@@ -25,4 +34,3 @@ The default value of this property is false.
 
 ## 태그
 
-#iOS

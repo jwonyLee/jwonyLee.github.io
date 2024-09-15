@@ -1,9 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] Foundation Kit은 무엇이고 포함되어 있는 클래스들은 어떤 것이 있는지 설명하시오"
+title: Foundation Kit은 무엇이고 포함되어 있는 클래스들은 어떤 것이 있는지 설명하시오
+summary: 
 permalink: 25571d26-a348-8ff2-6398-a899add33df3
-publish: true
+date: 2020-11-19
+updated: 2020-11-19
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] Foundation Kit은 무엇이고 포함되어 있는 클래스들은 어떤 것이 있는지 설명하시오
 
@@ -34,4 +44,3 @@ publish: true
 
 ## 태그
 
-#iOS #iOSInterviewquestions

@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] WWDC2021: Meet async/await in Swift"
+title: Meet async/await in Swift
+summary: 
 permalink: d749ec3d-86c8-8b21-144b-74fa7b69819a
-publish: true
 date: 2021-06-10
+updated: 2021-06-10
+tag: iOS WWDC2021
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] WWDC2021: Meet async/await in Swift
 
@@ -108,4 +117,3 @@ func fetchThumbnail(for id: String) async throws -> UIImage {
 
 ## 태그
 
-#Swift #iOS/WWDC/2021 #Swift/Async-Await

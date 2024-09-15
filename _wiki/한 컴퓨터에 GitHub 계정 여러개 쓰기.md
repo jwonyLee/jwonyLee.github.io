@@ -1,17 +1,19 @@
 ---
 layout: wiki
+title: 
+summary: 
 permalink: 0356f2ee-7e47-af38-047f-c9f13e392d73
 date: 2022-12-28
-topics:
-  - "[[Software Development]]"
-category: "[[Version Control]]"
-tags:
-  - Git
-  - GitHub
-status: "[[Maintenance]]"
-publish: true
-updated: 2024-04-13T20:07:01+09:00
+updated: 2024-04-13 20:07:01 +09:00
+tag: Git GitHub 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # 한 컴퓨터에 GitHub 계정 여러개 쓰기
 

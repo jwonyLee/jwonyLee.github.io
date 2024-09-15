@@ -1,9 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] UIKit 클래스들을 다룰 때 꼭 처리해야하는 애플리케이션 쓰레드 이름은 무엇인가?"
+title: UIKit 클래스들을 다룰 때 꼭 처리해야하는 애플리케이션 쓰레드 이름은 무엇인가?
+summary: 
 permalink: 3298b635-b078-7690-5cf0-2c5ad08df3f1
-publish: true
+date: 2021-04-01
+updated: 2021-04-01
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] UIKit 클래스들을 다룰 때 꼭 처리해야하는 애플리케이션 쓰레드 이름은 무엇인가?
 
@@ -21,4 +31,3 @@ UIKit 클래스는 앱의 기본 스레드 혹은 `DispatchQueue.main`에서만 
 
 ## 태그
 
-#iOS #iOSInterviewquestions

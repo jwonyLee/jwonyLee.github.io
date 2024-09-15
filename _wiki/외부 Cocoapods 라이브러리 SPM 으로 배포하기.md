@@ -1,17 +1,19 @@
 ---
 layout: wiki
+title: 
+summary: 
 permalink: 1339c97d-6732-f545-94d4-6a7453b9e1b2
 date: 2023-10-23
-topics:
-  - "[[Topics/Software Development]]"
-category: "[[Package Dependency]]"
-tags:
-  - Knowledge
-  - iOS/PackageManager/SPM
-status: "[[Done]]"
-publish: true
-updated: 2024-06-27T11:15:06+09:00
+updated: 2024-06-27 11:15:06 +09:00
+tag: Knowledge iOS/PackageManager/SPM 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # 외부 Cocoapods 라이브러리 SPM 으로 배포하기
 
@@ -101,4 +103,3 @@ let package = Package(
 
 - [swift - How can I get checksum for a Binary Package? - Stack Overflow](https://stackoverflow.com/questions/68529771/how-can-i-get-checksum-for-a-binary-package)
 - [Distribute binary frameworks as Swift packages - WWDC20 - Videos - Apple Developer](https://developer.apple.com/videos/play/wwdc2020/10147)
-- [stleamist/NMapsMap-SwiftPM: SwiftPM을 지원하는 iOS용 네이버 지도 SDK의 비공식 미러 저장소](https://github.com/stleamist/NMapsMap-SwiftPM)

@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] 커스텀 셀 적용하기"
+title: 커스텀 셀 적용하기
+summary: 
 permalink: e6ad015d-77c7-a653-dd35-5830c489dcd0
-publish: true
 date: 2021-04-16
+updated: 2021-04-16
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] 커스텀 셀 적용하기
 
@@ -23,4 +32,3 @@ collectionView.register(nib, forCellWithReusepermalink: CustomCollectionViewCell
 
 ## 태그
 
-#iOS/UICollectionView

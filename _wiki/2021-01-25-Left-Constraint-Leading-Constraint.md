@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] Left Constraint 와 Leading Constraint 의 차이점을 설명하시오."
+title: Left Constraint 와 Leading Constraint 의 차이점을 설명하시오.
+summary: 
 permalink: 1cf039e2-3425-0ddb-02e8-a054c8a9f7b9
-publish: true
 date: 2021-01-25
+updated: 2021-01-25
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] Left Constraint 와 Leading Constraint 의 차이점을 설명하시오.
 
@@ -23,4 +32,3 @@ date: 2021-01-25
 
 ## 태그
 
-#iOS/Autolayout #iOSInterviewquestions

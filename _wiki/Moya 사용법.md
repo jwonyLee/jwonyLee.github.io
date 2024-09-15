@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] Moya 사용법"
+title: Moya 사용법
+summary: 
 permalink: 1ff142a9-0d9f-cb69-7893-6ed85e7501cc
-publish: true
 date: 2022-03-22
+updated: 2022-03-22
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 ## 기록
 
@@ -78,4 +87,3 @@ provider.rx.request(Service.something)
 
 ## 태그
 
-#iOS/Moya #iOS/Network 

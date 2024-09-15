@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[Book] 제대로 배우는 수학적 최적화"
+title: 제대로 배우는 수학적 최적화
+summary: 
 permalink: 65ef6f13-238e-376b-c5d8-423601f482a5
-publish: true
 date: 2021-10-27
+updated: 2021-10-27
+tag: Book 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 <p align="center">
 <img alt="제대로 배우는 수학적 최적화 표지" src="/assets/img/mathematical-optimization/math-book.jpg"><br />
@@ -45,4 +54,3 @@ date: 2021-10-27
 
 ## 태그
 
-#서평

@@ -1,11 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] DateFormatter 는 비싸다."
+title: DateFormatter 는 비싸다.
+summary: 
 permalink: e8ed064c-4163-90c1-170a-a1d09ecb6748
-publish: true
-status: done
 date: 2022-09-18
+updated: 2022-09-18
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 지난 스프린트에서 A 라는 화면을 MVC 에서 ReactorKit 으로 리팩토링했다.
 
@@ -104,4 +112,3 @@ return StandardDateFormatter.shared.string(from: date) + " " + TimeFormatter.sha
 
 ## 태그
 
-#iOS/DateFormatter 

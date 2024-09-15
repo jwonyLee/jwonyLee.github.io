@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[Swift] 중첩 클로저의 캡처 리스트"
+title: 중첩 클로저의 캡처 리스트
+summary: 
 permalink: 6e52590c-ff19-5ed6-6c98-ea043d0ef93a
-publish: true
 date: 2022-01-25
+updated: 2022-01-25
+tag: Swift 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 프로젝트에서 아래의 코드를 작성했다.
 
@@ -62,4 +71,3 @@ DispatchQueue.main.async {
 
 ## 태그
 
-#Swift

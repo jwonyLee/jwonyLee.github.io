@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[Objective-C] ARC 대신 Manual Reference Count 방식으로 구현할 때 꼭 사용해야 하는 메서드들을 쓰고 역할을 설명하시오."
+title: ARC 대신 Manual Reference Count 방식으로 구현할 때 꼭 사용해야 하는 메서드들을 쓰고 역할을 설명하시오.
+summary: 
 permalink: cddfe26b-169d-567a-5382-8ae53ec547e2
-publish: true
 date: 2021-02-04
+updated: 2021-02-04
+tag: Objective-C 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[Objective-C] ARC 대신 Manual Reference Count 방식으로 구현할 때 꼭 사용해야 하는 메서드들을 쓰고 역할을 설명하시오.
 
@@ -43,4 +52,3 @@ TheClass *newObject = [[TheClass alloc] init];
 
 ## 태그
 
-#Objective-C/ARC #iOSInterviewquestions

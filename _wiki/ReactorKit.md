@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] ReactorKit"
+title: ReactorKit
+summary: 
 permalink: 10bb6466-6b17-6b9d-fcc7-09e3f262cdb1
-publish: true
 date: 2022-07-17
+updated: 2022-07-17
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 > **Note**
 > ReactorKit 공식문서를 참고하여 정리한 글입니다.
@@ -270,4 +279,3 @@ oldMessagePulse.value == messagePulse.value // true
 
 ## 태그
 
-#iOS/Framework/ReactorKit #iOS/Architecture 

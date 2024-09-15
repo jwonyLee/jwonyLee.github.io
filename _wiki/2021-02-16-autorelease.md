@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[Objective-C] 특정 객체를 autorelease 하기 위해 필요한 사항과 과정을 설명하시오."
+title: 특정 객체를 autorelease 하기 위해 필요한 사항과 과정을 설명하시오.
+summary: 
 permalink: 8c462797-aaee-445d-efdc-b532b964984f
-publish: true
 date: 2021-02-16
+updated: 2021-02-16
+tag: Objective-C 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[Objective-C] 특정 객체를 autorelease 하기 위해 필요한 사항과 과정을 설명하시오.
 
@@ -48,4 +57,3 @@ Person *aPerson = [[Person alloc] init];
 
 ## 태그
 
-#Objective-C/ARC #iOSInterviewquestions

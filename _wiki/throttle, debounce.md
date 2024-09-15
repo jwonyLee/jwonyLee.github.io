@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[RxSwift] throttle, debounce"
+title: throttle, debounce
+summary: 
 permalink: 255d538c-8044-4bbd-05a9-c125b5d505ee
-publish: true
 date: 2022-03-06
+updated: 2022-03-06
+tag: RxSwift 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 ## 기록
 
@@ -74,4 +83,3 @@ searchBar.rx.text.orEmpty
 
 ## 태그
 
-#iOS/RxSwift

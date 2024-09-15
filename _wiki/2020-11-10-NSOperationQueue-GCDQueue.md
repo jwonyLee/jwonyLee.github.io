@@ -1,9 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] NSOperationQueue 와 GCD Queue 의 차이점을 설명하시오."
+title: NSOperationQueue 와 GCD Queue 의 차이점을 설명하시오.
+summary: 
 permalink: 7a5cb9b6-0365-2deb-31ac-8867bdb3184a
-publish: true
+date: 2020-11-10
+updated: 2020-11-10
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] NSOperationQueue 와 GCD Queue 의 차이점을 설명하시오.
 
@@ -46,4 +56,3 @@ NSOperation 객체의 우선 순위 및 준비 상태에 따라 대기열에 있
 
 ## 태그
 
-#iOS #iOSInterviewquestions

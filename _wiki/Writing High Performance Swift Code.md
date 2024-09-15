@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[Swift] Writing High Performance Swift Code"
+title: Writing High Performance Swift Code
+summary: 
 permalink: 34dea93e-05e9-9d47-f058-328b54789fd3
-publish: true
 date: 2022-05-12
+updated: 2022-05-12
+tag: Swift 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 > [Writing High-Performance Swift Code](https://github.com/apple/swift/blob/main/docs/OptimizationTips.rst#writing-high-performance-swift-code)를 읽고 정리했습니다.
 
@@ -252,4 +261,3 @@ protocol Pinable: AnyObject {
 
 ## 태그
 
-#Swift

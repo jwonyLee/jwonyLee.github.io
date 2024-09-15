@@ -1,9 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] 앱이 foreground에 있을 때와 background에 있을 때 어떤 제약사항이 있나요?"
+title: 앱이 foreground에 있을 때와 background에 있을 때 어떤 제약사항이 있나요?
+summary: 
 permalink: 2163eba4-0877-e153-25c7-2ea70a310db8
-publish: true
+date: 2020-10-23
+updated: 2020-10-23
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] 앱이 foreground에 있을 때와 background에 있을 때 어떤 제약사항이 있나요?
 
@@ -32,4 +42,3 @@ publish: true
 
 ## 태그
 
-#iOS #iOSInterviewquestions

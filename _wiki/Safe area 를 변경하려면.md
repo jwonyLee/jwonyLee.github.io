@@ -1,10 +1,19 @@
 ---
 layout: wiki
 title: Safe area 를 변경하려면
+summary: 
 permalink: 7cfc1bcf-a5a7-b153-4d67-19da5e04a55c
-publish: true
-updated: 2024-04-13T20:05:38+09:00
+date: 2024-04-13 20:05:38 +09:00
+updated: 2024-04-13 20:05:38 +09:00
+tag: 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # Safe area 변경하기
 
@@ -18,4 +27,3 @@ updated: 2024-04-13T20:05:38+09:00
 
 ## 태그
 
-#iOS/Autolayout

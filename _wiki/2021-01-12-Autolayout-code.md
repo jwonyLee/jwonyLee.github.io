@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] 오토레이아웃을 코드로 작성하는 방법은 무엇인가? (3가지)"
+title: 오토레이아웃을 코드로 작성하는 방법은 무엇인가? (3가지)
+summary: 
 permalink: 31b7b10d-02ae-8cf6-064d-5bfb2cc11000
-publish: true
 date: 2021-04-16
+updated: 2021-04-16
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] 오토레이아웃을 코드로 작성하는 방법은 무엇인가? (3가지)
 
@@ -71,4 +80,3 @@ NSLayoutConstraint.activate(constraints)
 
 ## 태그
 
-#iOS/Autolayout #iOSInterviewquestions

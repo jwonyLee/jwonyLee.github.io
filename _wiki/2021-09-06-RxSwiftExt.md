@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[RxSwift] RxSwiftExt 일부 연산자 정리"
+title: RxSwiftExt 일부 연산자 정리
+summary: 
 permalink: 847e6d25-0406-9f55-65ea-71fe4ead4c2f
-publish: true
 date: 2021-09-06
+updated: 2021-09-06
+tag: RxSwift 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[RxSwift] RxSwiftExt 일부 연산자 정리
 
@@ -139,4 +148,3 @@ _ = Observable.of(
 
 ## 태그
 
-#iOS/RxSwift #iOS/RxSwiftExt

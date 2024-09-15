@@ -1,9 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] 앱 화면의 콘텐츠를 표시하는 로직과 관리를 담당하는 객체를 무엇이라고 하는가?"
+title: 앱 화면의 콘텐츠를 표시하는 로직과 관리를 담당하는 객체를 무엇이라고 하는가?
+summary: 
 permalink: 6f6c96ec-db60-3f68-0158-dca30f046316
-publish: true
+date: 2020-12-28
+updated: 2020-12-28
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] 앱 화면의 콘텐츠를 표시하는 로직과 관리를 담당하는 객체를 무엇이라고 하는가?
 
@@ -41,4 +51,3 @@ class UIViewController: UIResponder
 
 ## 태그
 
-#iOS/UIViewController #iOSInterviewquestions

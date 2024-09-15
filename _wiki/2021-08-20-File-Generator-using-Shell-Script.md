@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[Shell Script] 터미널에서 명령어로 마크다운 파일 만들기"
+title: 터미널에서 명령어로 마크다운 파일 만들기
+summary: 
 permalink: 1114d9a9-1eb1-1bf3-4819-6612d416beda
-publish: true
 date: 2021-08-20
+updated: 2021-08-20
+tag: Shell Script 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[Shell Script] 터미널에서 명령어로 마크다운 파일 만들기
   
@@ -203,4 +212,3 @@ $ post "File Generator"
 
 ## 태그
 
-#Shell #Jekyll

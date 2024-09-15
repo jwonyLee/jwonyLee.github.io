@@ -1,9 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] Swift의 클로저와 Objective-C의 블록은 어떤 차이가 있는가?"
+title: Swift의 클로저와 Objective-C의 블록은 어떤 차이가 있는가?
+summary: 
 permalink: 486edc27-d3f9-bed4-099e-f5983ff97baa
-publish: true
+date: 2020-12-29
+updated: 2020-12-29
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] Swift의 클로저와 Objective-C의 블록은 어떤 차이가 있는가?
 
@@ -84,4 +94,3 @@ block();
 
 ## 태그
 
-#Swift #iOSInterviewquestions

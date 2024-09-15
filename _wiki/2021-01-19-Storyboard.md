@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] 스토리보드를 이용했을때의 장단점을 설명하시오."
+title: 스토리보드를 이용했을때의 장단점을 설명하시오.
+summary: 
 permalink: c5dfccf5-2b57-6f88-4b0b-c6b25bd2a68d
-publish: true
 date: 2021-01-04
+updated: 2021-01-04
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] 스토리보드를 이용했을때의 장단점을 설명하시오.
 
@@ -30,4 +39,3 @@ date: 2021-01-04
 
 ## 태그
 
-#iOS/Autolayout #iOSInterviewquestions

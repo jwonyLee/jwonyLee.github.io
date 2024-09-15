@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "Identifiable"
+title: Identifiable
+summary: 
 permalink: 23541f6b-c82d-d953-2284-dde1ad84ec46
-publish: true
-status: maintenance
+date: 2024-01-01
+updated: 2024-01-01
+tag: Swift
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # Identifiable
 
@@ -24,4 +33,3 @@ class User: Identifiable {
 
 ## 태그
 
-#Swift

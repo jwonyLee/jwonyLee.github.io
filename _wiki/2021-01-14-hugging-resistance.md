@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] hugging, resistance에 대해서 설명하시오."
+title: hugging, resistance에 대해서 설명하시오.
+summary: 
 permalink: 1aa547a5-41c4-8dd1-b435-17560674ca3a
-publish: true
 date: 2021-01-14
+updated: 2021-01-14
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] hugging, resistance에 대해서 설명하시오.
 
@@ -42,4 +51,3 @@ Content hugging은 기본값이 250, Compression Resistance는 기본값이 750�
 
 ## 태그
 
-#iOS/Autolayout #iOSInterviewquestions

@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] scene delegate에 대해 설명하시오."
+title: scene delegate에 대해 설명하시오.
+summary: 
 permalink: 1da5c7c4-77b5-078d-7d51-cb4af2a594be
-publish: true
 date: 2021-03-23
+updated: 2021-03-23
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] scene delegate에 대해 설명하시오.
 
@@ -74,4 +83,3 @@ scene이 background로 갈 때마다 iOS는 리소스를 확보하기 위해 sce
 
 ## 태그
 
-#iOS #iOSInterviewquestions

@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] 네비게이션 타이틀 변경"
+title: 네비게이션 타이틀 변경
+summary: 
 permalink: a0ff24e0-518a-643b-b9e1-4d0f26ae6faa
-publish: true
 date: 2021-04-16
+updated: 2021-04-16
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] 네비게이션 타이틀 변경
 
@@ -56,4 +65,3 @@ class ViewController: UITabBarController {
 
 ## 태그
 
-#iOS/UINavigationController

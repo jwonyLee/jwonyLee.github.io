@@ -1,17 +1,19 @@
 ---
 layout: wiki
+title: 
+summary: 
 permalink: 5c700d5d-fd29-8292-6da1-c293485aabc2
 date: 2020-10-07
-topics:
-  - "[[Software Development]]"
-category: "[[Swift]]"
-tags:
-  - Swift
-  - iOSInterviewquestions
-  - Knowledge
-status: "[[Done]]"
-publish: true
+updated: 2020-10-07
+tag: Swift iOSInterviewquestions Knowledge 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[Swift] instance 메서드와 class 메서드의 차이점을 설명하시오.
 

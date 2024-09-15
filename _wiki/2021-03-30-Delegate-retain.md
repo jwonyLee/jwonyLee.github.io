@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[Swift] Delegate란 무언인가 설명하고, retain 되는지 안되는지 그 이유를 함께 설명하시오."
+title: Delegate란 무언인가 설명하고, retain 되는지 안되는지 그 이유를 함께 설명하시오.
+summary: 
 permalink: b859a722-c185-18ca-40e3-ff2874327645
-publish: true
 date: 2021-03-30
+updated: 2021-03-30
+tag: Swift 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[Swift] Delegate란 무언인가 설명하고, retain 되는지 안되는지 그 이유를 함께 설명하시오.
 
@@ -61,4 +70,3 @@ some2 = nil
 
 ## 태그
 
-#Swift #iOSInterviewquestions

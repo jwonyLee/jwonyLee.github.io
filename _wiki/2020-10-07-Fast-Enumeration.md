@@ -1,17 +1,19 @@
 ---
 layout: wiki
+title: 
+summary: 
 permalink: 9740e81d-a83f-61b9-05b2-bbae589cb348
 date: 2020-10-07
-topics:
-  - "[[Software Development]]"
-category: "[[Swift]]"
-tags:
-  - Swift/Enum
-  - iOSInterviewquestions
-  - Knowledge
-status: "[[Done]]"
-publish: true
+updated: 2020-10-07
+tag: Swift/Enum iOSInterviewquestions Knowledge 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[Swift] Fast Enumeration 이란 무엇인지 설명하시오.
 

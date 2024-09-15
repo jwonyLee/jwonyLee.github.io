@@ -1,10 +1,19 @@
 ---
 layout: wiki
 title: '[iOS] Understanding Auto Layout'
+summary: 
 permalink: 1ef8e42c-7d55-bc67-cbce-85cd58b7a910
-publish: true
 date: 2021-01-24
+updated: 2021-01-24
+tag: 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] Understanding Auto Layout
 
@@ -78,4 +87,3 @@ date: 2021-01-24
 
 ## 태그
 
-#iOS/Autolayout 

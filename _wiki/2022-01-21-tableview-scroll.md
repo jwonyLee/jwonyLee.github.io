@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] 원하는 위치의 셀로 이동"
+title: 원하는 위치의 셀로 이동
+summary: 
 permalink: af9b3263-31b2-74e1-2656-1c20982834e6
-publish: true
 date: 2022-01-21
+updated: 2022-01-21
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 ## 상황
 - A 화면: 썸네일로 이루어진 컬렉션 뷰가 있다.
@@ -55,4 +64,3 @@ A 화면의 특정 썸네일을 선택하면 B 화면으로 이동한다. 이 �
 
 ## 태그
 
-#iOS/UITableView #iOS/Life_Cycle

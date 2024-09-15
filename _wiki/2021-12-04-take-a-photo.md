@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] 사진 촬영 기능 구현하기"
+title: 사진 촬영 기능 구현하기
+summary: 
 permalink: ad896c4a-9cb1-57eb-6f2d-ed0f91110a7f
-publish: true
 date: 2021-12-04
+updated: 2021-12-04
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 ```
 🎯 UIImagePickerController를 이용해서 사진 촬영 기능 구현하기
@@ -264,4 +273,3 @@ extension UIImagePickerController {
 
 ## 태그
 
-#iOS/UIImagePickerController

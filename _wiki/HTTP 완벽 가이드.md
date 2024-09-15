@@ -1,10 +1,19 @@
 ---
 layout: wiki
 title: HTTP 완벽 가이드
+summary: 
 permalink: 35d2bb9e-3cea-3de7-4405-27f2965e2716
-publish: true
-updated: 2024-05-20T22:17:38+09:00
+date: 2024-05-20 22:17:38 +09:00
+updated: 2024-05-20 22:17:38 +09:00
+tag: 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # HTTP 완벽 가이드
 
@@ -25,4 +34,3 @@ updated: 2024-05-20T22:17:38+09:00
 
 ## 태그
 
-#Network/HTTP #Book/2023

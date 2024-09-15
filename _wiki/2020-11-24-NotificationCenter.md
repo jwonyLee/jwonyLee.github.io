@@ -1,9 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] NotificationCenter 동작 방식과 활용 방안에 대해 설명하시오."
+title: NotificationCenter 동작 방식과 활용 방안에 대해 설명하시오.
+summary: 
 permalink: 7770f268-14af-f587-7771-54a2bb9a57b4
-publish: true
+date: 2020-11-24
+updated: 2020-11-24
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] NotificationCenter 동작 방식과 활용 방안에 대해 설명하시오.
 
@@ -32,4 +42,3 @@ publish: true
 
 ## 태그
 
-#iOS/NotificationCenter #iOSInterviewquestions

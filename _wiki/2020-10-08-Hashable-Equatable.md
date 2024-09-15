@@ -1,9 +1,19 @@
 ---
 layout: wiki
-title: "[Swift] Hashable이 무엇이고, Equatable을 왜 상속해야 하는지 설명하시오."
+title: Hashable이 무엇이고, Equatable을 왜 상속해야 하는지 설명하시오.
+summary: 
 permalink: cc011585-af44-56be-eb26-97493639019e
-publish: true
+date: 2020-10-08
+updated: 2020-10-08
+tag: Swift 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[Swift] Hashable이 무엇이고, Equatable을 왜 상속해야 하는지 설명하시오.
 
@@ -53,4 +63,3 @@ Swift 표준 라이브러리의 대부분의 기본 타입은 `Equable`을 준�
 
 ## 태그
 
-#Swift/Protocol #iOSInterviewquestions

@@ -1,10 +1,19 @@
 ---
 layout: wiki
 title: RxSwift.Completable
+summary: 
 permalink: fc8764e8-1faa-3b9c-2220-92d0898700d0
-publish: true
 date: 2021-05-31
+updated: 2021-05-31
+tag: 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # RxSwift.Completable
 
@@ -13,4 +22,3 @@ date: 2021-05-31
 
 ## 태그
 
-#iOS/RxSwift 

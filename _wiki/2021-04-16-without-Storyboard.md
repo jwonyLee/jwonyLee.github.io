@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] 스토리보드없이 코드로 개발하기"
+title: 스토리보드없이 코드로 개발하기
+summary: 
 permalink: 8e6f8bf9-13fb-aef8-f6d5-701c02bc7ec2
-publish: true
 date: 2021-04-16
+updated: 2021-04-16
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # \[iOS] 스토리보드없이 코드로 개발하기
 
@@ -47,4 +56,3 @@ class ViewController: UITabBarController {
 
 ## 태그
 
-#iOS/Troubleshooting 

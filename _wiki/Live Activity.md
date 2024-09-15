@@ -1,10 +1,19 @@
 ---
 layout: wiki
-title: "[iOS] Live Activity"
+title: Live Activity
+summary: 
 permalink: dda861ad-c5d0-9e0b-e516-e0ea209f7761
-publish: true
 date: 2022-08-13
+updated: 2022-08-13
+tag: iOS 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 ```
 이 글은 사내에서 발표한 내용을 재구성했습니다. 잘못된 부분이 있으면 댓글로 남겨주세요.
@@ -260,4 +269,3 @@ Live Activity 는 최대 8시간까지 활성화될 수 있다. 그 이상의 �
 
 ## 태그
 
-#iOS/ActivityKit

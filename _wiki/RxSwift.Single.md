@@ -1,11 +1,19 @@
 ---
 layout: wiki
 title: RxSwift.Single
+summary: 
 permalink: 22b54afe-9f09-0d87-860f-a50de5b642ae
-publish: true
-status: maintenance
 date: 2021-05-31
+updated: 2021-05-31
+tag: 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 # RxSwift.Single
 
@@ -18,4 +26,3 @@ date: 2021-05-31
 
 ## 태그
 
-#iOS/RxSwift 

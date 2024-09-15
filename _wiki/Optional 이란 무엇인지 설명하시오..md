@@ -1,17 +1,19 @@
 ---
 layout: wiki
+title: 
+summary: Optional 이란 무엇인지 설명하시오.
 permalink: 7972af36-2e95-e5a9-936b-b2d8008d0dd2
 date: 2020-09-08
-topics:
-  - "[[Topics/Software Development]]"
-category: "[[Swift]]"
-tags:
-  - Swift/Optional
-  - iOSInterviewquestions
-  - Knowledge
-status: "[[Done]]"
-publish: true
+updated: 2020-09-08
+tag: Swift/Optional iOSInterviewquestions Knowledge 
+public: true
+parent: 
+latex: true
+comment: true
 ---
+
+* TOC
+{:toc}
 
 ```
 💡 옵셔널 체이닝 등 일부 빠진 개념은 좀 더 공부하고서 채울 예정
