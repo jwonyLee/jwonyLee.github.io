@@ -1,11 +1,11 @@
 ---
 layout: wiki
-title: 
+title: Fast Enumeration 이란 무엇인지 설명하시오.
 summary: 
 permalink: 9740e81d-a83f-61b9-05b2-bbae589cb348
 date: 2020-10-07
 updated: 2020-10-07
-tag: Swift/Enum iOSInterviewquestions Knowledge 
+tag: Swift Enum iOSInterviewquestions  
 public: true
 parent: 
 latex: true

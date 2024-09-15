@@ -66,6 +66,3 @@ func emojiViewDidSelectEmoji(_ emoji: String, emojiView: EmojiView) {
 ## 참고 자료
 
 - [How do you get a signal every time a UITextField text property changes in RxSwift](https://stackoverflow.com/questions/45633173/how-do-you-get-a-signal-every-time-a-uitextfield-text-property-changes-in-rxswif)
-
-## 태그
-

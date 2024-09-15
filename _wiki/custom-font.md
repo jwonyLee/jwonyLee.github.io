@@ -264,6 +264,3 @@ struct Pretendard: Fontable {
 ## 참고 자료
 
 - [Enum cases as protocol witnesses – available from Swift 5.3](https://www.hackingwithswift.com/swift/5.3/enum-protocol-witnesses)
-
-## 태그
-

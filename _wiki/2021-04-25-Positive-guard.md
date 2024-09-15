@@ -60,6 +60,3 @@ guard pices.isNotEmpty else {
 ## 참고 자료
 
 - [깔끔한 스위프트 코드를 위한 5가지 팁](https://betterprogramming.pub/5-tips-to-write-clean-swift-code-2ef287a11500)
-
-## 태그
-

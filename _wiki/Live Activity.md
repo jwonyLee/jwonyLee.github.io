@@ -266,6 +266,3 @@ Live Activity 는 최대 8시간까지 활성화될 수 있다. 그 이상의 �
 
 - [ActivityKit](https://developer.apple.com/documentation/ActivityKit)
 - [Displaying live data on the Lock Screen with Live Activities](https://developer.apple.com/documentation/activitykit/displaying-live-data-on-the-lock-screen-with-live-activities)
-
-## 태그
-

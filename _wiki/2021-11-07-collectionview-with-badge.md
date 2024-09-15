@@ -161,6 +161,3 @@ func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElem
 - [NSCollectionLayoutAnchor - Apple Developer Documentation](https://developer.apple.com/documentation/uikit/nscollectionlayoutanchor)
 - [register(_:forSupplementaryViewOfKind:withReusepermalink:) - Apple Developer Documentation](https://developer.apple.com/documentation/uikit/uicollectionview/1618103-register)
 - [UICollectionReusableView - Apple Developer Documentation](https://developer.apple.com/documentation/uikit/uicollectionreusableview)
-
-## 태그
-

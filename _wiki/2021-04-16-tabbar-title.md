@@ -62,6 +62,3 @@ class ViewController: UITabBarController {
     }
 }
 ```
-
-## 태그
-

@@ -84,6 +84,3 @@ comment: true
 ![Auto Layout](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/Art/layout_constraints_2x.png)
 
 특정 동작을 만들기 위해 제약 조건 집합을 설계하는 데 사용되는 논리는 절차적 또는 객체지향 코드를 작성하는 데 사용되는 논리와 매우 다르다.
-
-## 태그
-

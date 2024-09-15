@@ -1,11 +1,11 @@
 ---
 layout: wiki
-title: 
+title: TableView.reloadSections(_:with:)
 summary: 
 permalink: 6818f72c-8679-19ea-5849-0fa044b8e138
 date: 2020-09-14
 updated: 2020-09-14
-tag: iOS/UIKit/UITableView iOSInterviewquestions Knowledge 
+tag: iOS UIKit UITableView iOSInterviewquestions  
 public: true
 parent: 
 latex: true

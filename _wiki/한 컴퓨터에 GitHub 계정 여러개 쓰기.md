@@ -1,6 +1,6 @@
 ---
 layout: wiki
-title: 
+title: 한 컴퓨터에 GitHub 계정 여러개 쓰기
 summary: 
 permalink: 0356f2ee-7e47-af38-047f-c9f13e392d73
 date: 2022-12-28

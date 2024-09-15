@@ -61,6 +61,3 @@ iOS 애플리케이션은 국제화 되어야하며 지원하는 각 언어에 �
 ## 참고 자료
 
 - [Bundle Structures](https://developer.apple.com/library/archive/documentation/CoreFoundation/Conceptual/CFBundles/BundleTypes/BundleTypes.html#//apple_ref/doc/uid/10000123i-CH101-SW1)
-
-## 태그
-

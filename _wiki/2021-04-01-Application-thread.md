@@ -28,6 +28,3 @@ UIKit 클래스는 앱의 기본 스레드 혹은 `DispatchQueue.main`에서만 
 
 - [Why must UIKit operations be performed on the main thread? - Stack Overflow](https://stackoverflow.com/questions/18467114/why-must-uikit-operations-be-performed-on-the-main-thread)
 - [UIKit - Apple Developer Documentation](https://developer.apple.com/documentation/uikit)
-
-## 태그
-

@@ -443,6 +443,3 @@ Derivation 항목에 표현식을 적으면 된다. 우리는 post의 개수를 
 ## 참고 자료
 
 - [Diagnosing Memory, Thread, and Crash Issues Early](https://developer.apple.com/documentation/xcode/diagnosing-memory-thread-and-crash-issues-early)
-
-## 태그
-

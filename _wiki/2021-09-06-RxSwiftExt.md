@@ -145,6 +145,3 @@ _ = Observable.of(
 .debug("powers of 2")
 .subscribe() // Emits [2, 8, 32] and [4, 16]
 ```
-
-## 태그
-

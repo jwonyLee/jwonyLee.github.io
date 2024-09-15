@@ -36,6 +36,3 @@ comment: true
 
 - [Pros and Cons of Working with Storyboards](https://www.mobindustry.net/pros-and-cons-of-working-with-storyboards/)
 - [Storyboards - Pros & Cons](https://www.slideshare.net/dasdom/storyboards-pros-cons)
-
-## 태그
-

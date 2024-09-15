@@ -109,6 +109,3 @@ return StandardDateFormatter.shared.string(from: date) + " " + TimeFormatter.sha
 
 - [How expensive is DateFormatter \| Sarunw](https://sarunw.com/posts/how-expensive-is-dateformatter/)
 - [How to use DateFormatter in Swift \| Sarunw](https://sarunw.com/posts/how-to-use-dateformatter/)
-
-## 태그
-

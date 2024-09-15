@@ -17,7 +17,4 @@ comment: true
 
 # RxSwift.Maybe
 
-[[knowledge/RxSwift.Observable|Observable]]이 성공적으로 완료되면 값을 방출하지 않을 수 있다는 유일한 차이점을 제외하고는 [[knowledge/RxSwift.Single|Single]]과 매우 유사하다.
-
-## 태그
-
+[[RxSwift.Observable]]이 성공적으로 완료되면 값을 방출하지 않을 수 있다는 유일한 차이점을 제외하고는 [[RxSwift.Single]]과 매우 유사하다.

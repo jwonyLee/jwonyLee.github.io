@@ -79,6 +79,3 @@ class Apartment {
 ## 참고 자료
 
 - [Automatic Reference Counting - The Swift Programming Language (Swift 5.3)](https://docs.swift.org/swift-book/LanguageGuide/AutomaticReferenceCounting.html)
-
-## 태그
-

@@ -91,6 +91,3 @@ block();
 ## 참고 자료
 
 - [Swift Closure vs. Objective-C Block 차이점 비교 분석](https://www.letmecompile.com/swift-closure-vs-objective-c-block/)
-
-## 태그
-

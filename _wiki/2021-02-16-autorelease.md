@@ -54,6 +54,3 @@ Person *aPerson = [[Person alloc] init];
 - [Objective-C의 autorelease 이해하기(1)](https://nephilim.tistory.com/120)
 - [NSAutoreleasePool - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/nsautoreleasepool)
 - [[Objective-C] Objective-C의 메모리 관리 방법 · Wireframe](https://soooprmx.com/archives/4174)
-
-## 태그
-

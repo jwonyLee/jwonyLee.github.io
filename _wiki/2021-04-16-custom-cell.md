@@ -29,6 +29,3 @@ collectionView.register(CustomCollectionViewCell.self, forCellWithReusepermalink
 let nib = UINib(nibName: "CustomCollectionViewCell", bundle: nil)
 collectionView.register(nib, forCellWithReusepermalink: CustomCollectionViewCell.identifier)
 ```
-
-## 태그
-

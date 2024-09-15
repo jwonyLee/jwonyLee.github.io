@@ -1,11 +1,11 @@
 ---
 layout: wiki
-title: 
-summary: Optional 이란 무엇인지 설명하시오.
+title: Optional 이란 무엇인지 설명하시오.
+summary:
 permalink: 7972af36-2e95-e5a9-936b-b2d8008d0dd2
 date: 2020-09-08
 updated: 2020-09-08
-tag: Swift/Optional iOSInterviewquestions Knowledge 
+tag: Swift Optional iOSInterviewquestions  
 public: true
 parent: 
 latex: true

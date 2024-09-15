@@ -39,6 +39,3 @@ comment: true
 
 ## 참고 자료
 - [Using Notification Center In Swift (How To) - LearnAppMaking](https://learnappmaking.com/notification-center-how-to-swift/)
-
-## 태그
-

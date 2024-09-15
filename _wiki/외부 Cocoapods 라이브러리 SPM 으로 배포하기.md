@@ -1,11 +1,11 @@
 ---
 layout: wiki
-title: 
+title: 외부 Cocoapods 라이브러리 SPM 으로 배포하기
 summary: 
 permalink: 1339c97d-6732-f545-94d4-6a7453b9e1b2
 date: 2023-10-23
 updated: 2024-06-27 11:15:06 +09:00
-tag: Knowledge iOS/PackageManager/SPM 
+tag: iOS PackageManager SPM
 public: true
 parent: 
 latex: true

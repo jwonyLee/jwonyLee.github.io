@@ -276,6 +276,3 @@ oldMessagePulse.value == messagePulse.value // true
 ## 참고 자료
 
 - [ReactorKit/ReactorKit: A library for reactive and unidirectional Swift applications](https://github.com/ReactorKit/ReactorKit)
-
-## 태그
-

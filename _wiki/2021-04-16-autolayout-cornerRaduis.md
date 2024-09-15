@@ -42,6 +42,3 @@ override func viewWillLayoutSubviews() {
 ## 참고 자료
 
 - [Setting corner radius through viewDidAppear() or viewWillLayoutSubviews()?](https://stackoverflow.com/questions/53971385/setting-corner-radius-through-viewdidappear-or-viewwilllayoutsubviews)
-
-## 태그
-

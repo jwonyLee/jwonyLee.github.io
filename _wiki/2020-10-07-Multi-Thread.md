@@ -5,7 +5,7 @@ summary:
 permalink: 1ed82824-eb50-f1aa-3b78-7d9d67ca19f5
 date: 2020-10-07
 updated: 2020-10-07
-tag: Swift Swift/Thread iOSInterviewquestions Knowledge 
+tag: Swift Thread iOSInterviewquestions  
 public: true
 parent: 
 latex: true

@@ -84,6 +84,3 @@ provider.rx.request(Service.something)
 ## 참고 자료
 
 - [Moya/Moya: Network abstraction layer written in Swift.](https://github.com/Moya/Moya)
-
-## 태그
-

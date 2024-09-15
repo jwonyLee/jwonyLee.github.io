@@ -30,6 +30,3 @@ class User: Identifiable {
 ## 참고 자료
 
 - https://developer.apple.com/documentation/swift/identifiable
-
-## 태그
-

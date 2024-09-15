@@ -80,6 +80,3 @@ searchBar.rx.text.orEmpty
 ## 참고 자료
 
 - [Rxswift Debounce / Throttle :: kkimin's swift](https://kkimin.tistory.com/43?category=955083)
-
-## 태그
-

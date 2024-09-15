@@ -49,6 +49,3 @@ TheClass *newObject = [[TheClass alloc] init];
 
 - [About Memory Management](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/MemoryMgmt.html)
 - [retain - Apple Developer Documentation](https://developer.apple.com/documentation/objectivec/1418956-nsobject/1571946-retain)
-
-## 태그
-

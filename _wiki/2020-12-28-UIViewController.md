@@ -48,6 +48,3 @@ class UIViewController: UIResponder
 ## 참고 자료
 
 - [The Role of View Controllers](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/index.html#//apple_ref/doc/uid/TP40007457)
-
-## 태그
-

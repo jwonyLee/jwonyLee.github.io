@@ -114,6 +114,3 @@ func fetchThumbnail(for id: String) async throws -> UIImage {
 ### 참고 자료
 
 -   [Meet async/await in Swift - WWDC 2021](https://developer.apple.com/videos/play/wwdc2021/10132/)
-
-## 태그
-

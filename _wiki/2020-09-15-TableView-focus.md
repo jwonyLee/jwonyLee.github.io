@@ -1,11 +1,11 @@
 ---
 layout: wiki
-title: 
+title: 테이블뷰 셀 터치 후, 다른 뷰로 이동한 뒤에 다시 돌아왔을 때 포커스 없애기
 summary: 
 permalink: 9725d37e-e0e5-a1ed-f4fc-97a20479f6c8
 date: 2020-09-15
 updated: 2020-09-15
-tag: iOS/UIKit/UITableView Knowledge 
+tag: iOS UIKit UITableView  
 public: true
 parent: 
 latex: true

@@ -258,6 +258,3 @@ protocol Pinable: AnyObject {
 - [Writing High-Performance Swift Code](https://github.com/apple/swift/blob/main/docs/OptimizationTips.rst#writing-high-performance-swift-code)
 - [Dynamic dispatch - Wikipedia](https://en.wikipedia.org/wiki/Dynamic_dispatch)
 - [Virtual method table - Wikipedia](https://en.wikipedia.org/wiki/Virtual_method_table)
-
-## 태그
-

@@ -221,6 +221,3 @@ View.width <= 0.0 * NotAnAttribute + IntrinsicWidth
 | `Leading`, `Trailing` | 후행(Trailing) 가장자리로 이동하면 값이 증가한다. 왼쪽에서 오른쪽 레이아웃 방향의 경우 오른쪽으로 이동하면 값이 증가한다. 오른쪽에서 왼쪽 레이아웃 방향의 경우 왼쪽으로 이동하면 값이 증가한다. | 이러한 속성은 `Left`, `Right` 및 `Center X` 속성과 만 결합 할 수 있다. |
 | `Left`, `Right` | 오른쪽으로 이동하면 값이 증가한다. | `Left` 및 `Right` 속성을 사용하지 마시오. 대신 `Leading` 및 `Trailing`을 사용하십시오. 이렇게하면 레이아웃이 뷰의 읽기 방향에 맞게 조정된다. 기본적으로 읽기 방향은 사용자가 설정한 현재 언어에 따라 결정된다. 그러나 필요한 경우 이를 재정의 할 수 있다. iOS에서 제약 조건 (제약 조건의 영향을받는 모든 뷰의 가장 가까운 공통 조상)을 보유한 뷰에서 `semanticContentAttribute` 속성을 설정하여 왼쪽에서 오른쪽과 오른쪽에서 왼쪽으로 전환 할 때 콘텐츠의 레이아웃을 뒤집을 지 여부를 지정한다. |
 | `Center X`, `Center Y` | 해석은 방정식의 다른 속성을 기반으로 한다. | `Center X`는 `Center X`, `Leading`, `Trailing`, `Right` 및 `Left` 속성과 결합 될 수 있다. `Center Y`는 `Center Y`, `Top`, `Bottom` 및 `Baseline` 속성과 결합 될 수 있다. |
-
-## 태그
-

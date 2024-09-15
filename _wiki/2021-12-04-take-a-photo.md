@@ -270,6 +270,3 @@ extension UIImagePickerController {
 </p>
 
 끝!
-
-## 태그
-

@@ -24,6 +24,3 @@ comment: true
 ## 참고 자료
 
 - [Positioning content relative to the safe area | Apple Developer Documentation](https://developer.apple.com/documentation/uikit/uiview/positioning_content_relative_to_the_safe_area)
-
-## 태그
-

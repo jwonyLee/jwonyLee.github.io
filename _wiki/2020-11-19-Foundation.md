@@ -41,6 +41,3 @@ comment: true
 ## 참고 자료
 
 - [Foundation - Apple Developer Documentation](https://developer.apple.com/documentation/foundation)
-
-## 태그
-

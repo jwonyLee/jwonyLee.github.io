@@ -31,6 +31,3 @@ comment: true
 The default value of this property is false.
 
 두 가지를 모두 사용해보았을 때 동일한 결과를 보여준다. 그런데, 버튼의 그림자 효과를 넣었을 때 `clipToBounds` 속성을 이용하면 해당 효과가 적용되지 않았고, `masksToBounds`를 사용했을 때 제대로 적용되었다.
-
-## 태그
-

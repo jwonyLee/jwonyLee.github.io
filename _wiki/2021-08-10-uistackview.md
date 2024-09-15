@@ -170,6 +170,3 @@ First Baseline과 Last Baseline은 사진만 봐서는 Top, Bottom과 비슷해�
 
 - [UIStackView - Apple Developer Documentation](https://developer.apple.com/documentation/uikit/uistackview)
 - [Exploring UIStackView Distribution Types](https://spin.atomicobject.com/2016/06/22/uistackview-distribution/)
-
-## 태그
-

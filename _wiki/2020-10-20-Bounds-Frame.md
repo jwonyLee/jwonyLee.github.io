@@ -39,6 +39,3 @@ SuperView의 좌표 시스템 안에서 View의 위치와 크기를 나타냄
 - [iOS ) Frame과 Bounds의 차이 (1/2)](https://zeddios.tistory.com/203)
 - [[iOS] Frame과 Bounds의 차이](https://velog.io/@cskim/iOS-Frame-vs.-Bound-t7k1gdd4kj)
 - [[ios] Bounds vs Frame?](https://baked-corn.tistory.com/81)
-
-## 태그
-

@@ -31,6 +31,3 @@ button.contentHorizontalAlignment = .leading
 ```
 
 이미지를 텍스트의 오른쪽으로 변경하려면 `semanticContentAttribute` 속성을 `.forceRightToLeft`로 변경한다.
-
-## 태그
-

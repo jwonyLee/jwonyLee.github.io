@@ -5,7 +5,7 @@ summary:
 permalink: a6f7c741-4d45-d56e-7c60-aea6037ccc1a
 date: 2024-05-19 19:12:52 +09:00
 updated: 2024-05-19 19:12:52 +09:00
-tag: Knowledge iOS/SwiftUI 삽질 
+tag: iOS SwiftUI 삽질 
 public: true
 parent: 
 latex: true

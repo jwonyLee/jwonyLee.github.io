@@ -53,6 +53,3 @@ class ViewController: UITabBarController {
     
 
 \+ 다른 화면을 추가로 개발하게 되면 뷰 컨트롤러 객체 생성 후 `tabBars`에 추가
-
-## 태그
-

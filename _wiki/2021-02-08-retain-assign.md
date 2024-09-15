@@ -43,6 +43,3 @@ if (obj1 != obj2) {
 
 - [What is the difference between retain & assign?](https://www.mindstick.com/interview/12748/what-is-the-difference-between-retain-assign)
 - [[Obj-C] 접근자 @property, @synthesize, @dynamic / retain, copy, assign, atomic, nonatomic](https://jivepia.tistory.com/81)
-
-## 태그
-

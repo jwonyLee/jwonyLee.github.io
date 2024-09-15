@@ -68,6 +68,3 @@ DispatchQueue.main.async {
 
 - [The Nested Closure Trap. Revisiting [weak self] to avoid retain…](https://medium.com/@almalehdev/the-nested-closure-trap-356a0145b6d)
 - [You don’t (always) need [weak self]](https://medium.com/@almalehdev/you-dont-always-need-weak-self-a778bec505ef)
-
-## 태그
-

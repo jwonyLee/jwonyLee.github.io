@@ -67,6 +67,3 @@ some2 = nil
 ## 참고 자료
 - [[Swift] Retain cycle, weak, unowned [번역]](https://baked-corn.tistory.com/30)
 - [Protocols - The Swift Programming Language](https://docs.swift.org/swift-book/LanguageGuide/Protocols.html)
-
-## 태그
-

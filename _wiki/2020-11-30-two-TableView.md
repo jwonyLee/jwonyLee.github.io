@@ -79,6 +79,3 @@ func register(AnyClass?, forCellReusepermalink: String)
 ## 참고 자료
 
 - [iOS ) 하나의 델리게이트(Delegate)에 여러개의 요소 연결?](https://zeddios.tistory.com/169)
-
-## 태그
-

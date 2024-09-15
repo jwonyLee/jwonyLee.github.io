@@ -46,6 +46,3 @@ button.layer.shouldRasterize = true
 ## 참고 자료
 
 - [How to add a shadow to a UIView](https://www.hackingwithswift.com/example-code/uikit/how-to-add-a-shadow-to-a-uiview)
-
-## 태그
-

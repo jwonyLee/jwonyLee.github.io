@@ -48,6 +48,3 @@ Content hugging은 기본값이 250, Compression Resistance는 기본값이 750�
 - [Anatomy of a Constraint](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/AnatomyofaConstraint.html#//apple_ref/doc/uid/TP40010853-CH9-SW21)
 - [Content hugging vs Compression resistance 차이점 알기!](https://ontheswift.tistory.com/21)
 - [[AutoLayout] Hugging priority와 Compression Resistance priority 비교](https://eunjin3786.tistory.com/43)
-
-## 태그
-

@@ -5,7 +5,7 @@ summary:
 permalink: 794a8fe6-1bd9-f907-b97f-5c8d58f174c9
 date: 2021-04-16
 updated: 2021-04-16
-tag: iOS iOS/UICollectionView 
+tag: iOS UICollectionView 
 public: true
 parent: 
 latex: true

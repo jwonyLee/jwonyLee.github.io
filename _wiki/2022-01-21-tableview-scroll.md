@@ -61,6 +61,3 @@ A 화면의 특정 썸네일을 선택하면 B 화면으로 이동한다. 이 �
 
 ## 참고 자료, 참고
 - [[iOS] viewDidLayoutSubviews란? viewWillLayoutSubviews란? : 네이버 블로그](https://blog.naver.com/PostView.naver?blogId=soojin_2604&logNo=222437253619&parentCategoryNo=&categoryNo=64&viewDate=&isShowPopularPosts=false&from=postView)
-
-## 태그
-

@@ -39,6 +39,3 @@ Repository 에 대한 공식 문서같은 게 있나? 싶어서 찾아봤는데 
 repository 패턴은 필수가 아니다. 프로젝트 규모에 따라 적절하게... 하면 되는 데 그래도 이번에 해보면 좋을 거 같아서 연습중이다. 같이 연습해봅시다.
 
 https://www.userdesk.io/blog/repository-pattern-using-core-data-and-swift/
-
-## 태그
-

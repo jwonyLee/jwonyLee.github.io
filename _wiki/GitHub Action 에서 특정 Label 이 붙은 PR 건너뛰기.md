@@ -5,7 +5,7 @@ summary:
 permalink: 0654680d-f102-7159-d06c-99f2e46aa34e
 date: 2024-05-14 10:31:50 +09:00
 updated: 2024-05-14 10:31:50 +09:00
-tag: Knowledge 
+tag: 
 public: true
 parent: 
 latex: true
