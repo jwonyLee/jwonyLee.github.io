@@ -1,6 +1,7 @@
 ---
+layout: wiki
 permalink: 9ba05cc2-3d59-2b87-ea58-f3e733d6be01
-created: 2020-10-07
+date: 2020-10-07
 topics:
   - "[[Software Development]]"
 category: "[[iOS]]"

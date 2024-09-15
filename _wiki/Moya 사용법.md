@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[iOS] Moya 사용법"
 permalink: 1ff142a9-0d9f-cb69-7893-6ed85e7501cc
 publish: true
-created: 2022-03-22
+date: 2022-03-22
 ---
 
 ## 기록

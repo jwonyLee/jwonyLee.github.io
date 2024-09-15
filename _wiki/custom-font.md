@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[iOS] 커스텀 폰트 적용하기 with Dynamic Type"
 permalink: 087cf713-71b1-fed1-92de-eb4eb894c0d4
 publish: true
-created: 2022-01-02
+date: 2022-01-02
 ---
 
 ```

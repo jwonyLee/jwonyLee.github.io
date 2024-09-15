@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[Book] 처음 배우는 플라스크 웹 프로그래밍"
 permalink: a2ed4fc7-e0f5-7e9d-802f-0ef7e6a021d5
 publish: true
-created: 2021-09-13
+date: 2021-09-13
 ---
 
 # \[Book] 처음 배우는 플라스크 웹 프로그래밍

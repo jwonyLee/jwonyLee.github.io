@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[Book] 적정 소프트웨어 아키텍처"
 permalink: 14542ed1-ffb9-c062-5b3a-828755257d2b
 publish: true
-created: 2022-12-01
+date: 2022-12-01
 ---
 
 <p align="center">

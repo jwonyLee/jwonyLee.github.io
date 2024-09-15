@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[Swift] Writing High Performance Swift Code"
 permalink: 34dea93e-05e9-9d47-f058-328b54789fd3
 publish: true
-created: 2022-05-12
+date: 2022-05-12
 ---
 
 > [Writing High-Performance Swift Code](https://github.com/apple/swift/blob/main/docs/OptimizationTips.rst#writing-high-performance-swift-code)를 읽고 정리했습니다.

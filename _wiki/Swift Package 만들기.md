@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[iOS] Swift Package 만들기"
 permalink: b6e7d281-7f11-d868-7945-9704afcaccaa
 publish: true
-created: 2022-05-29
+date: 2022-05-29
 ---
 
 ```markdown

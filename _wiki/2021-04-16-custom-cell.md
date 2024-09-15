@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[iOS] 커스텀 셀 적용하기"
 permalink: e6ad015d-77c7-a653-dd35-5830c489dcd0
 publish: true
-created: 2021-04-16
+date: 2021-04-16
 ---
 
 # \[iOS] 커스텀 셀 적용하기

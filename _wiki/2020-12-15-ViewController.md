@@ -1,4 +1,5 @@
 ---
+layout: wiki
 title: "[iOS] 모든 View Controller 객체의 상위 클래스는 무엇이고 그 역할은 무엇인가?"
 permalink: b5bbb478-501f-7d48-0876-a8a3c779bbc5
 publish: true

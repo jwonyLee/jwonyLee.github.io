@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[iOS] 코드로 버튼에 이미지와 텍스트 넣기"
 permalink: a1e1ff84-afb9-3cd4-779b-ffac01f78ed8
 publish: true
-created: 2021-04-16
+date: 2021-04-16
 ---
 
 # \[iOS] 코드로 버튼에 이미지와 텍스트 넣기

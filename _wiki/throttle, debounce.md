@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[RxSwift] throttle, debounce"
 permalink: 255d538c-8044-4bbd-05a9-c125b5d505ee
 publish: true
-created: 2022-03-06
+date: 2022-03-06
 ---
 
 ## 기록

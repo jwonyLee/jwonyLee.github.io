@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[Swift] 긍정적인 Guard 사용"
 permalink: 21b56994-cc18-9f41-e982-cf9735b9d345
 publish: true
-created: 2021-04-25
+date: 2021-04-25
 ---
 
 # \[Swift] 긍정적인 Guard 사용

@@ -1,6 +1,7 @@
 ---
+layout: wiki
 permalink: 7972af36-2e95-e5a9-936b-b2d8008d0dd2
-created: 2020-09-08
+date: 2020-09-08
 topics:
   - "[[Topics/Software Development]]"
 category: "[[Swift]]"

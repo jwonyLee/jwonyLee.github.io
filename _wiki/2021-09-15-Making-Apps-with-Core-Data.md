@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[WWDC2019] Making Apps with Core Data"
 permalink: 0ce0a0ce-7b54-a57c-bd4d-8ccad29cc898
 publish: true
-created: 2021-09-16
+date: 2021-09-16
 ---
 
 > [WWDC2019: Making Apps with Core Data](https://developer.apple.com/videos/play/wwdc2019/230/)를 시청하고 정리한 글입니다. 개인 견해가 ~~아주 많이~~ 들어있습니다.

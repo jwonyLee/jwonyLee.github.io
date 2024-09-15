@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[iOS] Anatomy of a Constraint"
 permalink: 91779299-b1d8-f752-efbb-bebf18b9b997
 publish: true
-created: 2021-02-01
+date: 2021-02-01
 ---
 
 # \[iOS] Anatomy of a Constraint

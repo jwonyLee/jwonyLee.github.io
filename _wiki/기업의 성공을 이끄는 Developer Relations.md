@@ -1,10 +1,11 @@
 ---
+layout: wiki
 title: "[Book] 기업의 성공을 이끄는 Developer Relations"
 permalink: f61f3b71-2fcb-fb9c-5bf6-8695576b8ada
 publish: true
 tags:
   - 서평
-created: 2022-06-26
+date: 2022-06-26
 ---
 
 <p align="center">

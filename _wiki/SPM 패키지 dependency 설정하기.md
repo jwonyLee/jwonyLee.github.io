@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: SPM 패키지 dependency 설정하기
 permalink: c7df7494-6ac2-77d5-5367-d34e3b260d71
 publish: true
-modified: 2024-04-13T20:07:13+09:00
+updated: 2024-04-13T20:07:13+09:00
 ---
 
 # SPM 패키지 dependency 설정하기

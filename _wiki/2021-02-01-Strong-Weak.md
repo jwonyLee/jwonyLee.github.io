@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[Swift] Strong 과 Weak 참조 방식에 대해 설명하시오."
 permalink: 7c62d9b2-06d5-65d7-6898-1046353eebd0
 publish: true
-created: 2021-02-01
+date: 2021-02-01
 ---
 
 # \[Swift] Strong 과 Weak 참조 방식에 대해 설명하시오.

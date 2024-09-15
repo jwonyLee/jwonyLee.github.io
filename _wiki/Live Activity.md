@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[iOS] Live Activity"
 permalink: dda861ad-c5d0-9e0b-e516-e0ea209f7761
 publish: true
-created: 2022-08-13
+date: 2022-08-13
 ---
 
 ```

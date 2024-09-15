@@ -1,4 +1,5 @@
 ---
+layout: wiki
 title: "[Swift] 탈출 클로저에 대하여 설명하시오."
 permalink: 110c7a71-3d8e-f97e-14d9-24d6c28778f1
 publish: true

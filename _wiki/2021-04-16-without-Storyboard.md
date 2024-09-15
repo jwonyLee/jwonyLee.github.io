@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[iOS] 스토리보드없이 코드로 개발하기"
 permalink: 8e6f8bf9-13fb-aef8-f6d5-701c02bc7ec2
 publish: true
-created: 2021-04-16
+date: 2021-04-16
 ---
 
 # \[iOS] 스토리보드없이 코드로 개발하기

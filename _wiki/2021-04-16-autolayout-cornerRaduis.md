@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[iOS] 오토 레이아웃 기반 뷰에 cornerRadius 적용하기"
 permalink: a3a7ad89-8247-c3be-a830-793149274df0
 publish: true
-created: 2021-04-16
+date: 2021-04-16
 ---
 
 # \[iOS] 오토 레이아웃 기반 뷰에 cornerRadius 적용하기

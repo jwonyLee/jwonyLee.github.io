@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: RxSwift.Maybe
 permalink: 438a434c-e450-d3d8-a28c-3dbf1aed01f3
 publish: true
-created: 2021-05-31
+date: 2021-05-31
 ---
 
 # RxSwift.Maybe

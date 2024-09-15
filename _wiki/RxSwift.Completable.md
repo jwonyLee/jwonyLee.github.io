@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: RxSwift.Completable
 permalink: fc8764e8-1faa-3b9c-2220-92d0898700d0
 publish: true
-created: 2021-05-31
+date: 2021-05-31
 ---
 
 # RxSwift.Completable

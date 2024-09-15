@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[Book] 제대로 배우는 수학적 최적화"
 permalink: 65ef6f13-238e-376b-c5d8-423601f482a5
 publish: true
-created: 2021-10-27
+date: 2021-10-27
 ---
 
 <p align="center">

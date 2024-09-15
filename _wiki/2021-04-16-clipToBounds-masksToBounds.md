@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[iOS] UIView.clipToBounds와 layer.masksToBounds"
 permalink: 10a55411-2e65-1d24-1465-93b6a7ef8317
 publish: true
-created: 2021-04-16
+date: 2021-04-16
 ---
 
 # \[iOS] UIView.clipToBounds와 layer.masksToBounds

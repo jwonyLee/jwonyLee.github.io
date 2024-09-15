@@ -1,4 +1,5 @@
 ---
+layout: wiki
 title: "[iOS] Swift의 클로저와 Objective-C의 블록은 어떤 차이가 있는가?"
 permalink: 486edc27-d3f9-bed4-099e-f5983ff97baa
 publish: true

@@ -1,10 +1,11 @@
 ---
+layout: wiki
 permalink: 0654680d-f102-7159-d06c-99f2e46aa34e
 status: "[[Done]]"
 tags:
   - Knowledge
 publish: true
-modified: 2024-05-14T10:31:50+09:00
+updated: 2024-05-14T10:31:50+09:00
 ---
 
 # GitHub Action 에서 특정 Label 이 붙은 PR 건너뛰기

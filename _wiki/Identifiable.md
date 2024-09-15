@@ -1,4 +1,5 @@
 ---
+layout: wiki
 title: "Identifiable"
 permalink: 23541f6b-c82d-d953-2284-dde1ad84ec46
 publish: true

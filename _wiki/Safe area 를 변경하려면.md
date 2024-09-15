@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: Safe area 를 변경하려면
 permalink: 7cfc1bcf-a5a7-b153-4d67-19da5e04a55c
 publish: true
-modified: 2024-04-13T20:05:38+09:00
+updated: 2024-04-13T20:05:38+09:00
 ---
 
 # Safe area 변경하기

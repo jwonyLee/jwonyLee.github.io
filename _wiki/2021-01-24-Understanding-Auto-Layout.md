@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: '[iOS] Understanding Auto Layout'
 permalink: 1ef8e42c-7d55-bc67-cbce-85cd58b7a910
 publish: true
-created: 2021-01-24
+date: 2021-01-24
 ---
 
 # \[iOS] Understanding Auto Layout

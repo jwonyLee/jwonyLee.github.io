@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[iOS] ReactorKit"
 permalink: 10bb6466-6b17-6b9d-fcc7-09e3f262cdb1
 publish: true
-created: 2022-07-17
+date: 2022-07-17
 ---
 
 > **Note**
@@ -219,7 +220,7 @@ func testIsLoading() {
 		.disposed(by: disposeBag)
 		
 	// then
-	let response = scheduler.start(created: 0, subscribed: 0, disposed: 1000) {
+	let response = scheduler.start(date: 0, subscribed: 0, disposed: 1000) {
 		reactor.state.map(\.isLoading)
 	}
 	

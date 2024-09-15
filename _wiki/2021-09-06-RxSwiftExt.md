@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[RxSwift] RxSwiftExt 일부 연산자 정리"
 permalink: 847e6d25-0406-9f55-65ea-71fe4ead4c2f
 publish: true
-created: 2021-09-06
+date: 2021-09-06
 ---
 
 # \[RxSwift] RxSwiftExt 일부 연산자 정리

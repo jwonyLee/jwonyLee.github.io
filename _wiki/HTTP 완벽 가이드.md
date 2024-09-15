@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: HTTP 완벽 가이드
 permalink: 35d2bb9e-3cea-3de7-4405-27f2965e2716
 publish: true
-modified: 2024-05-20T22:17:38+09:00
+updated: 2024-05-20T22:17:38+09:00
 ---
 
 # HTTP 완벽 가이드

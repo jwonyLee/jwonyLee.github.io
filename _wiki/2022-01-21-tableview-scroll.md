@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[iOS] 원하는 위치의 셀로 이동"
 permalink: af9b3263-31b2-74e1-2656-1c20982834e6
 publish: true
-created: 2022-01-21
+date: 2022-01-21
 ---
 
 ## 상황

@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[iOS] hugging, resistance에 대해서 설명하시오."
 permalink: 1aa547a5-41c4-8dd1-b435-17560674ca3a
 publish: true
-created: 2021-01-14
+date: 2021-01-14
 ---
 
 # \[iOS] hugging, resistance에 대해서 설명하시오.

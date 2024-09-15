@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[iOS] 뷰의 그림자 만들기"
 permalink: 8f337062-db00-d89b-5151-0e2eec7ebf30
 publish: true
-created: 2021-04-16
+date: 2021-04-16
 ---
 
 # \[iOS] 뷰의 그림자 만들기

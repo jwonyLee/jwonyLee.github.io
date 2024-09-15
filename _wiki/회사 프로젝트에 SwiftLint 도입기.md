@@ -1,6 +1,7 @@
 ---
+layout: wiki
 permalink: 98e2a8e5-c76c-0e4c-0d1c-d9c4ae71426c
-created: 2022-06-26
+date: 2022-06-26
 topics:
   - "[[Software Development]]"
 category: "[[iOS]]"

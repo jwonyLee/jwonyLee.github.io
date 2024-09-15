@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[Objective-C] retain 과 assign 의 차이점을 설명하시오."
 permalink: 22f59356-46ea-4d5a-030f-e9a600736722
 publish: true
-created: 2021-02-08
+date: 2021-02-08
 ---
 
 # \[Objective-C] retain 과 assign 의 차이점을 설명하시오.

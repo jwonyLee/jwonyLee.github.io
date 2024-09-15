@@ -1,4 +1,5 @@
 ---
+layout: wiki
 title: "[Swift] Extension에 대해 설명하시오."
 permalink: 1b55afe8-60cf-8c94-0be0-14f2859f9e38
 publish: true

@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[iOS] UserDefaults, KeyChain, Core Data"
 permalink: 3efa3d59-c701-1158-7923-59270f51357b
 publish: true
-created: 2021-07-23
+date: 2021-07-23
 ---
 
 ## UserDefaults

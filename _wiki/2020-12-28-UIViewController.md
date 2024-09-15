@@ -1,4 +1,5 @@
 ---
+layout: wiki
 title: "[iOS] 앱 화면의 콘텐츠를 표시하는 로직과 관리를 담당하는 객체를 무엇이라고 하는가?"
 permalink: 6f6c96ec-db60-3f68-0158-dca30f046316
 publish: true

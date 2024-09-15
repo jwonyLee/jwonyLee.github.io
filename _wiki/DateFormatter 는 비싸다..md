@@ -1,9 +1,10 @@
 ---
+layout: wiki
 title: "[iOS] DateFormatter 는 비싸다."
 permalink: e8ed064c-4163-90c1-170a-a1d09ecb6748
 publish: true
 status: done
-created: 2022-09-18
+date: 2022-09-18
 ---
 
 지난 스프린트에서 A 라는 화면을 MVC 에서 ReactorKit 으로 리팩토링했다.

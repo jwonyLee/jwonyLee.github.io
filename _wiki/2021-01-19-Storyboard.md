@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[iOS] 스토리보드를 이용했을때의 장단점을 설명하시오."
 permalink: c5dfccf5-2b57-6f88-4b0b-c6b25bd2a68d
 publish: true
-created: 2021-01-04
+date: 2021-01-04
 ---
 
 # \[iOS] 스토리보드를 이용했을때의 장단점을 설명하시오.

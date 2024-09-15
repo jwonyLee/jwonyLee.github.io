@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[iOS] 네비게이션 타이틀 변경"
 permalink: a0ff24e0-518a-643b-b9e1-4d0f26ae6faa
 publish: true
-created: 2021-04-16
+date: 2021-04-16
 ---
 
 # \[iOS] 네비게이션 타이틀 변경

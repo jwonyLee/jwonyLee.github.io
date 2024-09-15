@@ -1,4 +1,5 @@
 ---
+layout: wiki
 title: "[iOS] Foundation Kit은 무엇이고 포함되어 있는 클래스들은 어떤 것이 있는지 설명하시오"
 permalink: 25571d26-a348-8ff2-6398-a899add33df3
 publish: true

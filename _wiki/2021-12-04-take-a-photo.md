@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[iOS] 사진 촬영 기능 구현하기"
 permalink: ad896c4a-9cb1-57eb-6f2d-ed0f91110a7f
 publish: true
-created: 2021-12-04
+date: 2021-12-04
 ---
 
 ```

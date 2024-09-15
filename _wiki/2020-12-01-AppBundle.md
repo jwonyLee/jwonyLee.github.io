@@ -1,4 +1,5 @@
 ---
+layout: wiki
 title: "[iOS] App Bundle의 구조와 역할에 대해 설명하시오."
 permalink: 35d80db8-e942-f7d2-f087-31cd5bde82ba
 publish: true

@@ -1,6 +1,7 @@
 ---
+layout: wiki
 permalink: 1339c97d-6732-f545-94d4-6a7453b9e1b2
-created: 2023-10-23
+date: 2023-10-23
 topics:
   - "[[Topics/Software Development]]"
 category: "[[Package Dependency]]"
@@ -9,7 +10,7 @@ tags:
   - iOS/PackageManager/SPM
 status: "[[Done]]"
 publish: true
-modified: 2024-06-27T11:15:06+09:00
+updated: 2024-06-27T11:15:06+09:00
 ---
 
 # 외부 Cocoapods 라이브러리 SPM 으로 배포하기

@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[Design Pattern] Repository 패턴"
 permalink: e41ac27e-0ce9-c443-2af4-7ceef30ec815
 publish: true
-created: 2021-08-20
+date: 2021-08-20
 ---
 
 클린 코드 2장 의미있는 이름에서 `Manager`, `Processor`, `Data`와 같은 동사는 클래스 이름으로 적합하지 않다고 설명한다. BeepBeep 프로젝트에서 Realm 클래스 이름이 `RealmManager` 였다. 그 때는 클린 코드 이미 한 번 읽은 상태였다. 그 때도 다른 적합한 이름이 뭐가 있을 지 고민을 했었는데, 생각이 잘 나지 않아서 그냥 Manager로 작명했었다. `Helper`도 고민했는데 이것도 그다지 적합하지 않다고 생각했다. `뭘 도와줄건데?` 라는 생각이 들었다.

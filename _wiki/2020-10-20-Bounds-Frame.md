@@ -1,4 +1,5 @@
 ---
+layout: wiki
 title: "[iOS] Bounds 와 Frame 의 차이점을 설명하시오."
 permalink: 221ef090-7f3a-cb99-5502-01ff6d90e6a6
 publish: true

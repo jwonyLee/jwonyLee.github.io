@@ -1,11 +1,12 @@
 ---
+layout: wiki
 title: "[iOS] App thinning에 대해서 설명하시오."
 permalink: aa6857a4-84f0-a3e2-a738-64d58b0cd9c5
 publish: true
 tags:
   - iOS
   - iOSInterviewquestions
-created: 2021-01-05
+date: 2021-01-05
 ---
 
 # \[iOS] App thinning에 대해서 설명하시오.

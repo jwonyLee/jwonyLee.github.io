@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[Shell Script] 터미널에서 명령어로 마크다운 파일 만들기"
 permalink: 1114d9a9-1eb1-1bf3-4819-6612d416beda
 publish: true
-created: 2021-08-20
+date: 2021-08-20
 ---
 
 # \[Shell Script] 터미널에서 명령어로 마크다운 파일 만들기

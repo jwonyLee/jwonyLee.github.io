@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[iOS] UIStackView"
 permalink: 5b441ad2-f77c-e2c0-5787-e4ed4138ec3c
 publish: true
-created: 2021-08-10
+date: 2021-08-10
 ---
 
 # \[iOS] UIStackView

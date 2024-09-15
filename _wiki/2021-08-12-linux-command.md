@@ -1,8 +1,9 @@
 ---
+layout: wiki
 title: "[Book] 리눅스 입문자를 위한 명령어 사전"
 permalink: bc24663e-8037-285f-8159-94f8b91384e1
 publish: true
-created: 2021-08-20
+date: 2021-08-20
 ---
 
 # \[Book] 리눅스 입문자를 위한 명령어 사전

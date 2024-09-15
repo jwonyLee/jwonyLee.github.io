@@ -1,4 +1,5 @@
 ---
+layout: wiki
 permalink: a6f7c741-4d45-d56e-7c60-aea6037ccc1a
 status: "[[Done]]"
 tags:
@@ -6,7 +7,7 @@ tags:
   - iOS/SwiftUI
   - 삽질
 publish: true
-modified: 2024-05-19T19:12:52+09:00
+updated: 2024-05-19T19:12:52+09:00
 ---
 
 # TabView + ScrollView
