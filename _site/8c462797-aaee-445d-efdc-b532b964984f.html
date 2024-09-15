@@ -1,0 +1,42 @@
+<h1 id="objective-c-특정-객체를-autorelease-하기-위해-필요한-사항과-과정을-설명하시오">[Objective-C] 특정 객체를 autorelease 하기 위해 필요한 사항과 과정을 설명하시오.</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Foundation</code>에서는 <code class="language-plaintext highlighter-rouge">autorelease pool</code>이라는 기능을 사용하여 함수 내에서 생성한 객체들을 적절한 시점에 한 번에 해제할 수 있도록 해주는 방법을 제공한다.</p>
+
+<h2 id="arc를-사용하는-경우">ARC를 사용하는 경우</h2>
+
+<p>autorelease pool을 직접 사용할 수 없고, <code class="language-plaintext highlighter-rouge">@autoreleasepool</code> 블록을 사용한다.</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">NSAutoreleasePool</span> <span class="o">*</span><span class="n">pool</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSAutoreleasePool</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>
+<span class="c1">// Codebenefitting from a local autorelease pool.</span>
+<span class="p">[</span><span class="n">pool</span> <span class="nf">release</span><span class="p">];</span>
+</code></pre></div></div>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@autoreleasepool</span> <span class="p">{</span>
+	<span class="c1">// Code benefitting from a local autorelease pool.</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">@autoreleasepool</code> 블록은 직접 인스턴스를 사용하는 것보다 더 효율적이다.</p>
+
+<h2 id="arc를-사용하지-않는-경우">ARC를 사용하지 않는 경우?</h2>
+
+<p>객체의 참조 카운트를 감소시킬 때 <code class="language-plaintext highlighter-rouge">release</code> 대신 <code class="language-plaintext highlighter-rouge">autorelease</code>를 사용하면 된다.</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Person</span> <span class="o">*</span><span class="n">aPerson</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Person</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>
+<span class="c1">// [aPerson release]; delete now</span>
+<span class="p">[</span><span class="n">aPerson</span> <span class="nf">autorelease</span><span class="p">];</span> <span class="c1">// delete later</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://nephilim.tistory.com/120">Objective-C의 autorelease 이해하기(1)</a></li>
+  <li><a href="https://developer.apple.com/documentation/foundation/nsautoreleasepool">NSAutoreleasePool - Apple Developer Documentation</a></li>
+  <li><a href="https://soooprmx.com/archives/4174">[Objective-C] Objective-C의 메모리 관리 방법 · Wireframe</a></li>
+</ul>
+
+<h2 id="태그">태그</h2>
+
+<p>#Objective-C/ARC #iOSInterviewquestions</p>

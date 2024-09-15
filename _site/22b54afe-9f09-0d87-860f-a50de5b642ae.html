@@ -1,0 +1,22 @@
+<h1 id="rxswiftsingle">RxSwift.Single</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[[RxSwift.Single</td>
+      <td>Single]] 은 특수한 [[RxSwift.Observable</td>
+      <td>Observable]] 이다. <code class="language-plaintext highlighter-rouge">.success(Value)</code> 이벤트 또는 <code class="language-plaintext highlighter-rouge">.error</code> 중 한 번만 내보낼 수 있는 시퀀스를 나타낸다. 내부적으로 <code class="language-plaintext highlighter-rouge">.success</code> 는 <code class="language-plaintext highlighter-rouge">.next</code> + <code class="language-plaintext highlighter-rouge">.completed</code> 로 이루어져있다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>이러한 종류의 특성은 파일 저장, 파일 다운로드, 디스크에서 데이터 로드 또는 기본적으로 값을 생성하는 모든 비동기 작업과 같은 상황에서 유용하다.</p>
+
+<ol>
+  <li>성공 시 정확히 하나의 요소를 내보내는 래핑 작업에 사용됨</li>
+  <li>시퀀스에서 단일 요소를 사용하려는 의도를 더 잘 표현하고 시퀀스가 둘 이상의 요소를 방출하는지 확인하기 위해 구독 오류가 발생된다.</li>
+</ol>
+
+<h2 id="태그">태그</h2>
+
+<p>#iOS/RxSwift</p>

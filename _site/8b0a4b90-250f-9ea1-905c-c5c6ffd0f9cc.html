@@ -1,0 +1,161 @@
+<h1 id="ios-contacts-프레임워크-톺아보기">[iOS] Contacts 프레임워크 톺아보기</h1>
+
+<h2 id="개요">개요</h2>
+
+<p><a href="https://developer.apple.com/documentation/contacts">Contacts</a> 프레임워크 톺아보기</p>
+
+<p>Contacts 프레임워크 문서를 참고해서 사용자의 연락처를 가져와서 테이블뷰를 통해 보여주자.</p>
+
+<h2 id="-사용자의-연락처를-가져와서-보여주기">🔨 사용자의 연락처를 가져와서 보여주기</h2>
+
+<p>UI 구성하는 부분은 패스. 코드나 스토리보드로 테이블뷰와 셀 구성을 해주면 된다. 셀의 스타일은 <code class="language-plaintext highlighter-rouge">Subtitle</code>로 지정해줬다. 데이터를 많이 가져와서 보여줄 게 아니라서 간단하게 했다.</p>
+
+<p>그다음으로 Fetching Contacts 문단에 있는 코드를 그대로 따라 하면 다음과 같은 코드를 작성할 수 있다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+
+    <span class="k">self</span><span class="o">.</span><span class="nf">fetchContacts</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">fetchContacts</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">store</span> <span class="o">=</span> <span class="kt">CNContactStore</span><span class="p">()</span>
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">predicate</span> <span class="o">=</span> <span class="kt">CNContact</span><span class="o">.</span><span class="nf">predicateForContacts</span><span class="p">(</span><span class="nv">matchingName</span><span class="p">:</span> <span class="s">"Appleseed"</span><span class="p">)</span>
+                <span class="k">let</span> <span class="nv">keysToFetch</span> <span class="o">=</span> <span class="p">[</span><span class="kt">CNContactGivenNameKey</span><span class="p">,</span> <span class="kt">CNContactFamilyNameKey</span><span class="p">]</span> <span class="k">as</span> <span class="p">[</span><span class="kt">CNKeyDescriptor</span><span class="p">]</span>
+        <span class="k">let</span> <span class="nv">contacts</span> <span class="o">=</span>
+            <span class="k">try</span> <span class="n">store</span><span class="o">.</span><span class="nf">unifiedContacts</span><span class="p">(</span><span class="nv">matching</span><span class="p">:</span> <span class="n">predicate</span><span class="p">,</span> <span class="nv">keysToFetch</span><span class="p">:</span> <span class="n">keysToFetch</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Fetched contacts: </span><span class="se">\(</span><span class="n">contacts</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Failed to fetch contact, error: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="c1">// Handle the error</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="contacts-1.png" alt="Error Message" /></p>
+
+<p>실행해보면 위와 같이 오류가 발생하는 걸 볼 수 있다. 왜냐하면 연락처는 개인정보에 해당하기 때문에 사용자에게 권한을 요청받아야 한다.</p>
+
+<p><img src="contacts-2.png" alt="Contacts Topics" /></p>
+
+<p>Contacts 문서 하단에는 관련된 토픽을 볼 수 있는데, 위 문제를 해결하려면 <a href="https://developer.apple.com/documentation/contacts/requesting_authorization_to_access_contacts">Requesting Authorization to Access Contacts</a> 문서를 보면 된다.</p>
+
+<p><img src="contacts-3.png" alt="Requesting Authorization to Access Contacts" /></p>
+
+<p>영어만 봐도 눈이 핑 돌아간다. @_@…</p>
+
+<p>앱은 사용자가 권한을 부여할 때까지 연락처 항목에 액세스 할 수 없다고 설명하면서 사용자에게 액세스 권한이 있는지 확인하려면 <code class="language-plaintext highlighter-rouge">authorizationStatus(for:)</code> 메서드를 사용하라고 쓰여있다.</p>
+
+<p><img src="contacts-4.png" alt="Configure Your Information Property List File" /></p>
+
+<p>조금 더 밑으로 내려서 읽어보면, <code class="language-plaintext highlighter-rouge">Info.plist</code> 파일에 <code class="language-plaintext highlighter-rouge">NSContactsUsageDescription</code> 키를 추가해야 한다고 쓰여있다. 이 키의 값은 앱이 사용자의 연락처로 수행하는 작업을 설명하는 문자열이라고 한다.</p>
+
+<p>그리고 그 다음으로는 사용자에게 권한 승인 요청을 하는 방법이 쓰여있다. <code class="language-plaintext highlighter-rouge">requestAccess(for:completionHandler:)</code> 를 사용하면 된다고 한다. 필요한 정보를 전부 알아냈으니 문제를 문서에서 제시하는 대로 앱을 수정해본다.</p>
+
+<p>먼저 <code class="language-plaintext highlighter-rouge">Info.plist</code> 파일에 <code class="language-plaintext highlighter-rouge">NSContactsUsageDescription</code> 키를 추가해야 하는데, 이것만 봐선 뭔지 모를 거 같지만 애플에선 친절하게 해당 키가 실제로 무슨 이름을 가졌는지 문서로 제공하고 있다.</p>
+
+<p><a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nscontactsusagedescription">https://developer.apple.com/documentation/bundleresources/information_property_list/nscontactsusagedescription</a></p>
+
+<p><img src="contacts-5.png" alt="NSContactsUsageDescription" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">Info.plist</code>에 다음과 같이 추가해준다. 사용자에게 이 권한이 왜 필요한지 설명을 기록해야 한다.</p>
+
+<p>이렇게 한 다음에 바로 연락처에 접근하는 게 아니라 <code class="language-plaintext highlighter-rouge">requestAccess(for:completionHandler:)</code>를 이용해 사용자에게 승인 요청을 한다. 권한이 있으면 연락처에 접근하고, 없으면 사용자에게 권한 요청을 한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">store</span> <span class="o">=</span> <span class="kt">CNContactStore</span><span class="p">()</span>
+
+<span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+
+    <span class="k">self</span><span class="o">.</span><span class="n">requestCNContactStoreAccess</span> <span class="p">{</span>
+        <span class="c1">// 승인 요청 성공시 할 작업</span>
+        <span class="nf">fetchContacts</span><span class="p">()</span>
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">tableView</span><span class="o">.</span><span class="nf">reloadData</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">requestCNContactStoreAccess</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="nf">requestAccess</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">contacts</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">granted</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+        <span class="c1">// 에러 발생</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 사용자에게 승인 요청 성공시 탈출</span>
+        <span class="k">if</span> <span class="n">granted</span> <span class="p">{</span>
+            <span class="nf">completion</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이 과정에서 <code class="language-plaintext highlighter-rouge">fetchContacts</code>에 있던 <code class="language-plaintext highlighter-rouge">store</code> 객체를 외부로 보냈다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">requestCNContactStoreAccess</code> 메서드를 만들면서 처음으로 탈출 클로저를 사용해봤다. 이렇게 작성하니 코드가 깔끔해져서 가독성이 좋아졌다.</p>
+
+<p>원래는 <code class="language-plaintext highlighter-rouge">fetch</code>와 <code class="language-plaintext highlighter-rouge">request</code>를 같이 하고 있었는데 리팩토링을 해서 메서드를 분리했다.</p>
+
+<p><img src="contacts-6.png" alt="&quot;AddressBookApp&quot; Would Like to Access Your Contacts" /></p>
+
+<p>사용자 승인 요청과 연락처 정보까지 잘 가져오는 것을 확인할 수 있다.</p>
+
+<p>그런데 위 코드는 이름이 "Appleseed"인 사람의 연락처만 갖고 온다. 모든 연락처 정보를 가져올 수 있게 <code class="language-plaintext highlighter-rouge">fetchContacts()</code> 메서드를 수정해보자. 그리고 가져온 정보를 <code class="language-plaintext highlighter-rouge">CNContact</code> 배열에 저장한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">store</span> <span class="o">=</span> <span class="kt">CNContactStore</span><span class="p">()</span>
+<span class="k">var</span> <span class="nv">contatcs</span><span class="p">:</span> <span class="kt">Array</span><span class="o">&lt;</span><span class="kt">CNContact</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="kd">func</span> <span class="nf">fetchContacts</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">keysToFetch</span> <span class="o">=</span> <span class="p">[</span><span class="kt">CNContactGivenNameKey</span><span class="p">,</span> <span class="kt">CNContactFamilyNameKey</span><span class="p">]</span> <span class="k">as</span> <span class="p">[</span><span class="kt">CNKeyDescriptor</span><span class="p">]</span>
+    <span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">CNContactFetchRequest</span><span class="p">(</span><span class="nv">keysToFetch</span><span class="p">:</span> <span class="n">keysToFetch</span><span class="p">)</span>
+
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="k">try</span> <span class="k">self</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="nf">enumerateContacts</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">request</span><span class="p">,</span> <span class="nv">usingBlock</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">contact</span><span class="p">,</span> <span class="n">stopPointer</span><span class="p">)</span> <span class="k">in</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">contacts</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">contact</span><span class="p">)</span>
+        <span class="p">})</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Failed to fetch contact, error: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>연락처 정보를 가져올 때 모든 정보를 가져오는 게 아니라 <code class="language-plaintext highlighter-rouge">keysToFetch</code> 에 있는 값만 갖고 오기 때문에 필요한 값을 적어줘야 한다.</p>
+
+<p>그리고 진짜 마지막으로.. 가져온 데이터를 테이블뷰를 통해 뿌려준다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - Table view data source</span>
+<span class="k">override</span> <span class="kd">func</span> <span class="nf">numberOfSections</span><span class="p">(</span><span class="k">in</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="c1">// #warning Incomplete implementation, return the number of sections</span>
+    <span class="k">return</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="k">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">numberOfRowsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="c1">// #warning Incomplete implementation, return the number of rows</span>
+    <span class="k">return</span> <span class="n">contacts</span><span class="o">.</span><span class="n">count</span>
+<span class="p">}</span>
+
+<span class="k">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">tableView</span><span class="o">.</span><span class="nf">dequeueReusableCell</span><span class="p">(</span><span class="nv">withpermalink</span><span class="p">:</span> <span class="s">"cellIdentifier"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span>
+
+    <span class="k">let</span> <span class="nv">contact</span> <span class="o">=</span> <span class="n">contacts</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span>
+    <span class="n">cell</span><span class="o">.</span><span class="n">textLabel</span><span class="p">?</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">contact</span><span class="o">.</span><span class="n">familyName</span>
+    <span class="n">cell</span><span class="o">.</span><span class="n">detailTextLabel</span><span class="p">?</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">contact</span><span class="o">.</span><span class="n">givenName</span>
+
+    <span class="k">return</span> <span class="n">cell</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="contacts-7.png" alt="Log" /></p>
+
+<p>완성!</p>
+
+<p><img src="contacts-8.png" alt="완성 화면" /></p>
+
+<p>애플 개발자 문서는 진짜 잘 정리되어있다는 걸 또 한번 느꼈다.</p>
+
+<h2 id="태그">태그</h2>
+
+<p>#iOS/Contacts</p>

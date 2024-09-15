@@ -1,0 +1,109 @@
+<h1 id="ios-오토레이아웃을-코드로-작성하는-방법은-무엇인가-3가지">[iOS] 오토레이아웃을 코드로 작성하는 방법은 무엇인가? (3가지)</h1>
+
+<h2 id="1-layout-anchors">1. Layout Anchors</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Get the superview's layout</span>
+<span class="k">let</span> <span class="nv">margins</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">layoutMarginsGuide</span>
+ 
+<span class="c1">// Pin the leading edge of myView to the margin's leading edge</span>
+<span class="n">myView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">margins</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">)</span><span class="o">.</span><span class="n">isActive</span> <span class="o">=</span> <span class="kc">true</span>
+ 
+<span class="c1">// Pin the trailing edge of myView to the margin's trailing edge</span>
+<span class="n">myView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">margins</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="p">)</span><span class="o">.</span><span class="n">isActive</span> <span class="o">=</span> <span class="kc">true</span>
+ 
+<span class="c1">// Give myView a 1:2 aspect ratio</span>
+<span class="n">myView</span><span class="o">.</span><span class="n">heightAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">myView</span><span class="o">.</span><span class="n">widthAnchor</span><span class="p">,</span> <span class="nv">multiplier</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">)</span><span class="o">.</span><span class="n">isActive</span> <span class="o">=</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<h2 id="2-nslayoutconstraint-class">2. NSLayoutConstraint Class</h2>
+
+<p>1 의 방식과 달리 레이아웃에 영향을 주지 않더라도 각 매개 변수에 대한 값을 지정해야 한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">NSLayoutConstraint</span><span class="p">(</span><span class="nv">item</span><span class="p">:</span> <span class="n">myView</span><span class="p">,</span> <span class="nv">attribute</span><span class="p">:</span> <span class="o">.</span><span class="n">leading</span><span class="p">,</span> <span class="nv">relatedBy</span><span class="p">:</span> <span class="o">.</span><span class="n">equal</span><span class="p">,</span> <span class="nv">toItem</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">attribute</span><span class="p">:</span> <span class="o">.</span><span class="n">leadingMargin</span><span class="p">,</span> <span class="nv">multiplier</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">)</span><span class="o">.</span><span class="n">isActive</span> <span class="o">=</span> <span class="kc">true</span>
+ 
+<span class="kt">NSLayoutConstraint</span><span class="p">(</span><span class="nv">item</span><span class="p">:</span> <span class="n">myView</span><span class="p">,</span> <span class="nv">attribute</span><span class="p">:</span> <span class="o">.</span><span class="n">trailing</span><span class="p">,</span> <span class="nv">relatedBy</span><span class="p">:</span> <span class="o">.</span><span class="n">equal</span><span class="p">,</span> <span class="nv">toItem</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">attribute</span><span class="p">:</span> <span class="o">.</span><span class="n">trailingMargin</span><span class="p">,</span> <span class="nv">multiplier</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">)</span><span class="o">.</span><span class="n">isActive</span> <span class="o">=</span> <span class="kc">true</span>
+ 
+<span class="kt">NSLayoutConstraint</span><span class="p">(</span><span class="nv">item</span><span class="p">:</span> <span class="n">myView</span><span class="p">,</span> <span class="nv">attribute</span><span class="p">:</span> <span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="nv">relatedBy</span><span class="p">:</span> <span class="o">.</span><span class="n">equal</span><span class="p">,</span> <span class="nv">toItem</span><span class="p">:</span> <span class="n">myView</span><span class="p">,</span> <span class="nv">attribute</span><span class="p">:</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="nv">multiplier</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span><span class="mf">0.0</span><span class="p">)</span><span class="o">.</span><span class="n">isActive</span> <span class="o">=</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<p>iOS 8 또는 OS X 10.10 또는 이전 버전을 지원해야하는 경우가 아니라면 Layout Anchors 방식으로 마이그레이션하는 것이 권장됨</p>
+
+<h2 id="3-visual-format-language">3. Visual Format Language</h2>
+
+<p>문자열과 같은 ASCII를 이용해 제약 조건을 정의할 수 있음</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">views</span> <span class="o">=</span> <span class="p">[</span><span class="s">"myView"</span> <span class="p">:</span> <span class="n">myView</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">formatString</span> <span class="o">=</span> <span class="s">"|-[myView]-|"</span>
+ 
+<span class="k">let</span> <span class="nv">constraints</span> <span class="o">=</span> <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">constraints</span><span class="p">(</span><span class="nv">withVisualFormat</span><span class="p">:</span> <span class="n">formatString</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="o">.</span><span class="n">alignAllTop</span><span class="p">,</span> <span class="nv">metrics</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">views</span><span class="p">:</span> <span class="n">views</span><span class="p">)</span>
+ 
+<span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">activate</span><span class="p">(</span><span class="n">constraints</span><span class="p">)</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>제약 조건</th>
+      <th>Visual Format Language</th>
+      <th>Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>표준 공간</td>
+      <td><code class="language-plaintext highlighter-rouge">[button]-[textField]</code></td>
+      <td><img src="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/Art/standardSpace.png" alt="표준 공간" /></td>
+    </tr>
+    <tr>
+      <td>폭 제약</td>
+      <td><code class="language-plaintext highlighter-rouge">[button(&gt;=50)]</code></td>
+      <td><img src="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/Art/widthConstraint.png" alt="폭 제약" /></td>
+    </tr>
+    <tr>
+      <td>Superview에 연결</td>
+      <td><code class="language-plaintext highlighter-rouge">\|-50-[purpleBox]-50-\|</code></td>
+      <td><img src="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/Art/connectionToSuperview.png" alt="Superview에 연결" /></td>
+    </tr>
+    <tr>
+      <td>수직 레이아웃</td>
+      <td><code class="language-plaintext highlighter-rouge">V: [topField]-10-[bottomField]</code></td>
+      <td><img src="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/Art/verticalLayout.png" alt="수직 레이아웃" /></td>
+    </tr>
+    <tr>
+      <td>플러시 뷰</td>
+      <td><code class="language-plaintext highlighter-rouge">[maroonView][blueView]</code></td>
+      <td><img src="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/Art/flushViews.png" alt="플러시 뷰" /></td>
+    </tr>
+    <tr>
+      <td>우선 순위</td>
+      <td><code class="language-plaintext highlighter-rouge">[button(100@20)]</code></td>
+      <td><img src="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/Art/priority.png" alt="우선 순위" /></td>
+    </tr>
+    <tr>
+      <td>동일한 폭</td>
+      <td><code class="language-plaintext highlighter-rouge">[button1(==button2)]</code></td>
+      <td><img src="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/Art/equalWidths.png" alt="동일한 폭" /></td>
+    </tr>
+    <tr>
+      <td>Multiple Predicates</td>
+      <td><code class="language-plaintext highlighter-rouge">[flexibleButton(&gt;=70, &lt;=100)]</code></td>
+      <td><img src="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/Art/multiplePredicates.png" alt="Multiple Predicates" /></td>
+    </tr>
+    <tr>
+      <td>A Complete Line of Layout</td>
+      <td><code class="language-plaintext highlighter-rouge">\|-[find]-[findNext]-[findField(&gt;=200)]=\|</code></td>
+      <td><img src="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/Art/completeLayout.png" alt="A Complete Line of Layout" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html#//apple_ref/doc/uid/TP40010853-CH16-SW1">Programmatically Creating Constraints</a></li>
+  <li><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/VisualFormatLanguage.html#//apple_ref/doc/uid/TP40010853-CH27-SW1">Visual Format Language</a></li>
+</ul>
+
+<h2 id="태그">태그</h2>
+
+<p>#iOS/Autolayout #iOSInterviewquestions</p>

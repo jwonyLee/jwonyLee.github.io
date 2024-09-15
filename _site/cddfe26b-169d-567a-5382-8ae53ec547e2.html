@@ -1,0 +1,41 @@
+<h1 id="objective-c-arc-대신-manual-reference-count-방식으로-구현할-때-꼭-사용해야-하는-메서드들을-쓰고-역할을-설명하시오">[Objective-C] ARC 대신 Manual Reference Count 방식으로 구현할 때 꼭 사용해야 하는 메서드들을 쓰고 역할을 설명하시오.</h1>
+
+<h2 id="allocinit">alloc/init</h2>
+
+<p><code class="language-plaintext highlighter-rouge">alloc</code> → 수신 클래스의 새 인스턴스를 반환. 새 인스턴스의 isa 인스턴스 변수는 클래스를 설명하는 데이터 구조로 초기화됨. 다른 모든 인스턴스 변수의 메모리는 0으로 설정됨. 새 인스턴스는 기본 영역에서 할당됨. <code class="language-plaintext highlighter-rouge">allocWithZone:</code> 을 사용하여 특정 영역을 지정</p>
+
+<p>초기화를 완료하려면 <code class="language-plaintext highlighter-rouge">init</code> 메소드를 이용해야한다.</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">TheClass</span> <span class="o">*</span><span class="n">newObject</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TheClass</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">init</code> → 메모리가 할당된 직후에 새 객체(수신자)를 초기화하기 위해 서브 클래스에 의해 구현됨. <code class="language-plaintext highlighter-rouge">init</code> 은 일반적으로 동일한 코드 라인에서 <code class="language-plaintext highlighter-rouge">alloc</code> 또는 <code class="language-plaintext highlighter-rouge">allocWithZone:</code> 과 같이 사용함</p>
+
+<h2 id="retain">retain</h2>
+
+<p>수신자의 참조 횟수를 증가시킴</p>
+
+<h2 id="release">release</h2>
+
+<p>수신자의 참조 횟수를 감소시킴</p>
+
+<h2 id="autorelease">autorelease</h2>
+
+<blockquote>
+  <p>Decrements the receiver’s retain count at the end of the current autorelease pool block.</p>
+</blockquote>
+
+<p>현재 autorelease pool block의 끝에서 수신자의 참조 횟수를 감소시킴</p>
+
+<hr />
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/MemoryMgmt.html">About Memory Management</a></li>
+  <li><a href="https://developer.apple.com/documentation/objectivec/1418956-nsobject/1571946-retain">retain - Apple Developer Documentation</a></li>
+</ul>
+
+<h2 id="태그">태그</h2>
+
+<p>#Objective-C/ARC #iOSInterviewquestions</p>

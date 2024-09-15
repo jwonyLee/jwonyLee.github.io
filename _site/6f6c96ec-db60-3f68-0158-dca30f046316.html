@@ -1,0 +1,42 @@
+<h1 id="ios-앱-화면의-콘텐츠를-표시하는-로직과-관리를-담당하는-객체를-무엇이라고-하는가">[iOS] 앱 화면의 콘텐츠를 표시하는 로직과 관리를 담당하는 객체를 무엇이라고 하는가?</h1>
+
+<h2 id="uiviewcontroller">UIViewController</h2>
+
+<p>UIKit 앱의 뷰 계층 구조를 관리하는 객체</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">UIViewController</span><span class="p">:</span> <span class="kt">UIResponder</span>
+</code></pre></div></div>
+
+<p>뷰 컨트롤러의 주요 책임</p>
+<ul>
+  <li>기본 데이터의 변경에 대한 응답으로 뷰의 콘텐츠를 업데이트</li>
+  <li>뷰와 사용자 상호 작용에 응답</li>
+  <li>뷰 크기 조정 및 전체 인터페이스의 레이아웃 관리</li>
+  <li>앱에서 다른 뷰 컨트롤러를 포함한 다른 객체와 조정</li>
+</ul>
+
+<p>뷰 컨트롤러의 유형</p>
+<ul>
+  <li>콘텐츠 뷰 컨트롤러는 앱 콘텐츠의 개별 부분을 관리하며 사용자가 만드는 기본 뷰 컨트롤러 유형</li>
+  <li>컨테이너 뷰 컨트롤러는 다른 뷰 컨트롤러(하위 뷰 컨트롤러라고 함)에서 정보를 수집하고 탐색을 용이하게 하거나 해당 뷰 컨트롤러의 콘텐츠를 다르게 표시하는 방식으로 정보 제공</li>
+</ul>
+
+<h3 id="뷰-관리">뷰 관리</h3>
+
+<p><img src="https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/Art/VCPG_ControllerHierarchy_fig_1-1_2x.png" alt="뷰 컨트롤러와 뷰 간의 관계" /></p>
+
+<p><img src="https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/Art/VCPG_ContainerViewController_fig_1-2_2x.png" alt="컨테이너 뷰 컨트롤러" /></p>
+
+<p>컨테이너 뷰 컨트롤러는 자체 뷰와 하나 이상의 하위 뷰 컨트롤러에서 루트 뷰를 관리한다. 컨테이너는 자식의 콘텐츠를 관리하지 않는다. 컨테이너의 디자인에 따라 루트 뷰만 관리하고 크기를 조정하고 배치한다. 위 이미지는 Split View Controller와 하위 컨트롤러 간의 관계를 보여준다. Split View Controller는 하위 뷰의 전체 크기와 위치를 관리하지만 하위 뷰 컨트롤러는 해당 뷰의 실제 콘텐츠를 관리한다.</p>
+
+<hr />
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/index.html#//apple_ref/doc/uid/TP40007457">The Role of View Controllers</a></li>
+</ul>
+
+<h2 id="태그">태그</h2>
+
+<p>#iOS/UIViewController #iOSInterviewquestions</p>

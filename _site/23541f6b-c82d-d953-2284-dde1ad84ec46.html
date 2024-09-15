@@ -1,0 +1,22 @@
+<h1 id="identifiable">Identifiable</h1>
+
+<blockquote>
+  <p>A class of types whose instances hold the value of an entity with stable identity.</p>
+</blockquote>
+
+<p>인스턴스가 stable 한 신원(identity)을 갖는 걸 보장하게 하는 프로토콜</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">User</span><span class="p">:</span> <span class="kt">Identifiable</span> <span class="p">{</span>
+	<span class="k">var</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">UUID</span> <span class="o">=</span> <span class="kt">UUID</span><span class="p">()</span> <span class="c1">// id 의 타입이 Hashable 만 만족하면 된다.</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li>https://developer.apple.com/documentation/swift/identifiable</li>
+</ul>
+
+<h2 id="태그">태그</h2>
+
+<p>#Swift</p>

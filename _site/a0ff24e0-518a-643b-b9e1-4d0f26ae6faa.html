@@ -1,0 +1,47 @@
+<h1 id="ios-네비게이션-타이틀-변경">[iOS] 네비게이션 타이틀 변경</h1>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="kt">UIButton</span><span class="p">(</span><span class="nv">type</span><span class="p">:</span> <span class="o">.</span><span class="n">custom</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="nf">setImage</span><span class="p">(</span><span class="kt">UIImage</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"cloud.bolt.fill"</span><span class="p">),</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="nf">addTarget</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="nf">scrollToTop</span><span class="p">(</span><span class="nv">_</span><span class="p">:)),</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">touchUpInside</span><span class="p">)</span>
+<span class="k">self</span><span class="o">.</span><span class="n">tabBarController</span><span class="p">?</span><span class="o">.</span><span class="n">navigationItem</span><span class="o">.</span><span class="n">titleView</span> <span class="o">=</span> <span class="n">button</span>
+</code></pre></div></div>
+
+<p>문자열 대신 버튼이나 이미지를 넣고 싶으면 위 코드처럼 <code class="language-plaintext highlighter-rouge">titleView</code>에 대입하면 된다.(<code class="language-plaintext highlighter-rouge">UIView</code> 객체)</p>
+
+<h2 id="잘못-알고-있던-내용">잘못 알고 있던 내용</h2>
+
+<p>일반적으로 네비게이션 컨트롤러만 사용한다면 <code class="language-plaintext highlighter-rouge">self.navigationItem</code>을 통해 접근한다. <del>하지만 탭 바를 같이 사용하고 있으면 <code class="language-plaintext highlighter-rouge">self.tabBarController?.navigationItem</code>으로 접근해야 한다.</del></p>
+
+<p>처음 <code class="language-plaintext highlighter-rouge">SceneDelegate</code>에서 <code class="language-plaintext highlighter-rouge">window</code>의 루트 뷰 컨트롤러를 다음과 같이 작성했었다.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">window</span><span class="p">?</span><span class="o">.</span><span class="n">rootViewController</span> <span class="o">=</span> <span class="kt">UINavigationController</span><span class="p">(</span><span class="nv">rootViewController</span><span class="p">:</span> <span class="kt">ViewController</span><span class="p">())</span>
+</code></pre></div></div>
+<p>탭(내부 뷰 컨트롤러)이 하나일 때는 무엇이 문제인지 몰랐는데, 검색 화면을 추가 하니까 문제점이 눈에 보였다. 타임라인 화면과 검색 화면 둘 다 네비게이션 컨트롤러를 사용하는데, 탭 바 컨트롤러(타임라인, 검색의 상위 뷰 컨트롤러)에서 네비게이션 컨트롤러를 공유하고 있는 것이었다.</p>
+
+<p>다음과 같이 고치는 걸로 해결했다.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">window</span><span class="p">?</span><span class="o">.</span><span class="n">rootViewController</span> <span class="o">=</span> <span class="kt">ViewController</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UITabBarController</span> <span class="p">{</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+
+        <span class="k">let</span> <span class="nv">layout</span> <span class="o">=</span> <span class="kt">UICollectionViewFlowLayout</span><span class="p">()</span>
+        <span class="k">let</span> <span class="nv">timelineViewController</span> <span class="o">=</span> <span class="kt">UINavigationController</span><span class="p">(</span><span class="nv">rootViewController</span><span class="p">:</span> <span class="kt">TimelineViewController</span><span class="p">(</span><span class="nv">collectionViewLayout</span><span class="p">:</span> <span class="n">layout</span><span class="p">))</span>
+        <span class="n">timelineViewController</span><span class="o">.</span><span class="n">tabBarItem</span> <span class="o">=</span> <span class="kt">UITabBarItem</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span>
+                                                         <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"house"</span><span class="p">),</span>
+                                                         <span class="nv">selectedImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"house.fill"</span><span class="p">))</span>
+        <span class="k">let</span> <span class="nv">searchViewController</span> <span class="o">=</span> <span class="kt">UINavigationController</span><span class="p">(</span><span class="nv">rootViewController</span><span class="p">:</span> <span class="kt">SearchViewController</span><span class="p">())</span>
+        <span class="n">searchViewController</span><span class="o">.</span><span class="n">tabBarItem</span> <span class="o">=</span> <span class="kt">UITabBarItem</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span>
+                                                         <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"magnifyingglass"</span><span class="p">),</span>
+                                                         <span class="nv">selectedImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"magnifyingglass"</span><span class="p">))</span>
+        <span class="k">let</span> <span class="nv">tabBars</span> <span class="o">=</span> <span class="p">[</span><span class="n">timelineViewController</span><span class="p">,</span> <span class="n">searchViewController</span><span class="p">]</span>
+
+        <span class="n">viewControllers</span> <span class="o">=</span> <span class="n">tabBars</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="태그">태그</h2>
+
+<p>#iOS/UINavigationController</p>

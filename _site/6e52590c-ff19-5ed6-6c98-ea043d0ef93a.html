@@ -1,0 +1,56 @@
+<p>프로젝트에서 아래의 코드를 작성했다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">bindNotificationPassSelectPHAssets</span><span class="p">()</span> <span class="p">{</span>
+	<span class="kt">NotificationCenter</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="n">rx</span>
+		<span class="o">.</span><span class="nf">notification</span><span class="p">(</span><span class="o">.</span><span class="n">passSelectAssets</span><span class="p">,</span> <span class="nv">object</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+		<span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">notification</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">PHAsset</span><span class="p">]</span> <span class="k">in</span>
+			<span class="n">notification</span><span class="o">.</span><span class="n">userInfo</span><span class="p">?[</span><span class="kt">Notification</span><span class="o">.</span><span class="kt">Name</span><span class="o">.</span><span class="n">passSelectAssets</span><span class="p">]</span> <span class="k">as?</span> <span class="p">[</span><span class="kt">PHAsset</span><span class="p">]</span> <span class="p">??</span> <span class="p">[]</span>
+		<span class="p">}</span>
+		<span class="o">.</span><span class="n">bind</span> <span class="p">{</span> <span class="n">assets</span> <span class="k">in</span>
+			<span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="k">in</span>
+				<span class="k">guard</span> <span class="k">let</span> <span class="nv">self</span> <span class="o">=</span> <span class="k">self</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+				<span class="k">self</span><span class="o">.</span><span class="n">selectedImages</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="nf">requestThumbnailImages</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">assets</span><span class="p">)</span>
+			<span class="p">}</span>
+		<span class="p">}</span><span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">disposeBag</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>코드 리뷰를 받으면서 해당 부분에서 메모리 누수가 발생한다는 점을 알려주셨다. 그러면서 아래의 코드로 수정하니, 메모리 누수가 발생하지 않는다면서 이유는 모르시겠다는 답변을 남기셨다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">bindNotificationPassSelectPHAssets</span><span class="p">()</span> <span class="p">{</span>
+	<span class="kt">NotificationCenter</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="n">rx</span>
+		<span class="o">.</span><span class="nf">notification</span><span class="p">(</span><span class="o">.</span><span class="n">passSelectAssets</span><span class="p">,</span> <span class="nv">object</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+		<span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">notification</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">PHAsset</span><span class="p">]</span> <span class="k">in</span>
+			<span class="n">notification</span><span class="o">.</span><span class="n">userInfo</span><span class="p">?[</span><span class="kt">Notification</span><span class="o">.</span><span class="kt">Name</span><span class="o">.</span><span class="n">passSelectAssets</span><span class="p">]</span> <span class="k">as?</span> <span class="p">[</span><span class="kt">PHAsset</span><span class="p">]</span> <span class="p">??</span> <span class="p">[]</span>
+		<span class="p">}</span>
+		<span class="o">.</span><span class="n">bind</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">assets</span> <span class="k">in</span>
+			<span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+				<span class="k">guard</span> <span class="k">let</span> <span class="nv">self</span> <span class="o">=</span> <span class="k">self</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+				<span class="k">self</span><span class="o">.</span><span class="n">selectedImages</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="nf">requestThumbnailImages</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">assets</span><span class="p">)</span>
+			<span class="p">}</span>
+		<span class="p">}</span><span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">disposeBag</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이유를 찾아보다가 <a href="https://medium.com/flawless-app-stories/the-nested-closure-trap-356a0145b6d">이 글</a>을 읽게 되었다. 요약하면, <code class="language-plaintext highlighter-rouge">중첩된 클로저가 있을 때 더 높은 수준(바깥)의 클로저에서 [weak self]를 호출해야 한다. 내부 클로저에 추가하면 메모리 누수가 발생한다.</code> 였다.</p>
+
+<p>더불어 해당 글과 연결된 글쓴이의 <a href="https://medium.com/@almalehdev/you-dont-always-need-weak-self-a778bec505ef">[weak self]</a>의 관한 글을 읽으면서 몰랐던 사실을 추가로 알게 되었다. GCD(DispatchQueue)에서 일반적으로 나중에 호출하기 위해서 저장하지 않는 이상 <code class="language-plaintext highlighter-rouge">[weak self]</code>를 쓰지 않아도 무관하다는 것이다.</p>
+
+<p>예를 들어,</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+	<span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">black</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이렇게 참조해도 무관하다는 것. 이 외에도 글에 다양한 예제가 나와있다.</p>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://medium.com/@almalehdev/the-nested-closure-trap-356a0145b6d">The Nested Closure Trap. Revisiting [weak self] to avoid retain…</a></li>
+  <li><a href="https://medium.com/@almalehdev/you-dont-always-need-weak-self-a778bec505ef">You don’t (always) need [weak self]</a></li>
+</ul>
+
+<h2 id="태그">태그</h2>
+
+<p>#Swift</p>

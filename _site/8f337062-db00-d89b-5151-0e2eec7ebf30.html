@@ -1,0 +1,36 @@
+<h1 id="ios-뷰의-그림자-만들기">[iOS] 뷰의 그림자 만들기</h1>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">shadowColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">black</span><span class="o">.</span><span class="n">cgColor</span>
+<span class="n">button</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">shadowOffset</span> <span class="o">=</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">shadowRadius</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">button</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">shadowOpacity</span> <span class="o">=</span> <span class="mf">0.5</span>
+</code></pre></div></div>
+<p>기존 플로팅 버튼은 위와 같이 그림자를 적용했는데, 디버깅을 해보니까 다음과 같은 경고가 떴다.</p>
+
+<blockquote>
+  <p>The layer is using dynamic shadows which are expensive to render. If possible try setting 'shadowPath', or pre-rendering the shadow into an image and putting it under the layer.</p>
+</blockquote>
+
+<p>렌더링 비용이 많이 드니까 <code class="language-plaintext highlighter-rouge">shadowPath</code>를 변경하라는 경고여서, 해결책을 찾아보았다. 두 가지 방식이 있는데,</p>
+
+<p>첫 번째는 <code class="language-plaintext highlighter-rouge">UIBezierPath</code>를 사용하면 된다. 다음과 같은 코드를 한 줄 추가하면 된다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">shadowPath</span> <span class="o">=</span> <span class="kt">UIBezierPath</span><span class="p">(</span><span class="nv">roundedRect</span><span class="p">:</span> <span class="n">button</span><span class="o">.</span><span class="n">bounds</span><span class="p">,</span> <span class="nv">cornerRadius</span><span class="p">:</span> <span class="n">button</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">cornerRadius</span><span class="p">)</span><span class="o">.</span><span class="n">cgPath</span>
+</code></pre></div></div>
+
+<p>두 번째는 그림자를 다시 그릴 필요없이 iOS에 렌더링된 그림자를 캐시하도록 요청할 수 있다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">shouldRasterize</span> <span class="o">=</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://www.hackingwithswift.com/example-code/uikit/how-to-add-a-shadow-to-a-uiview">How to add a shadow to a UIView</a></li>
+</ul>
+
+<h2 id="태그">태그</h2>
+
+<p>#iOS</p>

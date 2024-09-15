@@ -1,0 +1,428 @@
+<h1 id="rxswift-학습-정리">[RxSwift] 학습 정리</h1>
+
+<h2 id="옵저버-패턴">옵저버 패턴</h2>
+
+<ul>
+  <li>1:N 관계로 이루어진, 관찰 패턴</li>
+  <li>객체를 구독하면 옵저버가 상태를 알려줌<br />
+  <img src="rxswift-1.png" alt="Observer Pattern" /></li>
+</ul>
+
+<h2 id="함수형-프로그래밍">함수형 프로그래밍</h2>
+
+<ul>
+  <li>1급 객체
+    <ul>
+      <li>변수나 상수에 저장을 할 수 있어야 함</li>
+      <li>함수에서 <code class="language-plaintext highlighter-rouge">return</code> 할 수 있어야 함</li>
+      <li>파라미터로 전달할 수 있어야 함</li>
+    </ul>
+  </li>
+  <li>순수 함수</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 환율 계산해주는 프로그램 이 코드는 순수 함수라고 할 수 없다. → 전역 상태에 의존 = 참조 투명성이 없다 */</span> 
+<span class="k">var</span> <span class="nv">rate</span> <span class="o">=</span> <span class="mi">1120</span> 
+<span class="kd">func</span> <span class="nf">krw</span><span class="p">(</span><span class="nv">usd</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span> 
+    <span class="k">return</span> <span class="n">usd</span> <span class="o">*</span> <span class="n">rate</span> 
+<span class="p">}</span> 
+
+<span class="nf">krw</span><span class="p">(</span><span class="nv">usd</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">// 2240 </span>
+<span class="nf">krw</span><span class="p">(</span><span class="nv">usd</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">// 3360 </span>
+<span class="n">rate</span> <span class="o">=</span> <span class="mi">1130</span> 
+<span class="nf">krw</span><span class="p">(</span><span class="nv">usd</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">// 2260 </span>
+<span class="nf">krw</span><span class="p">(</span><span class="nv">usd</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">// 3390</span>
+</code></pre></div></div>
+
+<h2 id="reactivex">ReactiveX</h2>
+
+<ul>
+  <li>관찰 가능한 스트림을 이용한 비동기 프로그래밍 API</li>
+  <li>Reactive eXtension</li>
+</ul>
+
+<h2 id="rxswift">RxSwift</h2>
+
+<ul>
+  <li>Observable
+    <ul>
+      <li>Rx의 기본이 되는 스트림을 가지고 있는 기본 시퀀스</li>
+      <li>하나 또는 연속된 항목을 배출</li>
+      <li>구독 후 next, error, completed로 처리
+        <ul>
+          <li>next 스트림
+            <ul>
+              <li>연속된 값들을 배출하고 옵저버는 next 스트림을 관찰 및 구독해서 원하는 행동을 함</li>
+            </ul>
+          </li>
+          <li>error 스트림
+            <ul>
+              <li>값을 배출하다가 에러가 생기면 error를 배출한 다음 해당 Observable은 스트림을 멈춤</li>
+            </ul>
+          </li>
+          <li>complete
+            <ul>
+              <li>Observable이 모든 값을 다 배출하면 이 상태(?)가 됨</li>
+              <li>error가 발생하면 complete은 발생하지 않음!</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Operator
+    <ul>
+      <li>Observable 안에서 데이터 처리를 위한 모든 연산들</li>
+      <li>map, filter, merge 등 수십가지의 연산이 있음
+        <ul>
+          <li>메소드 체이닝으로 많이 진행함</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Single
+    <ul>
+      <li>Observable 같이 N번이 아닌, 단번의 데이터를 처리하기 위한 시퀀스</li>
+      <li>구독 후 success, error 두 가지로 처리</li>
+      <li>한번만 오고, 한번에 끝남</li>
+    </ul>
+  </li>
+  <li>Subject
+    <ul>
+      <li>여러개의 Observer가 데이터를 관찰해야 할 때 사용하는 객체</li>
+      <li>Observer 와 Observable 사이의 브릿지 역할</li>
+      <li>여러 개의 Observer가 데이터를 관찰해야하는 경우 자주 쓰임</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="굳이">굳이?</h2>
+
+<ul>
+  <li>왜 비용을 들여가면서?</li>
+  <li>왜 잘 돌아가는 코드를 바꿔가면서?</li>
+  <li>왜 꼭 더 난이도 있는 RxSwift를?</li>
+</ul>
+
+<h3 id="이유">이유</h3>
+
+<ul>
+  <li>간결해지는 코드
+    <ul>
+      <li>조금 더 길어지더라도, 간단하면서도 깔끔해지는 코드</li>
+    </ul>
+  </li>
+  <li>간편한 비동기 관리</li>
+</ul>
+
+<h2 id="rxswift-알아보기-1--3-기록">RxSwift 알아보기 1 ~ 3 기록</h2>
+
+<h3 id="정수형-배열의-엘리먼트를-체크하는-함수-rxswift">정수형 배열의 엘리먼트를 체크하는 함수 (RxSwift)</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// items 라는 정수 타입의 배열을 파라미터로 받음 -&gt; 정수 제네릭 타입의 Observable 객체를 리턴</span>
+<span class="kd">func</span> <span class="nf">checkArrayObservable</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Observable</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kt">Observable</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;.</span><span class="n">create</span> <span class="p">{</span> <span class="n">observer</span> <span class="o">-&gt;</span> <span class="kt">Disposable</span> <span class="k">in</span>
+
+        <span class="k">for</span> <span class="n">item</span> <span class="k">in</span> <span class="n">items</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+                <span class="n">observer</span><span class="o">.</span><span class="nf">onError</span><span class="p">(</span><span class="kt">NSError</span><span class="p">(</span><span class="nv">domain</span><span class="p">:</span> <span class="s">"Error: value is zero."</span><span class="p">,</span> <span class="nv">code</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">userInfo</span><span class="p">:</span> <span class="kc">nil</span><span class="p">))</span> <span class="c1">// 0이면 에러를 흘려준다</span>
+                <span class="k">break</span>
+            <span class="p">}</span>
+
+            <span class="n">observer</span><span class="o">.</span><span class="nf">onNext</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="c1">// 0이 아니면 각 엘리먼트를 next로 흘려준다</span>
+
+            <span class="nf">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="n">observer</span><span class="o">.</span><span class="nf">onCompleted</span><span class="p">()</span> <span class="c1">// 모든 순회가 끝나면 completed 되었다는 걸 알림</span>
+
+        <span class="k">return</span> <span class="kt">Disposables</span><span class="o">.</span><span class="nf">create</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="subscribe-dispose">Subscribe, Dispose</h3>
+
+<h4 id="subscribe">Subscribe</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Observable</code>의 stream을 관찰하고 구독해서 받는 역할<br />
+→ <code class="language-plaintext highlighter-rouge">Disposable</code> 이라는 객체를 반환한다!</p>
+
+<h4 id="예제-코드">예제 코드</h4>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// interval: n초마다 정수 타입의 스트림이 방출됨</span>
+<span class="kt">Observable</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;.</span><span class="nf">interval</span><span class="p">(</span><span class="kt">RxTimeInterval</span><span class="o">.</span><span class="nf">seconds</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="nv">scheduler</span><span class="p">:</span> <span class="kt">MainScheduler</span><span class="o">.</span><span class="n">instance</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">take</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1">// parameter 만큼의 스트림 허용</span>
+    <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="n">value</span> <span class="k">in</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="p">},</span> <span class="nv">onError</span><span class="p">:</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+    <span class="p">},</span> <span class="nv">onCompleted</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"onCompleted"</span><span class="p">)</span>
+    <span class="p">},</span> <span class="nv">onDisposed</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"onDisposed"</span><span class="p">)</span>
+    <span class="p">})</span>
+
+<span class="c1">// 예외 상황 발생</span>
+<span class="c1">// 카운팅이 끝나기 전에 뷰 컨트롤러를 해제해 버린다면?</span>
+<span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">asyncAfter</span><span class="p">(</span><span class="nv">deadline</span><span class="p">:</span> <span class="o">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">keyWindow</span><span class="p">?</span><span class="o">.</span><span class="n">rootViewController</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="p">}</span> <span class="c1">// 앱이 죽었음에도 불구하고 끝까지 카운트가 진행됨</span>
+</code></pre></div></div>
+
+<p>이것을 해결해보자.</p>
+
+<h4 id="disposable">Disposable</h4>
+
+<blockquote>
+  <p>disposable: 처분할 수 있는, 사용 후 버릴 수 있는</p>
+</blockquote>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Disposable</span> <span class="p">{</span>
+    <span class="c1">/// Dispose resource.</span>
+    <span class="kd">func</span> <span class="nf">dispose</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /></p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// interval: n초마다 정수 타입의 스트림이 방출됨</span>
+<span class="k">let</span> <span class="nv">disposable</span> <span class="o">=</span> <span class="kt">Observable</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;.</span><span class="nf">interval</span><span class="p">(</span><span class="kt">RxTimeInterval</span><span class="o">.</span><span class="nf">seconds</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="nv">scheduler</span><span class="p">:</span> <span class="kt">MainScheduler</span><span class="o">.</span><span class="n">instance</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">take</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1">// parameter 만큼의 스트림 허용</span>
+    <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="n">value</span> <span class="k">in</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="p">},</span> <span class="nv">onError</span><span class="p">:</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+    <span class="p">},</span> <span class="nv">onCompleted</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"onCompleted"</span><span class="p">)</span>
+    <span class="p">},</span> <span class="nv">onDisposed</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"onDisposed"</span><span class="p">)</span>
+    <span class="p">})</span>
+
+<span class="c1">// 예외 상황 발생</span>
+<span class="c1">// 카운팅이 끝나기 전에 뷰 컨트롤러를 해제해 버린다면?</span>
+<span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">asyncAfter</span><span class="p">(</span><span class="nv">deadline</span><span class="p">:</span> <span class="o">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">disposable</span><span class="o">.</span><span class="nf">dispose</span><span class="p">()</span>
+<span class="p">}</span> <span class="c1">// 반환된 disposable 객체를 가지고 있다가 뷰 컨트롤러가 deinit 될 때 dispose 실행</span>
+</code></pre></div></div>
+
+<h4 id="만약-구독받는-observable이-여러개라면">만약 구독받는 Observable이 여러개라면?</h4>
+
+<p>→ DisposeBag을 사용하자</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">Disposable</span> <span class="p">{</span>
+    <span class="c1">/// Adds `self` to `bag`</span>
+    <span class="c1">///</span>
+    <span class="c1">/// - parameter bag: `DisposeBag` to add `self` to.</span>
+    <span class="kd">public</span> <span class="kd">func</span> <span class="nf">disposed</span><span class="p">(</span><span class="n">by</span> <span class="nv">bag</span><span class="p">:</span> <span class="kt">DisposeBag</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">bag</span><span class="o">.</span><span class="nf">insert</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>파라미터로 들어오는 DisposeBag 객체에 자신을 insert 한다.</p>
+
+<p>모든 <code class="language-plaintext highlighter-rouge">Disposable</code> 객체에 <code class="language-plaintext highlighter-rouge">disposed</code>를 해주면 해당 파라미터인 <code class="language-plaintext highlighter-rouge">disposeBag</code>에 등록되고 <strong>disposeBag 객체가 해제되면서 등록된 모든 disposable이 다 같이 dispose 되어버린다.</strong></p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// var로 선언한 이유: disposeBag이 해제되면 모든 disposable이 dispose되는 원리를 개발도중 사용할 수 있음</span>
+<span class="c1">/// subscribe 중이던 disposable을 초기화하고 싶으면 새로운 DisposeBag 객체를 넣어주면 끝!</span>
+<span class="k">var</span> <span class="nv">disposeBag</span> <span class="o">=</span> <span class="kt">DisposeBag</span><span class="p">()</span>
+
+<span class="c1">// interval: n초마다 정수 타입의 스트림이 방출됨</span>
+<span class="kt">Observable</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;.</span><span class="nf">interval</span><span class="p">(</span><span class="kt">RxTimeInterval</span><span class="o">.</span><span class="nf">seconds</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="nv">scheduler</span><span class="p">:</span> <span class="kt">MainScheduler</span><span class="o">.</span><span class="n">instance</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">take</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1">// parameter 만큼의 스트림 허용</span>
+    <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="n">value</span> <span class="k">in</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="p">},</span> <span class="nv">onError</span><span class="p">:</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+    <span class="p">},</span> <span class="nv">onCompleted</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"onCompleted"</span><span class="p">)</span>
+    <span class="p">},</span> <span class="nv">onDisposed</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"onDisposed"</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">disposeBag</span><span class="p">)</span> <span class="c1">// **← 여기 부분!**</span>
+</code></pre></div></div>
+
+<h2 id="rxswift-in-4hours">RxSwift In 4Hours</h2>
+
+<h3 id="동기비동기-처리">동기/비동기 처리</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">onLoadAsync</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// TODO: async</span>
+    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">()</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="k">in</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">self</span> <span class="o">=</span> <span class="k">self</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        <span class="k">let</span> <span class="nv">image</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="nf">loadImage</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="kt">IMAGE_URL</span><span class="p">)</span>
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">imageView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">private</span> <span class="kd">func</span> <span class="nf">loadImage</span><span class="p">(</span><span class="n">from</span> <span class="nv">imageUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">imageUrl</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">nil</span> <span class="p">}</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">Data</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">nil</span> <span class="p">}</span>
+
+    <span class="k">let</span> <span class="nv">image</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">image</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="just">just</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Observable</span><span class="o">.</span><span class="nf">just</span><span class="p">(</span><span class="s">"Hello World"</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="n">str</span> <span class="k">in</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">disposeBag</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">just</code>의 인자로 넣어준 <code class="language-plaintext highlighter-rouge">"Hello World"</code>가 <code class="language-plaintext highlighter-rouge">str</code>로 넘어간다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Observable.create()</code>를 대신 해주는 메소드</li>
+  <li>배열을 넣으면 배열을 처리함(아무거나 넣어도 된단 소리)</li>
+</ul>
+
+<h3 id="from">from</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Observable</span><span class="o">.</span><span class="nf">from</span><span class="p">([</span><span class="s">"RxSwift"</span><span class="p">,</span> <span class="s">"In"</span><span class="p">,</span> <span class="s">"4"</span><span class="p">,</span> <span class="s">"Hours"</span><span class="p">])</span>
+    <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="n">str</span> <span class="k">in</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">disposeBag</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">from</code>에 배열이 들어가면 <strong>하나씩</strong> 실행한다.</p>
+
+<h3 id="map">map</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Observable</span><span class="o">.</span><span class="nf">just</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">str</span> <span class="k">in</span> <span class="s">"</span><span class="se">\(</span><span class="n">str</span><span class="se">)</span><span class="s"> RxSwift"</span> <span class="p">}</span>
+    <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="n">str</span> <span class="k">in</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">disposeBag</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>실행순서</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">just(Hello)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">map { str in "\(str) RxSwift" }</code></li>
+  <li><code class="language-plaintext highlighter-rouge">onNext: { str in print(str) }</code></li>
+  <li>결과: Hello RxSwift</li>
+</ol>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Observable</span><span class="o">.</span><span class="nf">just</span><span class="p">([</span><span class="s">"Hello"</span><span class="p">,</span> <span class="s">"World"</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">str</span> <span class="k">in</span> <span class="s">"</span><span class="se">\(</span><span class="n">str</span><span class="se">)</span><span class="s"> RxSwift"</span> <span class="p">}</span>
+    <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="n">str</span> <span class="k">in</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">disposeBag</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>실행순서</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">just(["Hello", "World"])</code></li>
+  <li><code class="language-plaintext highlighter-rouge">map { str in "\(str) RxSwift" }</code></li>
+  <li><code class="language-plaintext highlighter-rouge">onNext: { str in print(str) }</code></li>
+  <li>결과: ["Hello", "World"] RxSwift</li>
+</ol>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Observable</span><span class="o">.</span><span class="nf">from</span><span class="p">([</span><span class="s">"Hello"</span><span class="p">,</span> <span class="s">"World"</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">str</span> <span class="k">in</span> <span class="s">"</span><span class="se">\(</span><span class="n">str</span><span class="se">)</span><span class="s"> RxSwift"</span> <span class="p">}</span>
+    <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="n">str</span> <span class="k">in</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">disposeBag</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>실행순서</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">just(["Hello", "World"])</code> → 첫번째 원소</li>
+  <li><code class="language-plaintext highlighter-rouge">map { str in "\(str) RxSwift" }</code></li>
+  <li><code class="language-plaintext highlighter-rouge">onNext: { str in print(str) }</code></li>
+  <li>결과: Hello RxSwift</li>
+  <li><code class="language-plaintext highlighter-rouge">just(["Hello", "World"])</code> → 두번째 원소</li>
+  <li><code class="language-plaintext highlighter-rouge">map { str in "\(str) RxSwift" }</code></li>
+  <li><code class="language-plaintext highlighter-rouge">onNext: { str in print(str) }</code></li>
+  <li>결과: World RxSwift</li>
+</ol>
+
+<h3 id="filter">filter</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Observable</span><span class="o">.</span><span class="nf">from</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">}</span>
+    <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="n">n</span> <span class="k">in</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">disposeBag</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">true</code>일 때만 데이터가 밑으로 내려감</p>
+
+<h3 id="이미지를-다운받는-과정">이미지를 다운받는 과정</h3>
+
+<p>위에서 배운 걸로 해석해보자.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Observable</span><span class="o">.</span><span class="nf">just</span><span class="p">(</span><span class="s">"800x600"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="nf">replacingOccurrences</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="s">"x"</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="s">"/"</span><span class="p">)</span> <span class="p">}</span> <span class="c1">// → "800/600"</span>
+    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="s">"https://picsum.photos/</span><span class="se">\(</span><span class="nv">$0</span><span class="se">)</span><span class="s">/?random"</span> <span class="p">}</span> <span class="c1">// → "https://picsum.photos/800/600/?random"</span>
+    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="nv">$0</span><span class="p">)</span> <span class="p">}</span> <span class="c1">// → URL 객체로 변환</span>
+    <span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">}</span> <span class="c1">// → URL 객체가 nil이면 내려가지 않음</span>
+    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">!</span> <span class="p">}</span> <span class="c1">// → 내려오면 강제 언랩핑 (위에서 체크했으니까 강제 언래핑해도 됨)</span>
+    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="k">try</span> <span class="kt">Data</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="nv">$0</span><span class="p">)</span> <span class="p">}</span> <span class="c1">// → URL에 있는 데이터를 다운</span>
+    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="nv">$0</span><span class="p">)</span> <span class="p">}</span> <span class="c1">// → UIImage?</span>
+    <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="n">image</span> <span class="k">in</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">imageView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span>
+    <span class="p">})</span>
+    <span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">disposeBag</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="observeon">observeOn</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Observable</span><span class="o">.</span><span class="nf">just</span><span class="p">(</span><span class="s">"800x600"</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">observeOn</span><span class="p">(</span><span class="kt">ConcurrentDispatchQueueScheduler</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">qos</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">))</span> <span class="c1">// 백그라운드에서 돌릴 때</span>
+    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="nf">replacingOccurrences</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="s">"x"</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="s">"/"</span><span class="p">)</span> <span class="p">}</span> <span class="c1">// → "800/600"</span>
+    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="s">"https://picsum.photos/</span><span class="se">\(</span><span class="nv">$0</span><span class="se">)</span><span class="s">/?random"</span> <span class="p">}</span> <span class="c1">// → "https://picsum.photos/800/600/?random"</span>
+    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="nv">$0</span><span class="p">)</span> <span class="p">}</span> <span class="c1">// → URL 객체로 변환</span>
+    <span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">}</span> <span class="c1">// → URL 객체가 nil이면 내려가지 않음</span>
+    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">!</span> <span class="p">}</span> <span class="c1">// → 내려오면 강제 언랩핑 (위에서 체크했으니까 강제 언래핑해도 됨)</span>
+    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="k">try</span> <span class="kt">Data</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="nv">$0</span><span class="p">)</span> <span class="p">}</span> <span class="c1">// → URL에 있는 데이터를 다운</span>
+    <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="nv">$0</span><span class="p">)</span> <span class="p">}</span> <span class="c1">// → UIImage?</span>
+    <span class="o">.</span><span class="nf">observeOn</span><span class="p">(</span><span class="kt">MainScheduler</span><span class="o">.</span><span class="n">instance</span><span class="p">)</span> <span class="c1">// 메인 스레드에서 돌리는거</span>
+    <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="n">image</span> <span class="k">in</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">imageView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span>
+    <span class="p">})</span>
+    <span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">disposeBag</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">observeOn</code>을 해준 다음줄 부터 영향이 미친다.</p>
+
+<h3 id="subscribeon">subscribeOn</h3>
+
+<p><code class="language-plaintext highlighter-rouge">subscribe</code>가 실행되는 시점부터 동작한다. 아무 위치에나 넣어도 상관없음!</p>
+
+<h3 id="side-effect">side-effect</h3>
+
+<p>side-effect를 허용하는 건 두 개가 있다.</p>
+
+<ul>
+  <li>do</li>
+  <li>subscribe</li>
+</ul>
+
+<hr />
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=3_dyVj4HcYk&amp;feature=youtu.be">RxSwift + MVVM 설명</a></li>
+  <li><a href="https://medium.com/@jang.wangsu/rxswift-rxswift-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-4b5187d07a33">[RxSwift] RxSwift 시작하기</a></li>
+  <li><a href="https://magi82.github.io/ios-rxswift-01/">RxSwift 알아보기(ReactiveX 에 대해서) - 01</a> → 시리즈 참고!</li>
+  <li><a href="https://www.youtube.com/watch?v=w5Qmie-GbiA&amp;list=PL03rJBlpwTaAh5zfc8KWALc3ADgugJwjq&amp;index=1">RxSwift 4시간에 끝내기 (종합편)</a></li>
+</ul>
+
+<h2 id="태그">태그</h2>
+
+<p>#iOS/RxSwift</p>

@@ -1,0 +1,83 @@
+<h1 id="한-컴퓨터에-github-계정-여러개-쓰기">한 컴퓨터에 GitHub 계정 여러개 쓰기</h1>
+
+<h2 id="기록">기록</h2>
+
+<ol>
+  <li>SSH Key 생성</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-C</span> <span class="s2">"userA@example.com"</span> <span class="nt">-f</span> <span class="s2">"id_rsa_userA"</span>
+</code></pre></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-C</span> <span class="s2">"userB@example.com"</span> <span class="nt">-f</span> <span class="s2">"id_rsa_userB"</span>
+</code></pre></div></div>
+
+<ol>
+  <li>ssh-agent에 새로 생성한 SSH Key 추가</li>
+</ol>
+
+<p>백그라운드에 ssh-agent 실행</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">eval</span> <span class="s2">"</span><span class="si">$(</span>ssh-agent <span class="nt">-s</span><span class="si">)</span><span class="s2">"</span>
+</code></pre></div></div>
+
+<p>userA, userB의 SSH 개인키를 ssh-agent에 추가</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-add ~/.ssh/id_rsa_userA
+</code></pre></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-add ~/.ssh/id_rsa_userB
+</code></pre></div></div>
+
+<p>ssh-agent에 추가되었는지 확인</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-add <span class="nt">-l</span>
+</code></pre></div></div>
+
+<ol>
+  <li>GitHub 에 공개키 추가하기
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> &lt; ~/.ssh/id_rsa.pub
+</code></pre></div>    </div>
+  </li>
+  <li>SSH Config 파일 생성</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi ~/.ssh/config
+</code></pre></div></div>
+
+<pre><code class="language-plain"># userA에 대한 SSH 설정
+Host github.com-userA
+	HostName github.com
+	User userA
+	IdentityFile ~/.ssh/id_rsa_userA
+
+# userB에 대한 SSH 설정
+Host github.com-userB
+	HostName github.com
+	User userB
+	IdentityFile ~/.ssh/id_rsa_userB
+</code></pre>
+
+<ol>
+  <li>SSH 연결 테스트</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh <span class="nt">-T</span> git@github.com-userA
+</code></pre></div></div>
+
+<ol>
+  <li>SSH 로 clone</li>
+</ol>
+
+<p><strong>SSH 경로를 config 에서 설정한 것으로 해야함</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com-userA:userA/userA-test.git
+</code></pre></div></div>
+
+<p>예를 들어, jwonylee 로 config 를 만들었고, jwonylee 의 wiki 저장소를 clone 한다면</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com-jwonylee:jwonylee/wiki.git
+</code></pre></div></div>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li>https://usingu.co.kr/frontend/git/한-컴퓨터에서-github-계정-여러개-사용하기/</li>
+</ul>

@@ -1,0 +1,76 @@
+<h2 id="기록">기록</h2>
+
+<p>기존에 내가 <code class="language-plaintext highlighter-rouge">EndPoint</code> 프로토콜을 정의하고, 해당 프로토콜을 채택한 <code class="language-plaintext highlighter-rouge">EndPointCases</code> 를 만드는 방식과 유사하게 사용한다.</p>
+
+<p>먼저 <code class="language-plaintext highlighter-rouge">***Service</code> 라는 타입의 열거형을 선언한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">enum</span> <span class="kt">PaymentService</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="nf">getUserCoupon</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>그 다음에 해당 서비스를 확장해서, <code class="language-plaintext highlighter-rouge">TargetType</code>을 채택하고 구현한다.
+이 때 구현해야 하는 필수 요소는 다음과 같다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">TargetType</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">baseURL</span><span class="p">:</span> <span class="kt">URL</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="k">var</span> <span class="nv">path</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="k">var</span> <span class="nv">method</span><span class="p">:</span> <span class="kt">Method</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="k">var</span> <span class="nv">task</span><span class="p">:</span> <span class="kt">Task</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="k">var</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>그 다음에는 <code class="language-plaintext highlighter-rouge">MoyaProvider</code> 라는 인스턴스를 만들고 (제네릭 타입, 위에서 만든 <code class="language-plaintext highlighter-rouge">Service</code>를 넣어서 생성)</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">provider</span> <span class="o">=</span> <span class="kt">MoyaProvider</span><span class="o">&lt;</span><span class="kt">PaymentService</span><span class="o">&gt;</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">provider</code>를 통해 <code class="language-plaintext highlighter-rouge">request</code>를 날리고, 클로저로 응답받은 데이터를 처리하면 된다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">provider</span><span class="o">.</span><span class="nf">request</span><span class="p">(</span><span class="o">.</span><span class="nf">getUserCoupon</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span> <span class="p">{</span> <span class="n">result</span> <span class="k">in</span>
+    <span class="c1">// do someting</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>provider를 어딘가에 유지해야 하는데, 그렇지 않으면 자동으로 해제되고 잠재적으로 응답을 받기 전에 해제 된다.</p>
+</blockquote>
+
+<h3 id="moya-for-rx">Moya (for Rx)</h3>
+
+<p>일반적인 request 날리는 방법</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">provider</span><span class="o">.</span><span class="nf">request</span><span class="p">(</span><span class="kt">Service</span><span class="o">.</span><span class="n">something</span><span class="p">)</span> <span class="p">{</span> <span class="n">result</span> <span class="k">in</span>
+    <span class="c1">// do something</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>for Rx</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">provider</span><span class="o">.</span><span class="n">rx</span><span class="o">.</span><span class="nf">request</span><span class="p">(</span><span class="kt">Service</span><span class="o">.</span><span class="n">something</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">owner</span><span class="p">,</span> <span class="n">response</span> <span class="k">in</span>
+        <span class="c1">// do something</span>
+    <span class="p">}</span>
+    <span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">disposeBag</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="생각">생각</h2>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Endpoint</code>를 만드는 것도 나와 있는데 이건 좀 더 살펴봐야 할 거 같음 (무엇이 이점이 있는지)</p>
+  </li>
+  <li>
+    <p>온전히 <code class="language-plaintext highlighter-rouge">Alamofire</code>를 wrapping 한 라이브러리인줄 알았는데, 무거운 작업은 <code class="language-plaintext highlighter-rouge">Alamofire</code>를 사용하고 그걸 다시 <code class="language-plaintext highlighter-rouge">Moya</code>로 wrapping 해서 보여준다는 말이 있는 걸 보아.. 또 그건 아닌 듯</p>
+  </li>
+</ul>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://github.com/Moya/Moya">Moya/Moya: Network abstraction layer written in Swift.</a></li>
+</ul>
+
+<h2 id="태그">태그</h2>
+
+<p>#iOS/Moya #iOS/Network</p>

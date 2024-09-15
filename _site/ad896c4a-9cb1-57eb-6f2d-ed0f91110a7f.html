@@ -1,0 +1,253 @@
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🎯 UIImagePickerController를 이용해서 사진 촬영 기능 구현하기
+</code></pre></div></div>
+
+<p>iOS에서 카메라 기능을 구현할 때, <code class="language-plaintext highlighter-rouge">AVFoundation</code>에 <code class="language-plaintext highlighter-rouge">AVCam</code>을 이용하는 방법과 <code class="language-plaintext highlighter-rouge">UIImagePickerController</code>를 이용하는 방법이 있다. <code class="language-plaintext highlighter-rouge">AVCam</code>은 iOS 13 이상, <code class="language-plaintext highlighter-rouge">UIImagePickerController</code>는 iOS 10 이상을 지원한다. 우리 앱은 iOS 13부터 지원하기 때문에 어느 방법을 선택해도 무관했으나, <code class="language-plaintext highlighter-rouge">UIImagePickerController</code>가 구현이 간단해서 이 방식을 선택했다.</p>
+
+<h2 id="화면-구성">화면 구성</h2>
+
+<p><img src="/assets/img/take-a-photo/ui.png" width="50%" alt="화면 구성" /></p>
+
+<p>화면은 스토리보드로 간단하게 촬영한 사진을 보여줄 이미지뷰와 사진 촬영 화면으로 이동하는 버튼으로 구성했다.</p>
+
+<p>구성한 뷰를 각각 뷰 컨트롤러와 연결한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">final</span> <span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">imageView</span><span class="p">:</span> <span class="kt">UIImageView</span><span class="o">!</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">tapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 사진 촬영 버튼</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="infoplist-카메라-권한-추가">Info.plist 카메라 권한 추가</h2>
+
+<p>iOS에서 앱이 카메라를 사용하려면 사용자에게 명시적으로 권한을 요청해야 한다. <code class="language-plaintext highlighter-rouge">Info.plist</code>에서 <code class="language-plaintext highlighter-rouge">Privacy - Camera Usage Description</code>을 추가하고, 사용자에게 권한이 왜 필요한지에 대한 설명을 작성한다.</p>
+
+<p><img src="/assets/img/take-a-photo/info.png" alt="Info.plist" /></p>
+
+<h2 id="uiimagepickercontroller">UIImagePickerController</h2>
+
+<blockquote>
+  <p>A view controller that manages the system interfaces for taking pictures, recording movies, and choosing items from the user's media library.<br />
+사진을 찍고, 동영상을 녹화하고, 사용자의 미디어 라이브러리에서 항목을 선택하기 위한 시스템 인터페이스를 관리하는 뷰 컨트롤러입니다.</p>
+</blockquote>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">final</span> <span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">imageView</span><span class="p">:</span> <span class="kt">UIImageView</span><span class="o">!</span>
+    <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">imagePickerController</span><span class="p">:</span> <span class="kt">UIImagePickerController</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">imagePickerController</span><span class="p">:</span> <span class="kt">UIImagePickerController</span> <span class="o">=</span> <span class="kt">UIImagePickerController</span><span class="p">()</span>
+        <span class="n">imagePickerController</span><span class="o">.</span><span class="n">sourceType</span> <span class="o">=</span> <span class="o">.</span><span class="n">camera</span>
+        <span class="n">imagePickerController</span><span class="o">.</span><span class="n">allowsEditing</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="n">imagePickerController</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+        <span class="k">return</span> <span class="n">imagePickerController</span>
+    <span class="p">}()</span>
+
+    <span class="c1">// 생략 ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">UIImagePickerController</code>를 이용해서 사진을 촬영하려면 <code class="language-plaintext highlighter-rouge">sourceType</code> 프로퍼티를 <code class="language-plaintext highlighter-rouge">UIImagePickerController.SourceType.camera</code>로 지정한다. 이 밖에도 <code class="language-plaintext highlighter-rouge">.photoLibrary</code>, <code class="language-plaintext highlighter-rouge">.savedPhotosAlbum</code>가 있는데 iOS 15부터 <code class="language-plaintext highlighter-rouge">Deprecated</code> 되었다. 나중에는 <code class="language-plaintext highlighter-rouge">UIImagePickerController</code> 자체가 사라질 수도 있을 거 같다.</p>
+
+<p>사진 촬영 이후에 1:1로 이미지를 편집하기 위해 <code class="language-plaintext highlighter-rouge">allowsEditing</code>을 <code class="language-plaintext highlighter-rouge">true</code>로 지정한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">delegate</code>도 구현해줄 예정이므로 <code class="language-plaintext highlighter-rouge">delegate</code>도 ViewController(<code class="language-plaintext highlighter-rouge">self</code>)로 지정한다.</p>
+
+<h2 id="사진-촬영-버튼-선택">사진 촬영 버튼 선택</h2>
+
+<p><code class="language-plaintext highlighter-rouge">UIImagePickerController</code>를 표시하면 알아서 권한 요청 알럿을 띄워준다. 문제는, 이렇게 하면 사용자가 권한 거부를 해도 이미 카메라 화면을 표시하고 있기 때문에 아무것도 보이지 않는다. 그래서 <code class="language-plaintext highlighter-rouge">UIImagePickerController</code>를 표시하기 전에 따로 권한 확인을 하고 허용 시 사진 촬영 이동, 거절 시 설정 화면으로 안내하는 알럿 표시하게끔 구성했다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">UIImagePickerController</code>를 표시만 해도 권한 요청을 하므로 권한이 있는지 없는지 여부를 확인할 수 있는 메서드나 프로퍼티가 있는지 확인했지만 없었다. 대신 <code class="language-plaintext highlighter-rouge">AVCaptureDevice</code> 객체를 사용하면 카메라 권한 여부 확인, 권한 요청을 할 수 있다. <code class="language-plaintext highlighter-rouge">AVCaptureDeivce</code>는 <code class="language-plaintext highlighter-rouge">AVFoundation</code>에 포함되어 있으므로 <code class="language-plaintext highlighter-rouge">AVFoundation</code>을 import 해야 한다.</p>
+
+<h3 id="권한-요청을-받은-적이-없을-때--권한-허용-시">권한 요청을 받은 적이 없을 때 || 권한 허용 시</h3>
+
+<p>권한을 요청받은 적이 없다면 <code class="language-plaintext highlighter-rouge">AVCaptureDeivce.requestAccess(for:completionHandler:)</code>를 사용해서 따로 권한을 요청한다. 권한을 요청하고 허가받았을 때 <code class="language-plaintext highlighter-rouge">UIImagePickerController</code>를 표시하면 사용자가 카메라 사용 권한을 거부했을 때 아무것도 보이지 않는 사진 촬영 화면 대신 권한을 재요청하는 알럿을 띄우는 등 별도의 처리를 할 수 있다.</p>
+
+<p>사용자가 권한을 허용했다면 <code class="language-plaintext highlighter-rouge">UIImagePickerController</code>를 표시한다. <code class="language-plaintext highlighter-rouge">AVCaptureDevice.requestAccess</code> 핸들러는 Dispatch Queue에서 실행될 수 있으므로 <code class="language-plaintext highlighter-rouge">권한 요청&gt;권한 허용</code>일 때 <code class="language-plaintext highlighter-rouge">UIImagePickerController</code>를 표시하려면 메인 스레드에서 실행할 수 있게 해야 한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">switch</span> <span class="kt">AVCaptureDevice</span><span class="o">.</span><span class="nf">authorizationStatus</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">video</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="o">.</span><span class="nv">authorized</span><span class="p">:</span> <span class="c1">// 권한 허용</span>
+        <span class="nf">present</span><span class="p">(</span><span class="n">imagePickerController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+    <span class="k">case</span> <span class="o">.</span><span class="nv">notDetermined</span><span class="p">:</span> <span class="c1">// 권한 요청을 받은 적이 없음</span>
+        <span class="kt">AVCaptureDevice</span><span class="o">.</span><span class="nf">requestAccess</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">video</span><span class="p">)</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">granted</span> <span class="k">in</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">self</span> <span class="o">=</span> <span class="k">self</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+            <span class="k">if</span> <span class="n">granted</span> <span class="p">{</span>
+                <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+                    <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">imagePickerController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="c1">// 생략 ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="권한-거절-시-설정-화면으로-이동-안내-알럿-표시">권한 거절 시 설정 화면으로 이동 안내 알럿 표시</h3>
+
+<p>권한이 거절되었거나, 제한되었을 때는 어떻게 해야할까? 보통 다른 앱을 보면 사용자에게 권한이 필요한 이유를 설명하면서 앱 설정 화면으로 안내하는 알럿을 표시한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// 사용자에게 카메라 촬영 권한에 관한 알럿을 표시한다.</span>
+<span class="kd">func</span> <span class="nf">showMoveSettingAlert</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">alert</span><span class="p">:</span> <span class="kt">UIAlertController</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span>
+                                                    <span class="nv">message</span><span class="p">:</span> <span class="s">"카메라 촬영 권한이 없습니다.</span><span class="se">\n</span><span class="s">카메라 권한을 허용해주세요."</span><span class="p">,</span>
+                                                    <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">cancleAction</span><span class="p">:</span> <span class="kt">UIAlertAction</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"취소"</span><span class="p">,</span>
+                                                    <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">cancel</span><span class="p">,</span>
+                                                    <span class="nv">handler</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">settingAction</span><span class="p">:</span> <span class="kt">UIAlertAction</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"설정"</span><span class="p">,</span>
+                                                    <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">,</span>
+                                                    <span class="nv">handler</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">_</span> <span class="k">in</span>
+        <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="nf">moveAppSetting</span><span class="p">()</span>
+    <span class="p">})</span>
+
+    <span class="n">alert</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">cancleAction</span><span class="p">)</span>
+    <span class="n">alert</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">settingAction</span><span class="p">)</span>
+    <span class="nf">present</span><span class="p">(</span><span class="n">alert</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">/// 앱 설정 화면으로 이동한다.</span>
+<span class="kd">func</span> <span class="nf">moveAppSetting</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="n">openSettingsURLString</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+
+    <span class="k">if</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">canOpenURL</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 사진 촬영 버튼 선택 시</span>
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">tapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="kt">AVCaptureDevice</span><span class="o">.</span><span class="nf">authorizationStatus</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">video</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 생략 ...</span>
+        <span class="k">case</span> <span class="o">.</span><span class="n">denied</span><span class="p">,</span> <span class="o">.</span><span class="nv">restricted</span><span class="p">:</span> <span class="c1">// 권한 요청 거부, 제한</span>
+            <span class="nf">showMoveSettingAlert</span><span class="p">()</span>
+        <span class="kd">@unknown</span> <span class="k">default</span><span class="p">:</span> <span class="c1">// 그 외</span>
+            <span class="nf">showMoveSettingAlert</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이제 <code class="language-plaintext highlighter-rouge">Take a Button</code>을 누르면 사용자에게 카메라 권한을 요청하고, 허용 시 사진 촬영 화면을 표시 / 거부 시 앱 설정 화면으로 안내하는 알럿을 표시한다.</p>
+
+<h2 id="촬영한-사진-편집--편집한-이미지-표시">촬영한 사진 편집 &amp;&amp; 편집한 이미지 표시</h2>
+
+<p>촬영한 사진을 편집하기 위해 <code class="language-plaintext highlighter-rouge">UIImagePickerController</code>를 생성할 때 <code class="language-plaintext highlighter-rouge">allowsEditing</code>를 <code class="language-plaintext highlighter-rouge">true</code>로 지정했었다. 편집한 사진을 <code class="language-plaintext highlighter-rouge">imageView</code>에 표시해보자.</p>
+
+<h3 id="uinavigationcontrollerdelegate-uiimagepickercontrollerdelegate-구현">UINavigationControllerDelegate, UIImagePickerControllerDelegate 구현</h3>
+
+<p><code class="language-plaintext highlighter-rouge">UIImagePickerController.delegate</code> 는 <code class="language-plaintext highlighter-rouge">UINavigationControllerDelegate</code>과 <code class="language-plaintext highlighter-rouge">UIImagePickerControllerDelegate</code>를 모두 만족해야 한다. 편집이 끝난 이미지를 가져오기 위해서 <code class="language-plaintext highlighter-rouge">imagePickerController(_:didFinishPickingMediaWithInfo:)</code>를 구현한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UINavigationControllerDelegate</span><span class="p">,</span> <span class="kt">UIImagePickerControllerDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">imagePickerController</span><span class="p">(</span><span class="n">_</span> <span class="nv">picker</span><span class="p">:</span> <span class="kt">UIImagePickerController</span><span class="p">,</span> <span class="n">didFinishPickingMediaWithInfo</span> <span class="nv">info</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIImagePickerController</span><span class="o">.</span><span class="kt">InfoKey</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">])</span> <span class="p">{</span>
+        <span class="n">picker</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span> <span class="c1">// 편집이 끝났으므로 UIImagePickerController를 닫는다.</span>
+
+        <span class="c1">// 편집된 이미지를 가져온다.</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">image</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="o">.</span><span class="n">editedImage</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">UIImage</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"No image found"</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
+
+        <span class="c1">// imageView에 이미지를 지정한다.</span>
+        <span class="n">imageView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="이미지-편집-시-중앙으로-이동할-수-없는-문제">이미지 편집 시 중앙으로 이동할 수 없는 문제</h3>
+
+<p>끝날 때까지 끝난 게 아니다. ^_ㅠ</p>
+
+<p><code class="language-plaintext highlighter-rouge">UIImagePickerController</code>를 이용해 사진 촬영 후, 이미지를 편집할 때 이미지 중앙에서 이동할 수 없는 문제가 있다. 찾아보니 iOS 6부터 발생한 고질적인 문제다. iOS 15까지도 여태껏 고쳐지지 않았다.</p>
+
+<p>다행스럽게도 <a href="https://stackoverflow.com/questions/12630155/uiimagepicker-allowsediting-stuck-in-center">스택 오버플로</a>에서 해결책을 찾을 수 있었다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">UIImagePickerController</code>의 익스텐션으로 아래 코드를 추가한다. 원문에는 iOS 11에 대응하는 부분이 있는데 우리 앱에서는 필요가 없는 부분이라 제거했다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">UIImagePickerController</span> <span class="p">{</span>
+    <span class="kd">open</span> <span class="k">override</span> <span class="k">var</span> <span class="nv">childForStatusBarHidden</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">nil</span>
+    <span class="p">}</span>
+
+    <span class="kd">open</span> <span class="k">override</span> <span class="k">var</span> <span class="nv">prefersStatusBarHidden</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">true</span>
+    <span class="p">}</span>
+
+    <span class="kd">open</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLayoutSubviews</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLayoutSubviews</span><span class="p">()</span>
+        <span class="nf">fixCannotMoveEditingBox</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">fixCannotMoveEditingBox</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">cropView</span> <span class="o">=</span> <span class="n">cropView</span><span class="p">,</span>
+           <span class="k">let</span> <span class="nv">scrollView</span> <span class="o">=</span> <span class="n">scrollView</span><span class="p">,</span>
+           <span class="n">scrollView</span><span class="o">.</span><span class="n">contentOffset</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+
+            <span class="k">let</span> <span class="nv">top</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="n">cropView</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">minY</span>
+            <span class="k">let</span> <span class="nv">bottom</span> <span class="o">=</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="n">cropView</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="n">top</span>
+            <span class="n">scrollView</span><span class="o">.</span><span class="n">contentInset</span> <span class="o">=</span> <span class="kt">UIEdgeInsets</span><span class="p">(</span><span class="nv">top</span><span class="p">:</span> <span class="n">top</span><span class="p">,</span> <span class="nv">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">bottom</span><span class="p">:</span> <span class="n">bottom</span><span class="p">,</span> <span class="nv">right</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="k">var</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">if</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">contentSize</span><span class="o">.</span><span class="n">height</span> <span class="o">&gt;</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">contentSize</span><span class="o">.</span><span class="n">width</span> <span class="p">{</span>
+                <span class="n">offset</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">scrollView</span><span class="o">.</span><span class="n">contentSize</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">contentSize</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="n">scrollView</span><span class="o">.</span><span class="n">contentOffset</span> <span class="o">=</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="o">-</span><span class="n">top</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">asyncAfter</span><span class="p">(</span><span class="nv">deadline</span><span class="p">:</span> <span class="o">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">+</span> <span class="mf">0.1</span><span class="p">)</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="k">in</span>
+            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="nf">fixCannotMoveEditingBox</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">cropView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nf">findCropView</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">scrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nf">findScrollView</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">findCropView</span><span class="p">(</span><span class="n">from</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIView</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">width</span> <span class="o">=</span> <span class="kt">UIScreen</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">width</span>
+        <span class="k">let</span> <span class="nv">size</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">size</span>
+        <span class="k">if</span> <span class="n">width</span> <span class="o">==</span> <span class="n">size</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span> <span class="o">==</span> <span class="n">size</span><span class="o">.</span><span class="n">height</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">view</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="n">view</span> <span class="k">in</span> <span class="n">view</span><span class="o">.</span><span class="n">subviews</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">cropView</span> <span class="o">=</span> <span class="nf">findCropView</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">view</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="n">cropView</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">nil</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">findScrollView</span><span class="p">(</span><span class="n">from</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIScrollView</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">scrollView</span> <span class="o">=</span> <span class="n">view</span> <span class="k">as?</span> <span class="kt">UIScrollView</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">scrollView</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="n">view</span> <span class="k">in</span> <span class="n">view</span><span class="o">.</span><span class="n">subviews</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">scrollView</span> <span class="o">=</span> <span class="nf">findScrollView</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">view</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="n">scrollView</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">nil</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="완성">완성</h2>
+
+<p><img src="/assets/img/take-a-photo/complete.gif" alt="동작 화면" width="50%" /></p>
+
+<p align="center">
+<i>마우스에 먼지는 무시해주세요...</i>
+</p>
+
+<p>끝!</p>
+
+<h2 id="태그">태그</h2>
+
+<p>#iOS/UIImagePickerController</p>

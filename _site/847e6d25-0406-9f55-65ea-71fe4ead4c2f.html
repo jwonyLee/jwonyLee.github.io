@@ -1,0 +1,128 @@
+<h1 id="rxswift-rxswiftext-일부-연산자-정리">[RxSwift] RxSwiftExt 일부 연산자 정리</h1>
+
+<p><code class="language-plaintext highlighter-rouge">RxSwiftCommunity</code> 에서 하는 프로젝트</p>
+<ul>
+  <li><a href="https://github.com/RxSwiftCommunity/RxSwiftExt">https://github.com/RxSwiftCommunity/RxSwiftExt</a></li>
+  <li>RxSwift에서 제공하지 않는 다양한 상황을 처리할 때 도움이 되는 연산자를 제공한다.</li>
+</ul>
+
+<p>24(+2)개의 연산자를 제공하는데 아래에는 일부 연산자만 정리했다.</p>
+
+<h2 id="distinct">distinct</h2>
+
+<p>일련의 값에서 중복을 제거할 때 사용한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_</span> <span class="o">=</span> <span class="kt">Observable</span><span class="o">.</span><span class="nf">of</span><span class="p">(</span><span class="s">"a"</span><span class="p">,</span> <span class="s">"b"</span><span class="p">,</span> <span class="s">"a"</span><span class="p">,</span> <span class="s">"c"</span><span class="p">,</span> <span class="s">"b"</span><span class="p">,</span> <span class="s">"a"</span><span class="p">,</span> <span class="s">"d"</span><span class="p">)</span>
+  <span class="o">.</span><span class="nf">distinct</span><span class="p">()</span>
+  <span class="o">.</span><span class="nf">toArray</span><span class="p">()</span>
+  <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">})</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>["a", "b", "c", "d"]
+</code></pre></div></div>
+
+<h2 id="mapat">mapAt</h2>
+
+<p><code class="language-plaintext highlighter-rouge">Keypaths</code>를 활용하여 데이터를 추출할 때 사용한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Person</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+<span class="p">}</span>
+
+<span class="kt">Observable</span>
+  <span class="o">.</span><span class="nf">of</span><span class="p">(</span><span class="kt">Person</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Bart"</span><span class="p">),</span>
+      <span class="kt">Person</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Lisa"</span><span class="p">),</span>
+      <span class="kt">Person</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Maggie"</span><span class="p">))</span>
+  <span class="o">.</span><span class="nf">mapAt</span><span class="p">(\</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bart
+Lisa
+Maggie
+</code></pre></div></div>
+
+<h2 id="retry-repeatwithbehavior">retry, repeatWithBehavior</h2>
+
+<p>시퀀스가 완료되거나 오류가 발생하면 시퀀스를 다시 구독하는 동시에 재구독이 발생하는 방법과 시기를 제어한다.</p>
+
+<p>다음 열거형 중 하나를 사용하여 지정한다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.immediate(maxCount:)</code> → 최대 <code class="language-plaintext highlighter-rouge">maxCount</code>번까지 즉시 구독한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">.delay(maxCount: UInt, time: Double)</code> → 동일하지만 초 단위로 지연시킨다.</li>
+  <li><code class="language-plaintext highlighter-rouge">.exponentialDelayed(maxCount: UInt, initial: Double, multiplier: Double)</code> → 매 주기마다 재구독 지연을 곱한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">.customTimerDelayed(maxCount: UInt, delayCalculator: (UInt) -&gt; Double)</code> → 현재 반복을 수신하고 재구독이 지연되어야 하는 시간(초)을 반환하는 클로저를 제공한다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 요청을 최대 3회 시도한다.</span>
+<span class="c1">// 각 시도에서 지연 시간을 3초 곱한다.</span>
+<span class="c1">// 그래서 1, 3, 9초 후에 다시 시도한다.</span>
+<span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">tryHard</span> <span class="o">=</span> <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">rx</span><span class="o">.</span><span class="nf">response</span><span class="p">(</span><span class="nv">request</span><span class="p">:</span> <span class="n">request</span><span class="p">)</span>
+  <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
+      <span class="c1">// process response here</span>
+<span class="p">}</span>
+  <span class="o">.</span><span class="nf">retry</span><span class="p">(</span><span class="o">.</span><span class="nf">exponendialDelayed</span><span class="p">(</span><span class="nv">maxCount</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">inital</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+<span class="nv">multiplier</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h2 id="catcherrorjustcomplete">catchErrorJustComplete</h2>
+
+<p>오류를 무시하고 싶을 때 사용하는 연산자다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">neverErrors</span> <span class="o">=</span> <span class="n">someObservable</span><span class="o">.</span><span class="nf">catchErrorJustComplete</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="withunretained">withUnretained</h2>
+
+<p>주어진 객체에 대한 약한 참조를 유지하고 시퀀스가 무언가를 방출할 때마다 여전히 존재하는 지 여부를 테스트한다. 객체가 여전히 참도되는 경우 전달한 클로저가 실행되고, 반환되는 값은 새로 내보낸 값이다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">anObject</span><span class="p">:</span> <span class="kt">SomeClass</span><span class="o">!</span> <span class="o">=</span> <span class="kt">SomeClass</span><span class="p">()</span>
+<span class="n">_</span> <span class="o">=</span> <span class="kt">Observable</span><span class="o">.</span><span class="nf">of</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">23</span><span class="p">)</span>
+  <span class="o">.</span><span class="nf">withUnretained</span><span class="p">(</span><span class="n">anObject</span><span class="p">)</span>
+  <span class="o">.</span><span class="nf">debug</span><span class="p">(</span><span class="s">"Combined Object with Emitted Events"</span><span class="p">)</span>
+  <span class="o">.</span><span class="nf">do</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="n">_</span><span class="p">,</span> <span class="n">value</span> <span class="k">in</span>
+      <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="mi">13</span> <span class="p">{</span>
+        <span class="c1">// anObject가 nil이 되면, 새로운 값으로 넘어간다.</span>
+        <span class="c1">// 시퀀스가 실패하면... 완료된다.</span>
+        <span class="n">anObject</span> <span class="o">=</span> <span class="kc">nil</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+  <span class="o">.</span><span class="nf">subscribe</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>이 연산자는 <code class="language-plaintext highlighter-rouge">guard let self = self</code> 를 피하면서 안전하게 <code class="language-plaintext highlighter-rouge">self</code> 를 캡처하려고 할 때 유용하다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">message</span>
+  <span class="o">.</span><span class="nf">withUnretained</span><span class="p">(</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">vc</span><span class="p">,</span> <span class="n">message</span> <span class="k">in</span>
+    <span class="n">vc</span><span class="o">.</span><span class="nf">showMessage</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>그리고 RxSwift 6부터 공식적으로 포함되었다.</p>
+
+<h2 id="partition">partition</h2>
+
+<p>조건에 따라 스트림을 두 개의 스트림으로 분할할 때 사용한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="p">(</span><span class="nv">evens</span><span class="p">,</span> <span class="nv">odds</span><span class="p">)</span> <span class="o">=</span> <span class="kt">Observable</span>
+                      <span class="o">.</span><span class="nf">of</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+                      <span class="o">.</span><span class="n">partition</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">}</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">evens</span><span class="o">.</span><span class="nf">debug</span><span class="p">(</span><span class="s">"evens"</span><span class="p">)</span><span class="o">.</span><span class="nf">subscribe</span><span class="p">()</span> <span class="c1">// Emits 2, 6, 8</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">odds</span><span class="o">.</span><span class="nf">debug</span><span class="p">(</span><span class="s">"odds"</span><span class="p">)</span><span class="o">.</span><span class="nf">subscribe</span><span class="p">()</span> <span class="c1">// Emits 1, 3, 5, 7</span>
+</code></pre></div></div>
+
+<h2 id="mapmany">mapMany</h2>
+
+<p>컬렉션 타입의 시퀀스 내부의 모든 개별 요소를 매핑한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_</span> <span class="o">=</span> <span class="kt">Observable</span><span class="o">.</span><span class="nf">of</span><span class="p">(</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="p">)</span>
+<span class="o">.</span><span class="n">mapMany</span> <span class="p">{</span> <span class="nf">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+<span class="o">.</span><span class="nf">debug</span><span class="p">(</span><span class="s">"powers of 2"</span><span class="p">)</span>
+<span class="o">.</span><span class="nf">subscribe</span><span class="p">()</span> <span class="c1">// Emits [2, 8, 32] and [4, 16]</span>
+</code></pre></div></div>
+
+<h2 id="태그">태그</h2>
+
+<p>#iOS/RxSwift #iOS/RxSwiftExt</p>

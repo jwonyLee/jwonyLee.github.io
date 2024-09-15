@@ -1,0 +1,7 @@
+<h1 id="ios-컬렉션뷰-최상단으로-이동하기">[iOS] 컬렉션뷰 최상단으로 이동하기</h1>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">scrollToTop</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">collectionView</span><span class="o">.</span><span class="nf">scrollToItem</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">(</span><span class="nv">row</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">section</span><span class="p">:</span> <span class="mi">0</span><span class="p">),</span> <span class="nv">at</span><span class="p">:</span> <span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+	<span class="c1">// collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)</span>
+<span class="p">}</span>
+</code></pre></div></div>

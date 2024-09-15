@@ -1,0 +1,65 @@
+<h1 id="tabview--scrollview">TabView + ScrollView</h1>
+
+<p>탭 뷰의 배경색, 구분선 색상 지정을 하려면:</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">TabView</span> <span class="p">{</span>
+	<span class="c1">// 생략</span>
+<span class="p">}</span>
+<span class="o">.</span><span class="nf">onAppear</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">let</span> <span class="nv">appearance</span> <span class="o">=</span> <span class="kt">UITabBarAppearance</span><span class="p">()</span>
+	<span class="n">appearance</span><span class="o">.</span><span class="nf">configureWithTransparentBackground</span><span class="p">()</span>
+	<span class="n">appearance</span><span class="o">.</span><span class="n">shadowColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="p">(</span><span class="kt">Color</span><span class="o">.</span><span class="n">blue</span><span class="p">)</span> <span class="c1">// &lt;-- 구분선</span>
+	<span class="n">appearance</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="p">(</span><span class="kt">Color</span><span class="o">.</span><span class="n">white</span><span class="p">)</span> <span class="c1">// &lt;-- 배경색</span>
+	
+	<span class="kt">UITabBar</span><span class="o">.</span><span class="nf">appearance</span><span class="p">()</span><span class="o">.</span><span class="n">scrollEdgeAppearance</span> <span class="o">=</span> <span class="n">appearance</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>하지만 이상하게 [[TabView]] 에서 띄워주는 하위 뷰의 내부가 [[ScrollView]]로 감싸져 있다면 다음과 같이 색상이 적용되지 않는 현상이 있음.</p>
+
+<p><img src="https://private-user-images.githubusercontent.com/15073405/331861964-e1a28823-e48e-441b-8bb9-8f7db8437c00.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTYxMTIyMzksIm5iZiI6MTcxNjExMTkzOSwicGF0aCI6Ii8xNTA3MzQwNS8zMzE4NjE5NjQtZTFhMjg4MjMtZTQ4ZS00NDFiLThiYjktOGY3ZGI4NDM3YzAwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTE5VDA5NDUzOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWI0MWQ0ZmU0NTQ0ZTBkNDg5Mzk2YjlmZTg1ZGQxYjU4MjNiYjg3NTNlYjk1YjNjN2I3YzhhMWRjOGI3ZjNiNjgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.2ZMZ12NhBYxdj9_QdOtxhGdJpS_DLgb6hz1B-gsoGlE" alt="탭 뷰 배경색이 적용되지 않은 이미지" /></p>
+
+<p>이걸로 삽질을 좀 열심히 했는데 … <code class="language-plaintext highlighter-rouge">onAppear</code> 에서 다음 한 줄 추가하는 것으로 해결함:</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">TabView {
+</span>	// 생략
+}
+.onAppear() {
+	let appearance = UITabBarAppearance()
+	appearance.configureWithTransparentBackground()
+	appearance.shadowColor = UIColor(Color.blue) // &lt;-- 구분선
+	appearance.backgroundColor = UIColor(Color.white) // &lt;-- 배경색
+<span class="err">
+</span><span class="gi">+	UITabBar.appearance().standardAppearance = appearance
+</span>	UITabBar.appearance().scrollEdgeAppearance = appearance
+}
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">scrollEdgeAppearance</code> 에 할당한 것을 빼면 [[ScrollView]]로 감싸져있지 않은 하위 뷰에서 [[TabView]] 배경색이 적용되지 않으므로, 두 개 다 할당해줘야 함.</p>
+
+<p><a href="https://developer.apple.com/documentation/uikit/uinavigationbar/3198027-scrolledgeappearance">scrollEdgeAppearance</a></p>
+<blockquote>
+  <p>The appearance settings for the navigation bar when the edge of scrollable content aligns with the edge of the navigation bar.</p>
+</blockquote>
+
+<p><a href="https://developer.apple.com/documentation/uikit/uinavigationbar/3198028-standardappearance">standardAppearance</a></p>
+<blockquote>
+  <p>The appearance settings for a standard-height navigation bar.</p>
+</blockquote>
+
+<p><code class="language-plaintext highlighter-rouge">scrollEdgeAppearance</code> 는 스크롤 가능한 컨텐츠일 때 <strong>스크롤이 가장자리(뷰의 최하단)에 닿은 경우 적용</strong>
+<code class="language-plaintext highlighter-rouge">standardAppearance</code> 는 표준 높이의 네비게이션에 적용</p>
+
+<hr />
+
+<p>그래서 <code class="language-plaintext highlighter-rouge">scrollEdgeAppearance</code> 만 적용되어 있는 경우에 스크롤이 있는 컨텐츠에서는 스크롤을 내려 하단에 닿지 않으면 appearance 가 적용되지 않았던 것.</p>
+
+<p>잘 이해가 안 가는 부분은, <code class="language-plaintext highlighter-rouge">standardAppearance</code> 만 적용했을 때, 스크롤뷰로 감싸져 있지 않은 하위 뷰에서 appearance가 적용되지 않는 이유를 모르겠음. 설명에 나오는 standard-height 가 무엇인지 모르겠다…</p>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li>https://stackoverflow.com/questions/75256478/how-to-make-swiftui-tabbar-background-always-transparent</li>
+  <li>https://developer.apple.com/documentation/uikit/uinavigationbar/3198027-scrolledgeappearance</li>
+  <li>https://developer.apple.com/documentation/uikit/uinavigationbar/3198028-standardappearance</li>
+</ul>

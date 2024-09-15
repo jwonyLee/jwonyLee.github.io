@@ -1,0 +1,42 @@
+<h1 id="ios-스토리보드없이-코드로-개발하기">[iOS] 스토리보드없이 코드로 개발하기</h1>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">SceneDelegate</code> 내용을 다음과 같이 변경
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">SceneDelegate</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">UIWindowSceneDelegate</span> <span class="p">{</span>
+ <span class="k">var</span> <span class="nv">window</span><span class="p">:</span> <span class="kt">UIWindow</span><span class="p">?</span>
+
+ <span class="kd">func</span> <span class="nf">scene</span><span class="p">(</span><span class="n">_</span> <span class="nv">scene</span><span class="p">:</span> <span class="kt">UIScene</span><span class="p">,</span> <span class="n">willConnectTo</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">UISceneSession</span><span class="p">,</span> <span class="n">options</span> <span class="nv">connectionOptions</span><span class="p">:</span> <span class="kt">UIScene</span><span class="o">.</span><span class="kt">ConnectionOptions</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">guard</span> <span class="k">let</span> <span class="nv">scene</span> <span class="o">=</span> <span class="p">(</span><span class="n">scene</span> <span class="k">as?</span> <span class="kt">UIWindowScene</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+     <span class="n">window</span> <span class="o">=</span> <span class="kt">UIWindow</span><span class="p">(</span><span class="nv">windowScene</span><span class="p">:</span> <span class="n">scene</span><span class="p">)</span>
+     <span class="n">window</span><span class="p">?</span><span class="o">.</span><span class="n">rootViewController</span> <span class="o">=</span> <span class="kt">ViewController</span><span class="p">()</span>
+     <span class="n">window</span><span class="p">?</span><span class="o">.</span><span class="nf">makeKeyAndVisible</span><span class="p">()</span>
+ <span class="p">}</span>
+
+ <span class="cm">/* 생략 */</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">ViewController</code>를 다음과 같이 구성
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UITabBarController</span> <span class="p">{</span>
+ <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+     <span class="k">let</span> <span class="nv">timelineViewController</span> <span class="o">=</span> <span class="kt">UINavigationController</span><span class="p">(</span><span class="nv">rootViewController</span><span class="p">:</span> <span class="kt">TimelineViewController</span><span class="p">())</span>
+     <span class="n">timelineViewController</span><span class="o">.</span><span class="n">tabBarItem</span> <span class="o">=</span> <span class="kt">UITabBarItem</span><span class="p">(</span>
+         <span class="nv">title</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span>
+         <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"house"</span><span class="p">),</span>
+         <span class="nv">selectedImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"house.fill"</span><span class="p">)</span>
+     <span class="p">)</span>
+
+     <span class="k">let</span> <span class="nv">tabBars</span> <span class="o">=</span> <span class="p">[</span><span class="n">timelineViewController</span><span class="p">]</span>    
+     <span class="n">viewControllers</span> <span class="o">=</span> <span class="n">tabBars</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>+ 다른 화면을 추가로 개발하게 되면 뷰 컨트롤러 객체 생성 후 <code class="language-plaintext highlighter-rouge">tabBars</code>에 추가</p>
+
+<h2 id="태그">태그</h2>
+
+<p>#iOS/Troubleshooting</p>

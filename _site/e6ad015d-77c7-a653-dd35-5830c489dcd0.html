@@ -1,0 +1,16 @@
+<h1 id="ios-커스텀-셀-적용하기">[iOS] 커스텀 셀 적용하기</h1>
+
+<h2 id="코드로-만든-경우">코드로 만든 경우</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">collectionView</span><span class="o">.</span><span class="nf">register</span><span class="p">(</span><span class="kt">CustomCollectionViewCell</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forCellWithReusepermalink</span><span class="p">:</span> <span class="kt">CustomCollectionViewCell</span><span class="o">.</span><span class="n">identifier</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="xib로-만든-경우"><code class="language-plaintext highlighter-rouge">xib</code>로 만든 경우</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">nib</span> <span class="o">=</span> <span class="kt">UINib</span><span class="p">(</span><span class="nv">nibName</span><span class="p">:</span> <span class="s">"CustomCollectionViewCell"</span><span class="p">,</span> <span class="nv">bundle</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="n">collectionView</span><span class="o">.</span><span class="nf">register</span><span class="p">(</span><span class="n">nib</span><span class="p">,</span> <span class="nv">forCellWithReusepermalink</span><span class="p">:</span> <span class="kt">CustomCollectionViewCell</span><span class="o">.</span><span class="n">identifier</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="태그">태그</h2>
+
+<p>#iOS/UICollectionView</p>

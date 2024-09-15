@@ -1,0 +1,69 @@
+<h1 id="swift-mutating-키워드에-대해-설명하시오">[Swift] mutating 키워드에 대해 설명하시오.</h1>
+
+<p>구조체에서, 함수가 내부 변수의 값을 수정하려면 <code class="language-plaintext highlighter-rouge">mutating</code> 키워드를 붙여야 한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Person</span> <span class="p">{</span>
+
+	<span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+
+	<span class="k">mutating</span> <span class="kd">func</span> <span class="nf">modify</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>값 타입(구조체와 열거형)의 인스턴스 메서드에서 자신 내부의 값을 변경하고자 할 때 사용하는 키워드</p>
+
+<blockquote>
+  <p>Structures and enumerations are value types. By default, the properties of a value type cannot be modified from within its instance methods.</p>
+
+  <p>However, if you need to modify the properties of your structure or enumeration within a particular method, you can opt in to mutating behavior for that method. The method can then mutate (that is, change) its properties from within the method, and any changes that it makes are written back to the original structure when the method ends.</p>
+</blockquote>
+
+<p>보통 값 타입의 프로퍼티는 인스턴스 메서드에서 수정할 수 없다.</p>
+
+<p>그러나 구조체나 열거형의 인스턴스 메서드에서 프로퍼티를 수정하길 원한다면 <code class="language-plaintext highlighter-rouge">mutating</code>을 채택해서 할 수 있다. <code class="language-plaintext highlighter-rouge">mutating</code>을 채택하면 메서드 내에서 프로퍼티를 변경할 수 있으며 메서드가 종료되면 변경 내용이 원래 구조에 다시 기록된다.</p>
+
+<blockquote>
+  <p>The method can also assign a completely new instance to its implicit self property, and this new instance will replace the existing one when the method ends.</p>
+</blockquote>
+
+<blockquote>
+  <p>Assigning to self Within a Mutating Method</p>
+
+  <p>Mutating methods can assign an entirely new instance to the implicit self property. The Point example shown above could have been written in the following way instead:</p>
+</blockquote>
+
+<p>Mutating 메서드는 암시적인 속성인 <code class="language-plaintext highlighter-rouge">self</code>에 완전히 새로운 인스턴스를 할당할 수 있다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Point</span> <span class="p">{</span>
+  <span class="k">var</span> <span class="nv">x</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">0.0</span>
+  <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">moveBy</span><span class="p">(</span><span class="n">x</span> <span class="nv">deltaX</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="n">y</span> <span class="nv">deltaY</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">self</span> <span class="o">=</span> <span class="kt">Point</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">deltaX</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="n">y</span> <span class="o">+</span> <span class="n">deltaY</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://docs.swift.org/swift-book/LanguageGuide/Methods.html">Methods - The Swift Programming Language (Swift 5.3)</a></li>
+  <li><a href="https://xho95.github.io/swift/language/grammar/method/2020/05/03/Methods.html">Swift 5.2: Methods (메소드)</a></li>
+</ul>
+
+<h2 id="스터디">스터디</h2>
+
+<ul>
+  <li>Swift는 값이 변경될 때만 실제 복사를 하는 COW(Copy on Write)방식을 채용하고 있는데, 구조체 프로퍼티는 값을 변경할 때 Swift가 직관적으로 알 수 있지만 구조체 메서드에서 <code class="language-plaintext highlighter-rouge">mutating</code> 키워드없이 프로퍼티를 변경하게 되면 언제 실제로 복사를 해야하는 지 알 수 없다.</li>
+  <li>Struct는 값 타입이라서 스택 메모리에 저장이 되고, 힙 내부에 존재하지 않기 때문에 구조체를 전달할 때 계속해서 복사됨</li>
+  <li>변수에 <code class="language-plaintext highlighter-rouge">mutating</code>을 안 쓰는 이유는 <code class="language-plaintext highlighter-rouge">var</code>, <code class="language-plaintext highlighter-rouge">let</code> 키워드를 통해 이미 컴파일러가 알고 있기 때문에</li>
+  <li>value type은 값이 immutable하기 때문에 변경이 된다면 사용해야 한다.</li>
+</ul>
+
+<h2 id="태그">태그</h2>
+
+<p>#Swift #iOSInterviewquestions</p>

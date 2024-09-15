@@ -1,0 +1,51 @@
+<h1 id="swift-hashable이-무엇이고-equatable을-왜-상속해야-하는지-설명하시오">[Swift] Hashable이 무엇이고, Equatable을 왜 상속해야 하는지 설명하시오.</h1>
+
+<h2 id="hashable">Hashable</h2>
+
+<p>정수 해시 값을 제공하고 <code class="language-plaintext highlighter-rouge">Dictionary</code>의 키가 될 수 있는 타입</p>
+
+<p><code class="language-plaintext highlighter-rouge">String</code>, <code class="language-plaintext highlighter-rouge">integer</code>, <code class="language-plaintext highlighter-rouge">Boolean</code> 등 표준 라이브러리의 많은 타입은 <code class="language-plaintext highlighter-rouge">Hashable</code> 을 준수한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Hashable</code> 프로토콜은 <code class="language-plaintext highlighter-rouge">Equatable</code> 프로토콜을 상속받고 있기 때문에, <code class="language-plaintext highlighter-rouge">Hashable</code> 프로토콜을 채택한 구조체, 열거형에서는 <code class="language-plaintext highlighter-rouge">Equatable</code>도 같이 준수하게 된다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">GridPoint</span> <span class="p">{</span>
+	<span class="k">var</span> <span class="nv">x</span><span class="p">:</span> <span class="kt">Int</span>
+	<span class="k">var</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Int</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">GridPoint</span><span class="p">:</span> <span class="kt">Hashable</span> <span class="p">{</span>
+	<span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">GridPoint</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">GridPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">lhs</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">rhs</span><span class="o">.</span><span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">lhs</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="n">rhs</span><span class="o">.</span><span class="n">y</span>
+	<span class="p">}</span>
+
+	<span class="kd">func</span> <span class="nf">hash</span><span class="p">(</span><span class="n">into</span> <span class="nv">hasher</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Hasher</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">hasher</span><span class="o">.</span><span class="nf">combine</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+		<span class="n">hasher</span><span class="o">.</span><span class="nf">combine</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="equatable">Equatable</h2>
+
+<p>== 및 ≠ 연산자를 사용하여 값이 동일한지 판단할 수 있는 타입</p>
+
+<p>Swift 표준 라이브러리의 대부분의 기본 타입은 <code class="language-plaintext highlighter-rouge">Equable</code>을 준수한다.</p>
+
+<ul>
+  <li>다른 객체가 동일한 해시를 가질 수 있기 때문에 먼저 해시 값을 비교하고, 해시 값이 같다면 == 연산을 통해 객체를 비교한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Hashable</code> 객체를 Map(Dictionary)의 키로 사용할 수 있다. Map의 키는 중복될 수 없다. 시스템은 키의 해시 값을 이용해 중복을 확인한다.</li>
+</ul>
+
+<hr />
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://forums.swift.org/t/why-does-hashable-require-equatable/16817">Why does Hashable require Equatable?</a></li>
+  <li><a href="https://stackoverflow.com/questions/34915836/what-is-the-use-of-hashable-and-equatable-in-swift-when-to-use-which">What is the use of Hashable and Equatable in Swift? When to use which?</a></li>
+</ul>
+
+<h2 id="태그">태그</h2>
+
+<p>#Swift/Protocol #iOSInterviewquestions</p>

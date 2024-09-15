@@ -1,0 +1,55 @@
+<h1 id="spm-패키지-dependency-설정하기">SPM 패키지 dependency 설정하기</h1>
+
+<p>모듈화 하는 방식이 다양한데,</p>
+<ul>
+  <li>Swift Package 로 만들기</li>
+  <li>(Dynamic/Static) Framework 로 만들기</li>
+  <li>(Dynamic/Static) Library 로 만들기</li>
+</ul>
+
+<p>여기서는 Swift Package 로 만든다.</p>
+
+<p>만약 Swift Package 로 만드는 모듈에서 다른 라이브러리를 사용하고 있다면, Package 파일을 수정할 필요가 있는데,</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
+        <span class="c1">// Dependencies declare other packages that this package depends on.</span>
+        <span class="c1">// .package(url: /* package url */, from: "1.0.0"),</span>
+        <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/CombineCommunity/CombineExt.git"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"1.5.1"</span><span class="p">),</span>
+        <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/DevYeom/ModernRIBs.git"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"1.0.0"</span><span class="p">)</span>
+    <span class="p">],</span>
+</code></pre></div></div>
+
+<p>이렇게 디펜던시를 추가한 뒤에,</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">targets</span><span class="p">:</span> <span class="p">[</span>
+        <span class="c1">// Targets are the basic building blocks of a package. A target can define a module or a test suite.</span>
+        <span class="c1">// Targets can depend on other targets in this package, and on products in packages this package depends on.</span>
+        <span class="o">.</span><span class="nf">target</span><span class="p">(</span>
+            <span class="nv">name</span><span class="p">:</span> <span class="s">"AddPaymentMethod"</span><span class="p">,</span>
+            <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span><span class="s">"CombineExt"</span><span class="p">,</span> <span class="s">"ModernRIBs"</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+</code></pre></div></div>
+
+<p>target 에 dependencies 에 해당 디펜던시 이름을 반드시!! 넣어준다.</p>
+
+<p>이렇게 빌드했을 때 만약, 디펜던시들이 지원하는 버전이 내가 만든 패키지보다 높다고 하면, (당연하게도) 빌드에ㅓㄹ가 뜨는데</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The package product '디펜던시 이름' requires minimum platform version 10.0 for the iOS platform, but this target supports 9.0
+</code></pre></div></div>
+
+<p>다음과 같이 플랫폼을 지정해주면 된다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">platforms</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="nf">iOS</span><span class="p">(</span><span class="o">.</span><span class="n">v12</span><span class="p">),</span>
+        <span class="o">.</span><span class="nf">tvOS</span><span class="p">(</span><span class="o">.</span><span class="n">v12</span><span class="p">),</span>
+        <span class="o">.</span><span class="nf">watchOS</span><span class="p">(</span><span class="o">.</span><span class="n">v5</span><span class="p">),</span>
+        <span class="o">.</span><span class="nf">macOS</span><span class="p">(</span><span class="o">.</span><span class="n">v10_15</span><span class="p">)</span>
+    <span class="p">],</span>
+</code></pre></div></div>
+
+<p>라잌 디스..</p>
+
+<h2 id="태그">태그</h2>
+
+<p>#iOS/PackageManager/SPM</p>

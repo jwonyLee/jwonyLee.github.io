@@ -1,0 +1,58 @@
+<h1 id="jekyll-포스터의-생성-시간-마지막-수정-시간-구하기">[Jekyll] 포스터의 생성 시간, 마지막 수정 시간 구하기</h1>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🎯 포스트의 생성 시간, 마지막 수정 시간 구하기
+</code></pre></div></div>
+
+<h2 id="기록">기록</h2>
+
+<p>Ruby의 <code class="language-plaintext highlighter-rouge">File</code> 클래스를 이용한다.</p>
+
+<p>수정 시간을 구하는 코드</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Jekyll</span><span class="o">::</span><span class="no">Hooks</span><span class="p">.</span><span class="nf">register</span> <span class="ss">:posts</span><span class="p">,</span> <span class="ss">:pre_render</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
+    <span class="c1"># get the current post last modified time</span>
+    <span class="n">modification_time</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">mtime</span><span class="p">(</span> <span class="n">post</span><span class="p">.</span><span class="nf">path</span> <span class="p">)</span>
+  
+    <span class="c1"># inject modification_time in post's datas.</span>
+    <span class="n">post</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s1">'updated'</span><span class="p">]</span> <span class="o">=</span> <span class="n">modification_time</span>
+  
+  <span class="k">end</span>
+</code></pre></div></div>
+
+<p>생성 시간을 구하는 코드</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Jekyll</span><span class="o">::</span><span class="no">Hooks</span><span class="p">.</span><span class="nf">register</span> <span class="ss">:posts</span><span class="p">,</span> <span class="ss">:pre_render</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
+    <span class="c1"># get the current post created time</span>
+    <span class="n">create_time</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">birthtime</span><span class="p">(</span> <span class="n">post</span><span class="p">.</span><span class="nf">path</span> <span class="p">)</span>
+  
+    <span class="c1"># inject create_time in post's datas.</span>
+    <span class="n">post</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s1">'created'</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_time</span>
+  
+  <span class="k">end</span>
+</code></pre></div></div>
+
+<p>각 코드를 <code class="language-plaintext highlighter-rouge">_plugins/적당한_이름.rb</code> 로 만들고 빌드하면, <code class="language-plaintext highlighter-rouge">post.created</code> / <code class="language-plaintext highlighter-rouge">post.updated</code> 변수로 접근해서 사용할 수 있다. 이렇게 만들어두면 포스트마다 일일이 frontMatter에 명시할 필요가 없다.</p>
+
+<h2 id="반전">반전</h2>
+
+<p>두둥</p>
+
+<p>Github Page는 Jekyll의 Plugin을 사용할 수 없다. 보안 문제 때문에 불가능하다는 것이 요인이다.</p>
+
+<p>결국 해결책으로 이미 만들어진 플러그인을 사용했다. ~해피엔딩~</p>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[File</td>
+          <td>Ruby API (v3.1)](https://rubyapi.org/3.1/o/file#class-File-label-Creating)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><a href="https://stackoverflow.com/questions/36758072/how-to-insert-the-last-updated-time-stamp-in-jekyll-page-at-build-time">How to insert the last updated time-stamp in Jekyll page at build time? - Stack Overflow</a></li>
+  <li><a href="https://gumpcha.github.io/blog/github-pages-with-jekyll-custom-plugin">Github Pages에 Jekyll custom plugin 적용하기</a></li>
+</ul>

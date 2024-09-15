@@ -1,0 +1,104 @@
+<h1 id="ios-wwdc2021-meet-asyncawait-in-swift">[iOS] WWDC2021: Meet async/await in Swift</h1>
+
+<p>관심 있는 세션을 하나씩 보고 있는데, 그중 첫 번째로 시청한 것이 "Meet async/await in Swift"다. 중반부까지의 내용을 정리했다. <code class="language-plaintext highlighter-rouge">completionHandler</code>를 사용했을 때와 <code class="language-plaintext highlighter-rouge">async/await</code>을 사용했을 때를 비교하는 내용인데 이것만 봐도 어느 정도 감이 잡힌다.</p>
+
+<p>기존에는 <code class="language-plaintext highlighter-rouge">completionHandler</code>를 이용해 비동기 작업을 처리했다. 비동기 작업을 하면, 스레드가 시간이 오래 걸리는 작업을 완료할 때까지 다른 작업을 수행할 수 있는 장점이 있다.</p>
+
+<p>많은 사람들에게 친숙할 수 있는 예를 살펴보면, 테이블 뷰가 있고, 여기에는 서버에 저장된 썸네일 이미지가 표시된다. 썸네일 이미지를 가져오는 과정을 다음과 같다.</p>
+
+<p>ViewModel에서 <code class="language-plaintext highlighter-rouge">fetchThumbnail</code> 메서드를 호출한다. 다음과 같은 작업들이 진행된다.</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">thumbnailURLRequest</code> 메서드를 호출한다. 이 메서드는 문자열에서 <code class="language-plaintext highlighter-rouge">URLRequest</code>를 생성한다.</li>
+  <li>1에서 생성한 <code class="language-plaintext highlighter-rouge">URLRequest</code>를 이용해 <code class="language-plaintext highlighter-rouge">URLSession.dataTask(with:completion:)</code>을 호출한다. 이 메서드는 요청에 대한 <code class="language-plaintext highlighter-rouge">Data</code>를 가져온다.</li>
+  <li><code class="language-plaintext highlighter-rouge">UIImage(data:)</code>를 이용해 <code class="language-plaintext highlighter-rouge">Data</code>를 <code class="language-plaintext highlighter-rouge">UIImage</code>로 변경한다.</li>
+  <li>마지막으로 <code class="language-plaintext highlighter-rouge">UIImage.prepareThumbnail</code>을 통해 원본 이미지에서 축소해 렌더링한다.</li>
+</ol>
+
+<p>이러한 작업에서 1과 3의 작업은 아주 빠르게 처리가 된다. 그러나 2, 4의 작업은 시간이 걸린다. 그래서 2, 4 작업을 위해 (지금까지는) <code class="language-plaintext highlighter-rouge">completionHandler</code>를 사용했었다. 코드로 살펴보자.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">fetchThumbnail</span><span class="p">(</span><span class="k">for</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">UIImage</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="nf">thumbnailURLRequest</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">id</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">task</span> <span class="o">=</span> <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="n">withL</span> <span class="n">request</span><span class="p">)</span> <span class="p">{</span> <span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span> 
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="p">{</span>
+            <span class="nf">completion</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">response</span> <span class="k">as?</span> <span class="kt">HTTPURLResponse</span><span class="p">)?</span><span class="o">.</span><span class="n">statusCode</span> <span class="o">!=</span> <span class="mi">200</span> <span class="p">{</span>
+            <span class="nf">completion</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="kt">FetchError</span><span class="o">.</span><span class="n">badID</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">image</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="n">data</span><span class="o">!</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
+            <span class="n">image</span><span class="o">.</span><span class="nf">prepareThumbnail</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">40</span><span class="p">))</span> <span class="p">{</span> <span class="n">thumbnail</span> <span class="k">in</span> 
+                <span class="k">guard</span> <span class="k">let</span> <span class="nv">thumbnail</span> <span class="o">=</span> <span class="n">thumbnail</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="k">return</span>
+                <span class="p">}</span>
+                <span class="nf">completion</span><span class="p">(</span><span class="n">thumbnail</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">task</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이 코드의 문제점으로, 데이터에서 <code class="language-plaintext highlighter-rouge">UIImage</code>를 만들거나 썸네일 준비가 실패하면 <code class="language-plaintext highlighter-rouge">fetchThumbnail</code>의 호출자에게 알림이 전송되지 않는다. 게다가 개인적인 의견으로 코드의 depth가 깊어져서 복잡하다.</p>
+
+<p>그래서 다음과 같이 모든 경우에 알림을 보내게 작성해야 한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">fetchThumbnail</span><span class="p">(</span><span class="k">for</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">UIImage</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="nf">thumbnailURLRequest</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">id</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">task</span> <span class="o">=</span> <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="n">withL</span> <span class="n">request</span><span class="p">)</span> <span class="p">{</span> <span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span> 
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="p">{</span>
+            <span class="nf">completion</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">response</span> <span class="k">as?</span> <span class="kt">HTTPURLResponse</span><span class="p">)?</span><span class="o">.</span><span class="n">statusCode</span> <span class="o">!=</span> <span class="mi">200</span> <span class="p">{</span>
+            <span class="nf">completion</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="kt">FetchError</span><span class="o">.</span><span class="n">badID</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">image</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="n">data</span><span class="o">!</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nf">completion</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="kt">FetchError</span><span class="o">.</span><span class="n">badImage</span><span class="p">)</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
+            <span class="n">image</span><span class="o">.</span><span class="nf">prepareThumbnail</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">40</span><span class="p">))</span> <span class="p">{</span> <span class="n">thumbnail</span> <span class="k">in</span> 
+                <span class="k">guard</span> <span class="k">let</span> <span class="nv">thumbnail</span> <span class="o">=</span> <span class="n">thumbnail</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="nf">completion</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="kt">FetchError</span><span class="o">.</span><span class="n">badImage</span><span class="p">)</span>
+                    <span class="k">return</span>
+                <span class="p">}</span>
+                <span class="nf">completion</span><span class="p">(</span><span class="n">thumbnail</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">task</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>그런데, 문제는 <code class="language-plaintext highlighter-rouge">Swift</code>에서는 이 과정을 강제할 수 있는 방법이 없다는 것이다. 게다가 원하던 동작은 네 가지 작업을 순서대로 수행하는 것뿐이었는데, 코드는 따라가기 복잡하고 어려워졌다는 거다. 의도가 모호해졌다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Result</code> 타입을 사용하여 이것을 좀 더 안전하게 만들 수 있다. 그러나 이것은 코드를 더 추하고 약간 더 길게 만든다.</p>
+
+<p>그리고 이 과정을 <code class="language-plaintext highlighter-rouge">async/await</code>를 사용하면 더 좋게 만들 수 있다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">fetchThumbnail</span><span class="p">(</span><span class="k">for</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">UIImage</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="nf">thumbnailURLRequest</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">id</span><span class="p">)</span>
+    <span class="k">let</span> <span class="p">(</span><span class="nv">data</span><span class="p">,</span> <span class="nv">response</span><span class="p">)</span> <span class="o">=</span> <span class="k">try</span> <span class="k">await</span> <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">data</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">request</span><span class="p">)</span>
+    <span class="nf">guard</span> <span class="p">(</span><span class="n">response</span> <span class="k">as?</span> <span class="kt">HTTPURLResponse</span><span class="p">)?</span><span class="o">.</span><span class="n">statusCode</span> <span class="o">==</span> <span class="mi">200</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="kt">FetchError</span><span class="o">.</span><span class="n">badID</span>
+    <span class="p">}</span>
+    <span class="k">let</span> <span class="nv">maybeImage</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">thumbnail</span> <span class="o">=</span> <span class="k">await</span> <span class="n">maybeImage</span><span class="p">?</span><span class="o">.</span><span class="n">thumbnail</span> <span class="k">else</span> <span class="p">{</span> 
+        <span class="k">throw</span> <span class="kt">FetchError</span><span class="o">.</span><span class="n">badImage</span> 
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">thumbnail</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">async</code>를 표시할 때는 <code class="language-plaintext highlighter-rouge">throws</code> 직전 또는 함수가 throw 되지 않는다면 화살표 앞에 가야 한다. 이렇게 <code class="language-plaintext highlighter-rouge">async</code>를 사용하면 시그니처가 더 간단해진다. 이미지가 성공적으로 축소되면 썸네일 이미지가 반환되고, 오류가 발생하면 그냥 오류를 던진다.</p>
+
+<p>더 자세한 내용과 뒷부분이 궁금하다면 하단 링크를 통해 직접 시청하면 좋을 거 같다. </p>
+
+<h3 id="참고-자료">참고 자료</h3>
+
+<ul>
+  <li><a href="https://developer.apple.com/videos/play/wwdc2021/10132/">Meet async/await in Swift - WWDC 2021</a></li>
+</ul>
+
+<h2 id="태그">태그</h2>
+
+<p>#Swift #iOS/WWDC/2021 #Swift/Async-Await</p>

@@ -1,0 +1,154 @@
+<h1 id="ios-컬렉션뷰에-뱃지-추가하기">[iOS] 컬렉션뷰에 뱃지 추가하기</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🎯 Compositional Layout을 이용해 컬렉션뷰에 뱃지 추가하기
+</code></pre></div></div>
+
+<p>구현하려는 모양은 다음과 같다.</p>
+
+<p><img src="badge-1.png" alt="구현하려는 모양" /></p>
+
+<p>가운데에는 이미지를 표시하고 우측 상단에는 뱃지 형태의 버튼을 넣는 형태다. 그리고 이런 구성은 Compositonal layout을 이용하면 쉽게 만들 수 있다.</p>
+
+<h2 id="compositional-layout">Compositional Layout</h2>
+
+<p>iOS 13.0 부터 도입된 UICollectionView 레이아웃의 새로운 방식이다. 기존에 사용하던 UICollectionViewFlowLayout 보다 조금 더 많은 걸 지원하는데 자세한 내용은 다음에… (기약없는 약속)</p>
+
+<p>아무튼, Compositional Layout을 이용하면 뱃지를 가진 셀을 쉽게 구현할 수 있다. 뱃지를 구현하는 방법은 다음과 같다.</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">UICollectionReusableView</code>를 서브 클래싱해서 뱃지를 구현한다.</li>
+  <li>UICollectionView 에 사용할 뱃지를 등록한다.</li>
+  <li>Compositional Layout을 이용해 뱃지를 포함한 레이아웃을 구성한다.</li>
+  <li>셀을 그린다.</li>
+</ol>
+
+<h2 id="uicollectionreusableview">UICollectionReusableView</h2>
+
+<blockquote>
+  <p>A view that defines the behavior for all cells and supplementary views presented by a collection view.</p>
+</blockquote>
+
+<blockquote>
+  <p>컬렉션뷰에서 제공하는 모든 셀과 보조 뷰에 대한 동작을 정의하는 뷰입니다.</p>
+</blockquote>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+
+<span class="kd">final</span> <span class="kd">class</span> <span class="kt">CloseButtonView</span><span class="p">:</span> <span class="kt">UICollectionReusableView</span> <span class="p">{</span>
+    <span class="c1">// MARK: View</span>
+    <span class="kd">private</span> <span class="k">let</span> <span class="nv">button</span><span class="p">:</span> <span class="kt">UIButton</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="kt">UIButton</span><span class="p">()</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="n">button</span><span class="o">.</span><span class="nf">setImage</span><span class="p">(</span><span class="kt">SwiftGenAssets</span><span class="o">.</span><span class="n">closeBadge</span><span class="o">.</span><span class="n">image</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">button</span>
+    <span class="p">}()</span>
+
+    <span class="k">override</span> <span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="n">frame</span><span class="p">)</span>
+        <span class="nf">configure</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">coder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">fatalError</span><span class="p">(</span><span class="s">"Not implemented"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">extension</span> <span class="kt">CloseButtonView</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">configure</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nf">addSubview</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+
+        <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">activate</span><span class="p">([</span>
+            <span class="n">button</span><span class="o">.</span><span class="n">centerXAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">centerXAnchor</span><span class="p">),</span>
+            <span class="n">button</span><span class="o">.</span><span class="n">centerYAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">centerYAnchor</span><span class="p">)</span>
+        <span class="p">])</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>버튼 하나만 이용해 간단하게 만들었다. 메인으로 그려지는 셀의 보조 뷰라서 많은 걸 담기에 적합하지도 않다. (뇌피셜)</p>
+
+<h2 id="uicollectionviewregister_forsupplementaryviewofkindwithreusepermalink">UICollectionView.register(_:forSupplementaryViewOfKind:withReusepermalink:)</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">register</span><span class="p">(</span><span class="n">_</span> <span class="nv">viewClass</span><span class="p">:</span> <span class="kt">AnyClass</span><span class="p">?,</span>
+              <span class="n">forSupplementaryViewOfKind</span> <span class="nv">elementKind</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> 
+              <span class="n">withReuseIdentifier</span> <span class="nv">permalink</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>구현한 뱃지를 컬렉션 뷰에 등록한다. 커스텀 셀 등록할 때 쓰는 <code class="language-plaintext highlighter-rouge">register(_:forCellWithReusepermalink:)</code>랑 비슷하지만 <code class="language-plaintext highlighter-rouge">elementKind</code>라는 매개변수가 하나 더 있다. 아래에도 나오겠지만 레이아웃을 구성할 때 생성했던 <code class="language-plaintext highlighter-rouge">CloseButtonView</code>(뱃지 클래스)로 직접 구분하지 않고 여기서 등록하는 <code class="language-plaintext highlighter-rouge">elementKind</code>로 구분하기 때문에 유니크한 값을 넣어줘야 한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">collectionView</span><span class="o">.</span><span class="nf">register</span><span class="p">(</span><span class="kt">CloseButtonView</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forSupplementaryViewOfKind</span><span class="p">:</span> <span class="s">"close-badge"</span><span class="p">,</span> <span class="nv">withReusepermalink</span><span class="p">:</span> <span class="s">"close-badge"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">elementKind</code>는 Supplementary Item 을 만들 때 사용하고, <code class="language-plaintext highlighter-rouge">identifier</code>는 컬렉션 뷰에서 셀 재활용할 때 사용하는 거라서 같은 값을 넣어도 상관없다.</p>
+
+<h2 id="compositional-layout을-이용해-레이아웃-구성">Compositional Layout을 이용해 레이아웃 구성</h2>
+
+<p><a href="https://developer.apple.com/documentation/uikit/views_and_controls/collection_views/implementing_modern_collection_views">Implementing Modern Collection Views</a>에서 <strong>Add Badges to Items</strong> 항목을 보면 어떻게 구성하는 지 나와있다.</p>
+
+<p>예시로 나와있는 레이아웃 구성 코드를 한 줄씩 보자면,</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">badgeAnchor</span> <span class="o">=</span> <span class="kt">NSCollectionLayoutAnchor</span><span class="p">(</span><span class="nv">edges</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="o">.</span><span class="n">trailing</span><span class="p">],</span> <span class="nv">fractionalOffset</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">))</span> <span class="c1">// 1</span>
+<span class="k">let</span> <span class="nv">badgeSize</span> <span class="o">=</span> <span class="kt">NSCollectionLayoutSize</span><span class="p">(</span><span class="nv">widthDimension</span><span class="p">:</span> <span class="o">.</span><span class="nf">absolute</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+                                      <span class="nv">heightDimension</span><span class="p">:</span> <span class="o">.</span><span class="nf">absolute</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span> <span class="c1">// 2</span>
+<span class="k">let</span> <span class="nv">badge</span> <span class="o">=</span> <span class="kt">NSCollectionLayoutSupplementaryItem</span><span class="p">(</span>
+    <span class="nv">layoutSize</span><span class="p">:</span> <span class="n">badgeSize</span><span class="p">,</span>
+    <span class="nv">elementKind</span><span class="p">:</span> <span class="kt">ItemBadgeSupplementaryViewController</span><span class="o">.</span><span class="n">badgeElementKind</span><span class="p">,</span>
+    <span class="nv">containerAnchor</span><span class="p">:</span> <span class="n">badgeAnchor</span><span class="p">)</span> <span class="c1">// 3</span>
+
+<span class="k">let</span> <span class="nv">itemSize</span> <span class="o">=</span> <span class="kt">NSCollectionLayoutSize</span><span class="p">(</span><span class="nv">widthDimension</span><span class="p">:</span> <span class="o">.</span><span class="nf">fractionalWidth</span><span class="p">(</span><span class="mf">0.25</span><span class="p">),</span>
+                                     <span class="nv">heightDimension</span><span class="p">:</span> <span class="o">.</span><span class="nf">fractionalHeight</span><span class="p">(</span><span class="mf">1.0</span><span class="p">))</span>
+<span class="k">let</span> <span class="nv">item</span> <span class="o">=</span> <span class="kt">NSCollectionLayoutItem</span><span class="p">(</span><span class="nv">layoutSize</span><span class="p">:</span> <span class="n">itemSize</span><span class="p">,</span> <span class="nv">supplementaryItems</span><span class="p">:</span> <span class="p">[</span><span class="n">badge</span><span class="p">])</span> <span class="c1">// 4</span>
+<span class="n">item</span><span class="o">.</span><span class="n">contentInsets</span> <span class="o">=</span> <span class="kt">NSDirectionalEdgeInsets</span><span class="p">(</span><span class="nv">top</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="nv">leading</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="nv">bottom</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="nv">trailing</span><span class="p">:</span> <span class="mi">5</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">NSCollectionLayoutAnchor</code>는 컬렉션 뷰의 Supplementary Item의 위치를 정의하는 객체다. 아래 사진은 값에 따라 어떻게 배치되는 지를 나타낸다. 오프셋은 <code class="language-plaintext highlighter-rouge">fractionalOffset</code>과 <code class="language-plaintext highlighter-rouge">absoluteOffset</code>으로 나뉜다.<br />
+ <img src="badge-2.png" alt="NSCollectionLayoutAnchor 배치" /></li>
+  <li>뱃지의 크기를 지정한다. 여기서는 20 만큼의 절대값으로 지정했다.</li>
+  <li><code class="language-plaintext highlighter-rouge">NSCollectionLayoutSupplementaryItem</code> 객체를 생성한다. 여기서 <code class="language-plaintext highlighter-rouge">elementKind</code>로 들어가는 값은 컬렉션 뷰에 등록할 때 사용했던 <code class="language-plaintext highlighter-rouge">elementKind</code>랑 같은 값을 작성한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">supplementaryItems</code>에 3에서 생성한 SupplementaryItem을 넣는다.</li>
+</ol>
+
+<p>예시 코드와 실제 레이아웃 구성하는 부분은 크게 다르지 않아서 생략한다.</p>
+
+<h2 id="셀을-그린다">셀을 그린다.</h2>
+
+<p>일반적으로 셀 그리는 거랑 똑같이 그려주면 된다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">viewForSupplementaryElementOfKind</span> <span class="nv">kind</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">at</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UICollectionReusableView</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">badge</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">dequeueReusableSupplementaryView</span><span class="p">(</span><span class="nv">ofKind</span><span class="p">:</span> <span class="kt">CloseButtonView</span><span class="o">.</span><span class="n">reuseIdentifier</span><span class="p">,</span> <span class="nv">withReusepermalink</span><span class="p">:</span> <span class="kt">CloseButtonView</span><span class="o">.</span><span class="n">reuseIdentifier</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as?</span> <span class="kt">CloseButtonView</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">CloseButtonView</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">badge</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이렇게 하면 끝!!!! 인데 아주 큰 문제가 있다.</p>
+
+<p>나는 컬렉션 뷰를 가로로 스크롤하기 위해서 <code class="language-plaintext highlighter-rouge">section.orthogonalScrollingBehavior</code>를 사용했는데, 이걸 사용하면 뷰의 계층 구조가 엉망이 되버려서 Supplementary View가 제대로 표시되지 않는다.</p>
+
+<p><img src="badge-3.png" alt="계층 구조가 깨진 모습" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">orthogonalScrollingBehavior</code>를 사용하지 않으면 정상적으로 나온다.</p>
+
+<p><img src="badge-4.png" alt="정상적으로 보이는 모습" /></p>
+
+<p>알려주신 현수님께 무한한 감사의 말씀을 드리며… 🙏</p>
+
+<p>결국 최종 구현물에서는 셀 안에 버튼 만드는 방식으로 바꿨다. 이러면 무슨 소용이냐고 🤦‍♂️</p>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://developer.apple.com/documentation/uikit/views_and_controls/collection_views/implementing_modern_collection_views">Implementing Modern Collection Views - Apple Developer Documentation</a></li>
+  <li><a href="https://developer.apple.com/documentation/uikit/uicollectionviewcompositionallayout">UICollectionViewCompositionalLayout - Apple Developer Documentation</a></li>
+  <li><a href="https://developer.apple.com/documentation/uikit/nscollectionlayoutsupplementaryitem">NSCollectionLayoutSupplementaryItem - Apple Developer Documentation</a></li>
+  <li><a href="https://developer.apple.com/documentation/uikit/nscollectionlayoutanchor">NSCollectionLayoutAnchor - Apple Developer Documentation</a></li>
+  <li><a href="https://developer.apple.com/documentation/uikit/uicollectionview/1618103-register">register(_:forSupplementaryViewOfKind:withReusepermalink:) - Apple Developer Documentation</a></li>
+  <li><a href="https://developer.apple.com/documentation/uikit/uicollectionreusableview">UICollectionReusableView - Apple Developer Documentation</a></li>
+</ul>
+
+<h2 id="태그">태그</h2>
+
+<p>#iOS/UICollectionView #iOS/UICollectionView/Compositional_Layout</p>

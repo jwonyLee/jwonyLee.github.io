@@ -1,0 +1,55 @@
+/* 사이트 최상단 메뉴 바 + 구글 검색 */
+
+.header {
+    // background-color: $theme-color;
+    height: 100px;
+    display: flex; /* Flexbox 사용 */
+    justify-content: space-between; /* 좌측과 우측 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+
+    // 사이트 이름 (왼쪽)
+    .site-title {
+        float: left;
+        text-decoration: none;
+        color: #111827;
+        line-height: 1.3;
+        font-size: x-large;
+        padding-left: 10px;
+        font-weight: 800;
+    }
+    // 사이트 이름 (오른쪽: index, random, me)
+    .site-title-right {
+        float: right;
+        text-decoration: none;
+        color: #111827;
+        line-height: 1.3;
+        padding-right: 10px;
+        font-weight: 500;
+    }
+
+    .emoji {
+        font-family: Tossface;
+    }
+}
+
+.site-title-right-container {
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+#random-button:hover {
+    cursor: pointer;
+}
+
+// 구글 검색 결과
+div.gsc-control-cse {
+    padding: 0;
+}
+
+.search form.gsc-search-box {
+    margin: 0;
+}
+
+table.gsc-search-box {
+    margin: 0px;
+}

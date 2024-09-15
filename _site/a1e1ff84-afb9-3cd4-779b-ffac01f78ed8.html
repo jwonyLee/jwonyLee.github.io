@@ -1,0 +1,19 @@
+<h1 id="ios-코드로-버튼에-이미지와-텍스트-넣기">[iOS] 코드로 버튼에 이미지와 텍스트 넣기</h1>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="kt">UIButton</span><span class="p">()</span>
+<span class="n">button</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+<span class="n">button</span><span class="o">.</span><span class="n">titleLabel</span><span class="p">?</span><span class="o">.</span><span class="n">adjustsFontForContentSizeCategory</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="n">button</span><span class="o">.</span><span class="nf">setImage</span><span class="p">(</span><span class="kt">UIImage</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"bubble.left"</span><span class="p">),</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="n">tintColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">secondaryLabel</span>
+<span class="n">button</span><span class="o">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="s">"5"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="nf">setTitleColor</span><span class="p">(</span><span class="o">.</span><span class="n">secondaryLabel</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="n">semanticContentAttribute</span> <span class="o">=</span> <span class="o">.</span><span class="n">forceLeftToRight</span>
+<span class="n">button</span><span class="o">.</span><span class="n">contentVerticalAlignment</span> <span class="o">=</span> <span class="o">.</span><span class="n">center</span>
+<span class="n">button</span><span class="o">.</span><span class="n">contentHorizontalAlignment</span> <span class="o">=</span> <span class="o">.</span><span class="n">leading</span>
+</code></pre></div></div>
+
+<p>이미지를 텍스트의 오른쪽으로 변경하려면 <code class="language-plaintext highlighter-rouge">semanticContentAttribute</code> 속성을 <code class="language-plaintext highlighter-rouge">.forceRightToLeft</code>로 변경한다.</p>
+
+<h2 id="태그">태그</h2>
+
+<p>#iOS</p>

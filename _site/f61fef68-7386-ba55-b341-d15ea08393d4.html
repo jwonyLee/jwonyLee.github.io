@@ -1,0 +1,27 @@
+<h1 id="objective-c-autorelease-pool을-사용해야-하는-상황을-두-가지-이상-예로-들어-설명하시오">[Objective-C] Autorelease Pool을 사용해야 하는 상황을 두 가지 이상 예로 들어 설명하시오.</h1>
+
+<ul>
+  <li>command-line 도구와 같이 UI 프레임워크를 기반으로 하지 않는 프로그램을 작성하는 경우</li>
+  <li>많은 임시 객체를 생성하는 루프를 작성하는 경우 루프 내에서 autorelease pool을 사용하여 다음 반복 전에 해당 객체를 삭제할 수 있다. 루프에서 autorelease pool 블록을 사용하면 애플리케이션의 최대 메모리 공간을 줄이는 데 도움이 된다.</li>
+</ul>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">urls</span> <span class="o">=</span> <span class="o">&lt;</span><span class="err">#</span> <span class="n">An</span> <span class="n">array</span> <span class="n">of</span> <span class="n">file</span> <span class="n">URLs</span> <span class="err">#</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">NSURL</span> <span class="o">*</span><span class="n">url</span> <span class="k">in</span> <span class="n">urls</span><span class="p">)</span> <span class="p">{</span>
+    
+    <span class="k">@autoreleasepool</span> <span class="p">{</span>
+        <span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">;</span>
+        <span class="n">NSString</span> <span class="o">*</span><span class="n">fileContents</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSString</span> <span class="nf">stringWithContentsOfURL</span><span class="p">:</span><span class="n">url</span>
+                                            <span class="nl">encoding:</span><span class="n">NSUTF8StringEncoding</span> <span class="nf">error</span><span class="p">:</span><span class="o">&amp;</span><span class="n">error</span><span class="p">];</span>
+        <span class="cm">/* 문자열을 처리하여, 더 많은 객체를 만들고 autorelease 한다. */</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>보조 스레드를 생성하는 경우
+스레드가 실행되자마자 고유한 autorelease pool을 만들어야 한다. 그렇지 않으면 응용 프로그램에서 객체가 누출된다.</li>
+</ul>
+
+<h2 id="태그">태그</h2>
+
+<p>#Objective-C/ARC #iOSInterviewquestions</p>

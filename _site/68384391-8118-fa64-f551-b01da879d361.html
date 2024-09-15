@@ -1,0 +1,96 @@
+<h1 id="ios-토이-프로젝트-하면서-알게된-점">[iOS] 토이 프로젝트 하면서 알게된 점</h1>
+
+<h2 id="storyboard-reference">Storyboard Reference</h2>
+
+<p>세 명이서 작업을 했고, 처음에는 스토리보드를 안 쓰고 전부 코드로 작성하기로 했는데, 중간에 스토리보드도 쓰게 되었다. 쓸 사람은 쓰고, 안 쓸 사람은 안 쓰는 상황이 되었다. 서로의 스토리보드를 건드리지 않기 위해서 어떤 식으로 나누었냐면,</p>
+
+<ol>
+  <li>기능별 그룹을 만든다.</li>
+  <li>각 기능별 스토리보드를 만든다.</li>
+  <li>기능별 스토리보드를 <code class="language-plaintext highlighter-rouge">main.storyboard</code>에서 Storyboard Reference를 사용해서 연결한다.</li>
+</ol>
+
+<p>+ 탭 바와 네비게이션 컨트롤러 둘 다 사용했음</p>
+
+<p><code class="language-plaintext highlighter-rouge">main.storyboard</code>에 한 번 모든 기능의 흐름을 연결해놓으니까 보기에도 좋고, 스토리보드 충돌 날 일도 없어서 좋았다. </p>
+
+<h2 id="코드로-스크롤뷰-만들기">코드로 스크롤뷰 만들기</h2>
+
+<p>같이 프로젝트를 진행한 택현님이 알려주신 유튜브 동영상이 엄청 도움이 많이 되었다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="c1">// MARK:- Properties</span>
+    <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">contentViewSize</span> <span class="o">=</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>    
+
+    <span class="c1">// MARK:- Views</span>
+    <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">scrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIScrollView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="o">.</span><span class="n">zero</span><span class="p">)</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">bacgkroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">bounds</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">contentSize</span> <span class="o">=</span> <span class="n">contentViewSize</span>
+        <span class="k">return</span> <span class="n">view</span>
+    <span class="p">}()</span>
+
+    <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">containerView</span><span class="p">:</span> <span class="kt">UIView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">contentViewSize</span>
+        <span class="k">return</span> <span class="n">view</span>
+    <span class="p">}()</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+
+        <span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>
+        <span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">scrollView</span><span class="p">)</span>
+        <span class="n">scrollView</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">containerView</span><span class="p">)</span>
+        <span class="c1">// containerView.addSubView(component)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p align="center">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-yjknIzf5KE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+</p>
+
+<h2 id="스토리보드에서-생성한-navigation-controller-제약조건-주는-방법">스토리보드에서 생성한 Navigation Controller 제약조건 주는 방법</h2>
+
+<ol>
+  <li>스토리보드에서 <code class="language-plaintext highlighter-rouge">Navigation Controller</code>를 만든다.</li>
+  <li>나머지 View는 코드로 작성한다.</li>
+</ol>
+
+<p>이러한 상황에서 어떤 <code class="language-plaintext highlighter-rouge">view</code>를 네비게이션 컨트롤러로부터 8만큼 떨어지게 하려면 다음과 같이 작성하면 된다. (SnapKit 사용)</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">view</span><span class="o">.</span><span class="n">snp</span><span class="o">.</span><span class="n">makeConstraint</span> <span class="p">{</span>
+    <span class="nv">$0</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="nf">equalTo</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">safeAreaLayoutGuide</span><span class="o">.</span><span class="n">snp</span><span class="o">.</span><span class="n">top</span><span class="p">)</span><span class="o">.</span><span class="nf">offset</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="테이블뷰-셀-사이의-선-지우기">테이블뷰 셀 사이의 선 지우기</h2>
+
+<p>코드로 작성된 테이블뷰 셀 사이의 선을 지우고 싶다면, <code class="language-plaintext highlighter-rouge">tableView.separatorStyle = .none</code>을 쓰면 된다. 이때 주의해야 할 점은, 초기 생성 시에 작성하면 안 된다는 것이다.</p>
+
+<h3 id="-bad">🚫 Bad</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">tableView</span> <span class="o">=</span> <span class="kt">UITableView</span><span class="p">()</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span>
+    <span class="nv">$0</span><span class="o">.</span><span class="n">separatorStyle</span> <span class="o">=</span> <span class="o">.</span><span class="k">none</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="-correct">👍 Correct</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">tableView</span> <span class="o">=</span> <span class="kt">UITableView</span><span class="p">()</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span>
+    <span class="c1">// set tableView</span>
+<span class="p">}</span>
+
+<span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+
+    <span class="n">tableView</span><span class="o">.</span><span class="n">separatorStyle</span> <span class="o">=</span> <span class="o">.</span><span class="k">none</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="태그">태그</h2>
+
+<p>#iOS/Storyboard #iOS/UIScrollView</p>

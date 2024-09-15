@@ -1,0 +1,242 @@
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🎯 커스텀 폰트 적용하기 (with Dynamic Type)
+</code></pre></div></div>
+
+<h2 id="폰트-추가하기">폰트 추가하기</h2>
+
+<p><img src="files.png" alt="폰트 파일" /></p>
+
+<p>적당한 위치에 폰트 파일을 추가한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Info.plist</code>에 <code class="language-plaintext highlighter-rouge">Fonts provided by application</code> 항목을 추가한다. 그리고 하위 항목에 추가한 파일이름을 추가한다.</p>
+
+<p><img src="info-plist.png" alt="Info.plist" /></p>
+
+<h2 id="폰트-사용하기">폰트 사용하기</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">pretendardBody</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="o">=</span> <span class="kt">UIFont</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Pretendard-Regular"</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="mi">14</span><span class="p">)</span><span class="o">!</span>
+<span class="n">label</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="n">pretendardBody</span>
+</code></pre></div></div>
+
+<p>이렇게 사용할 수 있다.</p>
+
+<p>점진적으로 코드를 개선해보자.</p>
+
+<h2 id="폰트-스타일">폰트 스타일</h2>
+
+<p>폰트마다 스타일을 제공하는 경우가 있다. bold, light 등.. Pretendard는 9개의 스타일을 제공한다. 상황에 맞게 폰트 스타일(파일 이름)을 바꿔야 하는데 문자열을 직접 넣어 사용하는 건 파일 이름이 바뀌었을 때 등의 상황을 대응하기 불편하다. 프로토콜 + 열거형으로 관리해보자.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FontStyle</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">black</span><span class="p">:</span> <span class="k">Self</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">bold</span><span class="p">:</span> <span class="k">Self</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">extraBold</span><span class="p">:</span> <span class="k">Self</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">extraLight</span><span class="p">:</span> <span class="k">Self</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">light</span><span class="p">:</span> <span class="k">Self</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">medium</span><span class="p">:</span> <span class="k">Self</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">regular</span><span class="p">:</span> <span class="k">Self</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">semiBold</span><span class="p">:</span> <span class="k">Self</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">thin</span><span class="p">:</span> <span class="k">Self</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    
+    <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">FontStyle</code>이라는 프로토콜을 정의한다. <code class="language-plaintext highlighter-rouge">static var property: Self { get }</code> 형식으로 프로퍼티를 정의하고 열거형에서 해당 프로토콜을 채택하면 해당 case를 반드시 구현해야 한다. 👍</p>
+
+<p>이제 <code class="language-plaintext highlighter-rouge">FontStyle</code>을 채택한 열거형을 갖고 있는 폰트 구조체를 만든다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Pretendard</span> <span class="p">{</span>
+    <span class="kd">enum</span> <span class="nv">style</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">FontStyle</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">black</span> <span class="o">=</span> <span class="s">"Pretendard-Black"</span>
+        <span class="k">case</span> <span class="n">bold</span> <span class="o">=</span> <span class="s">"Pretendard-Bold"</span>
+        <span class="k">case</span> <span class="n">extraBold</span> <span class="o">=</span> <span class="s">"Pretendard-ExtraBold"</span>
+        <span class="k">case</span> <span class="n">extraLight</span> <span class="o">=</span> <span class="s">"Pretendard-ExtraLight"</span>
+        <span class="k">case</span> <span class="n">light</span> <span class="o">=</span> <span class="s">"Pretendard-Light"</span>
+        <span class="k">case</span> <span class="n">medium</span> <span class="o">=</span> <span class="s">"Pretendard-Medium"</span>
+        <span class="k">case</span> <span class="n">regular</span> <span class="o">=</span> <span class="s">"Pretendard-Regular"</span>
+        <span class="k">case</span> <span class="n">semiBold</span> <span class="o">=</span> <span class="s">"Pretendard-SemiBold"</span>
+        <span class="k">case</span> <span class="n">thin</span> <span class="o">=</span> <span class="s">"Pretendard-Thin"</span>
+        
+        <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> 
+            <span class="n">rawValue</span> 
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>별도로 <code class="language-plaintext highlighter-rouge">name</code> 프로퍼티를 만든 이유는 폰트 스타일이 선언해둔 9개보다 적을 경우를 위해서이다.</p>
+
+<p>일반적으로 스타일을 한 개만 제공한 경우는 regular 밖에 없을텐데 그럼 나머지 case에 대해서 대응할 수가 없다. 물론 파일 이름을 모두 복사-붙여넣기 해도 되지만 좋은 대안이 아니라고 생각했다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Cafe24Ssurround</span> <span class="p">{</span>
+    <span class="kd">enum</span> <span class="nv">style</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">FontStyle</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">black</span>
+        <span class="k">case</span> <span class="n">bold</span>
+        <span class="k">case</span> <span class="n">extraBold</span>
+        <span class="k">case</span> <span class="n">extraLight</span>
+        <span class="k">case</span> <span class="n">light</span>
+        <span class="k">case</span> <span class="n">medium</span>
+        <span class="k">case</span> <span class="n">regular</span> <span class="o">=</span> <span class="s">"Cafe24Ssurround"</span>
+        <span class="k">case</span> <span class="n">semiBold</span>
+        <span class="k">case</span> <span class="n">thin</span>
+        
+        <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
+            <span class="k">Self</span><span class="o">.</span><span class="n">regular</span><span class="o">.</span><span class="n">rawValue</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>혹은, 프로토콜을 선언할 때 <code class="language-plaintext highlighter-rouge">optional</code> 키워드를 선언하는 방식도 있다.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@objc</span>
+<span class="kd">protocol</span> <span class="kt">FontStyle</span> <span class="p">{</span>
+    <span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">black</span><span class="p">:</span> <span class="k">Self</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="c1">// ... 생략</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">regular</span><span class="p">:</span> <span class="k">Self</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="c1">// ... 생략</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>폰트 스타일은 하나 이상 있으니까 기본값을 제외한 나머지 프로퍼티에 대해 옵셔널로 선언하면 <code class="language-plaintext highlighter-rouge">name</code> 프로퍼티를 별도로 둘 필요가 없다. 그런데 내가 이 방식을 선택하지 않은 이유는 열거형이나 구조체에서 사용할 수 없기 때문이다. 클래스보다는 열거형으로 선언해서 관리하는 게 더 낫다고 생각했다.</p>
+
+<p>이제 아래의 코드처럼 폰트 이름을 관리할 수 있다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">pretendardBody</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="o">=</span> <span class="kt">UIFont</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">Pretendard</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">regular</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="mi">14</span><span class="p">)</span><span class="o">!</span>
+<span class="n">label</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="n">pretendardBody</span>
+</code></pre></div></div>
+
+<h2 id="typography">Typography</h2>
+
+<p>타이포그래피를 프로토콜로 만들고 폰트에서 해당 프로토콜을 채택하면 일관적인 경험을 제공할 수 있다. 아래에 적힌 것들 이 외에도 Button, Overline, alert 등을 추가해서 상황마다 쓸 스타일을 미리 정의해둔다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">Fontable</span> <span class="p">{</span>
+    <span class="c1">/// The font for body text</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="c1">/// The font for callouts</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">callout</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="c1">/// The font for standard captions</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">caption1</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="c1">/// The font for alternate captions</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">caption2</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="c1">/// The font fot footnotes</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">footnote</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="c1">/// The font for headings</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">headline</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="c1">/// The font for subheadings</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">subheadline</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="c1">/// The font style for large titles</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">largeTitle</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="c1">/// The font for first-level hierarchical headings</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">title1</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="c1">/// The font for second-level hierarchical headings</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">title2</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+    <span class="c1">/// The font for thrid-level hierarchical headlings</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">title3</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>위에서 만들었던 <code class="language-plaintext highlighter-rouge">Pretendard</code> 구조체에 <code class="language-plaintext highlighter-rouge">Fontable</code> 프로토콜을 채택하고, 요구 사항을 구현한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Pretendard</span><span class="p">:</span> <span class="kt">Fontable</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="p">{</span> <span class="kt">UIFont</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">Pretendard</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">regular</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="mi">14</span><span class="p">)</span><span class="o">!</span> <span class="p">}</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">callout</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="p">{</span> <span class="kt">UIFont</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">Pretendard</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">regular</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="mi">16</span><span class="p">)</span><span class="o">!</span> <span class="p">}</span>
+    <span class="c1">// ... 생략</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Cafe24Ssurround</span><span class="p">:</span> <span class="kt">Fontable</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="p">{</span> <span class="kt">UIFont</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">Cafe24Ssurround</span><span class="o">.</span><span class="n">regular</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="mi">14</span><span class="p">)</span><span class="o">!</span> <span class="p">}</span>
+    <span class="c1">// ... 생략</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>스타일을 미리 정의해뒀기 때문에 상황에 맞게 스타일을 적용할 수 있다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">headlineLabel</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="kt">Pretendard</span><span class="o">.</span><span class="n">headline</span>
+<span class="n">bodyLabel</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="kt">Cafe24Ssurround</span><span class="o">.</span><span class="n">body</span>
+</code></pre></div></div>
+
+<h2 id="접근성-지원-with-dynamic-type">접근성 지원 (with Dynamic Type)</h2>
+
+<p>접근성 지원과 관련해서 류성두님의 글과 영상을 보면 정말 좋다. 정말 좋다는 표현밖에 못해서 아쉬운데, 달리 설명할 길이 없다. 안 본 사람이 없게 해주세요. 🙏</p>
+
+<ul>
+  <li><a href="https://www.sungdoo.dev/retrospective-or-psa/how-accessibility-nudges-you-to-be-better-developer">접근성 지원, 개발자의 빠른 성장을 도와줍니다.</a></li>
+  <li><a href="https://www.sungdoo.dev/opinion/accessibility-and-racism">접근성 지원을 미루는 일, 인종차별입니다.</a></li>
+  <li><a href="https://www.sungdoo.dev/programming/accessibility-is-not-about-supporting-blind-people">접근성 지원 != 시각장애인 대응</a></li>
+  <li><a href="https://www.youtube.com/watch?v=G46RS-fuT5A&amp;list=PLtaz5vK7MbK3tvJ81_uRKIxFZ235QuJe9">iOS VoiecOver 무엇을 어떻게 할까? Intro - YouTube</a></li>
+</ul>
+
+<p>커스텀 폰트에서도 Dynamic Type을 지원해보자.</p>
+
+<p>먼저 Dynamic Type을 지원할 뷰의 <code class="language-plaintext highlighter-rouge">adjustsFontForContentSizeCategory</code> 값을 <code class="language-plaintext highlighter-rouge">true</code>로 지정한다. 이 프로퍼티는 사용자가 설정한 시스템 글꼴 크기에 따라 뷰의 글꼴 크기를 반영할 것인지를 나타내는 값이다. 기본값은 <code class="language-plaintext highlighter-rouge">false</code>이다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">label</span><span class="o">.</span><span class="n">adjustsFontForContentSizeCategory</span> <span class="o">=</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<p>스토리보드에서는 Attribute Inspector에서 변경할 수 있다.</p>
+
+<p><img src="attribute-inspector.png" alt="Attribute Inspector" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">Fontable</code> 프로토콜에 두 개의 메서드를 추가한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">Fontable</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="kd">func</span> <span class="nf">scaledFont</span><span class="p">(</span><span class="n">with</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">FontStyle</span><span class="p">,</span> <span class="nv">textStyle</span><span class="p">:</span> <span class="kt">UIFont</span><span class="o">.</span><span class="kt">TextStyle</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIFont</span>
+    <span class="kd">static</span> <span class="kd">func</span> <span class="nf">scaledFont</span><span class="p">(</span><span class="n">with</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">FontStyle</span><span class="p">,</span> <span class="nv">textStyle</span><span class="p">:</span> <span class="kt">UIFont</span><span class="o">.</span><span class="kt">TextStyle</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIFont</span>
+    <span class="c1">// ... 생략</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>하나는 시스템에서 제공하는 TextStyle만 이용하는 방법이고, 다른 하나는 사이즈도 바꿀 수 있는 메서드다. <code class="language-plaintext highlighter-rouge">Fontable</code>을 채택한 구조체에서 구현해도 되는 부분이지만, <code class="language-plaintext highlighter-rouge">extension</code>을 이용해 프로토콜 초기구현을 한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">Fontable</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="kd">func</span> <span class="nf">scaledFont</span><span class="p">(</span><span class="n">with</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">FontStyle</span><span class="p">,</span> <span class="nv">textStyle</span><span class="p">:</span> <span class="kt">UIFont</span><span class="o">.</span><span class="kt">TextStyle</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIFont</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">fontDescriptor</span><span class="p">:</span> <span class="kt">UIFontDescriptor</span> <span class="o">=</span> <span class="kt">UIFontDescriptor</span><span class="o">.</span><span class="nf">preferredFontDescriptor</span><span class="p">(</span><span class="nv">withTextStyle</span><span class="p">:</span> <span class="n">textStyle</span><span class="p">)</span>
+        
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">font</span> <span class="o">=</span> <span class="kt">UIFont</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="n">type</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="n">fontDescriptor</span><span class="o">.</span><span class="n">pointSize</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">fatalError</span><span class="p">(</span><span class="s">"""
+                Failed to load the </span><span class="se">\(</span><span class="n">type</span><span class="o">.</span><span class="n">name</span><span class="se">)</span><span class="s"> font.
+                Make sure the font file is included in the project and the font name is spelled correctly.
+                """</span><span class="p">)</span>
+        <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="kt">UIFontMetrics</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nf">scaledFont</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">font</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="kd">static</span> <span class="kd">func</span> <span class="nf">scaledFont</span><span class="p">(</span><span class="n">with</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">FontStyle</span><span class="p">,</span> <span class="nv">textStyle</span><span class="p">:</span> <span class="kt">UIFont</span><span class="o">.</span><span class="kt">TextStyle</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIFont</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">font</span> <span class="o">=</span> <span class="kt">UIFont</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="n">type</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="n">size</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">fatalError</span><span class="p">(</span><span class="s">"""
+                Failed to load the </span><span class="se">\(</span><span class="n">type</span><span class="o">.</span><span class="n">name</span><span class="se">)</span><span class="s"> font.
+                Make sure the font file is included in the project and the font name is spelled correctly.
+                """</span><span class="p">)</span>
+        <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="kt">UIFontMetrics</span><span class="p">(</span><span class="nv">forTextStyle</span><span class="p">:</span> <span class="n">textStyle</span><span class="p">)</span><span class="o">.</span><span class="nf">scaledFont</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">font</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>아까부터 계속 폰트를 만들 때마다 강제 언랩핑하고 있었는데 <code class="language-plaintext highlighter-rouge">guard</code>문을 이용해 안전하게 언랩핑했다.
+<code class="language-plaintext highlighter-rouge">Fontable</code> 채택하면서 구현했던 스타일들을 <code class="language-plaintext highlighter-rouge">scaledFont(with:textStyle:)</code>을 이용한 코드로 변경한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Pretendard</span><span class="p">:</span> <span class="kt">Fontable</span> <span class="p">{</span>
+    <span class="c1">// ... 생략</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="p">{</span> <span class="nf">scaledFont</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="kt">Pretendard</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">regular</span><span class="p">,</span> <span class="nv">textStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">body</span><span class="p">)</span> <span class="p">}</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">callout</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="p">{</span> <span class="nf">scaledFont</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="kt">Pretendard</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">regular</span><span class="p">,</span> <span class="nv">textStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">callout</span><span class="p">)}</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">caption1</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="p">{</span> <span class="nf">scaledFont</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="kt">Pretendard</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">regular</span><span class="p">,</span> <span class="nv">textStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">caption1</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="mi">18</span><span class="p">)</span> <span class="p">}</span>
+    <span class="c1">// ... 생략</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="dynamic-type.gif" alt="dynamic type 적용 사진" /></p>
+
+<p>끝!</p>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://www.hackingwithswift.com/swift/5.3/enum-protocol-witnesses">Enum cases as protocol witnesses – available from Swift 5.3</a></li>
+</ul>
+
+<h2 id="태그">태그</h2>
+
+<p>#iOS/UIFont #접근성 #iOS/Dynamic_Type</p>

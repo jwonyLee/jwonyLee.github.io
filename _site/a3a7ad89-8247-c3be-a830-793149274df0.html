@@ -1,0 +1,31 @@
+<h1 id="ios-오토-레이아웃-기반-뷰에-cornerradius-적용하기">[iOS] 오토 레이아웃 기반 뷰에 cornerRadius 적용하기</h1>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">profileImageView</span><span class="p">:</span> <span class="kt">UIImageView</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">imageView</span> <span class="o">=</span> <span class="kt">UIImageView</span><span class="p">()</span>
+    <span class="n">imageView</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="n">imageView</span><span class="o">.</span><span class="n">contentMode</span> <span class="o">=</span> <span class="o">.</span><span class="n">scaleAspectFill</span>
+    <span class="n">imageView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">cornerRadius</span> <span class="o">=</span> <span class="n">imageView</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mf">0.5</span>
+    <span class="k">return</span> <span class="n">imageView</span>
+<span class="p">}()</span>
+</code></pre></div></div>
+<p>이미지 뷰를 만들고 <code class="language-plaintext highlighter-rouge">cornerRadius</code> 값을 <code class="language-plaintext highlighter-rouge">imageView.frame.size.height / 2</code>를 하면 적용이 안된다. 이게 왜 안되는지 몰라서 다른 코드에서는 임의의 상수로 적용했었다. 나는 이미지뷰의 크기를 오토 레이아웃으로 지정해줘서(<code class="language-plaintext highlighter-rouge">leadingAnchor</code>, <code class="language-plaintext highlighter-rouge">trailingAnchor</code>) 프레임 값이 없었고, 없는 프레임 값을 가지고 적용하려고 안되는 거 였다. 그래서 이 문제를 해결하기 위해 찾아보니까 <code class="language-plaintext highlighter-rouge">cornerRadius</code> 값을 <code class="language-plaintext highlighter-rouge">viewWillLayoutSubviews</code> 때 업데이트 하라는 것이었다. 뷰의 생명주기를 이용한 방법이다. 이 방법 말고도 <code class="language-plaintext highlighter-rouge">UIButton</code>의 서브클래스를 만들어서 하는 방식도 있는데 후자의 방법으로 리팩토링 때 적용할 예정이다.</p>
+
+<p>나중에 생명주기를 이용하는 방식으로 문제를 해결했다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillLayoutSubviews</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewWillLayoutSubviews</span><span class="p">()</span>
+    <span class="n">tweetFloatingButton</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">cornerRadius</span> <span class="o">=</span> <span class="n">tweetFloatingButton</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li><a href="https://stackoverflow.com/questions/53971385/setting-corner-radius-through-viewdidappear-or-viewwilllayoutsubviews">Setting corner radius through viewDidAppear() or viewWillLayoutSubviews()?</a></li>
+</ul>
+
+<h2 id="태그">태그</h2>
+
+<p>#iOS/Autolayout</p>
