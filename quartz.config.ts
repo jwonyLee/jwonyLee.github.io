@@ -18,8 +18,7 @@ const config: QuartzConfig = {
     locale: "ko-KR",
     baseUrl: "rieul.tech",
     ignorePatterns: ["private", "templates", ".obsidian"],
-    defaultDateType: "created",
-    dateTypesToDisplay: ["created", "modified"],
+    defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
@@ -56,9 +55,8 @@ const config: QuartzConfig = {
     transformers: [
       Plugin.FrontMatter(),
       Plugin.CreatedModifiedDate({
-        priority: ["frontmatter", "filesystem"],
+        priority: ["git", "frontmatter", "filesystem"],
       }),
-      Plugin.Latex({ renderEngine: "katex" }),
       Plugin.SyntaxHighlighting({
         theme: {
           light: "github-light",
@@ -71,6 +69,7 @@ const config: QuartzConfig = {
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "absolute" }),
       Plugin.Description(),
+      Plugin.Latex({ renderEngine: "katex" }),
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
