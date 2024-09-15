@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Sep 2024 05:18:38 +0900</pubDate>
-    <lastBuildDate>Mon, 16 Sep 2024 05:18:38 +0900</lastBuildDate>
+    <pubDate>Mon, 16 Sep 2024 05:37:35 +0900</pubDate>
+    <lastBuildDate>Mon, 16 Sep 2024 05:37:35 +0900</lastBuildDate>
     <generator>Jekyll v4.3.3</generator>
 
 
@@ -19,21 +19,19 @@
         <link>http://localhost:4000/7c3093ec-e4ac-31f8-b22e-08c817377f1d</link>
         <guid isPermaLink="true">http://localhost:4000/7c3093ec-e4ac-31f8-b22e-08c817377f1d</guid>
         
-        <category>Knowledge</category>
-        
         
       </item>
     
 
     
       <item>
-        <title>외부 cocoapods 라이브러리 spm 으로 배포하기</title>
+        <title>외부 Cocoapods 라이브러리 SPM 으로 배포하기</title>
         <description></description>
         <pubDate>Thu, 27 Jun 2024 11:15:06 +0900</pubDate>
         <link>http://localhost:4000/1339c97d-6732-f545-94d4-6a7453b9e1b2</link>
         <guid isPermaLink="true">http://localhost:4000/1339c97d-6732-f545-94d4-6a7453b9e1b2</guid>
         
-        <category>Knowledge iOS/PackageManager/SPM</category>
+        <category>iOS PackageManager SPM</category>
         
         
       </item>
@@ -59,7 +57,7 @@
         <link>http://localhost:4000/c7c60c25-9bf8-d3ea-3d0a-0cc7a44a96f1</link>
         <guid isPermaLink="true">http://localhost:4000/c7c60c25-9bf8-d3ea-3d0a-0cc7a44a96f1</guid>
         
-        <category>Network Book/2023 Network/HTTP</category>
+        <category>Network Book HTTP</category>
         
         
       </item>
@@ -73,7 +71,7 @@
         <link>http://localhost:4000/e064e862-9f12-7734-dbbd-b18a7676aa6a</link>
         <guid isPermaLink="true">http://localhost:4000/e064e862-9f12-7734-dbbd-b18a7676aa6a</guid>
         
-        <category>Network Book/2023 Network/HTTP</category>
+        <category>Network Book HTTP</category>
         
         
       </item>
@@ -87,7 +85,7 @@
         <link>http://localhost:4000/e4f6b6ab-b3f5-5b26-2ff7-5df8e3a303a0</link>
         <guid isPermaLink="true">http://localhost:4000/e4f6b6ab-b3f5-5b26-2ff7-5df8e3a303a0</guid>
         
-        <category>Network Book/2023 Network/HTTP</category>
+        <category>Network Book HTTP</category>
         
         
       </item>
@@ -101,7 +99,7 @@
         <link>http://localhost:4000/e2f40fd5-9d83-5d33-3945-d93010f32ce0</link>
         <guid isPermaLink="true">http://localhost:4000/e2f40fd5-9d83-5d33-3945-d93010f32ce0</guid>
         
-        <category>Network Book/2023 Network/HTTP</category>
+        <category>Network Book HTTP</category>
         
         
       </item>
@@ -115,7 +113,7 @@
         <link>http://localhost:4000/66a1b5e5-9448-4476-c36b-1c1d8b77d079</link>
         <guid isPermaLink="true">http://localhost:4000/66a1b5e5-9448-4476-c36b-1c1d8b77d079</guid>
         
-        <category>Network Book/2023 Network/HTTP</category>
+        <category>Network Book HTTP</category>
         
         
       </item>
@@ -129,7 +127,7 @@
         <link>http://localhost:4000/820b29f3-5dd3-ec36-ff7d-46b2e110a122</link>
         <guid isPermaLink="true">http://localhost:4000/820b29f3-5dd3-ec36-ff7d-46b2e110a122</guid>
         
-        <category>Network Book/2023 Network/HTTP</category>
+        <category>Network Book HTTP</category>
         
         
       </item>
@@ -143,7 +141,7 @@
         <link>http://localhost:4000/a976befd-aad6-2cc0-f1bd-650205528f98</link>
         <guid isPermaLink="true">http://localhost:4000/a976befd-aad6-2cc0-f1bd-650205528f98</guid>
         
-        <category>Network Book/2023 Network/HTTP</category>
+        <category>Network Book HTTP</category>
         
         
       </item>
@@ -157,7 +155,7 @@
         <link>http://localhost:4000/56808a7e-abd1-979f-c7f9-fc2a81ce05ca</link>
         <guid isPermaLink="true">http://localhost:4000/56808a7e-abd1-979f-c7f9-fc2a81ce05ca</guid>
         
-        <category>Network Book/2023 Network/HTTP</category>
+        <category>Network Book HTTP</category>
         
         
       </item>
@@ -171,7 +169,7 @@
         <link>http://localhost:4000/b1fec897-d012-3803-4224-a1fac06a14c4</link>
         <guid isPermaLink="true">http://localhost:4000/b1fec897-d012-3803-4224-a1fac06a14c4</guid>
         
-        <category>Network Book/2023 Network/HTTP</category>
+        <category>Network Book HTTP</category>
         
         
       </item>
@@ -185,7 +183,7 @@
         <link>http://localhost:4000/4757f83b-b230-ecd5-01f0-03a532907199</link>
         <guid isPermaLink="true">http://localhost:4000/4757f83b-b230-ecd5-01f0-03a532907199</guid>
         
-        <category>Network Book/2023 Network/HTTP</category>
+        <category>Network Book HTTP</category>
         
         
       </item>
@@ -199,7 +197,7 @@
         <link>http://localhost:4000/40967902-b9d0-ed9e-7abd-8eb094e6c226</link>
         <guid isPermaLink="true">http://localhost:4000/40967902-b9d0-ed9e-7abd-8eb094e6c226</guid>
         
-        <category>Network Book/2023 Network/HTTP</category>
+        <category>Network Book HTTP</category>
         
         
       </item>
@@ -213,7 +211,7 @@
         <link>http://localhost:4000/2715b8ab-d021-6bef-7140-3387cd6c23fc</link>
         <guid isPermaLink="true">http://localhost:4000/2715b8ab-d021-6bef-7140-3387cd6c23fc</guid>
         
-        <category>Network Book/2023 Network/HTTP</category>
+        <category>Network Book HTTP</category>
         
         
       </item>
@@ -227,7 +225,7 @@
         <link>http://localhost:4000/720b3660-1039-0fc7-54a4-48facfcfda5c</link>
         <guid isPermaLink="true">http://localhost:4000/720b3660-1039-0fc7-54a4-48facfcfda5c</guid>
         
-        <category>Network Book/2023 Network/HTTP</category>
+        <category>Network Book HTTP</category>
         
         
       </item>
@@ -241,7 +239,7 @@
         <link>http://localhost:4000/1342bd24-dee7-d8f6-b63c-909e6e026b54</link>
         <guid isPermaLink="true">http://localhost:4000/1342bd24-dee7-d8f6-b63c-909e6e026b54</guid>
         
-        <category>Book/2023 Network/HTTP</category>
+        <category>Book Network HTTP</category>
         
         
       </item>
@@ -255,7 +253,7 @@
         <link>http://localhost:4000/a6f7c741-4d45-d56e-7c60-aea6037ccc1a</link>
         <guid isPermaLink="true">http://localhost:4000/a6f7c741-4d45-d56e-7c60-aea6037ccc1a</guid>
         
-        <category>Knowledge iOS/SwiftUI 삽질</category>
+        <category>iOS SwiftUI 삽질</category>
         
         
       </item>
@@ -269,7 +267,7 @@
         <link>http://localhost:4000/641670cf-215e-936c-44df-1d00acf50e2f</link>
         <guid isPermaLink="true">http://localhost:4000/641670cf-215e-936c-44df-1d00acf50e2f</guid>
         
-        <category>삽질 iOS/Framework/ReactorKit iOS/Troubleshooting Knowledge</category>
+        <category>삽질 iOS ReactorKit Troubleshooting</category>
         
         
       </item>
@@ -282,8 +280,6 @@
         <pubDate>Tue, 14 May 2024 10:31:50 +0900</pubDate>
         <link>http://localhost:4000/0654680d-f102-7159-d06c-99f2e46aa34e</link>
         <guid isPermaLink="true">http://localhost:4000/0654680d-f102-7159-d06c-99f2e46aa34e</guid>
-        
-        <category>Knowledge</category>
         
         
       </item>
@@ -317,7 +313,7 @@
 
     
       <item>
-        <title>한 컴퓨터에 github 계정 여러개 쓰기</title>
+        <title>한 컴퓨터에 GitHub 계정 여러개 쓰기</title>
         <description></description>
         <pubDate>Sat, 13 Apr 2024 20:07:01 +0900</pubDate>
         <link>http://localhost:4000/0356f2ee-7e47-af38-047f-c9f13e392d73</link>
@@ -349,7 +345,7 @@
         <link>http://localhost:4000/dcded7c6-5ce0-ebca-6536-e7323d041de4</link>
         <guid isPermaLink="true">http://localhost:4000/dcded7c6-5ce0-ebca-6536-e7323d041de4</guid>
         
-        <category>Swift/Design-Patterns</category>
+        <category>Swift Design-Patterns</category>
         
         
       </item>
@@ -455,13 +451,13 @@
 
     
       <item>
-        <title>회사 프로젝트에 swiftlint 도입기</title>
+        <title>회사 프로젝트에 SwiftLint 도입기</title>
         <description></description>
         <pubDate>Sun, 26 Jun 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/98e2a8e5-c76c-0e4c-0d1c-d9c4ae71426c</link>
         <guid isPermaLink="true">http://localhost:4000/98e2a8e5-c76c-0e4c-0d1c-d9c4ae71426c</guid>
         
-        <category>iOS/SwiftLint</category>
+        <category>iOS SwiftLint</category>
         
         
       </item>
@@ -483,13 +479,13 @@
 
     
       <item>
-        <title>회사 프로젝트에 swiftgen 도입기</title>
+        <title>회사 프로젝트에 SwiftGen 도입기</title>
         <description></description>
         <pubDate>Sun, 12 Jun 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/3acba79d-c253-a833-0fb8-9534af3cdffc</link>
         <guid isPermaLink="true">http://localhost:4000/3acba79d-c253-a833-0fb8-9534af3cdffc</guid>
         
-        <category>iOS/SwiftGen</category>
+        <category>iOS SwiftGen</category>
         
         
       </item>
@@ -553,7 +549,7 @@
 
     
       <item>
-        <title>포스트의 생성 시간, 마지막 수정 시간 구하기</title>
+        <title>포스터의 생성 시간, 마지막 수정 시간 구하기</title>
         <description></description>
         <pubDate>Sun, 06 Mar 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/7de6818f-99cb-bdf9-8bb2-92c51770076e</link>
@@ -967,13 +963,13 @@
 
     
       <item>
-        <title>Layoutmarginguide Safelayoutguide</title>
+        <title>layoutMarginsGuide, safeAreaLayoutGuide</title>
         <description></description>
         <pubDate>Fri, 16 Apr 2021 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/0f24fcbb-ce52-e617-1f35-7592cc832513</link>
         <guid isPermaLink="true">http://localhost:4000/0f24fcbb-ce52-e617-1f35-7592cc832513</guid>
         
-        <category>iOS/Autolayout</category>
+        <category>iOS Autolayout</category>
         
         
       </item>
@@ -1001,7 +997,7 @@
         <link>http://localhost:4000/794a8fe6-1bd9-f907-b97f-5c8d58f174c9</link>
         <guid isPermaLink="true">http://localhost:4000/794a8fe6-1bd9-f907-b97f-5c8d58f174c9</guid>
         
-        <category>iOS iOS/UICollectionView</category>
+        <category>iOS UICollectionView</category>
         
         
       </item>

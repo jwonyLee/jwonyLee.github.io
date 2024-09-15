@@ -1,6 +1,162 @@
 [
  {
+  "name": "삽질",
+  "size": 2
+ },
+ {
+  "name": "서평",
+  "size": 1
+ },
+ {
+  "name": "Autolayout",
+  "size": 1
+ },
+ {
+  "name": "Book",
+  "size": 22
+ },
+ {
+  "name": "Design",
+  "size": 1
+ },
+ {
+  "name": "Design-Patterns",
+  "size": 6
+ },
+ {
+  "name": "Enum",
+  "size": 1
+ },
+ {
+  "name": "Git",
+  "size": 1
+ },
+ {
+  "name": "GitHub",
+  "size": 1
+ },
+ {
+  "name": "HTTP",
+  "size": 14
+ },
+ {
+  "name": "iOS",
+  "size": 61
+ },
+ {
+  "name": "iOSInterviewquestions",
+  "size": 14
+ },
+ {
+  "name": "Jekyll",
+  "size": 1
+ },
+ {
   "name": "latex",
+  "size": 1
+ },
+ {
+  "name": "Network",
+  "size": 14
+ },
+ {
+  "name": "NotificationCenter",
+  "size": 1
+ },
+ {
+  "name": "Objective-C",
+  "size": 4
+ },
+ {
+  "name": "Optional",
+  "size": 1
+ },
+ {
+  "name": "PackageManager",
+  "size": 1
+ },
+ {
+  "name": "Pattern",
+  "size": 1
+ },
+ {
+  "name": "Protocol",
+  "size": 1
+ },
+ {
+  "name": "ReactorKit",
+  "size": 1
+ },
+ {
+  "name": "Ruby",
+  "size": 1
+ },
+ {
+  "name": "RxSwift",
+  "size": 4
+ },
+ {
+  "name": "Script",
+  "size": 1
+ },
+ {
+  "name": "Shell",
+  "size": 1
+ },
+ {
+  "name": "SPM",
+  "size": 1
+ },
+ {
+  "name": "Swift",
+  "size": 27
+ },
+ {
+  "name": "SwiftGen",
+  "size": 1
+ },
+ {
+  "name": "SwiftLint",
+  "size": 1
+ },
+ {
+  "name": "SwiftUI",
+  "size": 1
+ },
+ {
+  "name": "Thread",
+  "size": 1
+ },
+ {
+  "name": "Troubleshooting",
+  "size": 1
+ },
+ {
+  "name": "UICollectionView",
+  "size": 1
+ },
+ {
+  "name": "UIKit",
+  "size": 2
+ },
+ {
+  "name": "UITableView",
+  "size": 2
+ },
+ {
+  "name": "WWDC2019",
+  "size": 1
+ },
+ {
+  "name": "WWDC2021",
+  "size": 1
+ },
+ {
+  "name": "Xcode",
+  "size": 1
+ },
+ {
+  "name": "XCTest",
   "size": 1
  }
 ]

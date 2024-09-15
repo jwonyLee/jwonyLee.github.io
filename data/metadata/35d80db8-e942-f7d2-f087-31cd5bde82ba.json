@@ -1,7 +1,10 @@
 {
  "type": "wiki",
- "title": "\"[iOS] App Bundle의 구조와 역할에 대해 설명하시오.\"",
+ "title": "App Bundle의 구조와 역할에 대해 설명하시오.",
+ "summary": "",
+ "parent": "",
  "url": "35d80db8-e942-f7d2-f087-31cd5bde82ba",
+ "updated": "2020-12-01",
  "children": [],
  "fileName": "2020-12-01-AppBundle"
 }

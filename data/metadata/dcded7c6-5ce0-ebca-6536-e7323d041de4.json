@@ -1,7 +1,10 @@
 {
  "type": "wiki",
  "title": "thread safety한 싱글톤",
+ "summary": "",
+ "parent": "",
  "url": "dcded7c6-5ce0-ebca-6536-e7323d041de4",
+ "updated": "2024-04-13 20:05:32 +09:00",
  "children": [],
  "fileName": "swift-thread-safety-singleton"
 }

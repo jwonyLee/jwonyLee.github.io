@@ -1,7 +1,10 @@
 {
  "type": "wiki",
- "title": "\"[Book] 동시성 프로그래밍\"",
+ "title": "동시성 프로그래밍",
+ "summary": "",
+ "parent": "",
  "url": "565ee835-604a-3913-13cd-7dd4e83143ef",
+ "updated": "2022-04-24",
  "children": [],
  "fileName": "동시성 프로그래밍"
 }

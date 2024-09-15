@@ -1,6 +1,10 @@
 {
  "type": "wiki",
+ "title": "TableView.reloadSections(_:with:)",
+ "summary": "",
+ "parent": "",
  "url": "6818f72c-8679-19ea-5849-0fa044b8e138",
+ "updated": "2020-09-14",
  "children": [],
  "fileName": "2020-09-14-TableView-reloadSections"
 }

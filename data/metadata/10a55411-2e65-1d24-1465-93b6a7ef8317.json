@@ -1,7 +1,10 @@
 {
  "type": "wiki",
- "title": "\"[iOS] UIView.clipToBounds와 layer.masksToBounds\"",
+ "title": "UIView.clipToBounds와 layer.masksToBounds",
+ "summary": "",
+ "parent": "",
  "url": "10a55411-2e65-1d24-1465-93b6a7ef8317",
+ "updated": "2021-04-16",
  "children": [],
  "fileName": "2021-04-16-clipToBounds-masksToBounds"
 }

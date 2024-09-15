@@ -1,7 +1,10 @@
 {
  "type": "wiki",
- "title": "\"[Swift] 멀티 쓰레드로 동작하는 앱을 작성하고 싶을 때 고려할 수 있는 방식들을 설명하시오.\"",
+ "title": "멀티 쓰레드로 동작하는 앱을 작성하고 싶을 때 고려할 수 있는 방식들을 설명하시오.",
+ "summary": "",
+ "parent": "",
  "url": "1ed82824-eb50-f1aa-3b78-7d9d67ca19f5",
+ "updated": "2020-10-07",
  "children": [],
  "fileName": "2020-10-07-Multi-Thread"
 }

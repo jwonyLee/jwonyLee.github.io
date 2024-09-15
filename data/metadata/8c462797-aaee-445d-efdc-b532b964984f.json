@@ -1,7 +1,10 @@
 {
  "type": "wiki",
- "title": "\"[Objective-C] 특정 객체를 autorelease 하기 위해 필요한 사항과 과정을 설명하시오.\"",
+ "title": "특정 객체를 autorelease 하기 위해 필요한 사항과 과정을 설명하시오.",
+ "summary": "",
+ "parent": "",
  "url": "8c462797-aaee-445d-efdc-b532b964984f",
+ "updated": "2021-02-16",
  "children": [],
  "fileName": "2021-02-16-autorelease"
 }

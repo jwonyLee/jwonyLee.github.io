@@ -1,7 +1,10 @@
 {
  "type": "wiki",
- "title": "\"[iOS] View 객체에 대해 설명하시오.\"",
+ "title": "View 객체에 대해 설명하시오.",
+ "summary": "",
+ "parent": "",
  "url": "b67ff6f6-143a-2760-26a4-81efbd235844",
+ "updated": "2020-12-03",
  "children": [],
  "fileName": "2020-12-03-UIView"
 }
