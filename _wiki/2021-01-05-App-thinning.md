@@ -5,7 +5,7 @@ summary:
 permalink: aa6857a4-84f0-a3e2-a738-64d58b0cd9c5
 date: 2021-01-05
 updated: 2021-01-05
-tag: iOS iOS iOSInterviewquestions 
+tag: iOS iOSInterviewquestions 
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[iOS] App thinning에 대해서 설명하시오.
 
 ## App thinning
 
@@ -56,8 +54,6 @@ App thinning을 사용하려면:
 - 앱 크기가 작아 앱 다운로드 속도가 빨라져 최초 실행 환경이 개선됨
 - 사용자가 앱을 탐색하는 동안 필요에 따라 백그라운드에서 On-Demand Resources를 다운로드함
 - 운영체제는 디스크 공간이 부족하고 더 이상 리소스가 필요하지 않을 때 On-Demand Resources를 제거함
-
----
 
 ## 참고 자료
 

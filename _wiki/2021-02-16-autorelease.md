@@ -5,7 +5,7 @@ summary:
 permalink: 8c462797-aaee-445d-efdc-b532b964984f
 date: 2021-02-16
 updated: 2021-02-16
-tag: Objective-C 
+tag: Objective-C iOSInterviewquestions
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[Objective-C] 특정 객체를 autorelease 하기 위해 필요한 사항과 과정을 설명하시오.
 
 `Foundation`에서는 `autorelease pool`이라는 기능을 사용하여 함수 내에서 생성한 객체들을 적절한 시점에 한 번에 해제할 수 있도록 해주는 방법을 제공한다.
 
@@ -46,8 +44,6 @@ Person *aPerson = [[Person alloc] init];
 // [aPerson release]; delete now
 [aPerson autorelease]; // delete later
 ```
-
----
 
 ## 참고 자료
 

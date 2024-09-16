@@ -5,7 +5,7 @@ summary:
 permalink: ba700875-ce39-9567-5a76-b69390ff8828
 date: 2020-11-30
 updated: 2020-11-30
-tag: iOS 
+tag: iOS iOSInterviewquestions
 public: true
 parent: 
 latex: true
@@ -15,9 +15,7 @@ comment: true
 * TOC
 {:toc}
 
-# \[iOS] 하나의 View Controller 코드에서 여러 TableView Controller 역할을 해야 할 경우 어떻게 구분해서 구현해야 하는지 설명하시오.
-
-1. `viewDidLoad()` 에서 `UITableView.register()`를 사용해서 셀을 등록한다.
+## 1. `viewDidLoad()` 에서 `UITableView.register()`를 사용해서 셀을 등록한다.
     ```
     💡 스토리보드에서 만든 경우에는 등록할 필요가 없음!
     ```
@@ -32,7 +30,7 @@ comment: true
     }
     ```
 
-2. `func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell` 에서 파라미터로 받는 `tableView`를 객체 비교를 통해 구분한다.
+## 2. `func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell` 에서 파라미터로 받는 `tableView`를 객체 비교를 통해 구분한다.
 
     ```swift
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,7 +42,7 @@ comment: true
     }
     ```
 
-3. 테이블 뷰의 `Tag`를 등록, 비교해서 구분한다.
+## 3. 테이블 뷰의 `Tag`를 등록, 비교해서 구분한다.
 
     ```swift
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -73,8 +71,6 @@ func register(AnyClass?, forCellReusepermalink: String)
 - Cell을  재사용하기 위해서 등록할 때 사용함
     - 스토리보드는 자동으로 셀을 등록하기 때문에 별도의 등록을 하지 않아도 됨
     - ❗️ xib, code에 경우 등록해줘야 함
-
----
 
 ## 참고 자료
 

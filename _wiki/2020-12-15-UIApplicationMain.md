@@ -5,7 +5,7 @@ summary:
 permalink: 7e14cff5-8a2d-81a5-05f7-de775ca4ad96
 date: 2020-12-15
 updated: 2020-12-15
-tag: iOS 
+tag: iOS iOSInterviewquestions
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[iOS] 앱이 시작할 때 main.c 에 있는 UIApplicationMain 함수에 의해서 생성되는 객체는 무엇인가?
 
 결론: `UIApplication` 싱글턴 객체가 생성됨
 
@@ -95,13 +93,8 @@ class UIApplication: UIResponder
 
 앱이 수신 이벤트를 시스템이 처리하기 전에 처리해야하는 경우 (매우 드문 경우) 사용자 지정 이벤트 또는 작업 전달 메커니즘을 구현할 수 있다. 이렇게하려면 `UIApplication`을 하위 클래스로 만들고 `sendEvent(_ :)` 및 / 또는 `sendAction(_:to:from:for:)` 메서드를 재정의한다. 인터셉트하는 모든 이벤트에 대해 이벤트를 처리 한 후 [super sendEvent:event]를 호출하여 시스템에 다시 전달한다. 이벤트 차단은 거의 필요하지 않으며 가능하면 피해야 한다.
 
----
-
 ## 참고 자료
 
 - [앱델리게이트 이해하기 (iOS앱 만들기 - 01) · Wireframe](https://soooprmx.com/archives/4454)
 - [UIApplicationMain - Apple Developer Documentation](https://developer.apple.com/documentation/uikit/1622933-uiapplicationmain)
 - [UIApplication - Apple Developer Documentation](https://developer.apple.com/documentation/uikit/uiapplication)
-
-## 태그
-

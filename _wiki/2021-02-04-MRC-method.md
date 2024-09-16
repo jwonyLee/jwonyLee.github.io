@@ -5,7 +5,7 @@ summary:
 permalink: cddfe26b-169d-567a-5382-8ae53ec547e2
 date: 2021-02-04
 updated: 2021-02-04
-tag: Objective-C 
+tag: Objective-C iOSInterviewquestions
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[Objective-C] ARC 대신 Manual Reference Count 방식으로 구현할 때 꼭 사용해야 하는 메서드들을 쓰고 역할을 설명하시오.
 
 ## alloc/init
 
@@ -42,8 +40,6 @@ TheClass *newObject = [[TheClass alloc] init];
 > Decrements the receiver’s retain count at the end of the current autorelease pool block.
 
 현재 autorelease pool block의 끝에서 수신자의 참조 횟수를 감소시킴
-
----
 
 ## 참고 자료
 

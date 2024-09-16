@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# \[iOS] UIView.clipToBounds와 layer.masksToBounds
-
 ## `UIView.clipToBounds`
 
 이 값을 `true`로 설정하면 서브 뷰가 수신자의 경계에 잘린다. `false`로 설정하면 프레임이 수신기의 가시적 경계를 넘어 확장되는 서브 뷰는 잘리지 않는다. 기본값은 `false`이다.

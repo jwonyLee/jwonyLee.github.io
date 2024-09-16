@@ -5,7 +5,7 @@ summary:
 permalink: b5bbb478-501f-7d48-0876-a8a3c779bbc5
 date: 2020-12-15
 updated: 2020-12-15
-tag: iOS 
+tag: iOS iOSInterviewquestions
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[iOS] 모든 View Controller 객체의 상위 클래스는 무엇이고 그 역할은 무엇인가?
 
 Container ViewController
 
@@ -44,8 +42,6 @@ class UIViewController: UIResponder
 - 뷰 크기 조정 및 전체 인터페이스의 레이아웃 관리
 - 앱에서 다른 뷰 컨트롤러를 포함한 다른 객체와 조정
 
----
-
 ## 참고 자료
 
 - [[iOS 앱 만들기 005] 뷰 컨트롤러의 종류 · Wireframe](https://soooprmx.com/archives/4496)
@@ -53,6 +49,3 @@ class UIViewController: UIResponder
 ## 스터디
 
 UIResonder: 이벤트가 발생하면, UIKit은 이를 처리할 수 있도록 앱의 리스폰더 객체에 전달
-
-## 태그
-

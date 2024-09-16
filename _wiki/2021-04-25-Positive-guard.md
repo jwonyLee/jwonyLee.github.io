@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# \[Swift] 긍정적인 Guard 사용
-
 레츠스위프트 30호를 읽다가, 와닿는 부분이 있어서 요약, 정리했다. 알고리즘 풀 때도 비슷하게 많이 쓰는데 (`while !queue.isEmpty`) 이걸 읽고서 고쳐야겠다는 생각이 들었다.
 
 ## Use Positive Guards
@@ -54,8 +52,6 @@ guard pices.isNotEmpty else {
     return
 }
 ```
-
----
 
 ## 참고 자료
 

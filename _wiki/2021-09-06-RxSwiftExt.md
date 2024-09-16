@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# \[RxSwift] RxSwiftExt 일부 연산자 정리
-
 `RxSwiftCommunity` 에서 하는 프로젝트
 - [https://github.com/RxSwiftCommunity/RxSwiftExt](https://github.com/RxSwiftCommunity/RxSwiftExt)
 - RxSwift에서 제공하지 않는 다양한 상황을 처리할 때 도움이 되는 연산자를 제공한다.

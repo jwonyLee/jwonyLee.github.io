@@ -5,7 +5,7 @@ summary:
 permalink: 1aa547a5-41c4-8dd1-b435-17560674ca3a
 date: 2021-01-14
 updated: 2021-01-14
-tag: iOS 
+tag: iOS iOSInterviewquestions
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[iOS] hugging, resistance에 대해서 설명하시오.
 
 ![hugging resistance](/assets/image/hugging-resistance.png)
 
@@ -40,8 +38,6 @@ Content hugging은 기본값이 250, Compression Resistance는 기본값이 750�
 | Right Label Content Hugging Priority = 750 | Left Label Content Hugging Priority = 750 | 
 | ------------------------------------------ | ------------------------------------ |
 | ![Right Label Content Hugging Priority = 750](/assets/image/rightLabel.png) | ![Left Label Content Hugging Priority = 750](/assets/image/leftLabel.png) |
-
----
 
 ## 참고 자료
 

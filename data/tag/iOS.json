@@ -21,7 +21,6 @@
  "2020-12-28-UIViewController",
  "2020-12-29-Closure-Block",
  "2021-01-05-App-thinning",
- "2021-01-05-App-thinning",
  "2021-01-11-QoS",
  "2021-01-12-Autolayout-code",
  "2021-01-14-hugging-resistance",
@@ -29,6 +28,7 @@
  "2021-01-25-Left-Constraint-Leading-Constraint",
  "2021-01-26-ARC",
  "2021-02-01-Anatomy-of-a-Constraint",
+ "2021-02-02-Contacts",
  "2021-03-23-In-Active",
  "2021-03-23-Scene-Delegate",
  "2021-04-01-Application-thread",
@@ -58,6 +58,7 @@
  "Live Activity",
  "Moya 사용법",
  "ReactorKit",
+ "Safe area 를 변경하려면",
  "Swift Package 만들기",
  "TabView + ScrollView"
 ]

@@ -5,7 +5,7 @@ summary:
 permalink: 0f24fcbb-ce52-e617-1f35-7592cc832513
 date: 2021-04-16
 updated: 2021-04-16
-tag: iOS Autolayout 
+tag: iOS Autolayout
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[iOS] layoutMarginsGuide, safeAreaLayoutGuide
 
 | iPhone 8, safeAreaLayoutGuide | iPhone 8, layoutMarginsGuide | iPhone 11, safeAreaLayoutGuide | iPhone 11, layoutMarginsGuide |
 | ----------------------------- | ---------------------------- | ------------------------------ | ----------------------------- |

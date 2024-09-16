@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# \[iOS] 테이블뷰 셀 터치 후, 다른 뷰로 이동한 뒤에 다시 돌아왔을 때 포커스 없애기
-
 ```
 📌 테이블 뷰 화면 이동 후 셀의 포커스가 남아있는 문제 해결하기
 ```
@@ -39,8 +37,6 @@ override func viewWillAppear(_ animated: Bool) {
     }
 }
 ```
-
----
 
 ## 참고 자료
 

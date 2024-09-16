@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# \[Swift] Delegates와 Notification 방식의 차이점에 대해 설명하시오.
-
 ## Delegates
 
 - `Protocol`을 정의하여 사용
@@ -53,8 +51,6 @@ class Bakery {
 - 추적이 쉽지 않음  
 → 변화가 언제 일어나는지 캐치를 못함 
 → Center에서 관리하기 때문에?
-
----
 
 ## 참고 자료
 

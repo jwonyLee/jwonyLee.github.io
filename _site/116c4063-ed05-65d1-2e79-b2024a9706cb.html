@@ -97,7 +97,7 @@
         
         "strong-과-weak-참조-방식에-대해-설명하시오": "/7c62d9b2-06d5-65d7-6898-1046353eebd0", 
         
-        "ios-contacts-프레임워크-톺아보기": "/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc", 
+        "contacts-프레임워크-톺아보기": "/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc", 
         
         "arc-대신-manual-reference-count-방식으로-구현할-때-꼭-사용해야-하는-메서드들을-쓰고-역할을-설명하시오": "/cddfe26b-169d-567a-5382-8ae53ec547e2", 
         
@@ -437,44 +437,39 @@
     </header>
     <article class="post-content">
         <ul id="markdown-toc">
-  <li><a href="#rxswift-학습-정리" id="markdown-toc-rxswift-학습-정리">[RxSwift] 학습 정리</a>    <ul>
-      <li><a href="#옵저버-패턴" id="markdown-toc-옵저버-패턴">옵저버 패턴</a></li>
-      <li><a href="#함수형-프로그래밍" id="markdown-toc-함수형-프로그래밍">함수형 프로그래밍</a></li>
-      <li><a href="#reactivex" id="markdown-toc-reactivex">ReactiveX</a></li>
-      <li><a href="#rxswift" id="markdown-toc-rxswift">RxSwift</a></li>
-      <li><a href="#굳이" id="markdown-toc-굳이">굳이?</a>        <ul>
-          <li><a href="#이유" id="markdown-toc-이유">이유</a></li>
-        </ul>
-      </li>
-      <li><a href="#rxswift-알아보기-1--3-기록" id="markdown-toc-rxswift-알아보기-1--3-기록">RxSwift 알아보기 1 ~ 3 기록</a>        <ul>
-          <li><a href="#정수형-배열의-엘리먼트를-체크하는-함수-rxswift" id="markdown-toc-정수형-배열의-엘리먼트를-체크하는-함수-rxswift">정수형 배열의 엘리먼트를 체크하는 함수 (RxSwift)</a></li>
-          <li><a href="#subscribe-dispose" id="markdown-toc-subscribe-dispose">Subscribe, Dispose</a>            <ul>
-              <li><a href="#subscribe" id="markdown-toc-subscribe">Subscribe</a></li>
-              <li><a href="#예제-코드" id="markdown-toc-예제-코드">예제 코드</a></li>
-              <li><a href="#disposable" id="markdown-toc-disposable">Disposable</a></li>
-              <li><a href="#만약-구독받는-observable이-여러개라면" id="markdown-toc-만약-구독받는-observable이-여러개라면">만약 구독받는 Observable이 여러개라면?</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li><a href="#rxswift-in-4hours" id="markdown-toc-rxswift-in-4hours">RxSwift In 4Hours</a>        <ul>
-          <li><a href="#동기비동기-처리" id="markdown-toc-동기비동기-처리">동기/비동기 처리</a></li>
-          <li><a href="#just" id="markdown-toc-just">just</a></li>
-          <li><a href="#from" id="markdown-toc-from">from</a></li>
-          <li><a href="#map" id="markdown-toc-map">map</a></li>
-          <li><a href="#filter" id="markdown-toc-filter">filter</a></li>
-          <li><a href="#이미지를-다운받는-과정" id="markdown-toc-이미지를-다운받는-과정">이미지를 다운받는 과정</a></li>
-          <li><a href="#observeon" id="markdown-toc-observeon">observeOn</a></li>
-          <li><a href="#subscribeon" id="markdown-toc-subscribeon">subscribeOn</a></li>
-          <li><a href="#side-effect" id="markdown-toc-side-effect">side-effect</a></li>
-        </ul>
-      </li>
-      <li><a href="#참고-자료" id="markdown-toc-참고-자료">참고 자료</a></li>
+  <li><a href="#옵저버-패턴" id="markdown-toc-옵저버-패턴">옵저버 패턴</a></li>
+  <li><a href="#함수형-프로그래밍" id="markdown-toc-함수형-프로그래밍">함수형 프로그래밍</a></li>
+  <li><a href="#reactivex" id="markdown-toc-reactivex">ReactiveX</a></li>
+  <li><a href="#rxswift" id="markdown-toc-rxswift">RxSwift</a></li>
+  <li><a href="#굳이" id="markdown-toc-굳이">굳이?</a>    <ul>
+      <li><a href="#이유" id="markdown-toc-이유">이유</a></li>
     </ul>
   </li>
+  <li><a href="#rxswift-알아보기-1--3-기록" id="markdown-toc-rxswift-알아보기-1--3-기록">RxSwift 알아보기 1 ~ 3 기록</a>    <ul>
+      <li><a href="#정수형-배열의-엘리먼트를-체크하는-함수-rxswift" id="markdown-toc-정수형-배열의-엘리먼트를-체크하는-함수-rxswift">정수형 배열의 엘리먼트를 체크하는 함수 (RxSwift)</a></li>
+      <li><a href="#subscribe-dispose" id="markdown-toc-subscribe-dispose">Subscribe, Dispose</a>        <ul>
+          <li><a href="#subscribe" id="markdown-toc-subscribe">Subscribe</a></li>
+          <li><a href="#예제-코드" id="markdown-toc-예제-코드">예제 코드</a></li>
+          <li><a href="#disposable" id="markdown-toc-disposable">Disposable</a></li>
+          <li><a href="#만약-구독받는-observable이-여러개라면" id="markdown-toc-만약-구독받는-observable이-여러개라면">만약 구독받는 Observable이 여러개라면?</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#rxswift-in-4hours" id="markdown-toc-rxswift-in-4hours">RxSwift In 4Hours</a>    <ul>
+      <li><a href="#동기비동기-처리" id="markdown-toc-동기비동기-처리">동기/비동기 처리</a></li>
+      <li><a href="#just" id="markdown-toc-just">just</a></li>
+      <li><a href="#from" id="markdown-toc-from">from</a></li>
+      <li><a href="#map" id="markdown-toc-map">map</a></li>
+      <li><a href="#filter" id="markdown-toc-filter">filter</a></li>
+      <li><a href="#이미지를-다운받는-과정" id="markdown-toc-이미지를-다운받는-과정">이미지를 다운받는 과정</a></li>
+      <li><a href="#observeon" id="markdown-toc-observeon">observeOn</a></li>
+      <li><a href="#subscribeon" id="markdown-toc-subscribeon">subscribeOn</a></li>
+      <li><a href="#side-effect" id="markdown-toc-side-effect">side-effect</a></li>
+    </ul>
+  </li>
+  <li><a href="#참고-자료" id="markdown-toc-참고-자료">참고 자료</a></li>
 </ul>
-
-<h1 id="rxswift-학습-정리">[RxSwift] 학습 정리</h1>
 
 <h2 id="옵저버-패턴">옵저버 패턴</h2>
 
@@ -887,8 +882,6 @@
   <li>do</li>
   <li>subscribe</li>
 </ul>
-
-<hr />
 
 <h2 id="참고-자료">참고 자료</h2>
 

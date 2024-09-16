@@ -5,7 +5,7 @@ summary:
 permalink: f61fef68-7386-ba55-b341-d15ea08393d4
 date: 2021-02-16
 updated: 2021-02-16
-tag: Objective-C 
+tag: Objective-C iOSInterviewquestions
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[Objective-C] Autorelease Pool을 사용해야 하는 상황을 두 가지 이상 예로 들어 설명하시오.
 
 - command-line 도구와 같이 UI 프레임워크를 기반으로 하지 않는 프로그램을 작성하는 경우
 - 많은 임시 객체를 생성하는 루프를 작성하는 경우 루프 내에서 autorelease pool을 사용하여 다음 반복 전에 해당 객체를 삭제할 수 있다. 루프에서 autorelease pool 블록을 사용하면 애플리케이션의 최대 메모리 공간을 줄이는 데 도움이 된다.

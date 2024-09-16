@@ -5,7 +5,7 @@ summary:
 permalink: 486edc27-d3f9-bed4-099e-f5983ff97baa
 date: 2020-12-29
 updated: 2020-12-29
-tag: iOS 
+tag: iOS iOSInterviewquestions
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[iOS] Swift의 클로저와 Objective-C의 블록은 어떤 차이가 있는가?
 
 일반적인 클로저에 대한 내용은 [탈출 클로저에 대하여 설명하시오.](./Escaping-Closure.md) 문서 참고
 
@@ -85,8 +83,6 @@ block();
 ## Block
 
 일반적으로 객체는 힙(heap)에 할당되지만 블럭은 스택(stack)에 할당되는 객체다. 실행속도 최적화를 위해 기본적으로 스택에 할당 하게된다.
-
----
 
 ## 참고 자료
 

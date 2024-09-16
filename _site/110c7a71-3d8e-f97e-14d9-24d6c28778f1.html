@@ -97,7 +97,7 @@
         
         "strong-과-weak-참조-방식에-대해-설명하시오": "/7c62d9b2-06d5-65d7-6898-1046353eebd0", 
         
-        "ios-contacts-프레임워크-톺아보기": "/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc", 
+        "contacts-프레임워크-톺아보기": "/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc", 
         
         "arc-대신-manual-reference-count-방식으로-구현할-때-꼭-사용해야-하는-메서드들을-쓰고-역할을-설명하시오": "/cddfe26b-169d-567a-5382-8ae53ec547e2", 
         
@@ -428,7 +428,7 @@
 
 
     <div class="post-tag">
-    Swift
+    Swift iOSInterviewquestions
 </div>
 
 
@@ -437,17 +437,11 @@
     </header>
     <article class="post-content">
         <ul id="markdown-toc">
-  <li><a href="#swift-탈출-클로저에-대하여-설명하시오" id="markdown-toc-swift-탈출-클로저에-대하여-설명하시오">[Swift] 탈출 클로저에 대하여 설명하시오.</a>    <ul>
-      <li><a href="#클로저" id="markdown-toc-클로저">클로저</a></li>
-      <li><a href="#탈출-클로저" id="markdown-toc-탈출-클로저">탈출 클로저</a></li>
-      <li><a href="#참고-자료" id="markdown-toc-참고-자료">참고 자료</a></li>
-      <li><a href="#스터디" id="markdown-toc-스터디">스터디</a></li>
-      <li><a href="#태그" id="markdown-toc-태그">태그</a></li>
-    </ul>
-  </li>
+  <li><a href="#클로저" id="markdown-toc-클로저">클로저</a></li>
+  <li><a href="#탈출-클로저" id="markdown-toc-탈출-클로저">탈출 클로저</a></li>
+  <li><a href="#참고-자료" id="markdown-toc-참고-자료">참고 자료</a></li>
+  <li><a href="#스터디" id="markdown-toc-스터디">스터디</a></li>
 </ul>
-
-<h1 id="swift-탈출-클로저에-대하여-설명하시오">[Swift] 탈출 클로저에 대하여 설명하시오.</h1>
 
 <h2 id="클로저">클로저</h2>
 
@@ -476,8 +470,6 @@
 <p>클로저를 매개변수로 갖는 함수를 선언할 때 매개변수 이름의 콜론(:) 뒤에 <code class="language-plaintext highlighter-rouge">@escaping</code> 키워드를 사용하여 클로저가 탈출하는 것을 허용한다고 명시해줄 수 있음</p>
 
 <p>비동기 작업을 하는 함수들은 completion handler를 클로저 형태로 받는 경우가 많다. 이 때 받은 클로저는 함수의 작업이 완료될 때까지 호출되지 않는다. 실행 순서를 보장하고 싶을 때? 사용한다.</p>
-
-<hr />
 
 <h2 id="참고-자료">참고 자료</h2>
 
@@ -540,9 +532,6 @@ Server.getPerson { (isSuccess, persons) in
   <li>스위프트 프로그래밍 3판 267p, withoutActuallyEscaping 읽기</li>
   <li>값 타입의 경우, 탈출 클로저는 mutable reference를 캡쳐링 할 수 없기 때문에 에러가 발생함</li>
 </ul>
-
-<h2 id="태그">태그</h2>
-
 
     </article>
 

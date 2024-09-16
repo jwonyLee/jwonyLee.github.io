@@ -5,7 +5,7 @@ summary:
 permalink: c5dfccf5-2b57-6f88-4b0b-c6b25bd2a68d
 date: 2021-01-04
 updated: 2021-01-04
-tag: iOS 
+tag: iOS iOSInterviewquestions
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[iOS] 스토리보드를 이용했을때의 장단점을 설명하시오.
 
 ## 장점
 

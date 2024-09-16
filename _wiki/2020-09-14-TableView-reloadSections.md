@@ -5,7 +5,7 @@ summary:
 permalink: 6818f72c-8679-19ea-5849-0fa044b8e138
 date: 2020-09-14
 updated: 2020-09-14
-tag: iOS UIKit UITableView iOSInterviewquestions  
+tag: iOS UIKit UITableView  
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[iOS] TableView.reloadSections(_:with:)
 
 ```swift
 TableView.reloadSections(_ sections: IndexSet, with animation: UITableView.RowAnimation)

@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# \[iOS] 네비게이션 타이틀 변경
-
 ```swift
 let button = UIButton(type: .custom)
 button.setImage(UIImage(systemName: "cloud.bolt.fill"), for: .normal)

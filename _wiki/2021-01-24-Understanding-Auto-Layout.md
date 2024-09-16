@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# \[iOS] Understanding Auto Layout
-
 > 이 글은 [Auto Layout Guide: Understanding Auto Layout](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/index.html) 문서를 번역한 글입니다.  
 > 학습을 위해 일부 내용을 첨삭하여 원문과 동일하지 않을 수 있습니다.
 

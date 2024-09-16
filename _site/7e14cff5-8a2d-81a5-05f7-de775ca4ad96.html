@@ -97,7 +97,7 @@
         
         "strong-과-weak-참조-방식에-대해-설명하시오": "/7c62d9b2-06d5-65d7-6898-1046353eebd0", 
         
-        "ios-contacts-프레임워크-톺아보기": "/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc", 
+        "contacts-프레임워크-톺아보기": "/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc", 
         
         "arc-대신-manual-reference-count-방식으로-구현할-때-꼭-사용해야-하는-메서드들을-쓰고-역할을-설명하시오": "/cddfe26b-169d-567a-5382-8ae53ec547e2", 
         
@@ -428,7 +428,7 @@
 
 
     <div class="post-tag">
-    iOS
+    iOS iOSInterviewquestions
 </div>
 
 
@@ -437,25 +437,19 @@
     </header>
     <article class="post-content">
         <ul id="markdown-toc">
-  <li><a href="#ios-앱이-시작할-때-mainc-에-있는-uiapplicationmain-함수에-의해서-생성되는-객체는-무엇인가" id="markdown-toc-ios-앱이-시작할-때-mainc-에-있는-uiapplicationmain-함수에-의해서-생성되는-객체는-무엇인가">[iOS] 앱이 시작할 때 main.c 에 있는 UIApplicationMain 함수에 의해서 생성되는 객체는 무엇인가?</a>    <ul>
-      <li><a href="#uiapplicationmain_-_-_-_-" id="markdown-toc-uiapplicationmain_-_-_-_-">UIApplicationMain(_ :_ :_ :_ :)</a>        <ul>
-          <li><a href="#parameters" id="markdown-toc-parameters">Parameters</a></li>
-          <li><a href="#return-value" id="markdown-toc-return-value">Return Value</a></li>
-          <li><a href="#discussion" id="markdown-toc-discussion">Discussion</a></li>
-        </ul>
-      </li>
-      <li><a href="#uiapplication" id="markdown-toc-uiapplication">UIApplication</a>        <ul>
-          <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
-          <li><a href="#subclassing-notes" id="markdown-toc-subclassing-notes">Subclassing Notes</a></li>
-        </ul>
-      </li>
-      <li><a href="#참고-자료" id="markdown-toc-참고-자료">참고 자료</a></li>
-      <li><a href="#태그" id="markdown-toc-태그">태그</a></li>
+  <li><a href="#uiapplicationmain_-_-_-_-" id="markdown-toc-uiapplicationmain_-_-_-_-">UIApplicationMain(_ :_ :_ :_ :)</a>    <ul>
+      <li><a href="#parameters" id="markdown-toc-parameters">Parameters</a></li>
+      <li><a href="#return-value" id="markdown-toc-return-value">Return Value</a></li>
+      <li><a href="#discussion" id="markdown-toc-discussion">Discussion</a></li>
     </ul>
   </li>
+  <li><a href="#uiapplication" id="markdown-toc-uiapplication">UIApplication</a>    <ul>
+      <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+      <li><a href="#subclassing-notes" id="markdown-toc-subclassing-notes">Subclassing Notes</a></li>
+    </ul>
+  </li>
+  <li><a href="#참고-자료" id="markdown-toc-참고-자료">참고 자료</a></li>
 </ul>
-
-<h1 id="ios-앱이-시작할-때-mainc-에-있는-uiapplicationmain-함수에-의해서-생성되는-객체는-무엇인가">[iOS] 앱이 시작할 때 main.c 에 있는 UIApplicationMain 함수에 의해서 생성되는 객체는 무엇인가?</h1>
 
 <p>결론: <code class="language-plaintext highlighter-rouge">UIApplication</code> 싱글턴 객체가 생성됨</p>
 
@@ -535,8 +529,6 @@
 
 <p>앱이 수신 이벤트를 시스템이 처리하기 전에 처리해야하는 경우 (매우 드문 경우) 사용자 지정 이벤트 또는 작업 전달 메커니즘을 구현할 수 있다. 이렇게하려면 <code class="language-plaintext highlighter-rouge">UIApplication</code>을 하위 클래스로 만들고 <code class="language-plaintext highlighter-rouge">sendEvent(_ :)</code> 및 / 또는 <code class="language-plaintext highlighter-rouge">sendAction(_:to:from:for:)</code> 메서드를 재정의한다. 인터셉트하는 모든 이벤트에 대해 이벤트를 처리 한 후 [super sendEvent:event]를 호출하여 시스템에 다시 전달한다. 이벤트 차단은 거의 필요하지 않으며 가능하면 피해야 한다.</p>
 
-<hr />
-
 <h2 id="참고-자료">참고 자료</h2>
 
 <ul>
@@ -544,9 +536,6 @@
   <li><a href="https://developer.apple.com/documentation/uikit/1622933-uiapplicationmain">UIApplicationMain - Apple Developer Documentation</a></li>
   <li><a href="https://developer.apple.com/documentation/uikit/uiapplication">UIApplication - Apple Developer Documentation</a></li>
 </ul>
-
-<h2 id="태그">태그</h2>
-
 
     </article>
 

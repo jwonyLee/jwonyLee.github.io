@@ -5,7 +5,7 @@ summary:
 permalink: f1365c28-8c8e-c33f-4627-b94b76d3985d
 date: 2020-10-15
 updated: 2020-10-15
-tag: Swift 
+tag: Swift iOSInterviewquestions
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[Swift] defer가 호출되는 순서는 어떻게 되고, defer가 호출되지 않는 경우를 설명하시오.
 
 ## defer가 호출되는 순서
 
@@ -72,11 +70,6 @@ run 1
 3. 리턴값이 `Never`(비반환함수)인 경우
 에러가 발생하면서 함수를 반환하지 않고 실행을 종료하기 때문에 `defer` 가 호출되지 않음
 
----
-
 ## 참고 자료
 
 - [defer 구문 알아보기 - 뀔뀔(swieeft)의 개발새발기](https://swieeft.github.io/2020/02/26/defer.html)
-
-## 태그
-

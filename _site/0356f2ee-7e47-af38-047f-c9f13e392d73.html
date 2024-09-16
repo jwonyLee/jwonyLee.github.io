@@ -97,7 +97,7 @@
         
         "strong-과-weak-참조-방식에-대해-설명하시오": "/7c62d9b2-06d5-65d7-6898-1046353eebd0", 
         
-        "ios-contacts-프레임워크-톺아보기": "/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc", 
+        "contacts-프레임워크-톺아보기": "/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc", 
         
         "arc-대신-manual-reference-count-방식으로-구현할-때-꼭-사용해야-하는-메서드들을-쓰고-역할을-설명하시오": "/cddfe26b-169d-567a-5382-8ae53ec547e2", 
         
@@ -437,20 +437,16 @@
     </header>
     <article class="post-content">
         <ul id="markdown-toc">
-  <li><a href="#한-컴퓨터에-github-계정-여러개-쓰기" id="markdown-toc-한-컴퓨터에-github-계정-여러개-쓰기">한 컴퓨터에 GitHub 계정 여러개 쓰기</a>    <ul>
-      <li><a href="#기록" id="markdown-toc-기록">기록</a></li>
-      <li><a href="#참고-자료" id="markdown-toc-참고-자료">참고 자료</a></li>
-    </ul>
-  </li>
+  <li><a href="#1-ssh-key-생성" id="markdown-toc-1-ssh-key-생성">1. SSH Key 생성</a></li>
+  <li><a href="#2-ssh-agent에-새로-생성한-ssh-key-추가" id="markdown-toc-2-ssh-agent에-새로-생성한-ssh-key-추가">2. ssh-agent에 새로 생성한 SSH Key 추가</a></li>
+  <li><a href="#3-github-에-공개키-추가하기" id="markdown-toc-3-github-에-공개키-추가하기">3. GitHub 에 공개키 추가하기</a></li>
+  <li><a href="#4-ssh-config-파일-생성" id="markdown-toc-4-ssh-config-파일-생성">4. SSH Config 파일 생성</a></li>
+  <li><a href="#5-ssh-연결-테스트" id="markdown-toc-5-ssh-연결-테스트">5. SSH 연결 테스트</a></li>
+  <li><a href="#6-ssh-로-clone" id="markdown-toc-6-ssh-로-clone">6. SSH 로 clone</a></li>
+  <li><a href="#참고-자료" id="markdown-toc-참고-자료">참고 자료</a></li>
 </ul>
 
-<h1 id="한-컴퓨터에-github-계정-여러개-쓰기">한 컴퓨터에 GitHub 계정 여러개 쓰기</h1>
-
-<h2 id="기록">기록</h2>
-
-<ol>
-  <li>SSH Key 생성</li>
-</ol>
+<h2 id="1-ssh-key-생성">1. SSH Key 생성</h2>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-C</span> <span class="s2">"userA@example.com"</span> <span class="nt">-f</span> <span class="s2">"id_rsa_userA"</span>
 </code></pre></div></div>
@@ -458,9 +454,7 @@
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-C</span> <span class="s2">"userB@example.com"</span> <span class="nt">-f</span> <span class="s2">"id_rsa_userB"</span>
 </code></pre></div></div>
 
-<ol>
-  <li>ssh-agent에 새로 생성한 SSH Key 추가</li>
-</ol>
+<h2 id="2-ssh-agent에-새로-생성한-ssh-key-추가">2. ssh-agent에 새로 생성한 SSH Key 추가</h2>
 
 <p>백그라운드에 ssh-agent 실행</p>
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">eval</span> <span class="s2">"</span><span class="si">$(</span>ssh-agent <span class="nt">-s</span><span class="si">)</span><span class="s2">"</span>
@@ -477,13 +471,11 @@
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-add <span class="nt">-l</span>
 </code></pre></div></div>
 
-<ol>
-  <li>GitHub 에 공개키 추가하기
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> &lt; ~/.ssh/id_rsa.pub
-</code></pre></div>    </div>
-  </li>
-  <li>SSH Config 파일 생성</li>
-</ol>
+<h2 id="3-github-에-공개키-추가하기">3. GitHub 에 공개키 추가하기</h2>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> &lt; ~/.ssh/id_rsa.pub
+</code></pre></div></div>
+
+<h2 id="4-ssh-config-파일-생성">4. SSH Config 파일 생성</h2>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi ~/.ssh/config
 </code></pre></div></div>
@@ -501,16 +493,12 @@ Host github.com-userB
 	IdentityFile ~/.ssh/id_rsa_userB
 </code></pre>
 
-<ol>
-  <li>SSH 연결 테스트</li>
-</ol>
+<h2 id="5-ssh-연결-테스트">5. SSH 연결 테스트</h2>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh <span class="nt">-T</span> git@github.com-userA
 </code></pre></div></div>
 
-<ol>
-  <li>SSH 로 clone</li>
-</ol>
+<h2 id="6-ssh-로-clone">6. SSH 로 clone</h2>
 
 <p><strong>SSH 경로를 config 에서 설정한 것으로 해야함</strong></p>
 

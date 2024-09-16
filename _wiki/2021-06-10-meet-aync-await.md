@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# \[iOS] WWDC2021: Meet async/await in Swift
-
 관심 있는 세션을 하나씩 보고 있는데, 그중 첫 번째로 시청한 것이 "Meet async/await in Swift"다. 중반부까지의 내용을 정리했다. `completionHandler`를 사용했을 때와 `async/await`을 사용했을 때를 비교하는 내용인데 이것만 봐도 어느 정도 감이 잡힌다.
 
 기존에는 `completionHandler`를 이용해 비동기 작업을 처리했다. 비동기 작업을 하면, 스레드가 시간이 오래 걸리는 작업을 완료할 때까지 다른 작업을 수행할 수 있는 장점이 있다.

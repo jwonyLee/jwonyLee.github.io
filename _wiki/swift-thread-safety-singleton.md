@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# thread safety한 싱글톤
-
 일반적인 싱글톤 패턴 만드는 방법
 
 ```swift

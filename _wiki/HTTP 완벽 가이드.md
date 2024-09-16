@@ -5,7 +5,7 @@ summary:
 permalink: 35d2bb9e-3cea-3de7-4405-27f2965e2716
 date: 2024-05-20 22:17:38 +09:00
 updated: 2024-05-20 22:17:38 +09:00
-tag: 
+tag: Book
 public: true
 parent: 
 latex: true
@@ -15,7 +15,7 @@ comment: true
 * TOC
 {:toc}
 
-# HTTP 완벽 가이드
+## 목차
 
 - [[01장. HTTP 개관]]
 - [[02장. URL과 리소스]]

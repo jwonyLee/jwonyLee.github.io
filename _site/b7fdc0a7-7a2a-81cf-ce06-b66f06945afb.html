@@ -97,7 +97,7 @@
         
         "strong-과-weak-참조-방식에-대해-설명하시오": "/7c62d9b2-06d5-65d7-6898-1046353eebd0", 
         
-        "ios-contacts-프레임워크-톺아보기": "/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc", 
+        "contacts-프레임워크-톺아보기": "/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc", 
         
         "arc-대신-manual-reference-count-방식으로-구현할-때-꼭-사용해야-하는-메서드들을-쓰고-역할을-설명하시오": "/cddfe26b-169d-567a-5382-8ae53ec547e2", 
         
@@ -428,7 +428,7 @@
 
 
     <div class="post-tag">
-    iOS
+    iOS iOSInterviewquestions
 </div>
 
 
@@ -437,23 +437,18 @@
     </header>
     <article class="post-content">
         <ul id="markdown-toc">
-  <li><a href="#ios-arc란-무엇인지-설명하시오" id="markdown-toc-ios-arc란-무엇인지-설명하시오">[iOS] ARC란 무엇인지 설명하시오.</a>    <ul>
-      <li><a href="#rcreference-counting" id="markdown-toc-rcreference-counting">RC(Reference Counting)</a></li>
-      <li><a href="#mrcmanual-reference-counting" id="markdown-toc-mrcmanual-reference-counting">MRC(Manual Reference Counting)</a></li>
-      <li><a href="#arcautomatic-reference-counting" id="markdown-toc-arcautomatic-reference-counting">ARC(Automatic Reference Counting)</a>        <ul>
-          <li><a href="#arc의-작동-방식" id="markdown-toc-arc의-작동-방식">ARC의 작동 방식</a></li>
-          <li><a href="#클래스-인스턴스-사이의-강한-참조-순환" id="markdown-toc-클래스-인스턴스-사이의-강한-참조-순환">클래스 인스턴스 사이의 강한 참조 순환</a></li>
-          <li><a href="#클래스-인스턴스-사이의-강한-참조-순환-해결하기" id="markdown-toc-클래스-인스턴스-사이의-강한-참조-순환-해결하기">클래스 인스턴스 사이의 강한 참조 순환 해결하기</a></li>
-          <li><a href="#weak-references-약한-참조" id="markdown-toc-weak-references-약한-참조">Weak References (약한 참조)</a></li>
-          <li><a href="#unowned-references-무소속-참조" id="markdown-toc-unowned-references-무소속-참조">Unowned References (무소속 참조)</a></li>
-        </ul>
-      </li>
-      <li><a href="#참고-자료" id="markdown-toc-참고-자료">참고 자료</a></li>
+  <li><a href="#rcreference-counting" id="markdown-toc-rcreference-counting">RC(Reference Counting)</a></li>
+  <li><a href="#mrcmanual-reference-counting" id="markdown-toc-mrcmanual-reference-counting">MRC(Manual Reference Counting)</a></li>
+  <li><a href="#arcautomatic-reference-counting" id="markdown-toc-arcautomatic-reference-counting">ARC(Automatic Reference Counting)</a>    <ul>
+      <li><a href="#arc의-작동-방식" id="markdown-toc-arc의-작동-방식">ARC의 작동 방식</a></li>
+      <li><a href="#클래스-인스턴스-사이의-강한-참조-순환" id="markdown-toc-클래스-인스턴스-사이의-강한-참조-순환">클래스 인스턴스 사이의 강한 참조 순환</a></li>
+      <li><a href="#클래스-인스턴스-사이의-강한-참조-순환-해결하기" id="markdown-toc-클래스-인스턴스-사이의-강한-참조-순환-해결하기">클래스 인스턴스 사이의 강한 참조 순환 해결하기</a></li>
+      <li><a href="#weak-references-약한-참조" id="markdown-toc-weak-references-약한-참조">Weak References (약한 참조)</a></li>
+      <li><a href="#unowned-references-무소속-참조" id="markdown-toc-unowned-references-무소속-참조">Unowned References (무소속 참조)</a></li>
     </ul>
   </li>
+  <li><a href="#참고-자료" id="markdown-toc-참고-자료">참고 자료</a></li>
 </ul>
-
-<h1 id="ios-arc란-무엇인지-설명하시오">[iOS] ARC란 무엇인지 설명하시오.</h1>
 
 <h2 id="rcreference-counting">RC(Reference Counting)</h2>
 
@@ -539,8 +534,6 @@
   <p>무소속 참조는 해당 참조가 해제되지 않은 인스턴스만 항상 참조한다고 확신할 수 있을때만 사용
 해당 인스턴스가 해제된 후에 무소속 참조의 값에 접근하려고 하면, 런타임 에러가 발생</p>
 </blockquote>
-
-<hr />
 
 <h2 id="참고-자료">참고 자료</h2>
 

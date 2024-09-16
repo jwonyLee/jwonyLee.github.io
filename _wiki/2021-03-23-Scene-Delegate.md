@@ -5,7 +5,7 @@ summary:
 permalink: 1da5c7c4-77b5-078d-7d51-cb4af2a594be
 date: 2021-03-23
 updated: 2021-03-23
-tag: iOS 
+tag: iOS iOSInterviewquestions
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[iOS] scene delegate에 대해 설명하시오.
 
 ## ~ iOS 12
 
@@ -73,8 +71,6 @@ optional func sceneDidDisconnect(_ scene: UIScene)
 ```
 
 scene이 background로 갈 때마다 iOS는 리소스를 확보하기 위해 scene을 삭제하는 것을 결정할 수 있다. 이것은 앱이 종료되거나 실행되지 않음을 의미하지는 않지만 scene만 세션에서 연결 해제되고 활성화되지 않는다. iOS는 사용자가 특정 scene을 다시 foreground로 가져올 때 이 scene을 scene 세션에 다시 연결하도록 결정할 수 있다. 이 방법은 더 이상 사용되지 않는 리소스를 삭제하는 데 사용할 수 있다.
-
----
 
 ## 참고 자료
 

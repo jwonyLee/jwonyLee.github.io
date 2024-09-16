@@ -97,7 +97,7 @@
         
         "strong-과-weak-참조-방식에-대해-설명하시오": "/7c62d9b2-06d5-65d7-6898-1046353eebd0", 
         
-        "ios-contacts-프레임워크-톺아보기": "/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc", 
+        "contacts-프레임워크-톺아보기": "/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc", 
         
         "arc-대신-manual-reference-count-방식으로-구현할-때-꼭-사용해야-하는-메서드들을-쓰고-역할을-설명하시오": "/cddfe26b-169d-567a-5382-8ae53ec547e2", 
         
@@ -428,7 +428,7 @@
 
 
     <div class="post-tag">
-    Objective-C
+    Objective-C iOSInterviewquestions
 </div>
 
 
@@ -437,15 +437,10 @@
     </header>
     <article class="post-content">
         <ul id="markdown-toc">
-  <li><a href="#objective-c-특정-객체를-autorelease-하기-위해-필요한-사항과-과정을-설명하시오" id="markdown-toc-objective-c-특정-객체를-autorelease-하기-위해-필요한-사항과-과정을-설명하시오">[Objective-C] 특정 객체를 autorelease 하기 위해 필요한 사항과 과정을 설명하시오.</a>    <ul>
-      <li><a href="#arc를-사용하는-경우" id="markdown-toc-arc를-사용하는-경우">ARC를 사용하는 경우</a></li>
-      <li><a href="#arc를-사용하지-않는-경우" id="markdown-toc-arc를-사용하지-않는-경우">ARC를 사용하지 않는 경우?</a></li>
-      <li><a href="#참고-자료" id="markdown-toc-참고-자료">참고 자료</a></li>
-    </ul>
-  </li>
+  <li><a href="#arc를-사용하는-경우" id="markdown-toc-arc를-사용하는-경우">ARC를 사용하는 경우</a></li>
+  <li><a href="#arc를-사용하지-않는-경우" id="markdown-toc-arc를-사용하지-않는-경우">ARC를 사용하지 않는 경우?</a></li>
+  <li><a href="#참고-자료" id="markdown-toc-참고-자료">참고 자료</a></li>
 </ul>
-
-<h1 id="objective-c-특정-객체를-autorelease-하기-위해-필요한-사항과-과정을-설명하시오">[Objective-C] 특정 객체를 autorelease 하기 위해 필요한 사항과 과정을 설명하시오.</h1>
 
 <p><code class="language-plaintext highlighter-rouge">Foundation</code>에서는 <code class="language-plaintext highlighter-rouge">autorelease pool</code>이라는 기능을 사용하여 함수 내에서 생성한 객체들을 적절한 시점에 한 번에 해제할 수 있도록 해주는 방법을 제공한다.</p>
 
@@ -473,8 +468,6 @@
 <span class="c1">// [aPerson release]; delete now</span>
 <span class="p">[</span><span class="n">aPerson</span> <span class="nf">autorelease</span><span class="p">];</span> <span class="c1">// delete later</span>
 </code></pre></div></div>
-
-<hr />
 
 <h2 id="참고-자료">참고 자료</h2>
 

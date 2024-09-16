@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# \[iOS] Anatomy of a Constraint
-
 > 이 글은 [Auto Layout Guide: Anatomy of a Constraint](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/AnatomyofaConstraint.html#//apple_ref/doc/uid/TP40010853-CH9-SW1) 문서를 번역한 글입니다.  
 > 학습을 위해 일부 내용을 첨삭하여 원문과 동일하지 않을 수 있습니다.
 

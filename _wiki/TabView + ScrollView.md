@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# TabView + ScrollView
-
 탭 뷰의 배경색, 구분선 색상 지정을 하려면:
 
 ```swift

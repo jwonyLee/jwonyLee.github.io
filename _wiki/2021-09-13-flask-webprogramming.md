@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# \[Book] 처음 배우는 플라스크 웹 프로그래밍
-
 <p align="center">
 <img alt="처음 배우는 플라스크 웹 프로그래밍 표지" src="/assets/flask/flask-book.jpg"> <br />
 <a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B9575488572">처음 배우는 플라스크 웹 프로그래밍</a>

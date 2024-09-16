@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# SPM 패키지 dependency 설정하기
-
 모듈화 하는 방식이 다양한데,
 - Swift Package 로 만들기
 - (Dynamic/Static) Framework 로 만들기

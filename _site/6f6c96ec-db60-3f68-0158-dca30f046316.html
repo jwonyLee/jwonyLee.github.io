@@ -97,7 +97,7 @@
         
         "strong-과-weak-참조-방식에-대해-설명하시오": "/7c62d9b2-06d5-65d7-6898-1046353eebd0", 
         
-        "ios-contacts-프레임워크-톺아보기": "/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc", 
+        "contacts-프레임워크-톺아보기": "/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc", 
         
         "arc-대신-manual-reference-count-방식으로-구현할-때-꼭-사용해야-하는-메서드들을-쓰고-역할을-설명하시오": "/cddfe26b-169d-567a-5382-8ae53ec547e2", 
         
@@ -428,7 +428,7 @@
 
 
     <div class="post-tag">
-    iOS
+    iOS iOSInterviewquestions
 </div>
 
 
@@ -437,17 +437,12 @@
     </header>
     <article class="post-content">
         <ul id="markdown-toc">
-  <li><a href="#ios-앱-화면의-콘텐츠를-표시하는-로직과-관리를-담당하는-객체를-무엇이라고-하는가" id="markdown-toc-ios-앱-화면의-콘텐츠를-표시하는-로직과-관리를-담당하는-객체를-무엇이라고-하는가">[iOS] 앱 화면의 콘텐츠를 표시하는 로직과 관리를 담당하는 객체를 무엇이라고 하는가?</a>    <ul>
-      <li><a href="#uiviewcontroller" id="markdown-toc-uiviewcontroller">UIViewController</a>        <ul>
-          <li><a href="#뷰-관리" id="markdown-toc-뷰-관리">뷰 관리</a></li>
-        </ul>
-      </li>
-      <li><a href="#참고-자료" id="markdown-toc-참고-자료">참고 자료</a></li>
+  <li><a href="#uiviewcontroller" id="markdown-toc-uiviewcontroller">UIViewController</a>    <ul>
+      <li><a href="#뷰-관리" id="markdown-toc-뷰-관리">뷰 관리</a></li>
     </ul>
   </li>
+  <li><a href="#참고-자료" id="markdown-toc-참고-자료">참고 자료</a></li>
 </ul>
-
-<h1 id="ios-앱-화면의-콘텐츠를-표시하는-로직과-관리를-담당하는-객체를-무엇이라고-하는가">[iOS] 앱 화면의 콘텐츠를 표시하는 로직과 관리를 담당하는 객체를 무엇이라고 하는가?</h1>
 
 <h2 id="uiviewcontroller">UIViewController</h2>
 
@@ -477,8 +472,6 @@
 <p><img src="https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/Art/VCPG_ContainerViewController_fig_1-2_2x.png" alt="컨테이너 뷰 컨트롤러" /></p>
 
 <p>컨테이너 뷰 컨트롤러는 자체 뷰와 하나 이상의 하위 뷰 컨트롤러에서 루트 뷰를 관리한다. 컨테이너는 자식의 콘텐츠를 관리하지 않는다. 컨테이너의 디자인에 따라 루트 뷰만 관리하고 크기를 조정하고 배치한다. 위 이미지는 Split View Controller와 하위 컨트롤러 간의 관계를 보여준다. Split View Controller는 하위 뷰의 전체 크기와 위치를 관리하지만 하위 뷰 컨트롤러는 해당 뷰의 실제 콘텐츠를 관리한다.</p>
-
-<hr />
 
 <h2 id="참고-자료">참고 자료</h2>
 

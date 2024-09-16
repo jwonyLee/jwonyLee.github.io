@@ -5,7 +5,7 @@ summary:
 permalink: b859a722-c185-18ca-40e3-ff2874327645
 date: 2021-03-30
 updated: 2021-03-30
-tag: Swift 
+tag: Swift iOSInterviewquestions
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[Swift] Delegate란 무언인가 설명하고, retain 되는지 안되는지 그 이유를 함께 설명하시오.
 
 ## Delegate
 
@@ -61,8 +59,6 @@ some2 = nil
 ```
 
 두번째 코드처럼 `delegate`에 `weak` 키워드를 포함하여 선언하면, 상위 객체에 `nil`을 할당할 때 메모리에서 같이 해제된다.
-
----
 
 ## 참고 자료
 - [[Swift] Retain cycle, weak, unowned [번역]](https://baked-corn.tistory.com/30)

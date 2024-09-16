@@ -97,7 +97,7 @@
         
         "strong-과-weak-참조-방식에-대해-설명하시오": "/7c62d9b2-06d5-65d7-6898-1046353eebd0", 
         
-        "ios-contacts-프레임워크-톺아보기": "/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc", 
+        "contacts-프레임워크-톺아보기": "/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc", 
         
         "arc-대신-manual-reference-count-방식으로-구현할-때-꼭-사용해야-하는-메서드들을-쓰고-역할을-설명하시오": "/cddfe26b-169d-567a-5382-8ae53ec547e2", 
         
@@ -437,21 +437,16 @@
     </header>
     <article class="post-content">
         <ul id="markdown-toc">
-  <li><a href="#ios-anatomy-of-a-constraint" id="markdown-toc-ios-anatomy-of-a-constraint">[iOS] Anatomy of a Constraint</a>    <ul>
-      <li><a href="#오토-레이아웃-속성" id="markdown-toc-오토-레이아웃-속성">오토 레이아웃 속성</a></li>
-      <li><a href="#샘플-방정식" id="markdown-toc-샘플-방정식">샘플 방정식</a></li>
-      <li><a href="#할당이-아닌-평등" id="markdown-toc-할당이-아닌-평등">할당이 아닌 평등</a></li>
-      <li><a href="#모호하지-않고-만족스러운-레이아웃-만들기" id="markdown-toc-모호하지-않고-만족스러운-레이아웃-만들기">모호하지 않고 만족스러운 레이아웃 만들기</a></li>
-      <li><a href="#제약-불평등" id="markdown-toc-제약-불평등">제약 불평등</a></li>
-      <li><a href="#제약-우선-순위" id="markdown-toc-제약-우선-순위">제약 우선 순위</a></li>
-      <li><a href="#고유-콘텐츠-크기" id="markdown-toc-고유-콘텐츠-크기">고유 콘텐츠 크기</a></li>
-      <li><a href="#고유-콘텐츠-크기-대-피팅-크기" id="markdown-toc-고유-콘텐츠-크기-대-피팅-크기">고유 콘텐츠 크기 대 피팅 크기</a></li>
-      <li><a href="#가치-해석" id="markdown-toc-가치-해석">가치 해석</a></li>
-    </ul>
-  </li>
+  <li><a href="#오토-레이아웃-속성" id="markdown-toc-오토-레이아웃-속성">오토 레이아웃 속성</a></li>
+  <li><a href="#샘플-방정식" id="markdown-toc-샘플-방정식">샘플 방정식</a></li>
+  <li><a href="#할당이-아닌-평등" id="markdown-toc-할당이-아닌-평등">할당이 아닌 평등</a></li>
+  <li><a href="#모호하지-않고-만족스러운-레이아웃-만들기" id="markdown-toc-모호하지-않고-만족스러운-레이아웃-만들기">모호하지 않고 만족스러운 레이아웃 만들기</a></li>
+  <li><a href="#제약-불평등" id="markdown-toc-제약-불평등">제약 불평등</a></li>
+  <li><a href="#제약-우선-순위" id="markdown-toc-제약-우선-순위">제약 우선 순위</a></li>
+  <li><a href="#고유-콘텐츠-크기" id="markdown-toc-고유-콘텐츠-크기">고유 콘텐츠 크기</a></li>
+  <li><a href="#고유-콘텐츠-크기-대-피팅-크기" id="markdown-toc-고유-콘텐츠-크기-대-피팅-크기">고유 콘텐츠 크기 대 피팅 크기</a></li>
+  <li><a href="#가치-해석" id="markdown-toc-가치-해석">가치 해석</a></li>
 </ul>
-
-<h1 id="ios-anatomy-of-a-constraint">[iOS] Anatomy of a Constraint</h1>
 
 <blockquote>
   <p>이 글은 <a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/AnatomyofaConstraint.html#//apple_ref/doc/uid/TP40010853-CH9-SW1">Auto Layout Guide: Anatomy of a Constraint</a> 문서를 번역한 글입니다.<br />

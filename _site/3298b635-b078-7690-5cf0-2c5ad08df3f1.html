@@ -97,7 +97,7 @@
         
         "strong-과-weak-참조-방식에-대해-설명하시오": "/7c62d9b2-06d5-65d7-6898-1046353eebd0", 
         
-        "ios-contacts-프레임워크-톺아보기": "/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc", 
+        "contacts-프레임워크-톺아보기": "/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc", 
         
         "arc-대신-manual-reference-count-방식으로-구현할-때-꼭-사용해야-하는-메서드들을-쓰고-역할을-설명하시오": "/cddfe26b-169d-567a-5382-8ae53ec547e2", 
         
@@ -428,7 +428,7 @@
 
 
     <div class="post-tag">
-    iOS
+    iOS iOSInterviewquestions
 </div>
 
 
@@ -437,13 +437,8 @@
     </header>
     <article class="post-content">
         <ul id="markdown-toc">
-  <li><a href="#ios-uikit-클래스들을-다룰-때-꼭-처리해야하는-애플리케이션-쓰레드-이름은-무엇인가" id="markdown-toc-ios-uikit-클래스들을-다룰-때-꼭-처리해야하는-애플리케이션-쓰레드-이름은-무엇인가">[iOS] UIKit 클래스들을 다룰 때 꼭 처리해야하는 애플리케이션 쓰레드 이름은 무엇인가?</a>    <ul>
-      <li><a href="#참고-자료" id="markdown-toc-참고-자료">참고 자료</a></li>
-    </ul>
-  </li>
+  <li><a href="#참고-자료" id="markdown-toc-참고-자료">참고 자료</a></li>
 </ul>
-
-<h1 id="ios-uikit-클래스들을-다룰-때-꼭-처리해야하는-애플리케이션-쓰레드-이름은-무엇인가">[iOS] UIKit 클래스들을 다룰 때 꼭 처리해야하는 애플리케이션 쓰레드 이름은 무엇인가?</h1>
 
 <blockquote>
   <p><strong>Important</strong><br />
@@ -451,8 +446,6 @@ Use UIKit classes only from your app’s main thread or main dispatch queue, unl
 </blockquote>
 
 <p>UIKit 클래스는 앱의 기본 스레드 혹은 <code class="language-plaintext highlighter-rouge">DispatchQueue.main</code>에서만 사용해야 한다. 이 제한은 <code class="language-plaintext highlighter-rouge">UIResponder</code>에서 파생되거나 앱의 사용자 인터페이스를 조작하는 것과 관련된 클래스에 적용된다.</p>
-
-<hr />
 
 <h2 id="참고-자료">참고 자료</h2>
 

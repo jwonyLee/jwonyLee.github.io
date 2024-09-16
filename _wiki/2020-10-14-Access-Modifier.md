@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# \[Swift] 접근 제어자의 종류엔 어떤게 있는지 설명하시오.
-
 ## 접근수준
 
 - 접근수준(Acecess Level) 키워드를 통해 구현

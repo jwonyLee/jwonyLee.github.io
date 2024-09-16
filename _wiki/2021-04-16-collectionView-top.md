@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# \[iOS] 컬렉션뷰 최상단으로 이동하기
-
 ```swift
 @objc func scrollToTop(_ sender: UIButton) {
     collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: true)

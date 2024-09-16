@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# \[Book] 리눅스 입문자를 위한 명령어 사전
-
 <div align="center">
     <img src="/assets/linux-command/book.jpg" alt="리눅스 입문자를 위한 명령어 사전"><br />
     <a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B4300598719">리눅스 입문자를 위한 명령어 사전</a>

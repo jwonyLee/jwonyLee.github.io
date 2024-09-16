@@ -5,7 +5,7 @@ summary:
 permalink: 1b55afe8-60cf-8c94-0be0-14f2859f9e38
 date: 2020-10-13
 updated: 2020-10-13
-tag: Swift 
+tag: Swift iOSInterviewquestions
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[Swift] Extension에 대해 설명하시오.
 
 이미 만들어진 클래스, 구조체, 열거형의 기능을 확장하고 싶을 때 사용하는 키워드
 
@@ -40,8 +38,6 @@ extension ExtensionType {
 - 타입에 새로운 기능을 추가할 수는 있지만, 기존에 존재하는 기능을 재정의할 수 없음
 - 이니셜라이저를 추가할 수 있지만, 지정 이니셜라이저와 디이니셜라이저는 반드시 클래스 타입의 구현부에 위치해야 함
     - 지정 이니셜라이저, 디이니셜라이저가 뭔지 찾아보기
-    
----
 
 ## 스터디
 
@@ -49,6 +45,3 @@ extension ExtensionType {
 - 외부 라이브러리, `String`, `Int`와 같은 Original 코드에 접근할 수 없는 것에 기능을 추가할 때 사용
     - retroactive modeling
 - 기존에 존재하던 프로퍼티에 프로퍼티 감시자를 추가할 수 없음
-
-## 태그
-

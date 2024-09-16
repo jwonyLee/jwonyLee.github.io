@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# 외부 Cocoapods 라이브러리 SPM 으로 배포하기
-
 ## 문제
 
 - 회사 프로젝트의 의존성 관리 도구를 전부 Swift Package Manager(이하 SPM)으로 변경하고 싶다.

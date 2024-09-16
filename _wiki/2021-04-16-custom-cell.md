@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# \[iOS] 커스텀 셀 적용하기
-
 ## 코드로 만든 경우
 
 ```swift

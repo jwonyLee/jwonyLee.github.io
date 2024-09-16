@@ -5,7 +5,7 @@ summary:
 permalink: 7a5cb9b6-0365-2deb-31ac-8867bdb3184a
 date: 2020-11-10
 updated: 2020-11-10
-tag: iOS 
+tag: iOS iOSInterviewquestions
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[iOS] NSOperationQueue 와 GCD Queue 의 차이점을 설명하시오.
 
 ## NSOperationQueue
 
@@ -46,13 +44,8 @@ NSOperation 객체의 우선 순위 및 준비 상태에 따라 대기열에 있
 4. KVO 사용 가능 (GCD 불가능)
 5. 작업 간의 의존성 (작업 계층을 만들 수 있음)
 
----
-
 ## 참고 자료
 
 - [[Objective-C]NSOperation과 NSOperationQueue를 사용하는 방법 - 설명 및 예제](http://minsone.github.io/mac/ios/how-to-using-nsoperation-and-nsoperationqueue)
 - [NSOperation vs Grand Central Dispatch](https://stackoverflow.com/questions/10373331/nsoperation-vs-grand-central-dispatch)
 - [NSOperationQueue - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/nsoperationqueue)
-
-## 태그
-

@@ -5,7 +5,7 @@ summary:
 permalink: a1e1ff84-afb9-3cd4-779b-ffac01f78ed8
 date: 2021-04-16
 updated: 2021-04-16
-tag: iOS 
+tag: iOS
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[iOS] 코드로 버튼에 이미지와 텍스트 넣기
 
 ```swift
 let button = UIButton()

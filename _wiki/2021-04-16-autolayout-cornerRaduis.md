@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# \[iOS] 오토 레이아웃 기반 뷰에 cornerRadius 적용하기
-
 ```swift
 private lazy var profileImageView: UIImageView = {
     let imageView = UIImageView()
@@ -36,8 +34,6 @@ override func viewWillLayoutSubviews() {
     tweetFloatingButton.layer.cornerRadius = tweetFloatingButton.frame.size.height / 2
 }
 ```
-
----
 
 ## 참고 자료
 

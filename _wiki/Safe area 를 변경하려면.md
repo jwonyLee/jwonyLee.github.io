@@ -5,7 +5,7 @@ summary:
 permalink: 7cfc1bcf-a5a7-b153-4d67-19da5e04a55c
 date: 2024-04-13 20:05:38 +09:00
 updated: 2024-04-13 20:05:38 +09:00
-tag: 
+tag: iOS
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# Safe area 변경하기
 
 1. `UIEdgeInsets` 을 만든다.
 	1. 추가하고자 하는 방향의 너비를 더한다.

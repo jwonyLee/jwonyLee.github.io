@@ -15,9 +15,8 @@ comment: true
 * TOC
 {:toc}
 
-# \[iOS] 스토리보드없이 코드로 개발하기
+## 1. `SceneDelegate` 내용을 다음과 같이 변경
 
-1. `SceneDelegate` 내용을 다음과 같이 변경
 ```swift
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
@@ -33,7 +32,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 }
 ``` 
 
-2. `ViewController`를 다음과 같이 구성
+## 2. `ViewController`를 다음과 같이 구성
+
 ```swift
 class ViewController: UITabBarController {
     override func viewDidLoad() {

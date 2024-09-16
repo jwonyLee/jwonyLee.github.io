@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# \[iOS] 컬렉션뷰에 뱃지 추가하기
-
 ```
 🎯 Compositional Layout을 이용해 컬렉션뷰에 뱃지 추가하기
 ```

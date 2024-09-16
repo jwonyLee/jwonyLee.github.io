@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Sep 2024 14:57:01 +0900</pubDate>
-    <lastBuildDate>Mon, 16 Sep 2024 14:57:01 +0900</lastBuildDate>
+    <pubDate>Mon, 16 Sep 2024 15:24:18 +0900</pubDate>
+    <lastBuildDate>Mon, 16 Sep 2024 15:24:18 +0900</lastBuildDate>
     <generator>Jekyll v4.3.3</generator>
 
 
@@ -44,6 +44,8 @@
         <pubDate>Mon, 20 May 2024 22:17:38 +0900</pubDate>
         <link>http://localhost:4000/35d2bb9e-3cea-3de7-4405-27f2965e2716</link>
         <guid isPermaLink="true">http://localhost:4000/35d2bb9e-3cea-3de7-4405-27f2965e2716</guid>
+        
+        <category>Book</category>
         
         
       </item>
@@ -281,6 +283,8 @@
         <link>http://localhost:4000/0654680d-f102-7159-d06c-99f2e46aa34e</link>
         <guid isPermaLink="true">http://localhost:4000/0654680d-f102-7159-d06c-99f2e46aa34e</guid>
         
+        <category>GitHub-Action</category>
+        
         
       </item>
     
@@ -332,6 +336,8 @@
         <pubDate>Sat, 13 Apr 2024 20:05:38 +0900</pubDate>
         <link>http://localhost:4000/7cfc1bcf-a5a7-b153-4d67-19da5e04a55c</link>
         <guid isPermaLink="true">http://localhost:4000/7cfc1bcf-a5a7-b153-4d67-19da5e04a55c</guid>
+        
+        <category>iOS</category>
         
         
       </item>
@@ -1053,7 +1059,7 @@
         <link>http://localhost:4000/31b7b10d-02ae-8cf6-064d-5bfb2cc11000</link>
         <guid isPermaLink="true">http://localhost:4000/31b7b10d-02ae-8cf6-064d-5bfb2cc11000</guid>
         
-        <category>iOS</category>
+        <category>iOS iOSInterviewquestions</category>
         
         
       </item>
@@ -1081,7 +1087,7 @@
         <link>http://localhost:4000/3298b635-b078-7690-5cf0-2c5ad08df3f1</link>
         <guid isPermaLink="true">http://localhost:4000/3298b635-b078-7690-5cf0-2c5ad08df3f1</guid>
         
-        <category>iOS</category>
+        <category>iOS iOSInterviewquestions</category>
         
         
       </item>
@@ -1095,7 +1101,7 @@
         <link>http://localhost:4000/b859a722-c185-18ca-40e3-ff2874327645</link>
         <guid isPermaLink="true">http://localhost:4000/b859a722-c185-18ca-40e3-ff2874327645</guid>
         
-        <category>Swift</category>
+        <category>Swift iOSInterviewquestions</category>
         
         
       </item>
@@ -1109,7 +1115,7 @@
         <link>http://localhost:4000/1da5c7c4-77b5-078d-7d51-cb4af2a594be</link>
         <guid isPermaLink="true">http://localhost:4000/1da5c7c4-77b5-078d-7d51-cb4af2a594be</guid>
         
-        <category>iOS</category>
+        <category>iOS iOSInterviewquestions</category>
         
         
       </item>
@@ -1123,7 +1129,7 @@
         <link>http://localhost:4000/ebf8366a-b1c6-8312-3390-591d37f51f88</link>
         <guid isPermaLink="true">http://localhost:4000/ebf8366a-b1c6-8312-3390-591d37f51f88</guid>
         
-        <category>iOS</category>
+        <category>iOS iOSInterviewquestions</category>
         
         
       </item>
@@ -1137,7 +1143,7 @@
         <link>http://localhost:4000/844246b6-6f5f-10ac-344c-ad6a72e16681</link>
         <guid isPermaLink="true">http://localhost:4000/844246b6-6f5f-10ac-344c-ad6a72e16681</guid>
         
-        <category>Swift</category>
+        <category>Swift iOSInterviewquestions</category>
         
         
       </item>
@@ -1151,7 +1157,7 @@
         <link>http://localhost:4000/f61fef68-7386-ba55-b341-d15ea08393d4</link>
         <guid isPermaLink="true">http://localhost:4000/f61fef68-7386-ba55-b341-d15ea08393d4</guid>
         
-        <category>Objective-C</category>
+        <category>Objective-C iOSInterviewquestions</category>
         
         
       </item>
@@ -1165,7 +1171,7 @@
         <link>http://localhost:4000/8c462797-aaee-445d-efdc-b532b964984f</link>
         <guid isPermaLink="true">http://localhost:4000/8c462797-aaee-445d-efdc-b532b964984f</guid>
         
-        <category>Objective-C</category>
+        <category>Objective-C iOSInterviewquestions</category>
         
         
       </item>
@@ -1179,7 +1185,7 @@
         <link>http://localhost:4000/0e5f64f9-ad6d-a804-3131-2c3b871c78f1</link>
         <guid isPermaLink="true">http://localhost:4000/0e5f64f9-ad6d-a804-3131-2c3b871c78f1</guid>
         
-        <category>Swift</category>
+        <category>Swift iOSInterviewquestions</category>
         
         
       </item>
@@ -1193,7 +1199,7 @@
         <link>http://localhost:4000/22f59356-46ea-4d5a-030f-e9a600736722</link>
         <guid isPermaLink="true">http://localhost:4000/22f59356-46ea-4d5a-030f-e9a600736722</guid>
         
-        <category>Objective-C</category>
+        <category>Objective-C iOSInterviewquestions</category>
         
         
       </item>
@@ -1207,7 +1213,7 @@
         <link>http://localhost:4000/cddfe26b-169d-567a-5382-8ae53ec547e2</link>
         <guid isPermaLink="true">http://localhost:4000/cddfe26b-169d-567a-5382-8ae53ec547e2</guid>
         
-        <category>Objective-C</category>
+        <category>Objective-C iOSInterviewquestions</category>
         
         
       </item>
@@ -1215,11 +1221,13 @@
 
     
       <item>
-        <title>[iOS] Contacts 프레임워크 톺아보기</title>
+        <title>Contacts 프레임워크 톺아보기</title>
         <description></description>
         <pubDate>Tue, 02 Feb 2021 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc</link>
         <guid isPermaLink="true">http://localhost:4000/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc</guid>
+        
+        <category>iOS</category>
         
         
       </item>
@@ -1233,7 +1241,7 @@
         <link>http://localhost:4000/7c62d9b2-06d5-65d7-6898-1046353eebd0</link>
         <guid isPermaLink="true">http://localhost:4000/7c62d9b2-06d5-65d7-6898-1046353eebd0</guid>
         
-        <category>Swift</category>
+        <category>Swift iOSInterviewquestions</category>
         
         
       </item>
@@ -1261,7 +1269,7 @@
         <link>http://localhost:4000/b7fdc0a7-7a2a-81cf-ce06-b66f06945afb</link>
         <guid isPermaLink="true">http://localhost:4000/b7fdc0a7-7a2a-81cf-ce06-b66f06945afb</guid>
         
-        <category>iOS</category>
+        <category>iOS iOSInterviewquestions</category>
         
         
       </item>
@@ -1275,7 +1283,7 @@
         <link>http://localhost:4000/1cf039e2-3425-0ddb-02e8-a054c8a9f7b9</link>
         <guid isPermaLink="true">http://localhost:4000/1cf039e2-3425-0ddb-02e8-a054c8a9f7b9</guid>
         
-        <category>iOS</category>
+        <category>iOS iOSInterviewquestions</category>
         
         
       </item>
@@ -1301,7 +1309,7 @@
         <link>http://localhost:4000/1aa547a5-41c4-8dd1-b435-17560674ca3a</link>
         <guid isPermaLink="true">http://localhost:4000/1aa547a5-41c4-8dd1-b435-17560674ca3a</guid>
         
-        <category>iOS</category>
+        <category>iOS iOSInterviewquestions</category>
         
         
       </item>
@@ -1315,7 +1323,7 @@
         <link>http://localhost:4000/cd5e1f4f-8164-94cf-a774-bbc775a38cd7</link>
         <guid isPermaLink="true">http://localhost:4000/cd5e1f4f-8164-94cf-a774-bbc775a38cd7</guid>
         
-        <category>iOS</category>
+        <category>iOS iOSInterviewquestions</category>
         
         
       </item>
@@ -1329,7 +1337,7 @@
         <link>http://localhost:4000/aa6857a4-84f0-a3e2-a738-64d58b0cd9c5</link>
         <guid isPermaLink="true">http://localhost:4000/aa6857a4-84f0-a3e2-a738-64d58b0cd9c5</guid>
         
-        <category>iOS iOS iOSInterviewquestions</category>
+        <category>iOS iOSInterviewquestions</category>
         
         
       </item>
@@ -1343,7 +1351,7 @@
         <link>http://localhost:4000/c5dfccf5-2b57-6f88-4b0b-c6b25bd2a68d</link>
         <guid isPermaLink="true">http://localhost:4000/c5dfccf5-2b57-6f88-4b0b-c6b25bd2a68d</guid>
         
-        <category>iOS</category>
+        <category>iOS iOSInterviewquestions</category>
         
         
       </item>
@@ -1357,7 +1365,7 @@
         <link>http://localhost:4000/486edc27-d3f9-bed4-099e-f5983ff97baa</link>
         <guid isPermaLink="true">http://localhost:4000/486edc27-d3f9-bed4-099e-f5983ff97baa</guid>
         
-        <category>iOS</category>
+        <category>iOS iOSInterviewquestions</category>
         
         
       </item>
@@ -1371,7 +1379,7 @@
         <link>http://localhost:4000/6f6c96ec-db60-3f68-0158-dca30f046316</link>
         <guid isPermaLink="true">http://localhost:4000/6f6c96ec-db60-3f68-0158-dca30f046316</guid>
         
-        <category>iOS</category>
+        <category>iOS iOSInterviewquestions</category>
         
         
       </item>

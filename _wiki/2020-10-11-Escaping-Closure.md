@@ -5,7 +5,7 @@ summary:
 permalink: 110c7a71-3d8e-f97e-14d9-24d6c28778f1
 date: 2020-10-11
 updated: 2020-10-11
-tag: Swift 
+tag: Swift iOSInterviewquestions
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[Swift] 탈출 클로저에 대하여 설명하시오.
 
 ## 클로저
 
@@ -40,8 +38,6 @@ comment: true
 클로저를 매개변수로 갖는 함수를 선언할 때 매개변수 이름의 콜론(:) 뒤에 `@escaping` 키워드를 사용하여 클로저가 탈출하는 것을 허용한다고 명시해줄 수 있음
 
 비동기 작업을 하는 함수들은 completion handler를 클로저 형태로 받는 경우가 많다. 이 때 받은 클로저는 함수의 작업이 완료될 때까지 호출되지 않는다. 실행 순서를 보장하고 싶을 때? 사용한다.
-
----
 
 ## 참고 자료
 
@@ -95,6 +91,3 @@ Server.getPerson { (isSuccess, persons) in
 - 비탈출의 경우 반드시 명시해줄 필요는 없다. (선택적)
 - 스위프트 프로그래밍 3판 267p, withoutActuallyEscaping 읽기
 - 값 타입의 경우, 탈출 클로저는 mutable reference를 캡쳐링 할 수 없기 때문에 에러가 발생함
-
-## 태그
-

@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# \[Swift] Singleton 패턴을 활용하는 경우를 예를 들어 설명하시오.
-
 - 여러 객체에서 공용으로 객체를 사용하고 싶을 때 사용한다.
 - 일반적으로는 `shared`라는 이름의 상수를 만든다.
 - `static` 키워드를 붙인다.
@@ -47,8 +45,6 @@ let application = UIApplication.shared
 let fileManager = FileManager.default
 let notification = NotificationCenter.default
 ```
-
----
 
 ## 참고 자료
 

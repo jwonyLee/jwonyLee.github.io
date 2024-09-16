@@ -5,7 +5,7 @@ summary:
 permalink: 7770f268-14af-f587-7771-54a2bb9a57b4
 date: 2020-11-24
 updated: 2020-11-24
-tag: iOS 
+tag: iOS iOSInterviewquestions
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[iOS] NotificationCenter 동작 방식과 활용 방안에 대해 설명하시오.
 
 ## 동작 방식
 
@@ -34,8 +32,6 @@ comment: true
 ## 활용 방안
 
 몇 번 사용해보기는 했는데, 아직 잘 모르겠다. 활용 방안도 찾아봤는데 검색 능력 부족으로 못 찾겠음
-
----
 
 ## 참고 자료
 - [Using Notification Center In Swift (How To) - LearnAppMaking](https://learnappmaking.com/notification-center-how-to-swift/)

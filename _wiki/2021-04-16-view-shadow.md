@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# \[iOS] 뷰의 그림자 만들기
-
 ```swift
 button.layer.shadowColor = UIColor.black.cgColor
 button.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
@@ -40,8 +38,6 @@ button.layer.shadowPath = UIBezierPath(roundedRect: button.bounds, cornerRadius:
 ```swift
 button.layer.shouldRasterize = true
 ```
-
----
 
 ## 참고 자료
 

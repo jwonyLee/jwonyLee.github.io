@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# \[Swift] instance 메서드와 class 메서드의 차이점을 설명하시오.
-
 instance 메서드는 객체의 인스턴스를 만들어야 사용할 수 있음
 
 ```swift
@@ -56,8 +54,6 @@ class Dog {
 
 Dog.bark() // bow!
 ```
-
----
 
 ## 참고 자료
 - [[Swift]Methods 정리](http://minsone.github.io/mac/ios/swift-methods-summary)

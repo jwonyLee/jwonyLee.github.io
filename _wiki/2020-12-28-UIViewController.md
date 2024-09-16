@@ -5,7 +5,7 @@ summary:
 permalink: 6f6c96ec-db60-3f68-0158-dca30f046316
 date: 2020-12-28
 updated: 2020-12-28
-tag: iOS 
+tag: iOS iOSInterviewquestions
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[iOS] 앱 화면의 콘텐츠를 표시하는 로직과 관리를 담당하는 객체를 무엇이라고 하는가?
 
 ## UIViewController
 
@@ -42,8 +40,6 @@ class UIViewController: UIResponder
 ![컨테이너 뷰 컨트롤러](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/Art/VCPG_ContainerViewController_fig_1-2_2x.png)
 
 컨테이너 뷰 컨트롤러는 자체 뷰와 하나 이상의 하위 뷰 컨트롤러에서 루트 뷰를 관리한다. 컨테이너는 자식의 콘텐츠를 관리하지 않는다. 컨테이너의 디자인에 따라 루트 뷰만 관리하고 크기를 조정하고 배치한다. 위 이미지는 Split View Controller와 하위 컨트롤러 간의 관계를 보여준다. Split View Controller는 하위 뷰의 전체 크기와 위치를 관리하지만 하위 뷰 컨트롤러는 해당 뷰의 실제 콘텐츠를 관리한다.
-
----
 
 ## 참고 자료
 

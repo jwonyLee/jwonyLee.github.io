@@ -5,7 +5,7 @@ summary:
 permalink: 0e5f64f9-ad6d-a804-3131-2c3b871c78f1
 date: 2021-02-15
 updated: 2021-02-15
-tag: Swift 
+tag: Swift iOSInterviewquestions
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[Swift] 강한 순환 참조 (Strong Reference Cycle) 는 어떤 경우에 발생하는지 설명하시오.
 
 ```swift
 class Person {
@@ -73,8 +71,6 @@ class Apartment {
     deinit { print("Apartment \(unit) is being deinitialized") }
 }
 ```
-
----
 
 ## 참고 자료
 

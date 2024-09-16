@@ -15,11 +15,7 @@ comment: true
 * TOC
 {:toc}
 
-# 한 컴퓨터에 GitHub 계정 여러개 쓰기
-
-## 기록
-
-1. SSH Key 생성
+## 1. SSH Key 생성
 
 ```shell
 ssh-keygen -t rsa -C "userA@example.com" -f "id_rsa_userA"
@@ -29,7 +25,7 @@ ssh-keygen -t rsa -C "userA@example.com" -f "id_rsa_userA"
 ssh-keygen -t rsa -C "userB@example.com" -f "id_rsa_userB"
 ```
 
-2. ssh-agent에 새로 생성한 SSH Key 추가
+## 2. ssh-agent에 새로 생성한 SSH Key 추가
 
 백그라운드에 ssh-agent 실행
 ```shell
@@ -50,12 +46,12 @@ ssh-agent에 추가되었는지 확인
 ssh-add -l
 ```
 
-3. GitHub 에 공개키 추가하기
+## 3. GitHub 에 공개키 추가하기
 ```shell
 cat < ~/.ssh/id_rsa.pub
 ```
 
-5. SSH Config 파일 생성
+## 4. SSH Config 파일 생성
 
 ```shell
 vi ~/.ssh/config
@@ -75,13 +71,13 @@ Host github.com-userB
 	IdentityFile ~/.ssh/id_rsa_userB
 ```
 
-5. SSH 연결 테스트
+## 5. SSH 연결 테스트
 
 ```shell
 ssh -T git@github.com-userA
 ```
 
-6. SSH 로 clone
+## 6. SSH 로 clone
 
 **SSH 경로를 config 에서 설정한 것으로 해야함**
 

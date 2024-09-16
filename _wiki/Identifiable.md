@@ -15,8 +15,6 @@ comment: true
 * TOC
 {:toc}
 
-# Identifiable
-
 > A class of types whose instances hold the value of an entity with stable identity.
 
 인스턴스가 stable 한 신원(identity)을 갖는 걸 보장하게 하는 프로토콜

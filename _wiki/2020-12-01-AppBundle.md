@@ -5,7 +5,7 @@ summary:
 permalink: 35d80db8-e942-f7d2-f087-31cd5bde82ba
 date: 2020-12-01
 updated: 2020-12-01
-tag: iOS 
+tag: iOS iOSInterviewquestions
 public: true
 parent: 
 latex: true
@@ -14,8 +14,6 @@ comment: true
 
 * TOC
 {:toc}
-
-# \[iOS] App Bundle의 구조와 역할에 대해 설명하시오.
 
 ## App Bundle의 파일 유형
 
@@ -55,8 +53,6 @@ App Bundle에 있는 대부분의 리소스는 선택 사항이지만 항상 그
 💡 iOS App Bundle은 'Resources' 라는 사용자 지정 폴더를 포함 할 수 없음
 ```
 iOS 애플리케이션은 국제화 되어야하며 지원하는 각 언어에 대한 `language.lproj` 폴더가 있어야 함. 애플리케이션의 사용자 지정 리소스의 현지화된 버전을 제공하는 것 외에도 언어별 프로젝트 디렉토리에 동일한 이름의 파일을 배치하여 시작 이미지를 현지화 할 수도 있음. 현지화된 버전을 제공하더라도 항상 애플리케이션 번들의 최상위 레벨에 이러한 파일의 기본 버전을 포함해야 함. 기본 버전은 특정 지역화를 사용할 수 없는 상황에서 사용됨
-
----
 
 ## 참고 자료
 
