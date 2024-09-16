@@ -5,7 +5,7 @@ summary:
 permalink: 4a1becfc-9139-fbe2-ee07-67ed68e3de10
 date: 2020-10-14
 updated: 2020-10-14
-tag: Swift Swift iOSInterviewquestions 
+tag: Swift iOSInterviewquestions 
 public: true
 parent: 
 latex: true
