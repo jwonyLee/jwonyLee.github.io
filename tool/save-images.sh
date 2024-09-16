@@ -17,24 +17,28 @@ for CHANGED_FILE in $CHANGE_LIST; do
     echo "생성할 디렉토리 경로: [$TARGET_PATH]"
     mkdir -p $TARGET_PATH
 
-    # 작업 대상 파일에서 참조하고 있는 github에 등록된 리소스 파일들의 URI 목록
-    # URI_LIST=`ag "https://user-images\.githubuser.*?\/$NUM\/.*?(png|jpg|gif|mp4)" -o $CHANGED_FILE`
-    # URI_LIST=`ag "https://pbs.twimg.com/media/.*?(png|jpg|gif|mp4)" -o $CHANGED_FILE`
-
-    URI_LIST=`ag "https://((user-images\.githubuser.*?\/$NUM\/)|(pbs.twimg.com/media/)|(video.twimg.com/.+_video/)).*?(png|jpg|gif|mp4)" -o $CHANGED_FILE`
+    # GitHub user attachments와 기존 URL 패턴을 모두 포함
+    URI_LIST=`ag "https://(((user-images\.githubuser.*?\/$NUM\/)|(pbs.twimg.com/media/)|(video.twimg.com/.+_video/)).*?(png|jpg|gif|mp4)|github.com/user-attachments/assets/[a-f0-9-]+)" -o $CHANGED_FILE`
 
     for URI in $URI_LIST; do
-        FILE_NAME=`echo $URI | sed 's,^.*/,,'`
+        if [[ $URI == *"github.com/user-attachments/assets/"* ]]; then
+            # GitHub user attachments 형식 처리
+            FILE_NAME=$(echo $URI | awk -F/ '{print $NF}')
+        else
+            # 기존 방식으로 파일 이름 추출
+            FILE_NAME=`echo $URI | sed 's,^.*/,,'`
+        fi
+        
         RESOLVE_FILE_PATH="$TARGET_PATH/$FILE_NAME"
         RESOLVE_URL=`echo "$RESOLVE_FILE_PATH" | sed -E 's/^\.//'`
 
         echo "작업 대상 URI: [$URI]"
         echo "작업 대상 파일 패스: [$RESOLVE_FILE_PATH]"
-        curl -s $URI > $RESOLVE_FILE_PATH
+        curl -s -L $URI > $RESOLVE_FILE_PATH
 
         if [ "$?" == "0" ]; then
             echo "DOWNLOAD SUCCESS: $FILE_NAME"
-            sed -i '' -E 's, *https://.*('"$FILE_NAME"') *, '$RESOLVE_URL' ,g' $CHANGED_FILE
+            sed -i '' -E 's, *'"$URI"' *, '$RESOLVE_URL' ,g' $CHANGED_FILE
 
             git add $RESOLVE_FILE_PATH
 
@@ -49,4 +53,3 @@ for CHANGED_FILE in $CHANGE_LIST; do
 done
 
 printf "Success: %d, Fail: %d\n" $SUCCESS_COUNT $FAIL_COUNT
-

@@ -37,6 +37,3 @@ override func viewWillAppear(_ animated: Bool) {
     }
 }
 ```
-
-## 참고 자료
-
