@@ -17,39 +17,41 @@ comment: true
 
 ## 단일 Label
 
-```yaml
+{% raw %}
+```
 name: Some Action for single label
 
 on:
-	pull_request:
-		types: [opened]
+  pull_request:
+    types: [opened]
 
 jobs:
-	someAction:
-		if: ${{ !contains(github.event.pull_request.labels.*.name, 'label_name') }}
-	runs-on: ubuntu-latest
-	// 생략...
+  someAction:
+    if: ${{ !contains(github.event.pull_request.labels.*.name, 'label_name') }}
+    runs-on: ubuntu-latest
+    // 생략...
 ```
+{% endraw %}
 
 ## 다중 Label
-```yaml
+
+{% raw %}
+```
 name: Some Action for multiple labels
 
 on:
-	pull_request:
-		types: [opened]
+  pull_request:
+    types: [opened]
 
 jobs:
-	someAction:
-		if: >-
-			${{ 
-				!contains(github.event.pull_request.labels.*.name, 'label_name') &&
-				!contains(github.event.pull_request.labels.*.name, 'label_name2') &&
-				!contains(github.event.pull_request.labels.*.name, 'label_name3')
-			}}
-runs-on: ubuntu-latest
-	// 생략...
+  someAction:
+    if: >-
+      ${{ 
+        !contains(github.event.pull_request.labels.*.name, 'label_name') &&
+        !contains(github.event.pull_request.labels.*.name, 'label_name2') &&
+        !contains(github.event.pull_request.labels.*.name, 'label_name3')
+      }}
+    runs-on: ubuntu-latest
+    // 생략...
 ```
-
-## 참고 자료
-
+{% endraw %}

@@ -437,40 +437,42 @@
         <ul id="markdown-toc">
   <li><a href="#단일-label" id="markdown-toc-단일-label">단일 Label</a></li>
   <li><a href="#다중-label" id="markdown-toc-다중-label">다중 Label</a></li>
-  <li><a href="#참고-자료" id="markdown-toc-참고-자료">참고 자료</a></li>
 </ul>
 
 <h2 id="단일-label">단일 Label</h2>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Some Action for single label</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: Some Action for single label
 
-<span class="na">on</span><span class="pi">:</span>
-<span class="err">	</span><span class="na">pull_request</span><span class="pi">:</span>
-<span class="err">		</span><span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">opened</span><span class="pi">]</span>
+on:
+  pull_request:
+    types: [opened]
 
-<span class="na">jobs</span><span class="pi">:</span>
-<span class="err">	</span><span class="na">someAction</span><span class="pi">:</span>
-<span class="err">		</span><span class="na">if</span><span class="pi">:</span> <span class="s">$</span>
-<span class="na">	runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
-<span class="err">	</span><span class="s">// 생략...</span>
+jobs:
+  someAction:
+    if: ${{ !contains(github.event.pull_request.labels.*.name, 'label_name') }}
+    runs-on: ubuntu-latest
+    // 생략...
 </code></pre></div></div>
 
 <h2 id="다중-label">다중 Label</h2>
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Some Action for multiple labels</span>
 
-<span class="na">on</span><span class="pi">:</span>
-<span class="err">	</span><span class="na">pull_request</span><span class="pi">:</span>
-<span class="err">		</span><span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">opened</span><span class="pi">]</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: Some Action for multiple labels
 
-<span class="na">jobs</span><span class="pi">:</span>
-<span class="err">	</span><span class="na">someAction</span><span class="pi">:</span>
-<span class="err">		</span><span class="na">if</span><span class="pi">:</span> <span class="pi">&gt;-</span>
-<span class="err">	</span><span class="s">		$</span>
-<span class="err">r</span><span class="s">uns-on: ubuntu-latest</span>
-<span class="err">	</span><span class="s">// 생략...</span>
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  someAction:
+    if: &gt;-
+      ${{ 
+        !contains(github.event.pull_request.labels.*.name, 'label_name') &amp;&amp;
+        !contains(github.event.pull_request.labels.*.name, 'label_name2') &amp;&amp;
+        !contains(github.event.pull_request.labels.*.name, 'label_name3')
+      }}
+    runs-on: ubuntu-latest
+    // 생략...
 </code></pre></div></div>
-
-<h2 id="참고-자료">참고 자료</h2>
 
 
     </article>
