@@ -3,8 +3,8 @@ layout: wiki
 title: Optional 이란 무엇인지 설명하시오.
 summary:
 permalink: 7972af36-2e95-e5a9-936b-b2d8008d0dd2
-date: 2020-09-08
-updated: 2020-09-08
+date: 2020-09-08 00:00:00 +09:00
+updated: 2020-09-08 00:00:00 +09:00
 tag: Swift Optional iOSInterviewquestions  
 public: true
 parent: [[iOSInterviewquestions]]

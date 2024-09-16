@@ -3,8 +3,8 @@ layout: wiki
 title: 오토 레이아웃 기반 뷰에 cornerRadius 적용하기
 summary: 
 permalink: a3a7ad89-8247-c3be-a830-793149274df0
-date: 2021-04-16
-updated: 2021-04-16
+date: 2021-04-16 00:00:00 +09:00
+updated: 2021-04-16 00:00:00 +09:00
 tag: iOS 
 public: true
 parent: 

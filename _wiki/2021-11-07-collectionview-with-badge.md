@@ -3,8 +3,8 @@ layout: wiki
 title: 컬렉션뷰에 뱃지 추가하기
 summary: 
 permalink: 354752f2-0c01-5d34-7214-bacd077e4153
-date: 2021-11-07
-updated: 2021-11-07
+date: 2021-11-07 00:00:00 +09:00
+updated: 2021-11-07 00:00:00 +09:00
 tag: iOS 
 public: true
 parent: 

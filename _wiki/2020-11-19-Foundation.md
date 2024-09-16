@@ -3,8 +3,8 @@ layout: wiki
 title: Foundation Kit은 무엇이고 포함되어 있는 클래스들은 어떤 것이 있는지 설명하시오
 summary: 
 permalink: 25571d26-a348-8ff2-6398-a899add33df3
-date: 2020-11-19
-updated: 2020-11-19
+date: 2020-11-19 00:00:00 +09:00
+updated: 2020-11-19 00:00:00 +09:00
 tag: iOS iOSInterviewquestions
 public: true
 parent: 

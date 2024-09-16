@@ -3,8 +3,8 @@ layout: wiki
 title: 앱이 시작할 때 main.c 에 있는 UIApplicationMain 함수에 의해서 생성되는 객체는 무엇인가?
 summary: 
 permalink: 7e14cff5-8a2d-81a5-05f7-de775ca4ad96
-date: 2020-12-15
-updated: 2020-12-15
+date: 2020-12-15 00:00:00 +09:00
+updated: 2020-12-15 00:00:00 +09:00
 tag: iOS iOSInterviewquestions
 public: true
 parent: 

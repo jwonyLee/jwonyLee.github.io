@@ -3,8 +3,8 @@ layout: wiki
 title: 뷰의 그림자 만들기
 summary: 
 permalink: 8f337062-db00-d89b-5151-0e2eec7ebf30
-date: 2021-04-16
-updated: 2021-04-16
+date: 2021-04-16 00:00:00 +09:00
+updated: 2021-04-16 00:00:00 +09:00
 tag: iOS 
 public: true
 parent: 

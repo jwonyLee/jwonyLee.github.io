@@ -3,8 +3,8 @@ layout: wiki
 title: instance 메서드와 class 메서드의 차이점을 설명하시오.
 summary: 
 permalink: 5c700d5d-fd29-8292-6da1-c293485aabc2
-date: 2020-10-07
-updated: 2020-10-07
+date: 2020-10-07 00:00:00 +09:00
+updated: 2020-10-07 00:00:00 +09:00
 tag: Swift iOSInterviewquestions  
 public: true
 parent: 

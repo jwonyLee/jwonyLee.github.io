@@ -3,8 +3,8 @@ layout: wiki
 title: Writing High Performance Swift Code
 summary: 
 permalink: 34dea93e-05e9-9d47-f058-328b54789fd3
-date: 2022-05-12
-updated: 2022-05-12
+date: 2022-05-12 00:00:00 +09:00
+updated: 2022-05-12 00:00:00 +09:00
 tag: Swift 
 public: true
 parent: 

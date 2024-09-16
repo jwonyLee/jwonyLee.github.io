@@ -3,8 +3,8 @@ layout: wiki
 title: 회사 프로젝트에 SwiftGen 도입기
 summary: 
 permalink: 3acba79d-c253-a833-0fb8-9534af3cdffc
-date: 2022-06-12
-updated: 2022-06-12
+date: 2022-06-12 00:00:00 +09:00
+updated: 2022-06-12 00:00:00 +09:00
 tag: iOS SwiftGen 
 public: true
 parent: 

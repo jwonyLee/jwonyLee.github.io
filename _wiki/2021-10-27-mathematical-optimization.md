@@ -3,8 +3,8 @@ layout: wiki
 title: 제대로 배우는 수학적 최적화
 summary: 
 permalink: 65ef6f13-238e-376b-c5d8-423601f482a5
-date: 2021-10-27
-updated: 2021-10-27
+date: 2021-10-27 00:00:00 +09:00
+updated: 2021-10-27 00:00:00 +09:00
 tag: Book 
 public: true
 parent: 

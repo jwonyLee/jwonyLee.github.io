@@ -3,8 +3,8 @@ layout: wiki
 title: 처음 배우는 플라스크 웹 프로그래밍
 summary: 
 permalink: a2ed4fc7-e0f5-7e9d-802f-0ef7e6a021d5
-date: 2021-09-13
-updated: 2021-09-13
+date: 2021-09-13 00:00:00 +09:00
+updated: 2021-09-13 00:00:00 +09:00
 tag: Book 
 public: true
 parent: 

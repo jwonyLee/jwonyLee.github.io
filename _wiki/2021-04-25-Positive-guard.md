@@ -3,8 +3,8 @@ layout: wiki
 title: 긍정적인 Guard 사용
 summary: 
 permalink: 21b56994-cc18-9f41-e982-cf9735b9d345
-date: 2021-04-25
-updated: 2021-04-25
+date: 2021-04-25 00:00:00 +09:00
+updated: 2021-04-25 00:00:00 +09:00
 tag: Swift 
 public: true
 parent: 

@@ -3,8 +3,8 @@ layout: wiki
 title: Left Constraint 와 Leading Constraint 의 차이점을 설명하시오.
 summary: 
 permalink: 1cf039e2-3425-0ddb-02e8-a054c8a9f7b9
-date: 2021-01-25
-updated: 2021-01-25
+date: 2021-01-25 00:00:00 +09:00
+updated: 2021-01-25 00:00:00 +09:00
 tag: iOS iOSInterviewquestions
 public: true
 parent: 

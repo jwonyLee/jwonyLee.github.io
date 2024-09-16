@@ -3,8 +3,8 @@ layout: wiki
 title: Identifiable
 summary: 
 permalink: 23541f6b-c82d-d953-2284-dde1ad84ec46
-date: 2024-01-01
-updated: 2024-01-01
+date: 2024-01-01 00:00:00 +09:00
+updated: 2024-01-01 00:00:00 +09:00
 tag: Swift
 public: true
 parent: 

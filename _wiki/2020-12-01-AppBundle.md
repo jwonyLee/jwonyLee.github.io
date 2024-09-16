@@ -3,8 +3,8 @@ layout: wiki
 title: App Bundle의 구조와 역할에 대해 설명하시오.
 summary: 
 permalink: 35d80db8-e942-f7d2-f087-31cd5bde82ba
-date: 2020-12-01
-updated: 2020-12-01
+date: 2020-12-01 00:00:00 +09:00
+updated: 2020-12-01 00:00:00 +09:00
 tag: iOS iOSInterviewquestions
 public: true
 parent: 

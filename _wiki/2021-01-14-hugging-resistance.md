@@ -3,8 +3,8 @@ layout: wiki
 title: hugging, resistance에 대해서 설명하시오.
 summary: 
 permalink: 1aa547a5-41c4-8dd1-b435-17560674ca3a
-date: 2021-01-14
-updated: 2021-01-14
+date: 2021-01-14 00:00:00 +09:00
+updated: 2021-01-14 00:00:00 +09:00
 tag: iOS iOSInterviewquestions
 public: true
 parent: 

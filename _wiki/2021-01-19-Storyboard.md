@@ -3,8 +3,8 @@ layout: wiki
 title: 스토리보드를 이용했을때의 장단점을 설명하시오.
 summary: 
 permalink: c5dfccf5-2b57-6f88-4b0b-c6b25bd2a68d
-date: 2021-01-04
-updated: 2021-01-04
+date: 2021-01-04 00:00:00 +09:00
+updated: 2021-01-04 00:00:00 +09:00
 tag: iOS iOSInterviewquestions
 public: true
 parent: 

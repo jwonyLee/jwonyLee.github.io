@@ -3,8 +3,8 @@ layout: wiki
 title: retain 과 assign 의 차이점을 설명하시오.
 summary: 
 permalink: 22f59356-46ea-4d5a-030f-e9a600736722
-date: 2021-02-08
-updated: 2021-02-08
+date: 2021-02-08 00:00:00 +09:00
+updated: 2021-02-08 00:00:00 +09:00
 tag: Objective-C iOSInterviewquestions
 public: true
 parent: 

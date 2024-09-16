@@ -3,8 +3,8 @@ layout: wiki
 title: 앱이 foreground에 있을 때와 background에 있을 때 어떤 제약사항이 있나요?
 summary: 
 permalink: 2163eba4-0877-e153-25c7-2ea70a310db8
-date: 2020-10-23
-updated: 2020-10-23
+date: 2020-10-23 00:00:00 +09:00
+updated: 2020-10-23 00:00:00 +09:00
 tag: iOS iOSInterviewquestions
 public: true
 parent: 

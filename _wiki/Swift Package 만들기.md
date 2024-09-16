@@ -3,8 +3,8 @@ layout: wiki
 title: Swift Package 만들기
 summary: 
 permalink: b6e7d281-7f11-d868-7945-9704afcaccaa
-date: 2022-05-29
-updated: 2022-05-29
+date: 2022-05-29 00:00:00 +09:00
+updated: 2022-05-29 00:00:00 +09:00
 tag: iOS 
 public: true
 parent: 

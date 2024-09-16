@@ -3,8 +3,8 @@ layout: wiki
 title: scene delegate에 대해 설명하시오.
 summary: 
 permalink: 1da5c7c4-77b5-078d-7d51-cb4af2a594be
-date: 2021-03-23
-updated: 2021-03-23
+date: 2021-03-23 00:00:00 +09:00
+updated: 2021-03-23 00:00:00 +09:00
 tag: iOS iOSInterviewquestions
 public: true
 parent: 

@@ -3,8 +3,8 @@ layout: wiki
 title: 적정 소프트웨어 아키텍처
 summary: 
 permalink: 14542ed1-ffb9-c062-5b3a-828755257d2b
-date: 2022-12-01
-updated: 2022-12-01
+date: 2022-12-01 00:00:00 +09:00
+updated: 2022-12-01 00:00:00 +09:00
 tag: Book 
 public: true
 parent: 

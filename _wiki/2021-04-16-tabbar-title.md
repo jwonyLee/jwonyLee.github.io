@@ -3,8 +3,8 @@ layout: wiki
 title: 네비게이션 타이틀 변경
 summary: 
 permalink: a0ff24e0-518a-643b-b9e1-4d0f26ae6faa
-date: 2021-04-16
-updated: 2021-04-16
+date: 2021-04-16 00:00:00 +09:00
+updated: 2021-04-16 00:00:00 +09:00
 tag: iOS 
 public: true
 parent: 

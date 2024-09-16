@@ -3,8 +3,8 @@ layout: wiki
 title: Strong 과 Weak 참조 방식에 대해 설명하시오.
 summary: 
 permalink: 7c62d9b2-06d5-65d7-6898-1046353eebd0
-date: 2021-02-01
-updated: 2021-02-01
+date: 2021-02-01 00:00:00 +09:00
+updated: 2021-02-01 00:00:00 +09:00
 tag: Swift iOSInterviewquestions
 public: true
 parent: 

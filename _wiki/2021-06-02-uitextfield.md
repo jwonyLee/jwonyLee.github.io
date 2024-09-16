@@ -3,8 +3,8 @@ layout: wiki
 title: UITextField.text의 변경을 감지하지 못할 때
 summary: 
 permalink: 71f3e025-53b0-9a83-78df-fbf9c5bba6f6
-date: 2021-06-02
-updated: 2021-06-02
+date: 2021-06-02 00:00:00 +09:00
+updated: 2021-06-02 00:00:00 +09:00
 tag: RxSwift 
 public: true
 parent: 

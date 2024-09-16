@@ -3,8 +3,8 @@ layout: wiki
 title: UserDefaults, KeyChain, Core Data
 summary: 
 permalink: 3efa3d59-c701-1158-7923-59270f51357b
-date: 2021-07-23
-updated: 2021-07-23
+date: 2021-07-23 00:00:00 +09:00
+updated: 2021-07-23 00:00:00 +09:00
 tag: iOS 
 public: true
 parent: 

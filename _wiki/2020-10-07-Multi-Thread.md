@@ -3,8 +3,8 @@ layout: wiki
 title: 멀티 쓰레드로 동작하는 앱을 작성하고 싶을 때 고려할 수 있는 방식들을 설명하시오.
 summary: 
 permalink: 1ed82824-eb50-f1aa-3b78-7d9d67ca19f5
-date: 2020-10-07
-updated: 2020-10-07
+date: 2020-10-07 00:00:00 +09:00
+updated: 2020-10-07 00:00:00 +09:00
 tag: Swift Thread iOSInterviewquestions  
 public: true
 parent: 

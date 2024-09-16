@@ -3,8 +3,8 @@ layout: wiki
 title: 터미널에서 명령어로 마크다운 파일 만들기
 summary: 
 permalink: 1114d9a9-1eb1-1bf3-4819-6612d416beda
-date: 2021-08-20
-updated: 2021-08-20
+date: 2021-08-20 00:00:00 +09:00
+updated: 2021-08-20 00:00:00 +09:00
 tag: Shell Script 
 public: true
 parent: 

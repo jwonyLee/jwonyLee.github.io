@@ -3,8 +3,8 @@ layout: wiki
 title: 모든 View Controller 객체의 상위 클래스는 무엇이고 그 역할은 무엇인가?
 summary: 
 permalink: b5bbb478-501f-7d48-0876-a8a3c779bbc5
-date: 2020-12-15
-updated: 2020-12-15
+date: 2020-12-15 00:00:00 +09:00
+updated: 2020-12-15 00:00:00 +09:00
 tag: iOS iOSInterviewquestions
 public: true
 parent: 

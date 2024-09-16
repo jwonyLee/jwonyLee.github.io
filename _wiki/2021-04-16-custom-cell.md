@@ -3,8 +3,8 @@ layout: wiki
 title: 커스텀 셀 적용하기
 summary: 
 permalink: e6ad015d-77c7-a653-dd35-5830c489dcd0
-date: 2021-04-16
-updated: 2021-04-16
+date: 2021-04-16 00:00:00 +09:00
+updated: 2021-04-16 00:00:00 +09:00
 tag: iOS 
 public: true
 parent: 

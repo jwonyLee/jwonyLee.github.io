@@ -3,8 +3,8 @@ layout: wiki
 title: Moya 사용법
 summary: 
 permalink: 1ff142a9-0d9f-cb69-7893-6ed85e7501cc
-date: 2022-03-22
-updated: 2022-03-22
+date: 2022-03-22 00:00:00 +09:00
+updated: 2022-03-22 00:00:00 +09:00
 tag: iOS 
 public: true
 parent: 

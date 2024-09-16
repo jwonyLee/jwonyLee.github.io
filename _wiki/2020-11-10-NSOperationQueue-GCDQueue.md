@@ -3,8 +3,8 @@ layout: wiki
 title: NSOperationQueue 와 GCD Queue 의 차이점을 설명하시오.
 summary: 
 permalink: 7a5cb9b6-0365-2deb-31ac-8867bdb3184a
-date: 2020-11-10
-updated: 2020-11-10
+date: 2020-11-10 00:00:00 +09:00
+updated: 2020-11-10 00:00:00 +09:00
 tag: iOS iOSInterviewquestions
 public: true
 parent: 

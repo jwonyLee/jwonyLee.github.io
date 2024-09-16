@@ -3,8 +3,8 @@ layout: wiki
 title: Delegates와 Notification 방식의 차이점에 대해 설명하시오.
 summary: 
 permalink: 9ba05cc2-3d59-2b87-ea58-f3e733d6be01
-date: 2020-10-07
-updated: 2020-10-07
+date: 2020-10-07 00:00:00 +09:00
+updated: 2020-10-07 00:00:00 +09:00
 tag: Swift Design-Patterns iOS NotificationCenter iOSInterviewquestions  
 public: true
 parent: 

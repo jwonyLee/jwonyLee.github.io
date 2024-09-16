@@ -3,8 +3,8 @@ layout: wiki
 title: ARC 대신 Manual Reference Count 방식으로 구현할 때 꼭 사용해야 하는 메서드들을 쓰고 역할을 설명하시오.
 summary: 
 permalink: cddfe26b-169d-567a-5382-8ae53ec547e2
-date: 2021-02-04
-updated: 2021-02-04
+date: 2021-02-04 00:00:00 +09:00
+updated: 2021-02-04 00:00:00 +09:00
 tag: Objective-C iOSInterviewquestions
 public: true
 parent: 

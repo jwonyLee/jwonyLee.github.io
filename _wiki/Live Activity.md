@@ -3,8 +3,8 @@ layout: wiki
 title: Live Activity
 summary: 
 permalink: dda861ad-c5d0-9e0b-e516-e0ea209f7761
-date: 2022-08-13
-updated: 2022-08-13
+date: 2022-08-13 00:00:00 +09:00
+updated: 2022-08-13 00:00:00 +09:00
 tag: iOS 
 public: true
 parent: 

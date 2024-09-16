@@ -3,7 +3,7 @@ layout: wiki
 title: 상태 변화에 따라 다른 동작을 처리하기 위한 앱델리게이트 메서드들을 설명하시오.
 summary: 
 permalink: d30afc77-e653-1750-2441-cb8efaf43483
-date: 2020-10-27
+date: 2020-10-27 00:00:00 +09:00
 updated: 2024-04-30 11:57:43 +09:00
 tag: iOS 
 public: true

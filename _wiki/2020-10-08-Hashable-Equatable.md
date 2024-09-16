@@ -3,8 +3,8 @@ layout: wiki
 title: Hashable이 무엇이고, Equatable을 왜 상속해야 하는지 설명하시오.
 summary: 
 permalink: cc011585-af44-56be-eb26-97493639019e
-date: 2020-10-08
-updated: 2020-10-08
+date: 2020-10-08 00:00:00 +09:00
+updated: 2020-10-08 00:00:00 +09:00
 tag: Swift iOSInterviewquestions
 public: true
 parent: 

@@ -3,8 +3,8 @@ layout: wiki
 title: Making Apps with Core Data
 summary: 
 permalink: 0ce0a0ce-7b54-a57c-bd4d-8ccad29cc898
-date: 2021-09-16
-updated: 2021-09-16
+date: 2021-09-16 00:00:00 +09:00
+updated: 2021-09-16 00:00:00 +09:00
 tag: WWDC2019 
 public: true
 parent: 

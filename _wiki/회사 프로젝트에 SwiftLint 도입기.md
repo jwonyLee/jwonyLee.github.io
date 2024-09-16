@@ -3,8 +3,8 @@ layout: wiki
 title: 회사 프로젝트에 SwiftLint 도입기
 summary: 
 permalink: 98e2a8e5-c76c-0e4c-0d1c-d9c4ae71426c
-date: 2022-06-26
-updated: 2022-06-26
+date: 2022-06-26 00:00:00 +09:00
+updated: 2022-06-26 00:00:00 +09:00
 tag: iOS SwiftLint 
 public: true
 parent: 

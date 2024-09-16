@@ -3,8 +3,8 @@ layout: wiki
 title: Bounds 와 Frame 의 차이점을 설명하시오.
 summary: 
 permalink: 221ef090-7f3a-cb99-5502-01ff6d90e6a6
-date: 2020-10-20
-updated: 2020-10-20
+date: 2020-10-20 00:00:00 +09:00
+updated: 2020-10-20 00:00:00 +09:00
 tag: iOS iOSInterviewquestions
 public: true
 parent: 

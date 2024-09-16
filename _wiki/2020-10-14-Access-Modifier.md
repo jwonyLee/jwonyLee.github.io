@@ -3,8 +3,8 @@ layout: wiki
 title: 접근 제어자의 종류엔 어떤게 있는지 설명하시오.
 summary: 
 permalink: 4a1becfc-9139-fbe2-ee07-67ed68e3de10
-date: 2020-10-14
-updated: 2020-10-14
+date: 2020-10-14 00:00:00 +09:00
+updated: 2020-10-14 00:00:00 +09:00
 tag: Swift iOSInterviewquestions 
 public: true
 parent: 

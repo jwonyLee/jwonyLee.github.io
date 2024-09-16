@@ -3,8 +3,8 @@ layout: wiki
 title: UIStackView
 summary: 
 permalink: 5b441ad2-f77c-e2c0-5787-e4ed4138ec3c
-date: 2021-08-10
-updated: 2021-08-10
+date: 2021-08-10 00:00:00 +09:00
+updated: 2021-08-10 00:00:00 +09:00
 tag: iOS 
 public: true
 parent: 

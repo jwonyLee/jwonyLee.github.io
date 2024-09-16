@@ -3,8 +3,8 @@ layout: wiki
 title: defer가 호출되는 순서는 어떻게 되고, defer가 호출되지 않는 경우를 설명하시오.
 summary: 
 permalink: f1365c28-8c8e-c33f-4627-b94b76d3985d
-date: 2020-10-15
-updated: 2020-10-15
+date: 2020-10-15 00:00:00 +09:00
+updated: 2020-10-15 00:00:00 +09:00
 tag: Swift iOSInterviewquestions
 public: true
 parent: 

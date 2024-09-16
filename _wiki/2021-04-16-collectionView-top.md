@@ -3,8 +3,8 @@ layout: wiki
 title: 컬렉션뷰 최상단으로 이동하기
 summary: 
 permalink: 794a8fe6-1bd9-f907-b97f-5c8d58f174c9
-date: 2021-04-16
-updated: 2021-04-16
+date: 2021-04-16 00:00:00 +09:00
+updated: 2021-04-16 00:00:00 +09:00
 tag: iOS UICollectionView 
 public: true
 parent: 

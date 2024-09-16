@@ -3,8 +3,8 @@ layout: wiki
 title: 오토레이아웃을 코드로 작성하는 방법은 무엇인가? (3가지)
 summary: 
 permalink: 31b7b10d-02ae-8cf6-064d-5bfb2cc11000
-date: 2021-04-16
-updated: 2021-04-16
+date: 2021-04-16 00:00:00 +09:00
+updated: 2021-04-16 00:00:00 +09:00
 tag: iOS iOSInterviewquestions
 public: true
 parent: 

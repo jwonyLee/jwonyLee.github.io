@@ -3,8 +3,8 @@ layout: wiki
 title: 강한 순환 참조 (Strong Reference Cycle) 는 어떤 경우에 발생하는지 설명하시오.
 summary: 
 permalink: 0e5f64f9-ad6d-a804-3131-2c3b871c78f1
-date: 2021-02-15
-updated: 2021-02-15
+date: 2021-02-15 00:00:00 +09:00
+updated: 2021-02-15 00:00:00 +09:00
 tag: Swift iOSInterviewquestions
 public: true
 parent: 

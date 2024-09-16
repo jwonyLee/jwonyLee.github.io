@@ -3,8 +3,8 @@ layout: wiki
 title: Anatomy of a Constraint
 summary: 
 permalink: 91779299-b1d8-f752-efbb-bebf18b9b997
-date: 2021-02-01
-updated: 2021-02-01
+date: 2021-02-01 00:00:00 +09:00
+updated: 2021-02-01 00:00:00 +09:00
 tag: iOS 
 public: true
 parent: 

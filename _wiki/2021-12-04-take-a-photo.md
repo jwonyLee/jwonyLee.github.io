@@ -3,8 +3,8 @@ layout: wiki
 title: 사진 촬영 기능 구현하기
 summary: 
 permalink: ad896c4a-9cb1-57eb-6f2d-ed0f91110a7f
-date: 2021-12-04
-updated: 2021-12-04
+date: 2021-12-04 00:00:00 +09:00
+updated: 2021-12-04 00:00:00 +09:00
 tag: iOS 
 public: true
 parent: 

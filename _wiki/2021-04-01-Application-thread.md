@@ -3,8 +3,8 @@ layout: wiki
 title: UIKit 클래스들을 다룰 때 꼭 처리해야하는 애플리케이션 쓰레드 이름은 무엇인가?
 summary: 
 permalink: 3298b635-b078-7690-5cf0-2c5ad08df3f1
-date: 2021-04-01
-updated: 2021-04-01
+date: 2021-04-01 00:00:00 +09:00
+updated: 2021-04-01 00:00:00 +09:00
 tag: iOS iOSInterviewquestions
 public: true
 parent: 

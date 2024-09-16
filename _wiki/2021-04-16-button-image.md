@@ -3,8 +3,8 @@ layout: wiki
 title: 코드로 버튼에 이미지와 텍스트 넣기
 summary: 
 permalink: a1e1ff84-afb9-3cd4-779b-ffac01f78ed8
-date: 2021-04-16
-updated: 2021-04-16
+date: 2021-04-16 00:00:00 +09:00
+updated: 2021-04-16 00:00:00 +09:00
 tag: iOS
 public: true
 parent: 

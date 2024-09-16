@@ -3,8 +3,8 @@ layout: wiki
 title: Meet async/await in Swift
 summary: 
 permalink: d749ec3d-86c8-8b21-144b-74fa7b69819a
-date: 2021-06-10
-updated: 2021-06-10
+date: 2021-06-10 00:00:00 +09:00
+updated: 2021-06-10 00:00:00 +09:00
 tag: iOS WWDC2021
 public: true
 parent: 

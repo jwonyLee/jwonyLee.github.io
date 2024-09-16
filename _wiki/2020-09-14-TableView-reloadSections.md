@@ -3,8 +3,8 @@ layout: wiki
 title: TableView.reloadSections(_:with:)
 summary: 
 permalink: 6818f72c-8679-19ea-5849-0fa044b8e138
-date: 2020-09-14
-updated: 2020-09-14
+date: 2020-09-14 00:00:00 +09:00
+updated: 2020-09-14 00:00:00 +09:00
 tag: iOS UIKit UITableView  
 public: true
 parent: 

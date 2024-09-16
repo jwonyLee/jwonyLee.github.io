@@ -3,8 +3,8 @@ layout: wiki
 title: 중첩 클로저의 캡처 리스트
 summary: 
 permalink: 6e52590c-ff19-5ed6-6c98-ea043d0ef93a
-date: 2022-01-25
-updated: 2022-01-25
+date: 2022-01-25 00:00:00 +09:00
+updated: 2022-01-25 00:00:00 +09:00
 tag: Swift 
 public: true
 parent: 

@@ -3,8 +3,8 @@ layout: wiki
 title: 특정 객체를 autorelease 하기 위해 필요한 사항과 과정을 설명하시오.
 summary: 
 permalink: 8c462797-aaee-445d-efdc-b532b964984f
-date: 2021-02-16
-updated: 2021-02-16
+date: 2021-02-16 00:00:00 +09:00
+updated: 2021-02-16 00:00:00 +09:00
 tag: Objective-C iOSInterviewquestions
 public: true
 parent: 

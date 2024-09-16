@@ -3,8 +3,8 @@ layout: wiki
 title: 커스텀 폰트 적용하기 with Dynamic Type
 summary: 
 permalink: 087cf713-71b1-fed1-92de-eb4eb894c0d4
-date: 2022-01-02
-updated: 2022-01-02
+date: 2022-01-02 00:00:00 +09:00
+updated: 2022-01-02 00:00:00 +09:00
 tag: iOS 
 public: true
 parent: 

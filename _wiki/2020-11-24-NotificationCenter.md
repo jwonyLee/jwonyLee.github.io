@@ -3,8 +3,8 @@ layout: wiki
 title: NotificationCenter 동작 방식과 활용 방안에 대해 설명하시오.
 summary: 
 permalink: 7770f268-14af-f587-7771-54a2bb9a57b4
-date: 2020-11-24
-updated: 2020-11-24
+date: 2020-11-24 00:00:00 +09:00
+updated: 2020-11-24 00:00:00 +09:00
 tag: iOS iOSInterviewquestions
 public: true
 parent: 

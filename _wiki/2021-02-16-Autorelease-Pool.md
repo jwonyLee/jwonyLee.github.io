@@ -3,8 +3,8 @@ layout: wiki
 title: Autorelease Pool을 사용해야 하는 상황을 두 가지 이상 예로 들어 설명하시오.
 summary: 
 permalink: f61fef68-7386-ba55-b341-d15ea08393d4
-date: 2021-02-16
-updated: 2021-02-16
+date: 2021-02-16 00:00:00 +09:00
+updated: 2021-02-16 00:00:00 +09:00
 tag: Objective-C iOSInterviewquestions
 public: true
 parent: 

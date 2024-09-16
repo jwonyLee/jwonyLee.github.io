@@ -3,8 +3,8 @@ layout: wiki
 title: 탈출 클로저에 대하여 설명하시오.
 summary: 
 permalink: 110c7a71-3d8e-f97e-14d9-24d6c28778f1
-date: 2020-10-11
-updated: 2020-10-11
+date: 2020-10-11 00:00:00 +09:00
+updated: 2020-10-11 00:00:00 +09:00
 tag: Swift iOSInterviewquestions
 public: true
 parent: 

@@ -3,8 +3,8 @@ layout: wiki
 title: Extension에 대해 설명하시오.
 summary: 
 permalink: 1b55afe8-60cf-8c94-0be0-14f2859f9e38
-date: 2020-10-13
-updated: 2020-10-13
+date: 2020-10-13 00:00:00 +09:00
+updated: 2020-10-13 00:00:00 +09:00
 tag: Swift iOSInterviewquestions
 public: true
 parent: 
