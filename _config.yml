@@ -1,0 +1,60 @@
+# Site settings
+title: 🌩️ 먹구름
+url: "https://rieul.tech"
+baseurl: ""
+description: >
+    PKM
+
+# My information
+email: rieul@rieul.tech
+author: 리을
+twitter_username:
+github_username: jwonylee
+comment-support: giscus
+
+# Build settings
+plugins:
+  - jekyll-paginate
+  - jekyll-gist
+
+permalink: /blog/:year/:month/:day/:title/
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+paginate: 10
+paginator_path: "/blog"
+paginate_path: "/blog/page:num/"
+
+# Collections
+collections:
+    wiki:
+        output: true
+        permalink: /:collection/:path/
+
+# Comment Service
+giscus:
+  repo: jwonylee/jwonylee.github.io
+  repo_id: SAMPLE-VALUE
+  category: Announcements
+  category_id: SAMPLE-VALUE
+
+google_analytics:
+  ua: SAMPLE-VALUE
+  encrypted_ua: THIS-IS-SAMPLE-VALUE
+
+google_adsense:
+  client: SAMPLE-VALUE
+
+blame: "https://github.com/jwonylee/jwonylee.github.io/blame/master/_wiki"
+edit: "https://github.com/jwonylee/jwonylee.github.io/edit/master/_wiki"
+issue: "https://github.com/jwonylee/jwonylee.github.io/issues/new"
+
+timezone: "Asia/Seoul"
+
+# https://kramdown.gettalong.org/rdoc/Kramdown/Options.html - smart_quotes
+kramdown:
+    smart_quotes: ["apos", "apos", "quot", "quot"]

@@ -1,0 +1,104 @@
+/* based on Monokai Theme from https://github.com/richleland/pygments-css/blob/master/monokai.css */
+$background-color: #ffffff;
+$default-font-color: #1f2328;
+code {
+    font-family: $coding-font;
+    color: inherit;
+    background-color: #f3f4f6;
+    padding: 1px 3px;
+    border-radius: 3px;
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+pre {
+    font-family:  $coding-font;
+    overflow-x: auto;
+    padding: 10px 10px;
+    color: $default-font-color;
+    background-color: $background-color;
+    border: 1px solid #c6c6c6;
+}
+pre code {
+    color: $default-font-color;
+    background-color: $background-color;
+    padding: 0;
+}
+
+div.highlight {
+    font-size: 0.9em;
+    line-height: 1.3;
+}
+.highlight {
+    .bp { color: #1f2328; } /* Name.Builtin.Pseudo */
+    .c { color: #59636e; } /* Comment */
+    .c1 { color: #59636e; } /* Comment.Single */
+    .cm { color: #59636e; } /* Comment.Multiline */
+    .cp { color: #cf222e; } /* Comment.Preproc */
+    .cs { color: #59636e; } /* Comment.Special */
+    .gd { color: #d1242f; } /* Generic.Deleted & Diff Deleted */
+    .ge { font-style: italic; } /* Generic.Emph */
+    .gh { color: #59636e; } /* Generic Heading & Diff Header */
+    .gi { color: #2ea44f; } /* Generic.Inserted & Diff Inserted */
+    .gs { font-weight: bold; } /* Generic.Strong */
+    .gu { color: #59636e; } /* Generic.Subheading & Diff Unified/Comment? */
+    .hll { background-color: #f6f8fa; } /* Highlighted line */
+    .il { color: #0550ae; } /* Literal.Number.Integer.Long */
+    .k { color: #cf222e; } /* Keyword */
+    .kc { color: #cf222e; } /* Keyword.Constant */
+    .kd { color: #cf222e; } /* Keyword.Declaration */
+    .kn { color: #cf222e; } /* Keyword.Namespace */
+    .kp { color: #cf222e; } /* Keyword.Pseudo */
+    .kr { color: #cf222e; } /* Keyword.Reserved */
+    .kt { color: #1f2328; } /* Keyword.Type */
+    .l { color: #0550ae; } /* Literal */
+    .ld { color: #b8500f; } /* Literal.Date */
+    .lineno { color: #59636e; } /* Line number */
+    .m { color: #0550ae; } /* Literal.Number */
+    .mf { color: #0550ae; } /* Literal.Number.Float */
+    .mh { color: #0550ae; } /* Literal.Number.Hex */
+    .mi { color: #0550ae; } /* Literal.Number.Integer */
+    .mo { color: #0550ae; } /* Literal.Number.Oct */
+    .n { color: #1f2328; } /* Name */
+    .na { color: #0550ae; } /* Name.Attribute */
+    .nb { color: #0969da; } /* Name.Builtin */
+    .nc { color: #9d615c; } /* Name.Class */
+    .nd { color: #8250df; } /* Name.Decorator */
+    .ne { color: #cf222e; } /* Name.Exception */
+    .nf { color: #1f2328; } /* Name.Function */
+    .ni { color: #1f2328; } /* Name.Entity */
+    .nl { color: #1f2328; } /* Name.Label */
+    .nn { color: #1f2328; } /* Name.Namespace */
+    .no { color: #0969da; } /* Name.Constant */
+    .nt { color: #2c8141; } /* Name.Tag */
+    .nv { color: #1f2328; } /* Name.Variable */
+    .nx { color: #1f2328; } /* Name.Other */
+    .o { color: #cf222e; } /* Operator */
+    .ow { color: #cf222e; } /* Operator.Word */
+    .p { color: #1f2328; } /* Punctuation */
+    .py { color: #1f2328; } /* Name.Property */
+    .s { color: #0a3069; } /* Literal.String */
+    .s1 { color: #0a3069; } /* Literal.String.Single */
+    .s2 { color: #0a3069; } /* Literal.String.Double */
+    .sb { color: #0a3069; } /* Literal.String.Backtick */
+    .sc { color: #0a3069; } /* Literal.String.Char */
+    .sd { color: #0a3069; } /* Literal.String.Doc */
+    .se { color: #0a3069; } /* Literal.String.Escape */
+    .sh { color: #0a3069; } /* Literal.String.Heredoc */
+    .si { color: #0a3069; } /* Literal.String.Interpol */
+    .sr { color: #0a3069; } /* Literal.String.Regex */
+    .ss { color: #0a3069; } /* Literal.String.Symbol */
+    .sx { color: #0a3069; } /* Literal.String.Other */
+    .vc { color: #1f2328; } /* Name.Variable.Class */
+    .vg { color: #1f2328; } /* Name.Variable.Global */
+    .vi { color: #1f2328; } /* Name.Variable.Instance */
+    .w { color: #59636e; } /* Text.Whitespace */
+    .dl { color: #0a3069 } /* 따옴표 */
+}
+
+.language-ascii-art {
+    display: inline-block;
+    letter-spacing: -0.1em;
+    line-height: 1.0em;
+}

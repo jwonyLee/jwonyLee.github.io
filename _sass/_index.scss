@@ -1,0 +1,33 @@
+@import url('https://cdn.jsdelivr.net/gh/toss/tossface/dist/tossface.css');
+
+.blog-face {
+    text-align: center;
+    font-family: Tossface;
+}
+
+.borderless {
+    border-bottom: 0px;
+}
+
+.indent {
+    margin-left: 30px;
+}
+
+.contact {
+    margin-top: 10px;
+    text-align: center;
+
+    a {
+        font-family: "Pretendard", AppleSDGothicNeo, sans-serif;
+        text-decoration: none;
+        margin: 8px;
+        color: #344B83;
+        white-space: nowrap;
+
+        &:hover {
+            transition: background 0.3s ease;
+            background: $theme-color;
+        }
+    }
+}
+

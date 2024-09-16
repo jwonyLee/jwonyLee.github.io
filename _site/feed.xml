@@ -1,0 +1,1390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>🌩️ 먹구름</title>
+    <description>PKM
+</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 16 Sep 2024 16:55:19 +0900</pubDate>
+    <lastBuildDate>Mon, 16 Sep 2024 16:55:19 +0900</lastBuildDate>
+    <generator>Jekyll v4.3.3</generator>
+
+
+    
+      <item>
+        <title>하기 싫은 일은 작게 나누기</title>
+        <description></description>
+        <pubDate>Tue, 09 Jul 2024 11:35:00 +0900</pubDate>
+        <link>http://localhost:4000/7c3093ec-e4ac-31f8-b22e-08c817377f1d</link>
+        <guid isPermaLink="true">http://localhost:4000/7c3093ec-e4ac-31f8-b22e-08c817377f1d</guid>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>외부 Cocoapods 라이브러리 SPM 으로 배포하기</title>
+        <description></description>
+        <pubDate>Thu, 27 Jun 2024 11:15:06 +0900</pubDate>
+        <link>http://localhost:4000/1339c97d-6732-f545-94d4-6a7453b9e1b2</link>
+        <guid isPermaLink="true">http://localhost:4000/1339c97d-6732-f545-94d4-6a7453b9e1b2</guid>
+        
+        <category>iOS PackageManager SPM</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>HTTP 완벽 가이드</title>
+        <description></description>
+        <pubDate>Mon, 20 May 2024 22:17:38 +0900</pubDate>
+        <link>http://localhost:4000/35d2bb9e-3cea-3de7-4405-27f2965e2716</link>
+        <guid isPermaLink="true">http://localhost:4000/35d2bb9e-3cea-3de7-4405-27f2965e2716</guid>
+        
+        <category>Book</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>16장. 국제화</title>
+        <description></description>
+        <pubDate>Mon, 20 May 2024 01:00:09 +0900</pubDate>
+        <link>http://localhost:4000/c7c60c25-9bf8-d3ea-3d0a-0cc7a44a96f1</link>
+        <guid isPermaLink="true">http://localhost:4000/c7c60c25-9bf8-d3ea-3d0a-0cc7a44a96f1</guid>
+        
+        <category>Network Book HTTP</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>17장. 내용 협상과 트랜스코딩</title>
+        <description></description>
+        <pubDate>Mon, 20 May 2024 01:00:07 +0900</pubDate>
+        <link>http://localhost:4000/e064e862-9f12-7734-dbbd-b18a7676aa6a</link>
+        <guid isPermaLink="true">http://localhost:4000/e064e862-9f12-7734-dbbd-b18a7676aa6a</guid>
+        
+        <category>Network Book HTTP</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>15장. 엔터티와 인코딩</title>
+        <description></description>
+        <pubDate>Mon, 20 May 2024 01:00:05 +0900</pubDate>
+        <link>http://localhost:4000/e4f6b6ab-b3f5-5b26-2ff7-5df8e3a303a0</link>
+        <guid isPermaLink="true">http://localhost:4000/e4f6b6ab-b3f5-5b26-2ff7-5df8e3a303a0</guid>
+        
+        <category>Network Book HTTP</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>14장. 보안 HTTP</title>
+        <description></description>
+        <pubDate>Mon, 20 May 2024 01:00:03 +0900</pubDate>
+        <link>http://localhost:4000/e2f40fd5-9d83-5d33-3945-d93010f32ce0</link>
+        <guid isPermaLink="true">http://localhost:4000/e2f40fd5-9d83-5d33-3945-d93010f32ce0</guid>
+        
+        <category>Network Book HTTP</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>12장. 기본 인증</title>
+        <description></description>
+        <pubDate>Mon, 20 May 2024 00:59:57 +0900</pubDate>
+        <link>http://localhost:4000/66a1b5e5-9448-4476-c36b-1c1d8b77d079</link>
+        <guid isPermaLink="true">http://localhost:4000/66a1b5e5-9448-4476-c36b-1c1d8b77d079</guid>
+        
+        <category>Network Book HTTP</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>11장. 클라이언트 식별과 쿠키</title>
+        <description></description>
+        <pubDate>Mon, 20 May 2024 00:59:55 +0900</pubDate>
+        <link>http://localhost:4000/820b29f3-5dd3-ec36-ff7d-46b2e110a122</link>
+        <guid isPermaLink="true">http://localhost:4000/820b29f3-5dd3-ec36-ff7d-46b2e110a122</guid>
+        
+        <category>Network Book HTTP</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>10장. HTTP/2.0</title>
+        <description></description>
+        <pubDate>Mon, 20 May 2024 00:59:53 +0900</pubDate>
+        <link>http://localhost:4000/a976befd-aad6-2cc0-f1bd-650205528f98</link>
+        <guid isPermaLink="true">http://localhost:4000/a976befd-aad6-2cc0-f1bd-650205528f98</guid>
+        
+        <category>Network Book HTTP</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>07장. 캐시</title>
+        <description></description>
+        <pubDate>Mon, 20 May 2024 00:59:52 +0900</pubDate>
+        <link>http://localhost:4000/56808a7e-abd1-979f-c7f9-fc2a81ce05ca</link>
+        <guid isPermaLink="true">http://localhost:4000/56808a7e-abd1-979f-c7f9-fc2a81ce05ca</guid>
+        
+        <category>Network Book HTTP</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>06장. 프락시</title>
+        <description></description>
+        <pubDate>Mon, 20 May 2024 00:59:50 +0900</pubDate>
+        <link>http://localhost:4000/b1fec897-d012-3803-4224-a1fac06a14c4</link>
+        <guid isPermaLink="true">http://localhost:4000/b1fec897-d012-3803-4224-a1fac06a14c4</guid>
+        
+        <category>Network Book HTTP</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>05장. 웹 서버</title>
+        <description></description>
+        <pubDate>Mon, 20 May 2024 00:59:47 +0900</pubDate>
+        <link>http://localhost:4000/4757f83b-b230-ecd5-01f0-03a532907199</link>
+        <guid isPermaLink="true">http://localhost:4000/4757f83b-b230-ecd5-01f0-03a532907199</guid>
+        
+        <category>Network Book HTTP</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>04장. 커넥션 관리</title>
+        <description></description>
+        <pubDate>Mon, 20 May 2024 00:59:45 +0900</pubDate>
+        <link>http://localhost:4000/40967902-b9d0-ed9e-7abd-8eb094e6c226</link>
+        <guid isPermaLink="true">http://localhost:4000/40967902-b9d0-ed9e-7abd-8eb094e6c226</guid>
+        
+        <category>Network Book HTTP</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>03장. HTTP 메시지</title>
+        <description></description>
+        <pubDate>Mon, 20 May 2024 00:59:44 +0900</pubDate>
+        <link>http://localhost:4000/2715b8ab-d021-6bef-7140-3387cd6c23fc</link>
+        <guid isPermaLink="true">http://localhost:4000/2715b8ab-d021-6bef-7140-3387cd6c23fc</guid>
+        
+        <category>Network Book HTTP</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>02장. URL과 리소스</title>
+        <description></description>
+        <pubDate>Mon, 20 May 2024 00:59:42 +0900</pubDate>
+        <link>http://localhost:4000/720b3660-1039-0fc7-54a4-48facfcfda5c</link>
+        <guid isPermaLink="true">http://localhost:4000/720b3660-1039-0fc7-54a4-48facfcfda5c</guid>
+        
+        <category>Network Book HTTP</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>01장. HTTP 개관</title>
+        <description></description>
+        <pubDate>Mon, 20 May 2024 00:59:18 +0900</pubDate>
+        <link>http://localhost:4000/1342bd24-dee7-d8f6-b63c-909e6e026b54</link>
+        <guid isPermaLink="true">http://localhost:4000/1342bd24-dee7-d8f6-b63c-909e6e026b54</guid>
+        
+        <category>Book Network HTTP</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>TabView + ScrollView</title>
+        <description></description>
+        <pubDate>Sun, 19 May 2024 19:12:52 +0900</pubDate>
+        <link>http://localhost:4000/a6f7c741-4d45-d56e-7c60-aea6037ccc1a</link>
+        <guid isPermaLink="true">http://localhost:4000/a6f7c741-4d45-d56e-7c60-aea6037ccc1a</guid>
+        
+        <category>iOS SwiftUI 삽질</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>자식 뷰 컨트롤러에 이벤트가 전파되지 않음</title>
+        <description></description>
+        <pubDate>Sun, 19 May 2024 19:02:31 +0900</pubDate>
+        <link>http://localhost:4000/641670cf-215e-936c-44df-1d00acf50e2f</link>
+        <guid isPermaLink="true">http://localhost:4000/641670cf-215e-936c-44df-1d00acf50e2f</guid>
+        
+        <category>삽질 iOS ReactorKit Troubleshooting</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>GitHub Action 에서 특정 Label 이 붙은 PR 건너뛰기</title>
+        <description></description>
+        <pubDate>Tue, 14 May 2024 10:31:50 +0900</pubDate>
+        <link>http://localhost:4000/0654680d-f102-7159-d06c-99f2e46aa34e</link>
+        <guid isPermaLink="true">http://localhost:4000/0654680d-f102-7159-d06c-99f2e46aa34e</guid>
+        
+        <category>GitHub-Action</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>상태 변화에 따라 다른 동작을 처리하기 위한 앱델리게이트 메서드들을 설명하시오.</title>
+        <description></description>
+        <pubDate>Tue, 30 Apr 2024 11:57:43 +0900</pubDate>
+        <link>http://localhost:4000/d30afc77-e653-1750-2441-cb8efaf43483</link>
+        <guid isPermaLink="true">http://localhost:4000/d30afc77-e653-1750-2441-cb8efaf43483</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>SPM 패키지 dependency 설정하기</title>
+        <description></description>
+        <pubDate>Sat, 13 Apr 2024 20:07:13 +0900</pubDate>
+        <link>http://localhost:4000/c7df7494-6ac2-77d5-5367-d34e3b260d71</link>
+        <guid isPermaLink="true">http://localhost:4000/c7df7494-6ac2-77d5-5367-d34e3b260d71</guid>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>한 컴퓨터에 GitHub 계정 여러개 쓰기</title>
+        <description></description>
+        <pubDate>Sat, 13 Apr 2024 20:07:01 +0900</pubDate>
+        <link>http://localhost:4000/0356f2ee-7e47-af38-047f-c9f13e392d73</link>
+        <guid isPermaLink="true">http://localhost:4000/0356f2ee-7e47-af38-047f-c9f13e392d73</guid>
+        
+        <category>Git GitHub</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>Safe area 를 변경하려면</title>
+        <description></description>
+        <pubDate>Sat, 13 Apr 2024 20:05:38 +0900</pubDate>
+        <link>http://localhost:4000/7cfc1bcf-a5a7-b153-4d67-19da5e04a55c</link>
+        <guid isPermaLink="true">http://localhost:4000/7cfc1bcf-a5a7-b153-4d67-19da5e04a55c</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>thread safety한 싱글톤</title>
+        <description></description>
+        <pubDate>Sat, 13 Apr 2024 20:05:32 +0900</pubDate>
+        <link>http://localhost:4000/dcded7c6-5ce0-ebca-6536-e7323d041de4</link>
+        <guid isPermaLink="true">http://localhost:4000/dcded7c6-5ce0-ebca-6536-e7323d041de4</guid>
+        
+        <category>Swift Design-Patterns</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>Root</title>
+        <description></description>
+        <pubDate>Sat, 13 Apr 2024 17:14:35 +0900</pubDate>
+        <link>http://localhost:4000/a2bc19f8-43a2-68d3-81ae-3d280c221d20</link>
+        <guid isPermaLink="true">http://localhost:4000/a2bc19f8-43a2-68d3-81ae-3d280c221d20</guid>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>Identifiable</title>
+        <description></description>
+        <pubDate>Mon, 01 Jan 2024 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/23541f6b-c82d-d953-2284-dde1ad84ec46</link>
+        <guid isPermaLink="true">http://localhost:4000/23541f6b-c82d-d953-2284-dde1ad84ec46</guid>
+        
+        <category>Swift</category>
+        
+        
+      </item>
+    
+
+    
+
+    
+      <item>
+        <title>적정 소프트웨어 아키텍처</title>
+        <description></description>
+        <pubDate>Thu, 01 Dec 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/14542ed1-ffb9-c062-5b3a-828755257d2b</link>
+        <guid isPermaLink="true">http://localhost:4000/14542ed1-ffb9-c062-5b3a-828755257d2b</guid>
+        
+        <category>Book</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>DateFormatter 는 비싸다.</title>
+        <description></description>
+        <pubDate>Sun, 18 Sep 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/e8ed064c-4163-90c1-170a-a1d09ecb6748</link>
+        <guid isPermaLink="true">http://localhost:4000/e8ed064c-4163-90c1-170a-a1d09ecb6748</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>피, 땀, 리셋</title>
+        <description></description>
+        <pubDate>Sun, 28 Aug 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/765e8330-4b2a-eaae-e63c-53809a9db388</link>
+        <guid isPermaLink="true">http://localhost:4000/765e8330-4b2a-eaae-e63c-53809a9db388</guid>
+        
+        <category>Book</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>Live Activity</title>
+        <description></description>
+        <pubDate>Sat, 13 Aug 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/dda861ad-c5d0-9e0b-e516-e0ea209f7761</link>
+        <guid isPermaLink="true">http://localhost:4000/dda861ad-c5d0-9e0b-e516-e0ea209f7761</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>ReactorKit</title>
+        <description></description>
+        <pubDate>Sun, 17 Jul 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/10bb6466-6b17-6b9d-fcc7-09e3f262cdb1</link>
+        <guid isPermaLink="true">http://localhost:4000/10bb6466-6b17-6b9d-fcc7-09e3f262cdb1</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>회사 프로젝트에 SwiftLint 도입기</title>
+        <description></description>
+        <pubDate>Sun, 26 Jun 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/98e2a8e5-c76c-0e4c-0d1c-d9c4ae71426c</link>
+        <guid isPermaLink="true">http://localhost:4000/98e2a8e5-c76c-0e4c-0d1c-d9c4ae71426c</guid>
+        
+        <category>iOS SwiftLint</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>기업의 성공을 이끄는 Developer Relations</title>
+        <description></description>
+        <pubDate>Sun, 26 Jun 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/f61f3b71-2fcb-fb9c-5bf6-8695576b8ada</link>
+        <guid isPermaLink="true">http://localhost:4000/f61f3b71-2fcb-fb9c-5bf6-8695576b8ada</guid>
+        
+        <category>Book 서평</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>회사 프로젝트에 SwiftGen 도입기</title>
+        <description></description>
+        <pubDate>Sun, 12 Jun 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/3acba79d-c253-a833-0fb8-9534af3cdffc</link>
+        <guid isPermaLink="true">http://localhost:4000/3acba79d-c253-a833-0fb8-9534af3cdffc</guid>
+        
+        <category>iOS SwiftGen</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>Swift Package 만들기</title>
+        <description></description>
+        <pubDate>Sun, 29 May 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/b6e7d281-7f11-d868-7945-9704afcaccaa</link>
+        <guid isPermaLink="true">http://localhost:4000/b6e7d281-7f11-d868-7945-9704afcaccaa</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>Writing High Performance Swift Code</title>
+        <description></description>
+        <pubDate>Thu, 12 May 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/34dea93e-05e9-9d47-f058-328b54789fd3</link>
+        <guid isPermaLink="true">http://localhost:4000/34dea93e-05e9-9d47-f058-328b54789fd3</guid>
+        
+        <category>Swift</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>동시성 프로그래밍</title>
+        <description></description>
+        <pubDate>Sun, 24 Apr 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/565ee835-604a-3913-13cd-7dd4e83143ef</link>
+        <guid isPermaLink="true">http://localhost:4000/565ee835-604a-3913-13cd-7dd4e83143ef</guid>
+        
+        <category>Book</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>Moya 사용법</title>
+        <description></description>
+        <pubDate>Tue, 22 Mar 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/1ff142a9-0d9f-cb69-7893-6ed85e7501cc</link>
+        <guid isPermaLink="true">http://localhost:4000/1ff142a9-0d9f-cb69-7893-6ed85e7501cc</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>포스터의 생성 시간, 마지막 수정 시간 구하기</title>
+        <description></description>
+        <pubDate>Sun, 06 Mar 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/7de6818f-99cb-bdf9-8bb2-92c51770076e</link>
+        <guid isPermaLink="true">http://localhost:4000/7de6818f-99cb-bdf9-8bb2-92c51770076e</guid>
+        
+        <category>Ruby Jekyll</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>throttle, debounce</title>
+        <description></description>
+        <pubDate>Sun, 06 Mar 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/255d538c-8044-4bbd-05a9-c125b5d505ee</link>
+        <guid isPermaLink="true">http://localhost:4000/255d538c-8044-4bbd-05a9-c125b5d505ee</guid>
+        
+        <category>RxSwift</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>시뮬레이터가 표시되지 않을 때</title>
+        <description></description>
+        <pubDate>Fri, 28 Jan 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/5a1edbef-5c3a-9582-4689-be1c9860dc57</link>
+        <guid isPermaLink="true">http://localhost:4000/5a1edbef-5c3a-9582-4689-be1c9860dc57</guid>
+        
+        <category>Xcode</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>중첩 클로저의 캡처 리스트</title>
+        <description></description>
+        <pubDate>Tue, 25 Jan 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/6e52590c-ff19-5ed6-6c98-ea043d0ef93a</link>
+        <guid isPermaLink="true">http://localhost:4000/6e52590c-ff19-5ed6-6c98-ea043d0ef93a</guid>
+        
+        <category>Swift</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>원하는 위치의 셀로 이동</title>
+        <description></description>
+        <pubDate>Fri, 21 Jan 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/af9b3263-31b2-74e1-2656-1c20982834e6</link>
+        <guid isPermaLink="true">http://localhost:4000/af9b3263-31b2-74e1-2656-1c20982834e6</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>커스텀 폰트 적용하기 with Dynamic Type</title>
+        <description></description>
+        <pubDate>Sun, 02 Jan 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/087cf713-71b1-fed1-92de-eb4eb894c0d4</link>
+        <guid isPermaLink="true">http://localhost:4000/087cf713-71b1-fed1-92de-eb4eb894c0d4</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>사진 촬영 기능 구현하기</title>
+        <description></description>
+        <pubDate>Sat, 04 Dec 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/ad896c4a-9cb1-57eb-6f2d-ed0f91110a7f</link>
+        <guid isPermaLink="true">http://localhost:4000/ad896c4a-9cb1-57eb-6f2d-ed0f91110a7f</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>컬렉션뷰에 뱃지 추가하기</title>
+        <description></description>
+        <pubDate>Sun, 07 Nov 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/354752f2-0c01-5d34-7214-bacd077e4153</link>
+        <guid isPermaLink="true">http://localhost:4000/354752f2-0c01-5d34-7214-bacd077e4153</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>제대로 배우는 수학적 최적화</title>
+        <description></description>
+        <pubDate>Wed, 27 Oct 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/65ef6f13-238e-376b-c5d8-423601f482a5</link>
+        <guid isPermaLink="true">http://localhost:4000/65ef6f13-238e-376b-c5d8-423601f482a5</guid>
+        
+        <category>Book</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>비동기 메서드 테스트하기</title>
+        <description></description>
+        <pubDate>Sun, 24 Oct 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/ad1f874e-3ce1-2b9e-9b8e-bd8121e49b50</link>
+        <guid isPermaLink="true">http://localhost:4000/ad1f874e-3ce1-2b9e-9b8e-bd8121e49b50</guid>
+        
+        <category>XCTest</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>함께 자라기</title>
+        <description></description>
+        <pubDate>Mon, 27 Sep 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/7900102b-dad3-42b6-e1ff-bf18525660b2</link>
+        <guid isPermaLink="true">http://localhost:4000/7900102b-dad3-42b6-e1ff-bf18525660b2</guid>
+        
+        <category>Book</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>Making Apps with Core Data</title>
+        <description></description>
+        <pubDate>Thu, 16 Sep 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/0ce0a0ce-7b54-a57c-bd4d-8ccad29cc898</link>
+        <guid isPermaLink="true">http://localhost:4000/0ce0a0ce-7b54-a57c-bd4d-8ccad29cc898</guid>
+        
+        <category>WWDC2019</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>처음 배우는 플라스크 웹 프로그래밍</title>
+        <description></description>
+        <pubDate>Mon, 13 Sep 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/a2ed4fc7-e0f5-7e9d-802f-0ef7e6a021d5</link>
+        <guid isPermaLink="true">http://localhost:4000/a2ed4fc7-e0f5-7e9d-802f-0ef7e6a021d5</guid>
+        
+        <category>Book</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>RxSwiftExt 일부 연산자 정리</title>
+        <description></description>
+        <pubDate>Mon, 06 Sep 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/847e6d25-0406-9f55-65ea-71fe4ead4c2f</link>
+        <guid isPermaLink="true">http://localhost:4000/847e6d25-0406-9f55-65ea-71fe4ead4c2f</guid>
+        
+        <category>RxSwift</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>터미널에서 명령어로 마크다운 파일 만들기</title>
+        <description></description>
+        <pubDate>Fri, 20 Aug 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/1114d9a9-1eb1-1bf3-4819-6612d416beda</link>
+        <guid isPermaLink="true">http://localhost:4000/1114d9a9-1eb1-1bf3-4819-6612d416beda</guid>
+        
+        <category>Shell Script</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>리눅스 입문자를 위한 명령어 사전</title>
+        <description></description>
+        <pubDate>Fri, 20 Aug 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/bc24663e-8037-285f-8159-94f8b91384e1</link>
+        <guid isPermaLink="true">http://localhost:4000/bc24663e-8037-285f-8159-94f8b91384e1</guid>
+        
+        <category>Book</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>Repository 패턴</title>
+        <description></description>
+        <pubDate>Fri, 20 Aug 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/e41ac27e-0ce9-c443-2af4-7ceef30ec815</link>
+        <guid isPermaLink="true">http://localhost:4000/e41ac27e-0ce9-c443-2af4-7ceef30ec815</guid>
+        
+        <category>Design Pattern</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>UIStackView</title>
+        <description></description>
+        <pubDate>Tue, 10 Aug 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/5b441ad2-f77c-e2c0-5787-e4ed4138ec3c</link>
+        <guid isPermaLink="true">http://localhost:4000/5b441ad2-f77c-e2c0-5787-e4ed4138ec3c</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>UserDefaults, KeyChain, Core Data</title>
+        <description></description>
+        <pubDate>Fri, 23 Jul 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/3efa3d59-c701-1158-7923-59270f51357b</link>
+        <guid isPermaLink="true">http://localhost:4000/3efa3d59-c701-1158-7923-59270f51357b</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>오디오 녹음, 재생, 저장하기</title>
+        <description></description>
+        <pubDate>Tue, 06 Jul 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/b3ea49d4-8f7a-b9e0-2427-fd3b1e243fd8</link>
+        <guid isPermaLink="true">http://localhost:4000/b3ea49d4-8f7a-b9e0-2427-fd3b1e243fd8</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>UIMenu 사용해보기</title>
+        <description></description>
+        <pubDate>Tue, 15 Jun 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/175c0e8e-dcc4-2838-4b58-30c0ac22f9e4</link>
+        <guid isPermaLink="true">http://localhost:4000/175c0e8e-dcc4-2838-4b58-30c0ac22f9e4</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>Meet async/await in Swift</title>
+        <description></description>
+        <pubDate>Thu, 10 Jun 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/d749ec3d-86c8-8b21-144b-74fa7b69819a</link>
+        <guid isPermaLink="true">http://localhost:4000/d749ec3d-86c8-8b21-144b-74fa7b69819a</guid>
+        
+        <category>iOS WWDC2021</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>UITextField.text의 변경을 감지하지 못할 때</title>
+        <description></description>
+        <pubDate>Wed, 02 Jun 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/71f3e025-53b0-9a83-78df-fbf9c5bba6f6</link>
+        <guid isPermaLink="true">http://localhost:4000/71f3e025-53b0-9a83-78df-fbf9c5bba6f6</guid>
+        
+        <category>RxSwift</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>RxSwift.Single</title>
+        <description></description>
+        <pubDate>Mon, 31 May 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/22b54afe-9f09-0d87-860f-a50de5b642ae</link>
+        <guid isPermaLink="true">http://localhost:4000/22b54afe-9f09-0d87-860f-a50de5b642ae</guid>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>RxSwift.Maybe</title>
+        <description></description>
+        <pubDate>Mon, 31 May 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/438a434c-e450-d3d8-a28c-3dbf1aed01f3</link>
+        <guid isPermaLink="true">http://localhost:4000/438a434c-e450-d3d8-a28c-3dbf1aed01f3</guid>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>RxSwift.Completable</title>
+        <description></description>
+        <pubDate>Mon, 31 May 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/fc8764e8-1faa-3b9c-2220-92d0898700d0</link>
+        <guid isPermaLink="true">http://localhost:4000/fc8764e8-1faa-3b9c-2220-92d0898700d0</guid>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>학습 정리</title>
+        <description></description>
+        <pubDate>Fri, 14 May 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/116c4063-ed05-65d1-2e79-b2024a9706cb</link>
+        <guid isPermaLink="true">http://localhost:4000/116c4063-ed05-65d1-2e79-b2024a9706cb</guid>
+        
+        <category>RxSwift</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>긍정적인 Guard 사용</title>
+        <description></description>
+        <pubDate>Sun, 25 Apr 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/21b56994-cc18-9f41-e982-cf9735b9d345</link>
+        <guid isPermaLink="true">http://localhost:4000/21b56994-cc18-9f41-e982-cf9735b9d345</guid>
+        
+        <category>Swift</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>스토리보드없이 코드로 개발하기</title>
+        <description></description>
+        <pubDate>Fri, 16 Apr 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/8e6f8bf9-13fb-aef8-f6d5-701c02bc7ec2</link>
+        <guid isPermaLink="true">http://localhost:4000/8e6f8bf9-13fb-aef8-f6d5-701c02bc7ec2</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>네비게이션 타이틀 변경</title>
+        <description></description>
+        <pubDate>Fri, 16 Apr 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/a0ff24e0-518a-643b-b9e1-4d0f26ae6faa</link>
+        <guid isPermaLink="true">http://localhost:4000/a0ff24e0-518a-643b-b9e1-4d0f26ae6faa</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>layoutMarginsGuide, safeAreaLayoutGuide</title>
+        <description></description>
+        <pubDate>Fri, 16 Apr 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/0f24fcbb-ce52-e617-1f35-7592cc832513</link>
+        <guid isPermaLink="true">http://localhost:4000/0f24fcbb-ce52-e617-1f35-7592cc832513</guid>
+        
+        <category>iOS Autolayout</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>커스텀 셀 적용하기</title>
+        <description></description>
+        <pubDate>Fri, 16 Apr 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/e6ad015d-77c7-a653-dd35-5830c489dcd0</link>
+        <guid isPermaLink="true">http://localhost:4000/e6ad015d-77c7-a653-dd35-5830c489dcd0</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>컬렉션뷰 최상단으로 이동하기</title>
+        <description></description>
+        <pubDate>Fri, 16 Apr 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/794a8fe6-1bd9-f907-b97f-5c8d58f174c9</link>
+        <guid isPermaLink="true">http://localhost:4000/794a8fe6-1bd9-f907-b97f-5c8d58f174c9</guid>
+        
+        <category>iOS UICollectionView</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>UIView.clipToBounds와 layer.masksToBounds</title>
+        <description></description>
+        <pubDate>Fri, 16 Apr 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/10a55411-2e65-1d24-1465-93b6a7ef8317</link>
+        <guid isPermaLink="true">http://localhost:4000/10a55411-2e65-1d24-1465-93b6a7ef8317</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>코드로 버튼에 이미지와 텍스트 넣기</title>
+        <description></description>
+        <pubDate>Fri, 16 Apr 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/a1e1ff84-afb9-3cd4-779b-ffac01f78ed8</link>
+        <guid isPermaLink="true">http://localhost:4000/a1e1ff84-afb9-3cd4-779b-ffac01f78ed8</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>오토 레이아웃 기반 뷰에 cornerRadius 적용하기</title>
+        <description></description>
+        <pubDate>Fri, 16 Apr 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/a3a7ad89-8247-c3be-a830-793149274df0</link>
+        <guid isPermaLink="true">http://localhost:4000/a3a7ad89-8247-c3be-a830-793149274df0</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>오토레이아웃을 코드로 작성하는 방법은 무엇인가? (3가지)</title>
+        <description></description>
+        <pubDate>Fri, 16 Apr 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/31b7b10d-02ae-8cf6-064d-5bfb2cc11000</link>
+        <guid isPermaLink="true">http://localhost:4000/31b7b10d-02ae-8cf6-064d-5bfb2cc11000</guid>
+        
+        <category>iOS iOSInterviewquestions</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>뷰의 그림자 만들기</title>
+        <description></description>
+        <pubDate>Fri, 16 Apr 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/8f337062-db00-d89b-5151-0e2eec7ebf30</link>
+        <guid isPermaLink="true">http://localhost:4000/8f337062-db00-d89b-5151-0e2eec7ebf30</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>UIKit 클래스들을 다룰 때 꼭 처리해야하는 애플리케이션 쓰레드 이름은 무엇인가?</title>
+        <description></description>
+        <pubDate>Thu, 01 Apr 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/3298b635-b078-7690-5cf0-2c5ad08df3f1</link>
+        <guid isPermaLink="true">http://localhost:4000/3298b635-b078-7690-5cf0-2c5ad08df3f1</guid>
+        
+        <category>iOS iOSInterviewquestions</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>Delegate란 무언인가 설명하고, retain 되는지 안되는지 그 이유를 함께 설명하시오.</title>
+        <description></description>
+        <pubDate>Tue, 30 Mar 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/b859a722-c185-18ca-40e3-ff2874327645</link>
+        <guid isPermaLink="true">http://localhost:4000/b859a722-c185-18ca-40e3-ff2874327645</guid>
+        
+        <category>Swift iOSInterviewquestions</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>scene delegate에 대해 설명하시오.</title>
+        <description></description>
+        <pubDate>Tue, 23 Mar 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/1da5c7c4-77b5-078d-7d51-cb4af2a594be</link>
+        <guid isPermaLink="true">http://localhost:4000/1da5c7c4-77b5-078d-7d51-cb4af2a594be</guid>
+        
+        <category>iOS iOSInterviewquestions</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>앱이 In-Active 상태가 되는 시나리오를 설명하시오.</title>
+        <description></description>
+        <pubDate>Tue, 23 Mar 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/ebf8366a-b1c6-8312-3390-591d37f51f88</link>
+        <guid isPermaLink="true">http://localhost:4000/ebf8366a-b1c6-8312-3390-591d37f51f88</guid>
+        
+        <category>iOS iOSInterviewquestions</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>mutating 키워드에 대해 설명하시오.</title>
+        <description></description>
+        <pubDate>Thu, 04 Mar 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/844246b6-6f5f-10ac-344c-ad6a72e16681</link>
+        <guid isPermaLink="true">http://localhost:4000/844246b6-6f5f-10ac-344c-ad6a72e16681</guid>
+        
+        <category>Swift iOSInterviewquestions</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>Autorelease Pool을 사용해야 하는 상황을 두 가지 이상 예로 들어 설명하시오.</title>
+        <description></description>
+        <pubDate>Tue, 16 Feb 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/f61fef68-7386-ba55-b341-d15ea08393d4</link>
+        <guid isPermaLink="true">http://localhost:4000/f61fef68-7386-ba55-b341-d15ea08393d4</guid>
+        
+        <category>Objective-C iOSInterviewquestions</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>특정 객체를 autorelease 하기 위해 필요한 사항과 과정을 설명하시오.</title>
+        <description></description>
+        <pubDate>Tue, 16 Feb 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/8c462797-aaee-445d-efdc-b532b964984f</link>
+        <guid isPermaLink="true">http://localhost:4000/8c462797-aaee-445d-efdc-b532b964984f</guid>
+        
+        <category>Objective-C iOSInterviewquestions</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>강한 순환 참조 (Strong Reference Cycle) 는 어떤 경우에 발생하는지 설명하시오.</title>
+        <description></description>
+        <pubDate>Mon, 15 Feb 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/0e5f64f9-ad6d-a804-3131-2c3b871c78f1</link>
+        <guid isPermaLink="true">http://localhost:4000/0e5f64f9-ad6d-a804-3131-2c3b871c78f1</guid>
+        
+        <category>Swift iOSInterviewquestions</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>retain 과 assign 의 차이점을 설명하시오.</title>
+        <description></description>
+        <pubDate>Mon, 08 Feb 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/22f59356-46ea-4d5a-030f-e9a600736722</link>
+        <guid isPermaLink="true">http://localhost:4000/22f59356-46ea-4d5a-030f-e9a600736722</guid>
+        
+        <category>Objective-C iOSInterviewquestions</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>ARC 대신 Manual Reference Count 방식으로 구현할 때 꼭 사용해야 하는 메서드들을 쓰고 역할을 설명하시오.</title>
+        <description></description>
+        <pubDate>Thu, 04 Feb 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/cddfe26b-169d-567a-5382-8ae53ec547e2</link>
+        <guid isPermaLink="true">http://localhost:4000/cddfe26b-169d-567a-5382-8ae53ec547e2</guid>
+        
+        <category>Objective-C iOSInterviewquestions</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>Contacts 프레임워크 톺아보기</title>
+        <description></description>
+        <pubDate>Tue, 02 Feb 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc</link>
+        <guid isPermaLink="true">http://localhost:4000/8b0a4b90-250f-9ea1-905c-c5c6ffd0f9cc</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>Strong 과 Weak 참조 방식에 대해 설명하시오.</title>
+        <description></description>
+        <pubDate>Mon, 01 Feb 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/7c62d9b2-06d5-65d7-6898-1046353eebd0</link>
+        <guid isPermaLink="true">http://localhost:4000/7c62d9b2-06d5-65d7-6898-1046353eebd0</guid>
+        
+        <category>Swift iOSInterviewquestions</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>Anatomy of a Constraint</title>
+        <description></description>
+        <pubDate>Mon, 01 Feb 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/91779299-b1d8-f752-efbb-bebf18b9b997</link>
+        <guid isPermaLink="true">http://localhost:4000/91779299-b1d8-f752-efbb-bebf18b9b997</guid>
+        
+        <category>iOS</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>ARC란 무엇인지 설명하시오.</title>
+        <description></description>
+        <pubDate>Tue, 26 Jan 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/b7fdc0a7-7a2a-81cf-ce06-b66f06945afb</link>
+        <guid isPermaLink="true">http://localhost:4000/b7fdc0a7-7a2a-81cf-ce06-b66f06945afb</guid>
+        
+        <category>iOS iOSInterviewquestions</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>Left Constraint 와 Leading Constraint 의 차이점을 설명하시오.</title>
+        <description></description>
+        <pubDate>Mon, 25 Jan 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/1cf039e2-3425-0ddb-02e8-a054c8a9f7b9</link>
+        <guid isPermaLink="true">http://localhost:4000/1cf039e2-3425-0ddb-02e8-a054c8a9f7b9</guid>
+        
+        <category>iOS iOSInterviewquestions</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>[iOS] Understanding Auto Layout</title>
+        <description></description>
+        <pubDate>Sun, 24 Jan 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/1ef8e42c-7d55-bc67-cbce-85cd58b7a910</link>
+        <guid isPermaLink="true">http://localhost:4000/1ef8e42c-7d55-bc67-cbce-85cd58b7a910</guid>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>hugging, resistance에 대해서 설명하시오.</title>
+        <description></description>
+        <pubDate>Thu, 14 Jan 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/1aa547a5-41c4-8dd1-b435-17560674ca3a</link>
+        <guid isPermaLink="true">http://localhost:4000/1aa547a5-41c4-8dd1-b435-17560674ca3a</guid>
+        
+        <category>iOS iOSInterviewquestions</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>Global DispatchQueue 의 Qos 에는 어떤 종류가 있는지, 각각 어떤 의미인지 설명하시오.</title>
+        <description></description>
+        <pubDate>Mon, 11 Jan 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/cd5e1f4f-8164-94cf-a774-bbc775a38cd7</link>
+        <guid isPermaLink="true">http://localhost:4000/cd5e1f4f-8164-94cf-a774-bbc775a38cd7</guid>
+        
+        <category>iOS iOSInterviewquestions</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>App thinning에 대해서 설명하시오.</title>
+        <description></description>
+        <pubDate>Tue, 05 Jan 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/aa6857a4-84f0-a3e2-a738-64d58b0cd9c5</link>
+        <guid isPermaLink="true">http://localhost:4000/aa6857a4-84f0-a3e2-a738-64d58b0cd9c5</guid>
+        
+        <category>iOS iOSInterviewquestions</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>스토리보드를 이용했을때의 장단점을 설명하시오.</title>
+        <description></description>
+        <pubDate>Mon, 04 Jan 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/c5dfccf5-2b57-6f88-4b0b-c6b25bd2a68d</link>
+        <guid isPermaLink="true">http://localhost:4000/c5dfccf5-2b57-6f88-4b0b-c6b25bd2a68d</guid>
+        
+        <category>iOS iOSInterviewquestions</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>Swift의 클로저와 Objective-C의 블록은 어떤 차이가 있는가?</title>
+        <description></description>
+        <pubDate>Tue, 29 Dec 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/486edc27-d3f9-bed4-099e-f5983ff97baa</link>
+        <guid isPermaLink="true">http://localhost:4000/486edc27-d3f9-bed4-099e-f5983ff97baa</guid>
+        
+        <category>iOS iOSInterviewquestions</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>앱 화면의 콘텐츠를 표시하는 로직과 관리를 담당하는 객체를 무엇이라고 하는가?</title>
+        <description></description>
+        <pubDate>Mon, 28 Dec 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/6f6c96ec-db60-3f68-0158-dca30f046316</link>
+        <guid isPermaLink="true">http://localhost:4000/6f6c96ec-db60-3f68-0158-dca30f046316</guid>
+        
+        <category>iOS iOSInterviewquestions</category>
+        
+        
+      </item>
+    
+
+
+  </channel>
+</rss>
