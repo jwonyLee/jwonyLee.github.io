@@ -38,9 +38,9 @@ collections:
 # Comment Service
 giscus:
   repo: jwonylee/jwonylee.github.io
-  repo_id: SAMPLE-VALUE
-  category: Announcements
-  category_id: SAMPLE-VALUE
+  repo_id: MDEwOlJlcG9zaXRvcnkzNzEwNDM4NjY=
+  category: Comments
+  category_id: DIC_kwDOFh2uGs4Cel1y
 
 google_analytics:
   ua: SAMPLE-VALUE
