@@ -30,11 +30,11 @@ iOS 프로젝트에서 모듈화 하는 방식은 아래와 같다.
 
 `File > New > Package` 를 선택한다.
 
-![File > New > Package](/assets/img/create-SPM/file-new-package.png)
+![File > New > Package](https://github.com/user-attachments/assets/219294ea-87fa-4752-b393-7666aabb4c4f)
 
 패키지 이름과 위치를 지정해준다. 공통 모듈을 만들기 위해서 `Platform` 이라는 이름으로 지정해주었고, 위치는 기존 프로젝트로 지정해주었다. 그리고 하단에 Add to: Group: 이라는 부분에 기존 프로젝트를 선택한다.
 
-![create Package](/assets/img/create-SPM/create-package.png)
+![create Package](https://github.com/user-attachments/assets/54b3fcd5-2c08-45f8-a140-f319cb4c8cdf)
 
 Create 를 누르면 패키지가 생성이 된다. 기본으로 생성되는 구조는 다음과 같다.
 

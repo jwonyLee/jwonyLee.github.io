@@ -60,7 +60,7 @@ lint를 적용하고 나니 프로젝트가 빌드가 안되는 사태가 발생
 
 SwiftLint 에 기본으로 적용되어 있는 객체나 메서드, 파일의 적절한 크기도 초과했고, 적용한 규칙에 맞지 않는 코드들이 산더미였다. 
 
-![Error 578, Warning 11492](/assets/img/improve-with-swiftlint/warning-error.png)
+![Error 578, Warning 11492](https://github.com/user-attachments/assets/1b8e3df0-8f63-4090-936d-d05647ef0fdb)
 
 많이 수정해서 이 정도였고, 그 전엔 더 많았다. 나는 규칙만 만들고, 초반 에러를 제거하는 작업은 팀장님이 진행하셨다. 그리고 나는 로직의 변경 사항이 없는지, 바꾼 코드에서 더 좋은 방식으로 작성할 수 없는지를 리뷰했다. 이후에는 나도 수정 작업을 했다. 
 

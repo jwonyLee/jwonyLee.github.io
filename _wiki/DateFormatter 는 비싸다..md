@@ -44,7 +44,7 @@ class ViewController: UIViewController {
 
 그리고 PR 을 남겼는데, 다음과 같은 리뷰를 받았다.
 
-![PR 리뷰](06%20Utilities/Attachments/dateformatter/review.png)
+![PR 리뷰](https://github.com/user-attachments/assets/478616aa-8e52-4fb0-90ee-7ec7ce7cac47)
 
 `DateFormatter` 가 비용이 많이 드는 작업이라니!  
 처음 안 사실이었다. 블로그 내용을 요약하자면, `DateFormatter` 인스턴스를 생성하는 것, 해당 인스턴스의 프로퍼티를 변경하는 것 모두 제법 비싸다(expensive)는 것이었다. 

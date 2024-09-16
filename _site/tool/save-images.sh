@@ -38,7 +38,13 @@ for CHANGED_FILE in $CHANGE_LIST; do
         echo "작업 대상 URI: [$URI]"
         echo "작업 대상 파일 패스: [$RESOLVE_FILE_PATH]"
         
-        if curl -s -L -o "$RESOLVE_FILE_PATH" "$URI"; then
+        if curl -L -o "$RESOLVE_FILE_PATH" "$URI" \
+            -#  \
+            --connect-timeout 30 \
+            --max-time 300 \
+            --retry 3 \
+            --retry-delay 5 \
+            --retry-max-time 60; then
             echo "DOWNLOAD SUCCESS: $FILE_NAME"
             sed -i.bak -E 's,'"$URI"','"$RESOLVE_URL"',g' "$CHANGED_FILE" && rm "$CHANGED_FILE.bak"
 

@@ -16,48 +16,48 @@ comment: true
 {:toc}
 
 ## 1. `viewDidLoad()` 에서 `UITableView.register()`를 사용해서 셀을 등록한다.
-    ```
-    💡 스토리보드에서 만든 경우에는 등록할 필요가 없음!
-    ```
+```
+💡 스토리보드에서 만든 경우에는 등록할 필요가 없음!
+```
 
-    ```swift
-    @IBOutlet weak var customTableView: UITableView!
-    @IBOutlet weak var customTableView2: UITableView!
+```swift
+@IBOutlet weak var customTableView: UITableView!
+@IBOutlet weak var customTableView2: UITableView!
 
-    override func viewDidLoad() {
-    	customTableView.register(UITableViewCell.self, forCellReusepermalink: "cell")
-    	customTableView2.register(UITableViewCell.self, forCellReusepermalink: "cell")
-    }
+override func viewDidLoad() {
+    customTableView.register(UITableViewCell.self, forCellReusepermalink: "cell")
+    customTableView2.register(UITableViewCell.self, forCellReusepermalink: "cell")
+}
     ```
 
 ## 2. `func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell` 에서 파라미터로 받는 `tableView`를 객체 비교를 통해 구분한다.
 
-    ```swift
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    	if tableView == customTableView {
-    		// 구현		
-    	} else if tableView == customTableView2 {
-    		// 구현
-    	}
+```swift
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    if tableView == customTableView {
+        // 구현		
+    } else if tableView == customTableView2 {
+        // 구현
     }
-    ```
+}
+```
 
 ## 3. 테이블 뷰의 `Tag`를 등록, 비교해서 구분한다.
 
-    ```swift
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    	switch tableView.tag {
-    		case 0:
-    			// 구현
-    		case 1:
-    			// 구현
-    		default: 
-    			break
-    	}
+```swift
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    switch tableView.tag {
+        case 0:
+            // 구현
+        case 1:
+            // 구현
+        default: 
+            break
     }
-    ```
+}
+```
 
-    ![Set tag for tableview in storyboard](/assets/image/tableview-tag.png)
+![Set tag for tableview in storyboard](/resource/default/2c3d2677-23cb-4bb1-b091-7a227146e983)
 
 ## UITableView.register
 

@@ -49,11 +49,11 @@ iOS 16 부터 사용 가능하기 때문에 iOS Deployment Target 을 16 이상�
 
 개요에서도 설명했다시피 Live Activity 는 WidgetKit 과 ActivityKit 의 조합으로 구현한다. 프로젝트에 Widget Extension 을 추가한다.
 
-![File > New > Target](/assets/img/LiveActivity/File%20new%20Target.png)
+![File > New > Target](https://github.com/user-attachments/assets/4fb924d7-f2e3-41e1-a594-4ed0a461c522)
 
-![Choose a template for your new target:](/assets/img/LiveActivity/Choose%20a%20templete%20for%20your%20new%20target.png)
+![Choose a template for your new target:](https://github.com/user-attachments/assets/ba2b3799-db35-456a-89e8-9355df0a4389)
 
-![Choose options for your new target:](/assets/img/LiveActivity/Choose%20options%20for%20your%20new%20target.png)
+![Choose options for your new target:](https://github.com/user-attachments/assets/e2645ea4-f9d3-49ac-9bef-241c6441c3bf)
 
 Product Name 은 적절하게 지어주면 되는데, 나는 대략 `LiveActivitiesDashboard` 라는 이름으로 지정했다.
 
@@ -245,7 +245,7 @@ Live Activity 는 최대 8시간까지 활성화될 수 있다. 그 이상의 �
 
 ## 동작
 
-![동작](/assets/img/LiveActivity/Play.gif)
+![동작](https://github.com/user-attachments/assets/98622671-59a5-45cb-897c-2ae55a1227b0)
 
 - `Date` 를 timer 로 표시할 때, 정렬이 안되는 버그가 있다.
 - 생각보다 매끄럽지 않음. 약간의 딜레이가 있다.

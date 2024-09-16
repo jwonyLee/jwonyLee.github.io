@@ -21,13 +21,13 @@ comment: true
 
 ## 폰트 추가하기
 
-![폰트 파일](files.png)
+![폰트 파일](/resource/default/021afdd8-6267-43a4-b295-4cdc1a36438f)
 
 적당한 위치에 폰트 파일을 추가한다.
 
 `Info.plist`에 `Fonts provided by application` 항목을 추가한다. 그리고 하위 항목에 추가한 파일이름을 추가한다.
 
-![Info.plist](info-plist.png)
+![Info.plist](/resource/default/34cbdf59-80cd-4f1f-8ef5-eeab9f9ad8d6)
 
 ## 폰트 사용하기
 
@@ -202,7 +202,7 @@ label.adjustsFontForContentSizeCategory = true
 
 스토리보드에서는 Attribute Inspector에서 변경할 수 있다.
 
-![Attribute Inspector](attribute-inspector.png)
+![Attribute Inspector](/resource/default/fb8596c4-a1fc-4e8b-91b8-d2246932ce07)
 
 `Fontable` 프로토콜에 두 개의 메서드를 추가한다.
 
@@ -257,7 +257,7 @@ struct Pretendard: Fontable {
 }
 ```
 
-![dynamic type 적용 사진](dynamic-type.gif)
+![dynamic type 적용 사진](/resource/default/62d88097-0995-43c3-8f67-2bef7b899270)
 
 끝!
 

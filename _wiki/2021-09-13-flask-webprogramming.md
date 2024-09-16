@@ -16,7 +16,7 @@ comment: true
 {:toc}
 
 <p align="center">
-<img alt="처음 배우는 플라스크 웹 프로그래밍 표지" src="/assets/flask/flask-book.jpg"> <br />
+<img alt="처음 배우는 플라스크 웹 프로그래밍 표지" src="/resource/default/a47fa562-8b08-4a7a-8341-65a2576c10ba"> <br />
 <a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B9575488572">처음 배우는 플라스크 웹 프로그래밍</a>
 </p>
 
@@ -38,7 +38,7 @@ comment: true
 
 - 코드를 표기해놓은 부분 상단에 `파일이름.py`이 적혀있어서 해당 부분은 코드 윗 부분으로 빼거나, 주석으로 작성했으면 좋았을 거 같다.
 
-    ![코드 내 파일이름](filename.jpg)
+    ![코드 내 파일이름](/resource/default/c2fb5bfd-f7ec-4c95-b78a-5b39c91b3693)
 - 지면의 한계로 인해 입문자를 위해 세세하게 설명해주는 느낌의 책은 아니다. 설명이 부족하다는 뜻은 아니지만, 일부 코드는 스스로 분석하는 능력이 필요할지도 모르겠다. (입문자가 아닌 내 입장에서는) 아쉬운 점은 아닌데 그렇다고 장점도 아니라서 여기에 적었다.
 
 ## 좋았던 점

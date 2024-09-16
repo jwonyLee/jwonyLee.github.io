@@ -25,17 +25,17 @@ App thinning을 사용하려면:
 
 1. 앱을 Xcode에 보관한다.
 
-    ![Product > Archive](/assets/image/app-thinning-1.png)
+![Product > Archive](/resource/default/9165a686-6a95-4b6b-abdc-cc69a53a3bde)
 
 2. Organizer 창에서 보관된 앱을 선택하고 앱 배포를 클릭한다.
 
-    ![Organizer](/assets/image/app-thinning-2.png)
+![Organizer](/resource/default/cf73c9d4-ea43-42e6-ada1-4280b52f972b)
 
 3. Xcode를 사용하여 앱을 내보내고 내보내기 시트에서 app thinning을 위해 `All compatible device variants`을 선택한다. 앱에서 제한된 수의 장치만 지원하는 경우 해당하는 장치를 선택한다.
     ```
     💡 더 진행해보고 싶지만 Apple Developer Program에 가입되어 있지 않아서 진행 불가
     ```
-    ![Select a method of distribution](/assets/image/app-thinning-3.png)
+    ![Select a method of distribution](/resource/default/5c3eeed7-1a92-4092-803d-7ce7433bb619)
 
 ### Slicing (iOS, tvOS)
 

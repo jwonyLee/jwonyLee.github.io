@@ -15,7 +15,7 @@ comment: true
 * TOC
 {:toc}
 
-![hugging resistance](/assets/image/hugging-resistance.png)
+![hugging resistance](/resource/default/4062ed51-59a1-4f05-9c37-91378a8ff770)
 
 ## Content hugging
 
@@ -31,13 +31,13 @@ Content hugging은 기본값이 250, Compression Resistance는 기본값이 750�
 
 | Place a label on a storyboard | Constraints |
 | ----------------------------- | ----------- |
-| ![Place a label on a storyboard](/assets/image/storyboard.png) | ![Constraints](/assets/image/constraint.png) |
+| ![Place a label on a storyboard](/resource/default/a6b2be5a-a632-4b04-aa68-2e829aa8f932) | ![Constraints](/resource/default/b2044835-ea78-46e7-9865-3c39a4175cc4) |
 
-![Error](/assets/image/error.png)
+![Error](/resource/default/f4043f40-1ca2-47d6-9f0a-11005a81481d)
 
 | Right Label Content Hugging Priority = 750 | Left Label Content Hugging Priority = 750 | 
 | ------------------------------------------ | ------------------------------------ |
-| ![Right Label Content Hugging Priority = 750](/assets/image/rightLabel.png) | ![Left Label Content Hugging Priority = 750](/assets/image/leftLabel.png) |
+| ![Right Label Content Hugging Priority = 750](/resource/default/34831f78-4df8-4804-abd0-faf3445b2df5) | ![Left Label Content Hugging Priority = 750](/resource/default/e1c17a97-028e-4f3d-87de-72e1a6717b8b) |
 
 ## 참고 자료
 

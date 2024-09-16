@@ -23,7 +23,7 @@ iOS에서 카메라 기능을 구현할 때, `AVFoundation`에 `AVCam`을 이용
 
 ## 화면 구성
 
-<img src="/assets/img/take-a-photo/ui.png" width="50%" alt="화면 구성">
+<img src="/resource/default/cc9c200e-fa09-4761-910f-556ad8fe2408" width="50%" alt="화면 구성">
 
 화면은 스토리보드로 간단하게 촬영한 사진을 보여줄 이미지뷰와 사진 촬영 화면으로 이동하는 버튼으로 구성했다.
 
@@ -47,7 +47,7 @@ final class ViewController: UIViewController {
 
 iOS에서 앱이 카메라를 사용하려면 사용자에게 명시적으로 권한을 요청해야 한다. `Info.plist`에서 `Privacy - Camera Usage Description`을 추가하고, 사용자에게 권한이 왜 필요한지에 대한 설명을 작성한다.
 
-![Info.plist](/assets/img/take-a-photo/info.png)
+![Info.plist](/resource/default/ef3e14d8-4c89-413f-bb09-f645f21bc0e0)
 
 ## UIImagePickerController
 
@@ -263,7 +263,7 @@ extension UIImagePickerController {
 
 ## 완성
 
-<img src="/assets/img/take-a-photo/complete.gif" alt="동작 화면" width="50%" />
+<img src="/resource/default/b6a23614-1d29-44e5-8647-ce0943ec11cb" alt="동작 화면" width="50%" />
 
 <p align="center">
 <i>마우스에 먼지는 무시해주세요...</i>

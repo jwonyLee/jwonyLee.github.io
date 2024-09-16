@@ -20,7 +20,7 @@ comment: true
 
 뷰 계층 구조의 레이아웃은 일련의 선형 방정식으로 정의된다. 각 제약은 단일 방정식을 나타낸다.
 
-![image 1](img1.png)
+![img1](/resource/default/186db57e-4164-46c2-bb8c-a8253a08125d)
 
 이 제약 조건은 빨간색 뷰의 선행 가장자리가 파란색 뷰의 후행 가장자리 이후 8.0 포인트여야 함을 나타낸다. 방정식에는 여러 부분이 있다.
 
@@ -38,7 +38,7 @@ comment: true
 
 오토 레이아웃에서 속성은 제한 될 수 있는 기능을 정의한다. 일반적으로 여기에는 높이, 너비, 수직 및 수평 중심뿐만 아니라 네 개의 모서리(leading, trailing, top, bottom)가 포함된다. 텍스트 항목에는 하나 이상의 기본 속성이 있다.
 
-![image 2](img2.png)
+![img2](/resource/default/3ea131c8-c979-4a0e-abf9-009e4682596d)
 
 ## 샘플 방정식
 
@@ -171,7 +171,7 @@ Blue.leading <= 1.0 * Red.trailing + 8.0
 
 오토 레이아웃은 각 차원에 대한 한 쌍의 제약 조건을 사용하여 뷰의 고유 콘텐츠 크기를 나타낸다. content hugging은 뷰를 안쪽으로 당겨 콘텐츠 주변에 꼭 맞도록 한다. content compression은 콘텐츠를 자르지 않도록 뷰를 바깥쪽으로 밀어낸다.
 
-![image 3](img3.png)
+![img3](/resource/default/5af30d92-e7a7-41b7-83b2-92e1619365dc)
 
 이러한 제약은 목록 3-5에 표시된 부등식을 사용하여 정의된다. 여기서 `IntrinsicHeight` 및 `IntricsicWidth` 상수는 뷰의 고유 콘텐츠 크기에서 높이 및 너비 값을 나타낸다.
 

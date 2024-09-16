@@ -29,13 +29,11 @@ comment: true
 
 | 목록 화면 | 작성 화면 |
 | --- | --- |
-| <img src="/assets/img/making-apps-with-core-data/image1.png" style="width: 300px"> | <img src="/assets/img/making-apps-with-core-data/image2.png" style="width: 300px"> |
-
-
+| <img src="/resource/default/bea64210-2c7e-4d09-9407-f16fedabdc86" style="width: 300px"> | <img src="/resource/default/028aea45-6f3e-4887-9d0c-ec4325c666d1" style="width: 300px"> |
 
 예제로 다루는 앱은 일반적인 블로깅 앱과 유사하다. 태그를 여러 개 작성할 수 있고, 미디어도 여러 개 첨부할 수 있다. 이제 데이터 구조에 대해 생각해보자.
 
-![데이터 구조](/assets/img/making-apps-with-core-data/image3.png)
+![데이터 구조](/resource/default/b06278ad-2221-412c-9ed4-b4b8dd94e100)
 
 가장 먼저 떠오르는 데이터는 게시물(`Post`)이다. 미디어도 여러 개 첨부할 수 있다고 했으니, 이것도 타입이 될 수 있고, 태그 역시 별도의 타입이 될 수 있다.
 그리고 여기서 미디어의 크기가 엄청 클 수 있으니까 별도로 저장한다. 왜냐하면 목록에서 썸네일만 표시하면 되니까 더 큰 데이터는 따로 보관한다는 거다.
@@ -44,7 +42,7 @@ comment: true
 
 이렇게 구조를 생각했으니 이제 Xcode 열어서 Core Data 모델을 만들자.
 
-![Core Data Model](/assets/img/making-apps-with-core-data/image4.png)
+![Core Data Model](/resource/default/44ea9398-5e1f-43f2-8b10-ef4953f75b17)
 
 모델 구조는 위와 같다. 데이터 간의 관계를 살펴보자. 먼저, `Attachment`와 `ImageData`는 `1:1` 관계다. 왜냐하면 `Attachment`는 썸네일(크기가 작은 이미지)이고, `ImageData`는 그에 대응하는 원본 이미지이기 때문이다. 
 
@@ -65,7 +63,7 @@ comment: true
 Core Data Stack은 Model, Context, Store coordinator로 구성되어 있고, 우리(Apple)가 너희 쓰기 편하라고 Persistent container라고 추상화해놓은 거 줄 거야 ㅋ
 ```
 
-![The Core Data Stack](/assets/img/making-apps-with-core-data/image5.png)
+![The Core Data Stack](/resource/default/737a859a-3350-4c99-b118-8b299464090e)
 
 > The model is required by a PersistentStoreCoordinator, which as the name implies, is responsible for managing our persistent stores.  
 Most of the time, this is a database that lives on the file system, though it's possible to have many stores at once, including our own custom made types that derive from NSPersistentStore. Finally, the type that we'll spend the most time with is the ManagedObjectContext.
@@ -156,7 +154,7 @@ if let postDicts = try? JSONSerialization.jsonObject(with: rawPostsData) as? [[S
 
 먼저, `[[String: Any]]` 타입으로 형변환한다. 여기서 Key는 모델의 속성 이름과 일치해야 한다. Unique Constraint와 같은 게 필요하지 않으면 일부 생략 가능하다.
 
-![JSON 구조](/assets/img/making-apps-with-core-data/image6.png)
+![JSON 구조](/resource/default/8028e68c-d64e-4b0e-9a33-b10e956038b3)
 
 이 경우에는 세 개의 Dictionary가 들어간다.
 
@@ -376,18 +374,18 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 
 블로깅 앱이 있다. 태그 관리자를 보면 세 개의 태그와 많은 게시물이 있다는 걸 알 수 있다. 그런데 여기에서 동작하는 뷰 쪽 코드는 실제로 관계 게시물을 순회하고 카운트를 가져온다. (`tag.posts?.count ?? 0` 부분) 더 많은 데이터가 있으면 당연히 성능 문제가 생긴다. 그래서 Derived Attributes를 사용하는 방식으로 수정해볼 예정이다.
 
-![](/assets/img/making-apps-with-core-data/image7.png)
+![](/resource/default/bf6409af-0cc4-455d-83d0-f7fd10c747fc)
 
 새로운 속성을 추가한다. `postCount: Integer 64`
 
 그리고서 Attribute Inspector 를 보면 Derived 라는 항목이 있다.
 
-![](/assets/img/making-apps-with-core-data/image8.png)
+![](/resource/default/f265e405-1c13-41b0-b6d0-04e4d2471a0b)
 
 해당 항목을 체크하면 새로운 항목이 생긴다.
 
-![](/assets/img/making-apps-with-core-data/image9.png)
-![](/assets/img/making-apps-with-core-data/image10.png)
+![](/resource/default/a6bae747-47b3-493a-9228-0495c9fae994)
+![](/resource/default/180e189c-fc7c-4c57-adc0-235799b454a7)
 
 Derivation 항목에 표현식을 적으면 된다. 우리는 post의 개수를 알고싶으니까 `posts.@count`로 적으면 된다. 이제 빌드하면 `postCount`라는 변수로 접근해서 쓸 수 있다. 훨씬 빠르고 더 좋다. so goooood!
 

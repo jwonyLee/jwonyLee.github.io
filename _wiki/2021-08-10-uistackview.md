@@ -47,11 +47,11 @@ comment: true
 
 #### vertical
 
-![stack view axis vertical](axis-vertical.png)
+![axis-vertical](/resource/default/0deae729-fe23-48d5-bfb5-db9f48124a98)
 
 #### horizontal
 
-![stack view axis horizontal](axis-horizontal.png)
+![axis-horizontal](/resource/default/f8510b6b-8fd2-4634-819b-4c81a6c6d00b)
 
 ### distribution
 
@@ -67,7 +67,7 @@ comment: true
 
 각 뷰에 CHCR을 주지 않고, `distribution.fill`을 하게 되면 어떻게 될까?
 
-![stack view distribution fill](distribution-fill.png)
+![distribution-fill](/resource/default/05d9bcae-5173-4be0-9005-7b25870bc113)
 
 제약 사항을 찾을 수 없다는 오류가 뜬다. 이게 왜 뜨냐면, 각 뷰마다 높이(혹은 넓이)가 없어서 누가 늘어나야할 지 모르기 때문이다. 누가 늘어나야 할 지 알고있다면 이런 오류는 당연히 뜨지 않는다. 
 
@@ -75,7 +75,7 @@ comment: true
 
 #### fillEquality
 
-![stack view distribution fillEquality](distribution-fillEquality.png)
+![distribution-fillEquality](/resource/default/c8f2852b-23b4-47a7-a079-f7b08075e62c)
 
 말 그대로 동일한 비율로 크기로 채운다! `axis`에 나와있는 사진의 구성이 `fillEquality` 였다.
 
@@ -87,15 +87,15 @@ comment: true
 
 예시를 통해 자세히 알아보자. 고유한 콘텐츠 크기를 갖고 있는 `UILabel`를 두 개 배치해보면, 동등한 비율로 크기를 갖고 있는 걸 알 수 있다.
 
-![distribution fillProportionally 1](distribution-fillProportionally-1.png)
+![distribution-fillProportionally-1](/resource/default/21770b9a-4783-4190-bf79-6e116f36c21d)
 
 이제 왼쪽의 텍스트를 더 길게 바꿔보자. 텍스트가 길어지면서 스택뷰 내에서 더 많은 너비를 차지하고 있다는 걸 알 수 있다.
 
-![distribution fillProportionally 2](distribution-fillProportionally-2.png)
+![distribution-fillProportionally-2](/resource/default/3cc6a6f3-7691-4d6d-aa83-bc6ced88cc83)
 
 초록색 뷰도 더 길게 작성하면 어떻게 될까? 미세하게 더 많은 비율로 커진 걸 볼 수 있고, 나머지 텍스트는 `...`으로 처리된 걸 알 수 있다.
 
-![distribution fillProportionally 3](distribution-fillProportionally-3.png)
+![distribution-fillProportionally-3](/resource/default/82d2dc61-e2f3-46f5-997b-ed4a3f404cfd)
 
 #### equalSpacing
 
@@ -103,7 +103,7 @@ comment: true
 
 `UIStackView.spacing`의 간격으로 뷰를 배치한다. `spacing` 값이 크면 어떤 뷰가 작아져야할 지 정해줘야 한다.
 
-![distribution equalSpacing](distribution-equalSpacing.png)
+![distribution-equalSpacing](/resource/default/103e0bbb-001e-40c1-a8ee-be9c9ef63dc9)
 
 #### equalCentering
 
@@ -111,7 +111,7 @@ comment: true
 
 뷰의 중앙 축을 기준으로 간격을 유지하는데, 문장만 봐선 감이 잘 안 잡힌다. 그림으로 보는 게 이해하기 쉽다.
 
-![distributuion equalCentering](distribution-equalCentering.png)
+![distribution-equalCentering](/resource/default/ba864199-37fb-48c8-8fd7-0ee462e22187)
 
 ### alignment
 
@@ -122,16 +122,16 @@ comment: true
 #### Vertical
 - Fill
   - 뷰의 크기를 스택 뷰의 넓이 전체만큼 채운다.
-  ![Vertical Alignment Fill](vertical-alignment-fill.png)
+  ![vertical-alignment-fill](/resource/default/e9517cbd-c158-4e42-84a1-66fa8f6f8484)
 - Leading
   - 뷰를 스택 뷰의 `Leading`을 기준으로 정렬한다. (왼쪽 정렬 X)
-  ![Vertical Alignment Leading](vertical-alignment-leading.png)
+  ![vertical-alignment-leading](/resource/default/45f5d967-4d28-4e01-9693-cad7293a0880)
 - Center
   - 뷰를 스택 뷰의 가운데로 정렬한다.
-  ![Vertical Alignment Center](vertical-alignment-center.png)
+  ![vertical-alignment-center](/resource/default/b2a57a32-4e30-431a-ac9f-fbb3fb708073)
 - Trailing 
   - 뷰를 스택 뷰의 `Trailing`을 기준으로 정렬한다. (오른쪽 정렬 X)
-  ![Vertical Alginment Trailing](vertical-alignment-trailing.png)
+  ![vertical-alignment-trailing](/resource/default/54a1a035-99e9-49f4-ad99-e493c2825030)
 
 #### Horizontal
 
@@ -139,26 +139,26 @@ Vertical 예제와 달리 가운데 Label만 여러 줄로 작성했다. 이렇�
 
 - Fill
   - 뷰의 크기를 스택 뷰의 높이만큼 채운다.
-  ![Horizontal Alignment Fill](horizontal-alignment-fill.png)
+  ![horizontal-alignment-fill](/resource/default/dc4826c0-66bc-4905-bc99-efe4bfee52fb)
 - Top
   - 뷰를 스택 뷰의 상단을 기준으로 정렬한다.
-  ![Horizontal Alignment Top](horizontal-alignment-top.png)
+  ![horizontal-alignment-top](/resource/default/95312ffd-8453-4718-919f-de2a1b22111d)
 - Center
   - 뷰를 스택 뷰의 가운데로 정렬한다.
-  ![Horizontal Alignment Center](horizontal-alignment-center.png)
+  ![horizontal-alignment-center](/resource/default/a9a413dd-6f7b-471d-848b-513a92620174)
 - Bottom
   - 뷰를 스택 뷰의 하단을 기준으로 정렬한다.
-  ![Horizontal Alignment Bottom](horiziontal-alginment-bottom.png)
+  ![horiziontal-alginment-bottom](/resource/default/81b49c68-22b0-4da3-8478-738a49d145fa)
 - First Baseline (only Horizontal)
   - 뷰를 first Baseline을 기준으로 정렬한다. 
-  ![Horizontal Alignment First Baseline](horizontal-alignment-first-baseline.png)
+  ![horizontal-alignment-first-baseline](/resource/default/14b9e545-86da-4e3e-8e13-9ea32dbbbf23)
 - Last Baseline (only Horizontal)
   - 뷰를 last Baseline을 기준으로 정렬한다.
-  ![Horizontal Alignment Last Baseline](horizontal-alignment-last-baseline.png)
+  ![horizontal-alignment-last-baseline](/resource/default/66f18c9e-4523-43d6-8944-ebae01cd1653)
 
 First Baseline과 Last Baseline은 사진만 봐서는 Top, Bottom과 비슷해보이지만 실제론 이렇다.
 
-![[lastBaseline.png]]
+![lastBaseline](/resource/default/9710d0cd-3a73-4213-a1fa-1558981f6c73)
 
 ### spacing
 

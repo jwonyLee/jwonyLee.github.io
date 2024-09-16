@@ -497,11 +497,11 @@
 
 <h4 id="vertical">vertical</h4>
 
-<p><img src="axis-vertical.png" alt="stack view axis vertical" /></p>
+<p><img src="/resource/default/0deae729-fe23-48d5-bfb5-db9f48124a98" alt="axis-vertical" /></p>
 
 <h4 id="horizontal">horizontal</h4>
 
-<p><img src="axis-horizontal.png" alt="stack view axis horizontal" /></p>
+<p><img src="/resource/default/f8510b6b-8fd2-4634-819b-4c81a6c6d00b" alt="axis-horizontal" /></p>
 
 <h3 id="distribution">distribution</h3>
 
@@ -521,7 +521,7 @@
 
 <p>각 뷰에 CHCR을 주지 않고, <code class="language-plaintext highlighter-rouge">distribution.fill</code>을 하게 되면 어떻게 될까?</p>
 
-<p><img src="distribution-fill.png" alt="stack view distribution fill" /></p>
+<p><img src="/resource/default/05d9bcae-5173-4be0-9005-7b25870bc113" alt="distribution-fill" /></p>
 
 <p>제약 사항을 찾을 수 없다는 오류가 뜬다. 이게 왜 뜨냐면, 각 뷰마다 높이(혹은 넓이)가 없어서 누가 늘어나야할 지 모르기 때문이다. 누가 늘어나야 할 지 알고있다면 이런 오류는 당연히 뜨지 않는다.</p>
 
@@ -529,7 +529,7 @@
 
 <h4 id="fillequality">fillEquality</h4>
 
-<p><img src="distribution-fillEquality.png" alt="stack view distribution fillEquality" /></p>
+<p><img src="/resource/default/c8f2852b-23b4-47a7-a079-f7b08075e62c" alt="distribution-fillEquality" /></p>
 
 <p>말 그대로 동일한 비율로 크기로 채운다! <code class="language-plaintext highlighter-rouge">axis</code>에 나와있는 사진의 구성이 <code class="language-plaintext highlighter-rouge">fillEquality</code> 였다.</p>
 
@@ -543,15 +543,15 @@
 
 <p>예시를 통해 자세히 알아보자. 고유한 콘텐츠 크기를 갖고 있는 <code class="language-plaintext highlighter-rouge">UILabel</code>를 두 개 배치해보면, 동등한 비율로 크기를 갖고 있는 걸 알 수 있다.</p>
 
-<p><img src="distribution-fillProportionally-1.png" alt="distribution fillProportionally 1" /></p>
+<p><img src="/resource/default/21770b9a-4783-4190-bf79-6e116f36c21d" alt="distribution-fillProportionally-1" /></p>
 
 <p>이제 왼쪽의 텍스트를 더 길게 바꿔보자. 텍스트가 길어지면서 스택뷰 내에서 더 많은 너비를 차지하고 있다는 걸 알 수 있다.</p>
 
-<p><img src="distribution-fillProportionally-2.png" alt="distribution fillProportionally 2" /></p>
+<p><img src="/resource/default/3cc6a6f3-7691-4d6d-aa83-bc6ced88cc83" alt="distribution-fillProportionally-2" /></p>
 
 <p>초록색 뷰도 더 길게 작성하면 어떻게 될까? 미세하게 더 많은 비율로 커진 걸 볼 수 있고, 나머지 텍스트는 <code class="language-plaintext highlighter-rouge">...</code>으로 처리된 걸 알 수 있다.</p>
 
-<p><img src="distribution-fillProportionally-3.png" alt="distribution fillProportionally 3" /></p>
+<p><img src="/resource/default/82d2dc61-e2f3-46f5-997b-ed4a3f404cfd" alt="distribution-fillProportionally-3" /></p>
 
 <h4 id="equalspacing">equalSpacing</h4>
 
@@ -561,7 +561,7 @@
 
 <p><code class="language-plaintext highlighter-rouge">UIStackView.spacing</code>의 간격으로 뷰를 배치한다. <code class="language-plaintext highlighter-rouge">spacing</code> 값이 크면 어떤 뷰가 작아져야할 지 정해줘야 한다.</p>
 
-<p><img src="distribution-equalSpacing.png" alt="distribution equalSpacing" /></p>
+<p><img src="/resource/default/103e0bbb-001e-40c1-a8ee-be9c9ef63dc9" alt="distribution-equalSpacing" /></p>
 
 <h4 id="equalcentering">equalCentering</h4>
 
@@ -571,7 +571,7 @@
 
 <p>뷰의 중앙 축을 기준으로 간격을 유지하는데, 문장만 봐선 감이 잘 안 잡힌다. 그림으로 보는 게 이해하기 쉽다.</p>
 
-<p><img src="distribution-equalCentering.png" alt="distributuion equalCentering" /></p>
+<p><img src="/resource/default/ba864199-37fb-48c8-8fd7-0ee462e22187" alt="distribution-equalCentering" /></p>
 
 <h3 id="alignment">alignment</h3>
 
@@ -586,25 +586,25 @@
   <li>Fill
     <ul>
       <li>뷰의 크기를 스택 뷰의 넓이 전체만큼 채운다.
-<img src="vertical-alignment-fill.png" alt="Vertical Alignment Fill" /></li>
+<img src="/resource/default/e9517cbd-c158-4e42-84a1-66fa8f6f8484" alt="vertical-alignment-fill" /></li>
     </ul>
   </li>
   <li>Leading
     <ul>
       <li>뷰를 스택 뷰의 <code class="language-plaintext highlighter-rouge">Leading</code>을 기준으로 정렬한다. (왼쪽 정렬 X)
-<img src="vertical-alignment-leading.png" alt="Vertical Alignment Leading" /></li>
+<img src="/resource/default/45f5d967-4d28-4e01-9693-cad7293a0880" alt="vertical-alignment-leading" /></li>
     </ul>
   </li>
   <li>Center
     <ul>
       <li>뷰를 스택 뷰의 가운데로 정렬한다.
-<img src="vertical-alignment-center.png" alt="Vertical Alignment Center" /></li>
+<img src="/resource/default/b2a57a32-4e30-431a-ac9f-fbb3fb708073" alt="vertical-alignment-center" /></li>
     </ul>
   </li>
   <li>Trailing
     <ul>
       <li>뷰를 스택 뷰의 <code class="language-plaintext highlighter-rouge">Trailing</code>을 기준으로 정렬한다. (오른쪽 정렬 X)
-<img src="vertical-alignment-trailing.png" alt="Vertical Alginment Trailing" /></li>
+<img src="/resource/default/54a1a035-99e9-49f4-ad99-e493c2825030" alt="vertical-alignment-trailing" /></li>
     </ul>
   </li>
 </ul>
@@ -617,44 +617,44 @@
   <li>Fill
     <ul>
       <li>뷰의 크기를 스택 뷰의 높이만큼 채운다.
-<img src="horizontal-alignment-fill.png" alt="Horizontal Alignment Fill" /></li>
+<img src="/resource/default/dc4826c0-66bc-4905-bc99-efe4bfee52fb" alt="horizontal-alignment-fill" /></li>
     </ul>
   </li>
   <li>Top
     <ul>
       <li>뷰를 스택 뷰의 상단을 기준으로 정렬한다.
-<img src="horizontal-alignment-top.png" alt="Horizontal Alignment Top" /></li>
+<img src="/resource/default/95312ffd-8453-4718-919f-de2a1b22111d" alt="horizontal-alignment-top" /></li>
     </ul>
   </li>
   <li>Center
     <ul>
       <li>뷰를 스택 뷰의 가운데로 정렬한다.
-<img src="horizontal-alignment-center.png" alt="Horizontal Alignment Center" /></li>
+<img src="/resource/default/a9a413dd-6f7b-471d-848b-513a92620174" alt="horizontal-alignment-center" /></li>
     </ul>
   </li>
   <li>Bottom
     <ul>
       <li>뷰를 스택 뷰의 하단을 기준으로 정렬한다.
-<img src="horiziontal-alginment-bottom.png" alt="Horizontal Alignment Bottom" /></li>
+<img src="/resource/default/81b49c68-22b0-4da3-8478-738a49d145fa" alt="horiziontal-alginment-bottom" /></li>
     </ul>
   </li>
   <li>First Baseline (only Horizontal)
     <ul>
       <li>뷰를 first Baseline을 기준으로 정렬한다. 
-<img src="horizontal-alignment-first-baseline.png" alt="Horizontal Alignment First Baseline" /></li>
+<img src="/resource/default/14b9e545-86da-4e3e-8e13-9ea32dbbbf23" alt="horizontal-alignment-first-baseline" /></li>
     </ul>
   </li>
   <li>Last Baseline (only Horizontal)
     <ul>
       <li>뷰를 last Baseline을 기준으로 정렬한다.
-<img src="horizontal-alignment-last-baseline.png" alt="Horizontal Alignment Last Baseline" /></li>
+<img src="/resource/default/66f18c9e-4523-43d6-8944-ebae01cd1653" alt="horizontal-alignment-last-baseline" /></li>
     </ul>
   </li>
 </ul>
 
 <p>First Baseline과 Last Baseline은 사진만 봐서는 Top, Bottom과 비슷해보이지만 실제론 이렇다.</p>
 
-<p>![[lastBaseline.png]]</p>
+<p><img src="/resource/default/9710d0cd-3a73-4213-a1fa-1558981f6c73" alt="lastBaseline" /></p>
 
 <h3 id="spacing">spacing</h3>
 

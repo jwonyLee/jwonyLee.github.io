@@ -472,21 +472,21 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p><img src="contacts-1.png" alt="Error Message" /></p>
+<p><img src="https://github.com/user-attachments/assets/bfa6d14b-02d2-4b21-89a3-6137ffd434bb" alt="Error Message" /></p>
 
 <p>실행해보면 위와 같이 오류가 발생하는 걸 볼 수 있다. 왜냐하면 연락처는 개인정보에 해당하기 때문에 사용자에게 권한을 요청받아야 한다.</p>
 
-<p><img src="contacts-2.png" alt="Contacts Topics" /></p>
+<p><img src="https://github.com/user-attachments/assets/7650996a-8b91-4875-ae5c-33729a3ec093" alt="Contacts Topics" /></p>
 
 <p>Contacts 문서 하단에는 관련된 토픽을 볼 수 있는데, 위 문제를 해결하려면 <a href="https://developer.apple.com/documentation/contacts/requesting_authorization_to_access_contacts">Requesting Authorization to Access Contacts</a> 문서를 보면 된다.</p>
 
-<p><img src="contacts-3.png" alt="Requesting Authorization to Access Contacts" /></p>
+<p><img src="https://github.com/user-attachments/assets/b3a3ed6e-5b65-473e-a122-e78a27eaa00e" alt="Requesting Authorization to Access Contacts" /></p>
 
 <p>영어만 봐도 눈이 핑 돌아간다. @_@…</p>
 
 <p>앱은 사용자가 권한을 부여할 때까지 연락처 항목에 액세스 할 수 없다고 설명하면서 사용자에게 액세스 권한이 있는지 확인하려면 <code class="language-plaintext highlighter-rouge">authorizationStatus(for:)</code> 메서드를 사용하라고 쓰여있다.</p>
 
-<p><img src="contacts-4.png" alt="Configure Your Information Property List File" /></p>
+<p><img src="https://github.com/user-attachments/assets/3c710e0d-4728-404f-ac7e-ce056ef70f65" alt="Configure Your Information Property List File" /></p>
 
 <p>조금 더 밑으로 내려서 읽어보면, <code class="language-plaintext highlighter-rouge">Info.plist</code> 파일에 <code class="language-plaintext highlighter-rouge">NSContactsUsageDescription</code> 키를 추가해야 한다고 쓰여있다. 이 키의 값은 앱이 사용자의 연락처로 수행하는 작업을 설명하는 문자열이라고 한다.</p>
 
@@ -496,7 +496,7 @@
 
 <p><a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nscontactsusagedescription">https://developer.apple.com/documentation/bundleresources/information_property_list/nscontactsusagedescription</a></p>
 
-<p><img src="contacts-5.png" alt="NSContactsUsageDescription" /></p>
+<p><img src="https://github.com/user-attachments/assets/b1a9dd2f-ce6b-4f09-8de0-ac3279ca867f" alt="NSContactsUsageDescription" /></p>
 
 <p><code class="language-plaintext highlighter-rouge">Info.plist</code>에 다음과 같이 추가해준다. 사용자에게 이 권한이 왜 필요한지 설명을 기록해야 한다.</p>
 
@@ -538,7 +538,7 @@
 
 <p>원래는 <code class="language-plaintext highlighter-rouge">fetch</code>와 <code class="language-plaintext highlighter-rouge">request</code>를 같이 하고 있었는데 리팩토링을 해서 메서드를 분리했다.</p>
 
-<p><img src="contacts-6.png" alt="&quot;AddressBookApp&quot; Would Like to Access Your Contacts" /></p>
+<p><img src="https://github.com/user-attachments/assets/eadb7709-c220-46d9-aa06-cd323a012987" alt="&quot;AddressBookApp&quot; Would Like to Access Your Contacts" /></p>
 
 <p>사용자 승인 요청과 연락처 정보까지 잘 가져오는 것을 확인할 수 있다.</p>
 
@@ -587,11 +587,11 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p><img src="contacts-7.png" alt="Log" /></p>
+<p><img src="https://github.com/user-attachments/assets/098fa8c6-0db1-4aeb-90ce-251affd3e16c" alt="Log" /></p>
 
 <p>완성!</p>
 
-<p><img src="contacts-8.png" alt="완성 화면" /></p>
+<p><img src="https://github.com/user-attachments/assets/c2cbbf60-9faa-4b38-a401-aaba10a24ce4" alt="완성 화면" /></p>
 
 <p>애플 개발자 문서는 진짜 잘 정리되어있다는 걸 또 한번 느꼈다.</p>
 

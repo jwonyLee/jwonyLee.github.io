@@ -21,7 +21,7 @@ comment: true
 
 구현하려는 모양은 다음과 같다.
 
-![구현하려는 모양](badge-1.png)
+![구현하려는 모양](/resource/default/1721f57a-3e45-4880-9807-dcacafb9c24a)
 
 가운데에는 이미지를 표시하고 우측 상단에는 뱃지 형태의 버튼을 넣는 형태다. 그리고 이런 구성은 Compositonal layout을 이용하면 쉽게 만들 수 있다.
 
@@ -116,7 +116,7 @@ item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trai
 ```
 
 1. `NSCollectionLayoutAnchor`는 컬렉션 뷰의 Supplementary Item의 위치를 정의하는 객체다. 아래 사진은 값에 따라 어떻게 배치되는 지를 나타낸다. 오프셋은 `fractionalOffset`과 `absoluteOffset`으로 나뉜다.  
-    ![NSCollectionLayoutAnchor 배치](badge-2.png)
+    ![NSCollectionLayoutAnchor 배치](/resource/default/b73ab63d-5efc-4feb-a086-42b76b100ee5)
 2. 뱃지의 크기를 지정한다. 여기서는 20 만큼의 절대값으로 지정했다. 
 3. `NSCollectionLayoutSupplementaryItem` 객체를 생성한다. 여기서 `elementKind`로 들어가는 값은 컬렉션 뷰에 등록할 때 사용했던 `elementKind`랑 같은 값을 작성한다.
 4. `supplementaryItems`에 3에서 생성한 SupplementaryItem을 넣는다.
@@ -141,11 +141,11 @@ func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElem
 
 나는 컬렉션 뷰를 가로로 스크롤하기 위해서 `section.orthogonalScrollingBehavior`를 사용했는데, 이걸 사용하면 뷰의 계층 구조가 엉망이 되버려서 Supplementary View가 제대로 표시되지 않는다. 
 
-![계층 구조가 깨진 모습](badge-3.png)
+![계층 구조가 깨진 모습](/resource/default/2f6a5c4e-4996-4cb4-be28-241c1a4321ae)
 
 `orthogonalScrollingBehavior`를 사용하지 않으면 정상적으로 나온다.
 
-![정상적으로 보이는 모습](badge-4.png)
+![정상적으로 보이는 모습](/resource/default/4e812870-0e8b-4d43-90c2-de24a6827b28)
 
 알려주신 현수님께 무한한 감사의 말씀을 드리며... 🙏 
 
