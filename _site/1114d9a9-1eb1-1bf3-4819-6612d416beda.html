@@ -3,8 +3,6 @@
     <script type="application/json" id="pagePermalinks">
     {
         
-        "제목이-test-입니다": "/wiki/test/", 
-        
         "optional-이란-무엇인지-설명하시오": "/7972af36-2e95-e5a9-936b-b2d8008d0dd2", 
         
         "tableview-reloadsections-with": "/6818f72c-8679-19ea-5849-0fa044b8e138", 
@@ -263,13 +261,13 @@
         
         "github-action-에서-특정-label-이-붙은-pr-건너뛰기": "/0654680d-f102-7159-d06c-99f2e46aa34e", 
         
-        "http-완벽-가이드": "/35d2bb9e-3cea-3de7-4405-27f2965e2716", 
-        
-        "wiki": "/wiki/root-index/", 
-        
         "자식-뷰-컨트롤러에-이벤트가-전파되지-않음": "/641670cf-215e-936c-44df-1d00acf50e2f", 
         
         "tabview-scrollview": "/a6f7c741-4d45-d56e-7c60-aea6037ccc1a", 
+        
+        "http-완벽-가이드": "/35d2bb9e-3cea-3de7-4405-27f2965e2716", 
+        
+        "wiki": "/wiki/root-index/", 
         
         "하기-싫은-일은-작게-나누기": "/7c3093ec-e4ac-31f8-b22e-08c817377f1d"
         
@@ -437,21 +435,19 @@
     </header>
     <article class="post-content">
         <ul id="markdown-toc">
-  <li><a href="#shell-script-터미널에서-명령어로-마크다운-파일-만들기" id="markdown-toc-shell-script-터미널에서-명령어로-마크다운-파일-만들기">[Shell Script] 터미널에서 명령어로 마크다운 파일 만들기</a>    <ul>
-      <li><a href="#-연도월-디렉터리-생성" id="markdown-toc--연도월-디렉터리-생성">🗂 <code class="language-plaintext highlighter-rouge">연도/월</code> 디렉터리 생성</a></li>
-      <li><a href="#-연도월연도-월-일-파일이름md-파일-생성" id="markdown-toc--연도월연도-월-일-파일이름md-파일-생성">💾 <code class="language-plaintext highlighter-rouge">연도/월/연도-월-일-파일이름.md</code> 파일 생성</a></li>
-      <li><a href="#️-에디터로-파일-열기" id="markdown-toc-️-에디터로-파일-열기">✍️ 에디터로 파일 열기</a>        <ul>
-          <li><a href="#전체-코드" id="markdown-toc-전체-코드">전체 코드</a></li>
-        </ul>
-      </li>
-      <li><a href="#️-명령어-등록" id="markdown-toc-️-명령어-등록">⚡️ 명령어 등록</a></li>
-      <li><a href="#-마무리" id="markdown-toc--마무리">💬 마무리</a></li>
-      <li><a href="#참고-자료" id="markdown-toc-참고-자료">참고 자료</a></li>
+  <li><a href="#개요" id="markdown-toc-개요">개요</a></li>
+  <li><a href="#-연도월-디렉터리-생성" id="markdown-toc--연도월-디렉터리-생성">🗂 <code class="language-plaintext highlighter-rouge">연도/월</code> 디렉터리 생성</a></li>
+  <li><a href="#-연도월연도-월-일-파일이름md-파일-생성" id="markdown-toc--연도월연도-월-일-파일이름md-파일-생성">💾 <code class="language-plaintext highlighter-rouge">연도/월/연도-월-일-파일이름.md</code> 파일 생성</a></li>
+  <li><a href="#️-에디터로-파일-열기" id="markdown-toc-️-에디터로-파일-열기">✍️ 에디터로 파일 열기</a>    <ul>
+      <li><a href="#전체-코드" id="markdown-toc-전체-코드">전체 코드</a></li>
     </ul>
   </li>
+  <li><a href="#️-명령어-등록" id="markdown-toc-️-명령어-등록">⚡️ 명령어 등록</a></li>
+  <li><a href="#-마무리" id="markdown-toc--마무리">💬 마무리</a></li>
+  <li><a href="#참고-자료" id="markdown-toc-참고-자료">참고 자료</a></li>
 </ul>
 
-<h1 id="shell-script-터미널에서-명령어로-마크다운-파일-만들기">[Shell Script] 터미널에서 명령어로 마크다운 파일 만들기</h1>
+<h2 id="개요">개요</h2>
 
 <blockquote>
   <p>엔지니어들은 게으름에서 비롯된 이상한 습성을 가진 경우가 있다. 정말 하기 싫은 일이 있으면 엔지니어들은 자신을 대신해 이 일을 해줄 무언가를 만든다. 심지어 이런 것을 만드는 데 걸리는 노력이 원래 하기 싫은 일을 하는 데 드는 노력보다 훨씬 많이 들어도 굳이 이런 짓을 하고는 한다.<br />

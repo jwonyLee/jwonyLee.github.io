@@ -11,12 +11,21 @@ regenerate: true
 * TOC
 {:toc}
 
-## [[how-to]]
+## wiki
 
-* [[mathjax-latex]]
-
-
----
+<div>
+    <ul>
+{% for post in site.wiki %}
+    {% if post.public == true %}
+        <li>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                {{ post.title }}
+            </a>
+        </li>
+    {% endif %}
+{% endfor %}
+    </ul>
+</div>
 
 ## blog posts
 <div>

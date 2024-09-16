@@ -7,7 +7,7 @@ date: 2020-09-08
 updated: 2020-09-08
 tag: Swift Optional iOSInterviewquestions  
 public: true
-parent: 
+parent: [[iOSInterviewquestions]]
 latex: true
 comment: true
 ---
