@@ -49,8 +49,8 @@ google_analytics:
 google_adsense:
   client: SAMPLE-VALUE
 
-blame: "https://github.com/jwonylee/jwonylee.github.io/blame/master/_wiki"
-edit: "https://github.com/jwonylee/jwonylee.github.io/edit/master/_wiki"
+blame: "https://github.com/jwonylee/jwonylee.github.io/blame/main/_wiki"
+edit: "https://github.com/jwonylee/jwonylee.github.io/edit/main/_wiki"
 issue: "https://github.com/jwonylee/jwonylee.github.io/issues/new"
 
 timezone: "Asia/Seoul"
