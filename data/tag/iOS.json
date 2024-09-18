@@ -49,10 +49,6 @@
  "2021-11-07-collectionview-with-badge",
  "2021-12-04-take-a-photo",
  "2022-01-21-tableview-scroll",
- "외부 Cocoapods 라이브러리 SPM 으로 배포하기",
- "자식 뷰 컨트롤러에 이벤트가 전파되지 않음",
- "회사 프로젝트에 SwiftGen 도입기",
- "회사 프로젝트에 SwiftLint 도입기",
  "custom-font",
  "DateFormatter 는 비싸다.",
  "Live Activity",
@@ -60,5 +56,9 @@
  "ReactorKit",
  "Safe area 를 변경하려면",
  "Swift Package 만들기",
- "TabView + ScrollView"
+ "TabView + ScrollView",
+ "외부 Cocoapods 라이브러리 SPM 으로 배포하기",
+ "자식 뷰 컨트롤러에 이벤트가 전파되지 않음",
+ "회사 프로젝트에 SwiftGen 도입기",
+ "회사 프로젝트에 SwiftLint 도입기"
 ]

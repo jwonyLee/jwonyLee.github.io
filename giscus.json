@@ -1,3 +1,11 @@
 {
-  "origins": ["https://jwonylee.github.io"]
+  "origins": [
+    "https://rieul.tech",
+    "https://jwonylee.github.io"
+  ],
+   "originsRegex": [
+      "http://localhost:[0-9]+",
+      "http://127.0.0.1:[0-9]+"
+   ],
+  "defaultCommentOrder": "oldest"
 }

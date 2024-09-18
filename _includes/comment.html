@@ -1,20 +1,34 @@
 {% if page.comment != false %}
-    <div class="giscus"></div>    
-    <script src="https://giscus.app/client.js"
-        data-repo="{{ site.giscus.repo }}"
-        data-repo-id="{{ site.giscus.repo_id }}"
-        data-category="{{ site.giscus.category }}"
-        data-category-id="{{ site.giscus.category_id }}"
+<!-- <script src="https://giscus.app/client.js"
+    data-repo="{{ site.giscus.repo }}"
+    data-repo-id="{{ site.giscus.repo_id }}"
+    data-category="{{ site.giscus.category }}"
+    data-category-id="{{ site.giscus.category_id }}"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="ko"
+    crossorigin="anonymous"
+    data-mapping="url"
+    data-term="{{ page.resource }}"
+    data-strict="0"
+    async>
+</script> -->
+<script src="https://giscus.app/client.js"
+        data-repo="jwonyLee/jwonyLee.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkzNzEwNDM4NjY="
+        data-category="[ENTER CATEGORY NAME HERE]"
+        data-category-id="[ENTER CATEGORY ID HERE]"
+        data-mapping="url"
+        data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
         data-theme="light_tritanopia"
         data-lang="ko"
+        data-loading="lazy"
         crossorigin="anonymous"
-        data-mapping="url"
-        data-term="{{ page.resource }}"
-        data-strict="0"
         async>
-    </script>
-    </div>
+</script>
 {% endif %}

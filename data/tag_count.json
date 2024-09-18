@@ -1,13 +1,5 @@
 [
  {
-  "name": "삽질",
-  "size": 2
- },
- {
-  "name": "서평",
-  "size": 1
- },
- {
   "name": "Autolayout",
   "size": 1
  },
@@ -157,6 +149,14 @@
  },
  {
   "name": "XCTest",
+  "size": 1
+ },
+ {
+  "name": "삽질",
+  "size": 2
+ },
+ {
+  "name": "서평",
   "size": 1
  }
 ]

@@ -1,6 +1,6 @@
 # Site settings
 title: 🌩️ 먹구름
-url: "https://jwonylee.github.io"
+url: "https://rieul.tech"
 baseurl: ""
 description: >
     PKM
@@ -58,3 +58,9 @@ timezone: "Asia/Seoul"
 # https://kramdown.gettalong.org/rdoc/Kramdown/Options.html - smart_quotes
 kramdown:
     smart_quotes: ["apos", "apos", "quot", "quot"]
+
+webrick:
+  headers:
+    Content-Security-Policy: "frame-ancestors 'self' https://giscus.app"
+    Access-Control-Allow-Origin: "*"
+    
