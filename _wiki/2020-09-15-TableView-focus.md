@@ -37,3 +37,7 @@ override func viewWillAppear(_ animated: Bool) {
     }
 }
 ```
+
+## 참고 자료
+
+- [iOS: 테이블뷰 셀 터치 시 포커스 남기지 않기 (TableViewCell SelectionStyle)](https://ohgyun.com/641)

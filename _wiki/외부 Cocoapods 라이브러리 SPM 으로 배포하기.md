@@ -69,7 +69,7 @@ let package = Package(
 import PackageDescription
 
 let package = Package(
-    name: "SPMTest",
+    name: "SPMTest",
     products: [
         .library(
             name: "SPMTest",
@@ -101,3 +101,4 @@ let package = Package(
 
 - [swift - How can I get checksum for a Binary Package? - Stack Overflow](https://stackoverflow.com/questions/68529771/how-can-i-get-checksum-for-a-binary-package)
 - [Distribute binary frameworks as Swift packages - WWDC20 - Videos - Apple Developer](https://developer.apple.com/videos/play/wwdc2020/10147)
+- [stleamist/NMapsMap-SwiftPM: SwiftPM을 지원하는 iOS용 네이버 지도 SDK의 비공식 미러 저장소](https://github.com/stleamist/NMapsMap-SwiftPM)

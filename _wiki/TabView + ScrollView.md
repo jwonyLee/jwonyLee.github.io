@@ -73,3 +73,4 @@ TabView {
 
 - https://stackoverflow.com/questions/75256478/how-to-make-swiftui-tabbar-background-always-transparent
 - https://developer.apple.com/documentation/uikit/uinavigationbar/3198027-scrolledgeappearance
+- https://developer.apple.com/documentation/uikit/uinavigationbar/3198028-standardappearance
