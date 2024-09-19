@@ -85,7 +85,7 @@ let package = Package(
             dependencies: [
                 .product(name: "{기존 라이브러리 이름}", package: "{1번 저장소 이름}") // package 이름을 라이브러리 이름과 동일하게 작성했을 때 동작하지 않았음
             ]
-        )
+        )피
     ]
 )
 

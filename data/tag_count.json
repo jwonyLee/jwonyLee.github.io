@@ -1,5 +1,13 @@
 [
  {
+  "name": "삽질",
+  "size": 2
+ },
+ {
+  "name": "서평",
+  "size": 1
+ },
+ {
   "name": "Autolayout",
   "size": 1
  },
@@ -21,11 +29,11 @@
  },
  {
   "name": "Git",
-  "size": 1
+  "size": 4
  },
  {
   "name": "GitHub",
-  "size": 1
+  "size": 2
  },
  {
   "name": "GitHub-Action",
@@ -37,7 +45,7 @@
  },
  {
   "name": "iOS",
-  "size": 62
+  "size": 63
  },
  {
   "name": "iOSInterviewquestions",
@@ -85,7 +93,7 @@
  },
  {
   "name": "RxSwift",
-  "size": 4
+  "size": 5
  },
  {
   "name": "Script",
@@ -97,7 +105,7 @@
  },
  {
   "name": "SPM",
-  "size": 1
+  "size": 2
  },
  {
   "name": "Swift",
@@ -149,14 +157,6 @@
  },
  {
   "name": "XCTest",
-  "size": 1
- },
- {
-  "name": "삽질",
-  "size": 2
- },
- {
-  "name": "서평",
   "size": 1
  }
 ]
