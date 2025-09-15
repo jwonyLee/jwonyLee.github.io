@@ -1,18 +1,10 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
-gem "jekyll"
-gem "minima"
+git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
-group :jekyll_plugins do
-  gem "jekyll-feed"
-end
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'jekyll-paginate'
-gem 'jekyll-gist'
-
-gem 'wdm', '>= 0.1.0' if Gem.win_platform?
-
-gem 'kramdown-parser-gfm'
-
-gem "webrick"
+gem "jekyll", "~> 4.4"
+gem "jekyll-last-modified-at", git: "https://github.com/maximevaillancourt/jekyll-last-modified-at", branch: "add-support-for-files-in-git-submodules"
+gem "webrick", "~> 1.9"
+gem "nokogiri"
